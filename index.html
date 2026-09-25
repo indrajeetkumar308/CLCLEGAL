@@ -8,6 +8,13 @@
 <meta property="og:description" content="Criminal, civil, property, family, succession and recovery matters before the Patna High Court and courts of Bihar.">
 <meta property="og:type" content="website">
 <style>img{max-width:100%}</style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0E2240">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CLC">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
 </head>
 <body>
 <title>Choudhary Law Chambers</title>
@@ -982,5 +989,13 @@ renderChrome();
  if(ok)$('#gate').hidden=true;else document.body.style.overflow='hidden'})();
 route();
 
+</script>
+<button id="clc-install" type="button" hidden style="position:fixed;left:18px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:46;display:inline-flex;align-items:center;gap:8px;background:#0E2240;color:#fff;border:1px solid #C9A96E;border-radius:28px;padding:11px 18px;font:600 14px 'Source Sans 3',system-ui,sans-serif;box-shadow:0 10px 26px -10px rgba(0,0,0,.5);cursor:pointer"><img src="icons/icon-32.png" alt="" width="20" height="20" style="border-radius:4px">Install CLC App</button>
+<script>
+if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
+(function(){let ev=null;const b=document.getElementById('clc-install');
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();ev=e;if(!matchMedia('(display-mode: standalone)').matches)b.hidden=false});
+b.addEventListener('click',async()=>{if(!ev)return;ev.prompt();await ev.userChoice;ev=null;b.hidden=true});
+addEventListener('appinstalled',()=>{b.hidden=true});})();
 </script>
 </body></html>
