@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Choudhary Law Chambers, Advocates, Boring Road, Patna. Patna High Court and courts of Bihar.">
+<meta property="og:title" content="Choudhary Law Chambers — Advocates, Patna">
+<meta property="og:description" content="Criminal, civil, property, family, succession and recovery matters before the Patna High Court and courts of Bihar.">
+<meta property="og:type" content="website">
+<style>img{max-width:100%}</style>
+</head>
+<body>
+<title>Choudhary Law Chambers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF; --alt:#F4F6F9; --surface:#FFFFFF; --ink:#1A2332; --muted:#5A6476; --faint:#8791A2; --line:#E2E6ED;
+  --navy:#0E2240; --navy-2:#0A1930; --navy-ink:#EEF2F8; --navy-muted:#A9B5C8; --navy-line:rgba(255,255,255,.12);
+  --gold:#A9834C; --gold-2:#C9A96E; --gold-soft:#F6F0E4; --title:#0E2240;
+  --shadow:0 1px 2px rgba(14,34,64,.06),0 12px 32px -18px rgba(14,34,64,.28);
+  --serif:"Cormorant Garamond", "Palatino Linotype", Georgia, serif;
+  --sans:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --deva:"Tiro Devanagari Hindi", "Noto Serif Devanagari", serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){color-scheme:dark;
+    --bg:#0B1321; --alt:#0E1829; --surface:#122036; --ink:#E4E9F1; --muted:#A3AEC0; --faint:#7C889C; --line:#223250;
+    --navy:#0C1B33; --navy-2:#081324; --gold:#CDAA6E; --gold-2:#D9BC86; --gold-soft:#231F17; --title:#F1F4F9;
+    --shadow:0 12px 32px -18px rgba(0,0,0,.8);}
+}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0B1321; --alt:#0E1829; --surface:#122036; --ink:#E4E9F1; --muted:#A3AEC0; --faint:#7C889C; --line:#223250;
+  --navy:#0C1B33; --navy-2:#081324; --gold:#CDAA6E; --gold-2:#D9BC86; --gold-soft:#231F17; --title:#F1F4F9;
+  --shadow:0 12px 32px -18px rgba(0,0,0,.8);}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.7}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:24px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance;color:var(--title);line-height:1.15}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font:600 12px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 14px var(--sans);letter-spacing:.04em;padding:14px 26px;border-radius:2px;border:1px solid transparent;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#8F6D3C}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:#1A3560}
+.btn-line{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-line:hover{border-color:var(--gold-2);color:var(--gold-2)}
+.btn-outline{border-color:var(--line);color:var(--title);background:var(--surface)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* utility bar + header */
+.util{background:var(--navy-2);color:var(--navy-muted);font-size:13px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:40px;flex-wrap:wrap}
+.util span{display:inline-flex;align-items:center;gap:8px}
+.util svg{width:14px;height:14px;stroke:var(--gold-2);fill:none;stroke-width:1.6}
+.util .r{display:flex;gap:22px}
+@media (max-width:760px){.util .l{display:none}.util .wrap{justify-content:center}.util .r{gap:14px}.util .em{display:none}}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 6px 20px -16px rgba(14,34,64,.35)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:80px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.mark{width:48px;height:48px;flex:none;background:var(--navy);display:grid;place-items:center;border:1px solid var(--gold)}
+.mark span{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--gold-2);letter-spacing:.04em}
+.brand b{display:block;font-family:var(--serif);font-weight:700;font-size:23px;color:var(--title);line-height:1.1;white-space:nowrap}
+.brand small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:3px;white-space:nowrap}
+.links{display:flex;align-items:center;gap:30px}
+.links>a,.dd>button{font:600 14.5px var(--sans);color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:28px 0;position:relative}
+.links>a:not(.btn)::after,.dd>button::after{content:"";position:absolute;left:0;right:0;bottom:20px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .25s}
+.links>a:not(.btn):hover::after,.dd:hover>button::after,.links>a.on::after{transform:scaleX(1)}
+.links>a.btn-gold{padding:12px 22px;background:var(--gold);color:#fff}
+.links>a.btn-gold:hover{background:#8F6D3C}
+section[id]{scroll-margin-top:90px}
+.dd{position:relative}
+.dd-menu{position:absolute;top:100%;left:-24px;background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--gold);min-width:300px;padding:10px 0;display:none;box-shadow:var(--shadow)}
+.dd:hover .dd-menu,.dd.open .dd-menu{display:block}
+.dd-menu a{display:flex;justify-content:space-between;padding:10px 24px;font-size:15px;text-decoration:none;color:var(--ink)}
+.dd-menu a:hover{background:var(--alt);color:var(--gold)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);cursor:pointer;padding:9px;color:var(--title)}
+.menu-btn svg{width:22px;height:22px}
+@media (max-width:980px){
+  .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--surface);border-bottom:1px solid var(--line);padding:6px 24px 22px;max-height:80vh;overflow:auto;box-shadow:var(--shadow)}
+  .links.open{display:flex}
+  .links>a,.dd>button{padding:14px 0;text-align:left;border-bottom:1px solid var(--line);width:100%}
+  .links>a::after,.dd>button::after{display:none}
+  .dd-menu,.dd:hover .dd-menu{position:static;display:block;border:0;box-shadow:none;padding:4px 0 8px 10px;min-width:0}
+  .dd-menu a{padding:8px 0}
+  .links .btn{margin-top:18px}
+  .menu-btn{display:inline-flex}
+}
+@media (max-width:480px){.brand b{font-size:18px;white-space:normal}.brand small{display:none}.mark{width:40px;height:40px}.mark span{font-size:16px}.nav{gap:12px}}
+
+/* hero */
+.hero{background:radial-gradient(ellipse at 75% 30%,#1B3968 0%,var(--navy) 45%,var(--navy-2) 100%);color:var(--navy-ink);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.012) 3px 4px);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:96px 150px}
+.hero h1{color:#fff;font-size:clamp(40px,5.2vw,66px);font-weight:600;margin:22px 0 22px;letter-spacing:-.005em}
+.hero h1 em{font-style:italic;color:var(--gold-2);font-weight:500}
+.hero .lead{color:var(--navy-muted);font-size:18.5px;max-width:52ch;margin:0 0 34px}
+.hero .deva{font-family:var(--deva);color:var(--gold-2);font-size:18px;margin-top:-8px;margin-bottom:22px;opacity:.9}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.facade{width:100%;max-width:520px;justify-self:end}
+.facade svg{width:100%;height:auto;display:block}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;padding-block:64px 130px}.facade{max-width:380px;justify-self:center;order:-1;opacity:.85}}
+.trust{position:relative;z-index:2;margin-top:-72px}
+.trust-in{background:var(--surface);box-shadow:var(--shadow);border-top:3px solid var(--gold);display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-in>div{padding:28px 26px;display:flex;gap:16px;align-items:flex-start}
+.trust-in>div+div{border-left:1px solid var(--line)}
+.trust-in svg{width:30px;height:30px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.4}
+.trust-in b{display:block;font-family:var(--serif);font-size:20px;color:var(--title);line-height:1.2}
+.trust-in span{font-size:14px;color:var(--muted)}
+@media (max-width:900px){.trust-in{grid-template-columns:1fr 1fr}.trust-in>div:nth-child(3){border-left:0}.trust-in>div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:520px){.trust-in{grid-template-columns:1fr}.trust-in>div+div{border-left:0;border-top:1px solid var(--line)}}
+
+/* sections */
+section.s{padding-block:100px}
+section.alt{background:var(--alt)}
+.sh{text-align:center;max-width:760px;margin:0 auto 56px}
+.sh h2{font-size:clamp(34px,4vw,50px);margin-top:14px}
+.sh p{color:var(--muted);font-size:17.5px;margin:0}
+.rule{width:60px;height:2px;background:var(--gold);margin:20px auto}
+.sh .eyebrow::before{display:none}
+
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:start}
+.about h2{font-size:clamp(34px,4vw,48px);margin:14px 0 20px}
+.about p{color:var(--muted);font-size:17px;margin:0 0 16px}
+.pillars{display:grid;gap:18px}
+.pillar{background:var(--surface);border:1px solid var(--line);padding:24px 26px;display:grid;grid-template-columns:44px 1fr;gap:18px;box-shadow:var(--shadow)}
+.pillar .ic{width:44px;height:44px;border-radius:50%;background:var(--gold-soft);display:grid;place-items:center}
+.pillar svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.pillar h3{font-size:22px;margin-bottom:4px}
+.pillar p{margin:0;font-size:15.5px}
+@media (max-width:900px){.about{grid-template-columns:1fr;gap:40px}}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.pa{background:var(--surface);border:1px solid var(--line);padding:36px 32px 30px;text-decoration:none;display:flex;flex-direction:column;gap:12px;position:relative;transition:transform .25s,box-shadow .25s,border-color .25s}
+.pa::after{content:"";position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.pa:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+.pa:hover::after{transform:scaleX(1)}
+.pa .ic{width:60px;height:60px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;margin-bottom:8px;transition:background .25s}
+.pa .ic svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.4;transition:stroke .25s}
+.pa:hover .ic{background:var(--navy)}
+.pa:hover .ic svg{stroke:var(--gold-2)}
+.pa h3{font-size:25px}
+.pa p{margin:0;color:var(--muted);font-size:15.5px;flex:1}
+.pa .more{font:700 13px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:10px}
+@media (max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+
+.navy{background:var(--navy);color:var(--navy-ink)}
+.navy .sh h2{color:#fff}
+.navy .sh p{color:var(--navy-muted)}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--navy-line)}
+.why div{padding:36px 30px}
+.why div+div{border-left:1px solid var(--navy-line)}
+.why .n{font-family:var(--serif);font-size:46px;color:var(--gold-2);line-height:1;font-weight:500}
+.why h3{color:#fff;font-size:24px;margin:16px 0 10px}
+.why p{color:var(--navy-muted);margin:0;font-size:15.5px}
+@media (max-width:980px){.why{grid-template-columns:1fr 1fr}.why div:nth-child(3){border-left:0}.why div:nth-child(n+3){border-top:1px solid var(--navy-line)}}
+@media (max-width:560px){.why{grid-template-columns:1fr}.why div+div{border-left:0;border-top:1px solid var(--navy-line)}}
+
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:980px;margin:0 auto}
+.chips span{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);padding:18px 22px;font-weight:600;color:var(--title)}
+.chips span::before{content:"";width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex:none}
+@media (max-width:760px){.chips{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.chips{grid-template-columns:1fr}}
+
+.founder{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.portrait{position:relative;max-width:420px;padding:16px;background:var(--surface);border:2px solid var(--gold);box-shadow:var(--shadow)}
+.portrait::before{content:"";position:absolute;inset:7px;border:1px solid var(--gold-2);pointer-events:none}
+.portrait .ph{position:relative;aspect-ratio:4/5;max-width:100%;background:linear-gradient(160deg,#1B3968,var(--navy-2));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
+.portrait .ph span{font-family:var(--serif);font-size:96px;color:rgba(201,169,110,.55);font-weight:600}
+.portrait .ph small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy-muted)}
+.founder h2{font-size:clamp(36px,4vw,50px);margin:14px 0 4px}
+.founder .role{font-weight:600;color:var(--gold);margin-bottom:22px;letter-spacing:.04em}
+.founder p{color:var(--muted);font-size:17px;max-width:60ch}
+.creds{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:26px}
+.creds div{padding:16px 0;border-bottom:1px solid var(--line)}
+.creds dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.creds dd{margin:4px 0 0;font-weight:600;color:var(--title)}
+.creds .pending{color:var(--gold)}
+@media (max-width:900px){.founder{grid-template-columns:1fr;gap:56px}.portrait{max-width:340px}}
+@media (max-width:480px){.creds{grid-template-columns:1fr}}
+
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:p;position:relative}
+.process::before{content:"";position:absolute;top:32px;left:12%;right:12%;height:1px;background:var(--line)}
+.process div{text-align:center;padding:0 18px;position:relative}
+.process .n{width:64px;height:64px;border-radius:50%;background:var(--surface);border:1px solid var(--gold);display:grid;place-items:center;margin:0 auto 20px;font-family:var(--serif);font-size:24px;color:var(--gold);font-weight:600}
+.process h3{font-size:22px;margin-bottom:8px}
+.process p{color:var(--muted);margin:0;font-size:15.5px}
+@media (max-width:860px){.process{grid-template-columns:1fr 1fr;row-gap:40px}.process::before{display:none}}
+@media (max-width:480px){.process{grid-template-columns:1fr}}
+
+.cta{background:linear-gradient(100deg,var(--navy-2),#1A3560);color:#fff}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;padding-block:56px}
+.cta h2{color:#fff;font-size:clamp(28px,3.2vw,40px)}
+.cta p{margin:6px 0 0;color:var(--navy-muted)}
+.cta .acts{display:flex;gap:12px;flex-wrap:wrap}
+
+/* chambers */
+.cham{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;box-shadow:var(--shadow);border:1px solid var(--line)}
+.cham-info{background:var(--navy);color:var(--navy-ink);padding:44px 40px}
+.cham-info h3{color:#fff;font-size:30px;margin-bottom:24px}
+.cham-info dl{margin:0}
+.cham-info dl>div{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--navy-line)}
+.cham-info .ic{width:40px;height:40px;border:1px solid rgba(201,169,110,.5);display:grid;place-items:center}
+.cham-info .ic svg{width:18px;height:18px;stroke:var(--gold-2);fill:none;stroke-width:1.5}
+.cham-info dt{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2);font-weight:600}
+.cham-info dd{overflow-wrap:anywhere;margin:4px 0 0;font-size:16.5px;color:#fff;line-height:1.55}
+.cham-info .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.copy{margin-left:8px;font:600 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;background:none;border:1px solid rgba(255,255,255,.25);color:var(--navy-muted);padding:2px 8px;cursor:pointer;vertical-align:middle}
+.copy:hover{border-color:var(--gold-2);color:var(--gold-2)}
+form.intake{background:var(--surface);padding:44px 40px;display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;align-content:start}
+form.intake h3{grid-column:1/-1;font-size:30px}
+form.intake .sub{grid-column:1/-1;margin:-10px 0 4px;color:var(--muted);font-size:15px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+.f label{font-size:13.5px;font-weight:600;color:var(--title)}
+.f input,.f select,.f textarea{font:16px var(--sans);color:var(--ink);background:var(--alt);border:1px solid var(--line);padding:12px 14px;border-radius:2px}
+.f textarea{min-height:110px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--gold);background:var(--surface)}
+.ck{grid-column:1/-1;display:flex;gap:10px;font-size:14px;color:var(--muted)}
+.ck input{margin-top:5px;accent-color:#A9834C}
+.ff{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.ff small{color:var(--faint);font-size:13px;max-width:36ch}
+.ok{grid-column:1/-1;border-left:3px solid var(--gold);padding:14px 18px;background:var(--gold-soft);color:var(--ink)}
+@media (max-width:900px){.cham{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){form.intake{grid-template-columns:1fr;padding:28px 22px}.cham-info{padding:32px 22px}}
+
+/* footer */
+footer.site{background:var(--navy-2);color:var(--navy-muted);padding-top:72px;font-size:15px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1.1fr 1.3fr;gap:44px}
+.fgrid h6{margin:0 0 20px;font:600 13px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#fff;padding-bottom:12px;border-bottom:1px solid var(--navy-line);position:relative}
+.fgrid h6::after{content:"";position:absolute;left:0;bottom:-1px;width:36px;height:2px;background:var(--gold)}
+.fgrid a{display:block;text-decoration:none;padding:4px 0}
+.fgrid a:hover{color:var(--gold-2)}
+.fgrid p{margin:0 0 12px}
+.fbrand{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.fbrand b{font-family:var(--serif);font-size:22px;color:#fff;display:block;line-height:1.1}
+.fbrand small{color:var(--gold-2);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.fbot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--navy-line);margin-top:56px;padding-block:22px;font-size:13.5px}
+@media (max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.fgrid{grid-template-columns:1fr}}
+
+.wa{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:45;width:56px;height:56px;border-radius:50%;background:#1F8F5F;display:grid;place-items:center;box-shadow:0 12px 30px -10px rgba(0,0,0,.45);transition:transform .2s}
+.wa:hover{transform:scale(1.06)}
+.wa svg{width:26px;height:26px;fill:#fff}
+
+/* practice page */
+.phero{background:radial-gradient(ellipse at 80% 20%,#1B3968 0%,var(--navy) 50%,var(--navy-2) 100%);color:#fff;position:relative;overflow:hidden}
+.phero .wrap{position:relative;z-index:1;padding-block:70px 76px}
+.crumbs{font-size:14px;color:var(--navy-muted);display:flex;gap:10px;flex-wrap:wrap}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{color:var(--gold-2)}
+.crumbs span{color:var(--gold-2)}
+.phero h1{color:#fff;font-size:clamp(38px,5vw,60px);margin:18px 0 14px}
+.phero p{color:var(--navy-muted);font-size:18.5px;max-width:62ch;margin:0}
+.phero .ghost{position:absolute;right:-30px;bottom:-60px;width:360px;height:360px;opacity:.07;stroke:#fff;fill:none;stroke-width:.6}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:56px;padding-block:80px}
+.side{position:sticky;top:110px;align-self:start;display:grid;gap:24px}
+.side-box{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.side-box h4{font-size:22px;padding:22px 24px 14px;border-bottom:1px solid var(--line)}
+.side-box nav a{display:flex;justify-content:space-between;align-items:center;padding:13px 24px;text-decoration:none;border-bottom:1px solid var(--line);font-weight:500;font-size:15.5px}
+.side-box nav a:last-child{border-bottom:0}
+.side-box nav a:hover{color:var(--gold);background:var(--alt)}
+.side-box nav a.on{background:var(--navy);color:#fff;border-left:3px solid var(--gold)}
+.side-cta{background:var(--navy);color:var(--navy-muted);padding:28px 26px;border-top:3px solid var(--gold)}
+.side-cta h4{color:#fff;font-size:24px;margin-bottom:8px}
+.side-cta p{margin:0 0 18px;font-size:15px}
+.side-cta .ph{font-family:var(--serif);font-size:24px;color:var(--gold-2);font-weight:600;margin-bottom:16px;display:block}
+.side-cta .btn{width:100%}
+@media (max-width:1000px){.layout{grid-template-columns:minmax(0,1fr);gap:40px;padding-block:56px}.side{position:static}}
+
+.main>section{padding-block:0 64px}
+.main>section:last-child{padding-bottom:0}
+.main .wrap{max-width:none;padding-inline:0}
+.main section.s{padding-block:0 64px}
+.main .sh{text-align:left;margin:0 0 28px;max-width:none}
+.main .sh h2{font-size:clamp(30px,3.2vw,40px)}
+.main .rule{margin:16px 0}
+.main .eyebrow::before{display:inline-block}
+.prose p{color:var(--muted);font-size:17.5px;margin:0 0 16px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);background:var(--alt);border:1px solid var(--line);margin-top:28px}
+.facts div{padding:20px 20px}
+.facts div+div{border-left:1px solid var(--line)}
+.facts span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.facts b{display:block;font-family:var(--serif);font-size:19px;color:var(--title);margin-top:4px;line-height:1.3}
+@media (max-width:760px){.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(3){border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--line)}}
+.groups{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.groups div{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--navy);padding:24px 26px}
+.groups h4{font-size:22px;margin-bottom:12px}
+.groups ul{list-style:none;margin:0;padding:0}
+.groups li{padding:6px 0 6px 22px;position:relative;color:var(--muted);font-size:15.5px}
+.groups li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border:1.5px solid var(--gold);transform:rotate(45deg)}
+@media (max-width:640px){.groups{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:st}
+.steps div{background:var(--alt);border:1px solid var(--line);padding:20px 22px;display:flex;gap:14px;align-items:center}
+.steps span{width:38px;height:38px;flex:none;border-radius:50%;background:var(--navy);color:var(--gold-2);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px}
+.steps h4{font-size:19px}
+@media (max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.steps{grid-template-columns:1fr}}
+
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 48px 20px 0;position:relative;font-weight:600;font-size:17.5px;color:var(--title)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:14px;width:32px;height:32px;border:1px solid var(--line);display:grid;place-items:center;font-size:20px;color:var(--gold);transition:transform .25s,background .25s}
+.faq details[open] summary::after{content:"–";background:var(--navy);color:var(--gold-2);border-color:var(--navy)}
+.faq details p{margin:0 0 22px;color:var(--muted);max-width:70ch}
+.home-faq{max-width:860px;margin:0 auto}
+
+.tbl{overflow-x:auto;border:1px solid var(--line);box-shadow:var(--shadow)}
+.tbl table{border-collapse:collapse;width:100%;min-width:640px;font-size:15.5px;background:var(--surface)}
+.tbl th{text-align:left;font:600 12.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:15px 18px;background:var(--navy);color:#fff}
+.tbl td{padding:15px 18px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl tr:nth-child(even) td{background:var(--alt)}
+.tbl td:first-child{color:var(--title);font-weight:600}
+.tbl.sec td:last-child{color:var(--gold);font-weight:600;white-space:nowrap}
+.note{font-size:13.5px;color:var(--faint);margin-top:14px;font-style:italic}
+
+.journey{position:relative}
+.journey::before{content:"";position:absolute;left:23px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.jstep{position:relative;display:grid;grid-template-columns:48px 1fr;gap:22px;padding-bottom:30px}
+.jnum{width:48px;height:48px;border-radius:50%;border:2px solid var(--gold);background:var(--surface);display:grid;place-items:center;font-family:var(--serif);font-size:20px;font-weight:700;color:var(--gold);position:relative;z-index:1}
+.jstep.end .jnum{background:var(--navy);color:var(--gold-2);border-color:var(--navy)}
+.jstep h3{font-size:23px;margin:8px 0 4px}
+.jstep p{margin:0;color:var(--muted)}
+.fork{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.fork button{font:600 13px var(--sans);padding:7px 18px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;border-radius:2px}
+.fork button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.branch{margin-top:10px;border-left:3px solid var(--gold);padding:10px 16px;background:var(--gold-soft);font-size:15px;color:var(--ink)}
+.branch b{color:var(--gold);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:11.5px;display:block}
+
+.prev{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.prev article{background:var(--surface);border:1px solid var(--line);padding:28px}
+.prev .n{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--gold-2);font-family:var(--serif);font-weight:700}
+.prev h3{font-size:23px;margin:14px 0 6px}
+.prev p{color:var(--muted);margin:0}
+.prev details{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.prev summary{cursor:pointer;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);list-style:none}
+.prev summary::-webkit-details-marker{display:none}
+.prev summary::after{content:" +"}
+.prev details[open] summary::after{content:" –"}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+.kv h5{margin:0 0 6px;font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--title)}
+.kv ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px}
+@media (max-width:700px){.prev,.kv{grid-template-columns:1fr}}
+
+.remedies,.remedies.two{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.rem{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--navy);padding:26px;display:flex;flex-direction:column}
+.rem h3{font-size:24px;margin-bottom:4px}
+.rem .law{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--gold);margin-bottom:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.tabs button{font:600 12.5px var(--sans);padding:6px 12px;background:var(--alt);border:1px solid var(--line);color:var(--muted);cursor:pointer;border-radius:2px}
+.tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.rem .panel{color:var(--muted);font-size:15.5px;min-height:96px}
+.rem .panel ul,.rem .panel ol{margin:0;padding-left:20px}
+.rem .panel li{margin-bottom:4px}
+.rem .panel p{margin:0}
+.rem .fit{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
+.rem .fit b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--title);margin-bottom:4px}
+@media (max-width:700px){.remedies,.remedies.two{grid-template-columns:1fr}}
+
+.match{display:grid;grid-template-columns:1fr 120px 1fr;align-items:center}
+.match ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.match li button{width:100%;text-align:left;font:600 15.5px var(--sans);padding:13px 16px;background:var(--surface);border:1px solid var(--line);color:var(--title);cursor:pointer;border-radius:2px}
+.match li button.on{border-color:var(--gold);background:var(--gold-soft)}
+.match #wa button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.match .col h5{font:700 12px var(--sans);letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px;color:var(--gold)}
+.match svg{width:100%;height:320px;color:var(--gold)}
+.match-cap{color:var(--muted);margin-top:22px;font-family:var(--serif);font-style:italic;font-size:21px}
+@media (max-width:560px){.match{grid-template-columns:1fr 44px 1fr}.match li button{font-size:13.5px;padding:10px}}
+
+/* gate */
+.gate{position:fixed;inset:0;z-index:100;background:rgba(8,19,36,.86);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto}
+.gate-in{background:var(--surface);max-width:640px;width:100%;border-top:4px solid var(--gold);box-shadow:0 30px 80px -30px rgba(0,0,0,.6);animation:rise .35s ease-out}
+.gate-head{background:var(--navy);padding:26px 34px;display:flex;align-items:center;gap:14px}
+.gate-head b{font-family:var(--serif);font-size:24px;color:#fff;display:block;line-height:1.1}
+.gate-head small{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2)}
+.gate-body{padding:28px 34px 32px}
+.gate-body h2{font-size:28px;margin-bottom:12px}
+.gate-body p{color:var(--muted);font-size:15.5px;margin:0 0 12px}
+.gate-body .ck{margin:18px 0 22px}
+.gate-body .btn[disabled]{opacity:.45;cursor:not-allowed}
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+.fade{animation:fade .45s ease-out}
+@keyframes fade{from{transform:translateY(6px)}to{transform:none}}
+
+/* language toggle */
+.links>a,.dd>button{white-space:nowrap}
+@media (min-width:981px){.links{gap:24px}.nav-r{margin-left:4px}}
+@media (max-width:1280px) and (min-width:981px){.links{gap:18px}.links>a,.dd>button{font-size:14px}.links>a.btn-gold{padding:11px 16px}.brand b{font-size:21px}}
+.nav-r{display:flex;align-items:center;gap:10px;order:3}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:2px;overflow:hidden;flex:none}
+.lang button{font:600 13px var(--sans);padding:7px 11px;background:var(--surface);border:0;color:var(--muted);cursor:pointer;line-height:1.2}
+.lang button+button{border-left:1px solid var(--line)}
+.lang button[lang="hi"]{font-family:"Noto Sans Devanagari",var(--sans)}
+.lang button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.gate-head .lang{border-color:rgba(255,255,255,.25)}
+.gate-head .lang button{background:transparent;color:var(--navy-muted)}
+.gate-head .lang button[aria-pressed="true"]{background:var(--gold);color:#fff}
+@media (min-width:981px){.links{order:2}}
+/* Hindi typography */
+html[lang="hi"]{--serif:"Tiro Devanagari Hindi","Noto Serif Devanagari",Georgia,serif;--sans:"Noto Sans Devanagari","Source Sans 3",system-ui,sans-serif}
+html[lang="hi"] body{line-height:1.85}
+html[lang="hi"] *{letter-spacing:0!important}
+html[lang="hi"] h1,html[lang="hi"] h2,html[lang="hi"] h3,html[lang="hi"] h4{font-weight:400;line-height:1.4}
+html[lang="hi"] .hero h1{font-size:clamp(34px,4.4vw,56px)}
+html[lang="hi"] .brand b{font-size:21px}
+html[lang="hi"] .links>a,html[lang="hi"] .dd>button{font-size:15px}
+html[lang="hi"] .links{gap:24px}
+@media (max-width:1180px) and (min-width:981px){.links{gap:14px}.links>a,.dd>button{font-size:13.5px}.brand small{display:none}.brand b{font-size:19px}}
+
+/* whatsapp */
+.u-wa{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#fff;font-weight:600}
+.u-wa svg{stroke:#4ADE80!important}
+.u-wa:hover{color:#4ADE80}
+.wa-link{display:inline-block;margin-top:6px;font:600 14px var(--sans);color:#4ADE80;text-decoration:none}
+.wa-link:hover{text-decoration:underline}
+.btn-wa{background:#1F8F5F;color:#fff;margin-top:10px;width:100%}
+.btn-wa:hover{background:#177148}
+.btn-wa svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.6}
+.wa::before{content:attr(data-label);position:absolute;right:66px;top:50%;transform:translateY(-50%);background:#1F8F5F;color:#fff;font:600 13.5px var(--sans);padding:8px 14px;border-radius:20px;white-space:nowrap;box-shadow:0 8px 20px -10px rgba(0,0,0,.5)}
+@media (max-width:760px){.wa::before{display:none}.util .r span:first-child{display:none}}
+.portrait img{position:relative;display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.btn-wa-send{background:#1F8F5F;color:#fff}
+.btn-wa-send:hover{background:#177148}
+.btn-wa-send svg,.ok .btn-wa svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.6}
+</style>
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-h"></div>
+<header class="site" id="hdr"></header>
+<main id="app"></main>
+<a class="wa" href="https://wa.me/916204166690" target="_blank" rel="noopener" aria-label="WhatsApp +91 62041 66690" data-label="WhatsApp: +91 62041 66690"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.1z"/></svg></a>
+<script>
+const FOUNDER="data:image/jpeg;base64,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";
+
+/* content */
+const PHONE="+91 62041 66690", EMAIL="pankajpatel66690@gmail.com";
+const ADDR=["Choudhary Law Chambers (CLC)","E-12, First Floor, Krishna Apartment,","Boring Road, Patna, Bihar"];
+const MAPS="https://www.google.com/maps/search/?api=1&query=Krishna+Apartment+Boring+Road+Patna";
+const I={
+ gavel:'<path d="M14 5l5 5M11 8l5 5M12.5 6.5l-6 6M9 16l-5 5M8 11l5 5"/>',
+ shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+ scale:'<path d="M12 4v16M5 7h14M5 7l-3 7h6zM19 7l-3 7h6zM8 20h8"/>',
+ house:'<path d="M4 20h16M6 20V10l6-5 6 5v10M10 20v-5h4v5"/>',
+ map:'<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>',
+ rupee:'<path d="M7 5h10M7 9h10M10 5c4 0 4 8 0 8H7l7 7"/>',
+ family:'<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 5-5s5 2 5 5M11 20c0-3 2.5-5 5-5s5 2 5 5"/>',
+ scroll:'<path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/>',
+ pen:'<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M13 6l3 3"/>'
+};
+const PAGES={
+criminal:{icon:'shield',title:'Criminal Defence',short:'Defence at trial, bail and anticipatory bail, and challenges to FIRs and criminal proceedings.',
+ hero:'Representation for the accused and for complainants, from the first FIR to trial, appeal and revision.',
+ overview:['We act in criminal matters before the Magistrate courts, Sessions courts and the Patna High Court. The work begins with a close reading of the FIR, the complaint and the case diary, because the early record decides most of what follows.','Since 1 July 2024, offences and procedure are governed by the Bharatiya Nyaya Sanhita, the Bharatiya Nagarik Suraksha Sanhita and the Bharatiya Sakshya Adhiniyam. Cases registered earlier continue under the IPC and CrPC. We handle both.'],
+ facts:[['Forums','Magistrate, Sessions & High Court'],['Framework','BNS · BNSS · BSA 2023'],['Legacy matters','IPC · CrPC · Evidence Act'],['Acts for','Accused & complainants']],
+ groups:[['Bail',['Regular bail in bailable offences','Bail before the Magistrate','Bail before Sessions Court and High Court','Opposing cancellation of bail']],['Anticipatory Bail',['Applications before the Sessions Court','Applications before the Patna High Court','Interim protection from arrest','Compliance with bail conditions']],['Quashing',['Quashing of FIRs','Quashing of chargesheets and cognizance orders','Settlement-based quashing','Petitions under inherent powers']],['Trial Defence',['Discharge applications','Framing of charge','Cross-examination of witnesses','Final arguments']],['Appeals & Revisions',['Criminal appeals against conviction','Criminal revisions','Suspension of sentence','Appeals against acquittal']],['Complaint Cases',['Private complaints before the Magistrate','Protest petitions','Cheque dishonour complaints','Matrimonial and dowry-related cases']]],
+ special:'bail',
+ steps:['Consultation','Record Review','Strategy','Bail or Protection','Trial or Quashing','Appeal or Revision'],
+ faq:[['Can I apply for anticipatory bail before an FIR is registered?','Yes. Anticipatory bail can be sought when there is a reasonable apprehension of arrest for a non-bailable offence. The application must show the facts that give rise to that apprehension.'],['What is the difference between quashing and discharge?','Quashing is sought from the High Court and asks it to end the proceedings altogether. Discharge is sought from the trial court at the stage of charge, on the ground that the record does not disclose a triable case.'],['Do old cases still run under the CrPC and IPC?','Proceedings pending on 1 July 2024 generally continue under the old law, while newer FIRs are registered under the BNS and BNSS. Which law applies is checked in every matter.'],['Do you represent complainants as well?','Yes. The chambers files complaints and protest petitions, and assists the prosecution where the law allows.'],['What documents should I bring?','A copy of the FIR or complaint, any notice received from the police, prior bail orders, and any documents that support your account of the facts.']]},
+
+civil:{icon:'scale',title:'Civil Litigation',short:'Suits for partition, specific performance, injunction and declaration, and appeals before the High Court.',
+ hero:'Suits, interim relief, appeals and execution, conducted with careful pleadings and a clear theory of the case.',
+ overview:['We conduct civil suits before the civil courts of Patna and neighbouring districts, and first appeals, second appeals and civil revisions before the Patna High Court.','A civil case is won largely on its pleadings and documents. Each brief starts with a list of what must be proved and the evidence that will prove it, so that nothing is left to be discovered at trial.'],
+ facts:[['Forums','Civil Courts & Patna High Court'],['Governing law','CPC 1908 · Specific Relief Act 1963'],['Stages','Suit to execution'],['Acts for','Plaintiffs & defendants']],
+ groups:[['Suits',['Partition suits','Specific performance of agreements','Declaration of title','Permanent and mandatory injunction','Cancellation of deeds','Recovery of possession']],['Interim Relief',['Temporary injunctions','Status quo orders','Appointment of receivers','Local and survey commissions']],['Tenancy',['Eviction of tenants','Arrears of rent','Proceedings under Bihar rent control law']],['Appeals',['First appeals','Second appeals before the High Court','Civil revisions','Miscellaneous appeals']],['Writ Petitions',['Petitions under Article 226','Challenges to administrative orders','Service matters','Revenue and land orders']],['Execution',['Execution of decrees','Final decree in partition','Delivery of possession','Attachment and sale']]],
+ steps:['Consultation','Documents & Title','Pleadings','Interim Relief','Evidence & Trial','Decree & Execution'],
+ faq:[['How long does a civil suit take?','It depends on the court, the number of parties and how contested the evidence is. We give an honest estimate after reviewing the file, and update it as the case proceeds.'],['Can I get an injunction quickly?','Temporary injunctions can be sought at the start of a suit where there is urgency, a prima facie case and a risk of irreparable harm. Ex parte relief is granted only in limited situations.'],['What is a final decree in a partition suit?','The preliminary decree declares the shares. The final decree divides the property by metes and bounds, usually on a commissioner’s report.'],['Do you handle appeals in cases conducted by other advocates?','Yes. We review the trial record and advise on the grounds of appeal before filing.'],['Is limitation important?','Very. Each suit and appeal has a time limit under the Limitation Act, 1963. Bring your papers early so that this can be checked.']]},
+
+property:{icon:'house',title:'Property & Title',short:'Title search reports, deed drafting and review, and disputes over land and buildings.',
+ hero:'Counsel through the whole life of a property: checks before you buy, the documents you sign, and the disputes that may follow.',
+ overview:['We advise individuals, families and institutions on land and buildings in Bihar. Much of the work is title verification: tracing ownership through khatiyan, registered deeds, jamabandi entries and rent receipts before money changes hands.','Each stage of a property’s life is treated as a separate piece of work with its own documents: due diligence before purchase, the transaction itself, compliance afterwards, and disputes if they arise.'],
+ groups:[['Before You Buy',['Title search reports','Chain-of-title verification','Khatiyan and jamabandi check','Rent receipt and LPC review','Litigation search','Red-flag report']],['Transaction Documents',['Agreements for sale','Sale deeds','Gift deeds','Partition and family settlement deeds','Powers of attorney','Leases and licences']],['After Purchase',['Mutation (dakhil-kharij)','Correction of land records','Municipal holding records','Rent (lagan) payment records']],['Disputes',['Partition of joint property','Recovery of possession','Cancellation of fraudulent deeds','Boundary and encroachment disputes','Injunctions against dispossession']],['Revenue Forums',['Proceedings before the Circle Officer','Appeals before the DCLR','Proceedings before the Collector','Land dispute proceedings']],['Developers & Buyers',['Development agreements','Builder–buyer disputes','Flat allotment documents','Apartment ownership records']]],
+ steps:['Briefing','Title Search','Documentation','Registration','Mutation','Continuing Counsel'],
+ faq:[['Is a title search necessary before buying land?','Strongly advised. Most disputes after purchase could have been spotted by checking the chain of title, the revenue records and pending litigation before the sale.'],['What records do you check in Bihar?','Usually the survey khatiyan, registered deeds in the chain, the jamabandi (Register II) entry, recent rent receipts and, where available, the Land Possession Certificate and map records.'],['Do you handle family property disputes?','Yes, including partition, family settlements and disputes between heirs.'],['Do you draft deeds as well as litigate?','Yes. Deeds drafted with the likely disputes in mind are the best protection against litigation later.'],['Can you help with builder disputes?','Yes, including disputes over delayed possession and the terms of allotment and development agreements.']]},
+
+mutation:{icon:'map',title:'Mutation & Land Records',short:'Dakhil-kharij, jamabandi corrections, and appeals before the DCLR and Collector.',
+ hero:'Getting your name onto the land records, and correcting them when they are wrong.',
+ overview:['After you buy or inherit land in Bihar, the revenue records must be updated to show you as the holder. Without a current jamabandi entry, paying rent, obtaining an LPC, taking a loan or selling the land becomes difficult.','We prepare mutation applications, appear before the Circle Officer when objections are filed, and take appeals before the DCLR and higher revenue authorities. Where an order is illegal, we challenge it before the Patna High Court.'],
+ facts:[['Portal','Bihar Bhumi (online)'],['First authority','Circle Officer'],['Appeal','DCLR'],['Further remedy','Collector · High Court']],
+ groups:[['Mutation',['Mutation after sale','Mutation on inheritance','Mutation after partition','Mutation under a gift or settlement']],['Record Correction',['Correction of name, area or plot errors','Parimarjan applications','Creation of new jamabandi','Cancellation of wrong jamabandi']],['Certificates',['Land Possession Certificate (LPC)','Rent receipts','Certified copies of records']],['Contested Matters',['Objections to mutation','Hearings before the Circle Officer','Appeals before the DCLR','Revisions before the Collector']]],
+ special:'journey',
+ steps:['Document Check','Online Application','Field Inquiry','Hearing','Order','Appeal if Needed'],
+ faq:[['What is dakhil-kharij?','It is the mutation of land records: the name of the previous holder is removed (kharij) and the new holder is entered (dakhil) in the jamabandi.'],['My mutation was rejected. What now?','An appeal lies against the Circle Officer’s order. The time limit is short, so bring the order and your documents as soon as possible.'],['Does mutation decide ownership?','No. Mutation is a fiscal record for revenue purposes. Title is decided by the civil court on the basis of the documents. But an up-to-date record is important in practice.'],['Can errors in an old jamabandi be corrected?','Yes, through the correction process on the portal or by application before the revenue authorities, supported by documents.'],['Do you appear before the revenue courts in person?','Yes. Appearances before the Circle Officer, DCLR and Collector are part of the practice.']]},
+
+recovery:{icon:'rupee',title:'Money Recovery',short:'Recovery of unpaid invoices, loans and cheques through civil, commercial and criminal remedies.',
+ hero:'Helping businesses and individuals recover what is owed, by choosing the right remedy at the right time.',
+ heroBtn:'Explore Recovery Options', special:'recovery', noStd:true,
+ faq:[['Should I file a criminal case or a civil suit?','A criminal case is appropriate only where there is cheating, fraud or a dishonoured cheque. Unpaid money alone is a civil matter. Choosing the wrong route wastes time and can weaken your case.'],['How long do I have to file a recovery suit?','Generally three years from the date the money became due, subject to acknowledgments and part payments that can extend it. This must be checked on your documents.'],['I am a registered MSME. Does that help?','Yes. The MSMED Act gives registered micro and small suppliers a right to interest on delayed payments and a reference to the Facilitation Council.'],['Is a legal notice necessary?','For a cheque dishonour case, a notice within the statutory period is mandatory. In other cases a well-drafted notice often produces payment without litigation.']]},
+
+family:{icon:'family',title:'Family & Matrimonial',short:'Divorce, maintenance, custody and protection under the Domestic Violence Act.',
+ hero:'Family matters handled with discretion, and with a clear line between the legal question and the personal one.',
+ overview:['We act in matrimonial, maintenance, custody and domestic violence matters before the Family Court, the Magistrate courts and the Patna High Court. These cases involve people who will remain connected long after the case ends, and we conduct them with that in mind.','Where settlement or mediation is realistic, it is pursued seriously before a contested hearing. Where it is not, the case is prepared fully for trial.'],
+ groups:[['Mutual Divorce',['Petition drafting','Settlement terms','Waiver of cooling-off period','Court appearances']],['Contested Divorce',['Grounds and pleadings','Interim applications','Evidence and trial','Appeals']],['Maintenance',['Maintenance under the BNSS','Interim maintenance','Permanent alimony','Enforcement of arrears']],['Custody & Guardianship',['Custody and visitation','Guardianship of minors','Welfare-of-child approach','Minor’s property']],['Domestic Violence',['Protection orders','Residence orders','Monetary relief','Defending DV applications']],['Settlement',['Mediation at the Family Court','Settlement agreements','Return of stridhan','Withdrawal and compounding of cases']]],
+ steps:['Consultation','Assessment','Strategy','Documentation','Mediation or Court','Resolution'],
+ faq:[['Is mediation compulsory?','Family Courts usually refer parties to counselling or mediation. The chambers treats it as a real opportunity to settle rather than a formality.'],['Are these matters kept confidential?','Yes. Family matters are handled with strict confidentiality, and proceedings may be held in camera where the law allows.'],['Do you act for husbands as well as wives?','Yes. The chambers acts for either side, depending on the matter.'],['Can the six-month waiting period for mutual divorce be waived?','The court has discretion to waive it in suitable cases where the parties have genuinely separated and settled all issues.'],['What is considered in a custody case?','The welfare of the child is the main consideration, above the rights claimed by either parent.']]},
+
+succession:{icon:'scroll',title:'Succession & Wills',short:'Wills, probate, succession certificates and inheritance disputes.',
+ hero:'Wills, succession certificates and family settlements, written so that they can be carried out without friction.',
+ overview:['Succession work is about recording what a person wants to happen to their property, and then making sure it happens. We draft Wills that are clear and hard to challenge, and we represent heirs and executors in the courts afterwards.','Where there is no Will, we advise heirs on their shares under the applicable personal law and obtain the certificates that banks, companies and registrars ask for.'],
+ groups:[['Wills',['Drafting of Wills','Codicils and amendments','Execution and witnessing','Optional registration']],['Probate & Administration',['Probate petitions','Letters of administration','Contested probate','Executor assistance']],['Succession Certificates',['Bank accounts and deposits','Shares and securities','Debts owed to the deceased']],['Heirs & Inheritance',['Heirship documents','Shares under personal law','Family settlements','Inheritance disputes']]],
+ special:'will',
+ steps:['Briefing','Asset Mapping','Structuring','Drafting','Execution','Review'],
+ faq:[['Do I need a Will if my estate is small?','Yes. A Will avoids disputes among heirs whatever the size of the estate, and makes transfer of property much simpler.'],['Must a Will be registered?','Registration is optional, but it helps prove that the Will is genuine and makes it harder to challenge.'],['Is probate always required?','Not always. It depends on the testator’s religion and where the property is situated. We advise on this in each case.'],['What is a succession certificate used for?','It lets heirs collect debts and securities of the deceased, such as bank balances and shares.'],['Can an existing Will be changed?','Yes, by a codicil or a fresh Will, until the testator’s death.']]},
+
+documents:{icon:'pen',title:'Notices & Documentation',short:'Legal notices, replies, agreements and deeds drafted for the dispute they may later face.',
+ hero:'Documents that record what was agreed clearly enough to hold up if it is ever disputed.',
+ overview:['A large share of disputes can be avoided, or won, because of how the paperwork was written. We draft and review notices, agreements and deeds for individuals and businesses in Patna.','Businesses that need regular review of contracts and notices can retain the chambers for continuing advice.'],
+ groups:[['Legal Notices',['Demand notices','Cheque dishonour notices','Notices to Government under the CPC','Replies to notices']],['Agreements',['Agreements for sale','Supply and distribution agreements','Service agreements','Partnership deeds','MoUs']],['Deeds',['Sale, gift and partition deeds','Family settlement deeds','Powers of attorney','Leases and licences']],['Business Documents',['Terms of trade','Invoices with interest clauses','Recovery-ready documentation','Retainer advisory']]],
+ steps:['Briefing','Risk Review','Drafting','Negotiation','Execution','Follow-up'],
+ faq:[['How quickly can a legal notice be sent?','Usually within a few days of receiving the documents and instructions.'],['Is a reply to a legal notice necessary?','Not always legally mandatory, but an unanswered notice can be used against you later. We advise on each case.'],['Do you review agreements drafted by the other side?','Yes. We mark up the draft and explain the risks before you sign.'],['Can businesses retain the chambers?','Yes, for continuing review of notices, contracts and recovery matters.']]}
+};
+const ORDER=['criminal','civil','property','mutation','recovery','family','succession','documents'];
+const PA_HOME=[...ORDER.slice(0,4),'recovery','family','succession','documents'];
+
+
+
+/* Hindi content */
+const ADDR_HI=["चौधरी लॉ चैम्बर्स (CLC)","ई-12, प्रथम तल, कृष्णा अपार्टमेंट,","बोरिंग रोड, पटना, बिहार"];
+const PAGES_HI={
+criminal:{title:'आपराधिक बचाव',short:'विचारण में बचाव, ज़मानत एवं अग्रिम ज़मानत, तथा प्राथमिकी और आपराधिक कार्यवाही को चुनौती।',
+ hero:'अभियुक्त और परिवादी दोनों की ओर से प्रतिनिधित्व — पहली प्राथमिकी से लेकर विचारण, अपील और पुनरीक्षण तक।',
+ overview:['हम मजिस्ट्रेट न्यायालयों, सत्र न्यायालयों तथा पटना उच्च न्यायालय में आपराधिक मामलों में उपस्थित होते हैं। कार्य की शुरुआत प्राथमिकी, परिवाद-पत्र और केस डायरी के सूक्ष्म अध्ययन से होती है, क्योंकि प्रारंभिक अभिलेख ही आगे की दिशा तय करता है।','1 जुलाई 2024 से अपराध एवं प्रक्रिया भारतीय न्याय संहिता, भारतीय नागरिक सुरक्षा संहिता और भारतीय साक्ष्य अधिनियम द्वारा शासित हैं। इससे पूर्व दर्ज मामले भारतीय दंड संहिता और दंड प्रक्रिया संहिता के अंतर्गत चलते रहते हैं। हम दोनों प्रकार के मामले देखते हैं।'],
+ facts:[['न्यायालय','मजिस्ट्रेट, सत्र एवं उच्च न्यायालय'],['विधि','BNS · BNSS · BSA 2023'],['पुराने मामले','IPC · CrPC · साक्ष्य अधिनियम'],['किसकी ओर से','अभियुक्त एवं परिवादी']],
+ groups:[['ज़मानत',['ज़मानतीय अपराधों में ज़मानत','मजिस्ट्रेट के समक्ष ज़मानत','सत्र न्यायालय एवं उच्च न्यायालय में ज़मानत','ज़मानत रद्द करने के आवेदन का विरोध']],['अग्रिम ज़मानत',['सत्र न्यायालय में आवेदन','पटना उच्च न्यायालय में आवेदन','गिरफ़्तारी से अंतरिम संरक्षण','ज़मानत शर्तों का अनुपालन']],['निरस्तीकरण (क्वैशिंग)',['प्राथमिकी का निरस्तीकरण','आरोप-पत्र एवं संज्ञान आदेश का निरस्तीकरण','समझौते के आधार पर निरस्तीकरण','अंतर्निहित शक्तियों के अंतर्गत याचिका']],['विचारण में बचाव',['उन्मोचन (डिस्चार्ज) आवेदन','आरोप विरचन','गवाहों से प्रति-परीक्षा','अंतिम बहस']],['अपील एवं पुनरीक्षण',['दोषसिद्धि के विरुद्ध अपील','आपराधिक पुनरीक्षण','सज़ा का निलंबन','दोषमुक्ति के विरुद्ध अपील']],['परिवाद वाद',['मजिस्ट्रेट के समक्ष परिवाद','प्रोटेस्ट पिटीशन','चेक अनादरण परिवाद','दहेज एवं वैवाहिक आपराधिक मामले']]],
+ steps:['परामर्श','अभिलेख अध्ययन','रणनीति','ज़मानत या संरक्षण','विचारण या निरस्तीकरण','अपील या पुनरीक्षण'],
+ faq:[['क्या प्राथमिकी दर्ज होने से पहले अग्रिम ज़मानत ली जा सकती है?','हाँ। अजमानतीय अपराध में गिरफ़्तारी की उचित आशंका होने पर अग्रिम ज़मानत माँगी जा सकती है। आवेदन में उन तथ्यों को दर्शाना होता है जिनसे यह आशंका उत्पन्न होती है।'],['निरस्तीकरण और उन्मोचन में क्या अंतर है?','निरस्तीकरण उच्च न्यायालय से माँगा जाता है और इसमें पूरी कार्यवाही समाप्त करने का अनुरोध होता है। उन्मोचन विचारण न्यायालय से आरोप के चरण पर माँगा जाता है, इस आधार पर कि अभिलेख से विचारण योग्य मामला नहीं बनता।'],['क्या पुराने मामले अब भी CrPC और IPC के अंतर्गत चलते हैं?','1 जुलाई 2024 को लंबित कार्यवाहियाँ सामान्यतः पुराने क़ानून के अंतर्गत चलती हैं, जबकि नई प्राथमिकियाँ BNS और BNSS के अंतर्गत दर्ज होती हैं। प्रत्येक मामले में लागू क़ानून की जाँच की जाती है।'],['क्या आप परिवादी की ओर से भी मामला देखते हैं?','हाँ। चैम्बर्स परिवाद एवं प्रोटेस्ट पिटीशन दायर करता है और विधि द्वारा अनुमत सीमा में अभियोजन की सहायता करता है।'],['मुझे कौन-से दस्तावेज़ लाने चाहिए?','प्राथमिकी या परिवाद की प्रति, पुलिस से प्राप्त कोई नोटिस, पूर्व के ज़मानत आदेश, तथा आपके पक्ष के समर्थन में कोई भी दस्तावेज़।']]},
+
+civil:{title:'दीवानी मुक़दमे',short:'बँटवारा, संविदा के विनिर्दिष्ट पालन, व्यादेश एवं घोषणा के वाद, तथा उच्च न्यायालय में अपील।',
+ hero:'वाद, अंतरिम अनुतोष, अपील और डिक्री का निष्पादन — सुविचारित अभिवचनों और स्पष्ट पक्ष के साथ।',
+ overview:['हम पटना एवं निकटवर्ती ज़िलों के व्यवहार न्यायालयों में दीवानी वाद तथा पटना उच्च न्यायालय में प्रथम अपील, द्वितीय अपील और दीवानी पुनरीक्षण संचालित करते हैं।','दीवानी मामला मुख्यतः अभिवचनों और दस्तावेज़ों पर जीता जाता है। प्रत्येक मामले की शुरुआत इस सूची से होती है कि क्या सिद्ध करना है और किस साक्ष्य से, ताकि विचारण के समय कुछ भी अप्रत्याशित न रहे।'],
+ facts:[['न्यायालय','व्यवहार न्यायालय एवं पटना उच्च न्यायालय'],['विधि','सिविल प्रक्रिया संहिता 1908 · विनिर्दिष्ट अनुतोष अधिनियम 1963'],['चरण','वाद से निष्पादन तक'],['किसकी ओर से','वादी एवं प्रतिवादी']],
+ groups:[['वाद',['बँटवारा वाद','संविदा का विनिर्दिष्ट पालन','स्वत्व की घोषणा','स्थायी एवं आज्ञापक व्यादेश','विलेख का निरस्तीकरण','कब्ज़े की वापसी']],['अंतरिम अनुतोष',['अस्थायी व्यादेश','यथास्थिति आदेश','रिसीवर की नियुक्ति','स्थानीय एवं सर्वेक्षण कमीशन']],['किरायेदारी',['किरायेदार की बेदख़ली','बकाया किराया','बिहार किराया नियंत्रण विधि के अंतर्गत कार्यवाही']],['अपील',['प्रथम अपील','उच्च न्यायालय में द्वितीय अपील','दीवानी पुनरीक्षण','विविध अपील']],['रिट याचिकाएँ',['अनुच्छेद 226 के अंतर्गत याचिका','प्रशासनिक आदेशों को चुनौती','सेवा मामले','राजस्व एवं भूमि संबंधी आदेश']],['निष्पादन',['डिक्री का निष्पादन','बँटवारे में अंतिम डिक्री','कब्ज़ा दिलाना','कुर्की एवं नीलामी']]],
+ steps:['परामर्श','दस्तावेज़ एवं स्वत्व','अभिवचन','अंतरिम अनुतोष','साक्ष्य एवं विचारण','डिक्री एवं निष्पादन'],
+ faq:[['दीवानी वाद में कितना समय लगता है?','यह न्यायालय, पक्षकारों की संख्या और साक्ष्य पर विवाद की सीमा पर निर्भर करता है। फ़ाइल देखने के बाद हम ईमानदार अनुमान देते हैं और मामले की प्रगति के साथ उसे अद्यतन करते हैं।'],['क्या शीघ्र व्यादेश मिल सकता है?','तात्कालिकता, प्रथमदृष्टया मामला और अपूरणीय क्षति की आशंका होने पर वाद के आरंभ में ही अस्थायी व्यादेश माँगा जा सकता है। एकपक्षीय अनुतोष केवल सीमित परिस्थितियों में दिया जाता है।'],['बँटवारा वाद में अंतिम डिक्री क्या है?','प्रारंभिक डिक्री हिस्सों की घोषणा करती है। अंतिम डिक्री, सामान्यतः कमिश्नर के प्रतिवेदन पर, संपत्ति का माप-जोख के अनुसार वास्तविक विभाजन करती है।'],['क्या आप किसी अन्य अधिवक्ता द्वारा संचालित मामले की अपील लेते हैं?','हाँ। अपील दायर करने से पहले हम विचारण अभिलेख देखकर अपील के आधारों पर सलाह देते हैं।'],['क्या परिसीमा (लिमिटेशन) महत्वपूर्ण है?','अत्यंत महत्वपूर्ण। परिसीमा अधिनियम, 1963 के अंतर्गत प्रत्येक वाद और अपील की समय-सीमा होती है। कृपया अपने काग़ज़ात समय रहते लाएँ ताकि इसकी जाँच हो सके।']]},
+
+property:{title:'संपत्ति एवं स्वत्व',short:'स्वत्व खोज रिपोर्ट, विलेखों का प्रारूपण एवं जाँच, तथा भूमि और भवन संबंधी विवाद।',
+ hero:'संपत्ति के पूरे जीवन-चक्र में परामर्श: ख़रीद से पहले की जाँच, हस्ताक्षरित दस्तावेज़, और उसके बाद उत्पन्न विवाद।',
+ overview:['हम बिहार में भूमि और भवनों के संबंध में व्यक्तियों, परिवारों और संस्थाओं को परामर्श देते हैं। अधिकांश कार्य स्वत्व सत्यापन का है: पैसे के लेन-देन से पहले खतियान, निबंधित विलेखों, जमाबंदी प्रविष्टियों और लगान रसीदों के माध्यम से स्वामित्व की कड़ी की जाँच।','संपत्ति के प्रत्येक चरण को अलग कार्य के रूप में देखा जाता है: ख़रीद से पहले की जाँच, स्वयं लेन-देन, उसके बाद का अनुपालन, और विवाद होने पर मुक़दमा।'],
+ groups:[['ख़रीदने से पहले',['स्वत्व खोज रिपोर्ट','स्वामित्व की कड़ी का सत्यापन','खतियान एवं जमाबंदी की जाँच','लगान रसीद एवं LPC की जाँच','मुक़दमों की खोज','जोखिम रिपोर्ट']],['लेन-देन के दस्तावेज़',['बिक्री इकरारनामा','विक्रय विलेख','दान विलेख','बँटवारा एवं पारिवारिक समझौता विलेख','मुख़्तारनामा','पट्टा एवं अनुज्ञप्ति']],['ख़रीद के बाद',['दाखिल-खारिज','भू-अभिलेखों का सुधार','नगर निगम होल्डिंग अभिलेख','लगान भुगतान अभिलेख']],['विवाद',['संयुक्त संपत्ति का बँटवारा','कब्ज़े की वापसी','कपटपूर्ण विलेख का निरस्तीकरण','सीमा एवं अतिक्रमण विवाद','बेदख़ली के विरुद्ध व्यादेश']],['राजस्व न्यायालय',['अंचल अधिकारी के समक्ष कार्यवाही','भूमि सुधार उप समाहर्ता (DCLR) के समक्ष अपील','समाहर्ता के समक्ष कार्यवाही','भूमि विवाद निराकरण कार्यवाही']],['बिल्डर एवं ख़रीदार',['विकास इकरारनामा','बिल्डर–ख़रीदार विवाद','फ़्लैट आवंटन दस्तावेज़','अपार्टमेंट स्वामित्व अभिलेख']]],
+ steps:['विवरण','स्वत्व खोज','दस्तावेज़ीकरण','निबंधन','दाखिल-खारिज','निरंतर परामर्श'],
+ faq:[['क्या भूमि ख़रीदने से पहले स्वत्व खोज आवश्यक है?','अत्यंत आवश्यक। ख़रीद के बाद के अधिकांश विवाद, बिक्री से पहले स्वत्व की कड़ी, राजस्व अभिलेख और लंबित मुक़दमों की जाँच करके पहले ही पकड़े जा सकते थे।'],['बिहार में आप कौन-से अभिलेख जाँचते हैं?','सामान्यतः सर्वे खतियान, कड़ी के निबंधित विलेख, जमाबंदी (पंजी II) प्रविष्टि, हाल की लगान रसीदें, तथा जहाँ उपलब्ध हो, भू-धारण प्रमाण-पत्र (LPC) और नक़्शा।'],['क्या आप पारिवारिक संपत्ति विवाद देखते हैं?','हाँ, बँटवारा, पारिवारिक समझौते और वारिसों के बीच के विवाद सहित।'],['क्या आप मुक़दमे के साथ विलेख भी बनाते हैं?','हाँ। संभावित विवादों को ध्यान में रखकर बनाया गया विलेख बाद के मुक़दमे से सबसे अच्छा बचाव है।'],['क्या बिल्डर विवादों में सहायता मिल सकती है?','हाँ, कब्ज़े में देरी तथा आवंटन एवं विकास इकरारनामे की शर्तों से जुड़े विवादों सहित।']]},
+
+mutation:{title:'दाखिल-खारिज एवं भू-अभिलेख',short:'दाखिल-खारिज, जमाबंदी सुधार, तथा DCLR एवं समाहर्ता के समक्ष अपील।',
+ hero:'भू-अभिलेखों में आपका नाम दर्ज कराना, और ग़लत होने पर उन्हें सुधरवाना।',
+ overview:['बिहार में भूमि ख़रीदने या उत्तराधिकार में पाने के बाद राजस्व अभिलेखों में आपको धारक के रूप में दर्ज होना आवश्यक है। अद्यतन जमाबंदी के बिना लगान भुगतान, LPC प्राप्त करना, ऋण लेना या भूमि बेचना कठिन हो जाता है।','हम दाखिल-खारिज आवेदन तैयार करते हैं, आपत्ति होने पर अंचल अधिकारी के समक्ष उपस्थित होते हैं, तथा DCLR एवं उच्च राजस्व प्राधिकारियों के समक्ष अपील करते हैं। जहाँ आदेश अवैध हो, वहाँ पटना उच्च न्यायालय में चुनौती दी जाती है।'],
+ facts:[['पोर्टल','बिहार भूमि (ऑनलाइन)'],['प्रथम प्राधिकारी','अंचल अधिकारी'],['अपील','भूमि सुधार उप समाहर्ता (DCLR)'],['आगे का उपचार','समाहर्ता · उच्च न्यायालय']],
+ groups:[['दाखिल-खारिज',['बिक्री के बाद दाखिल-खारिज','उत्तराधिकार पर दाखिल-खारिज','बँटवारे के बाद दाखिल-खारिज','दान या समझौते के अंतर्गत दाखिल-खारिज']],['अभिलेख सुधार',['नाम, रकबा या खेसरा की त्रुटि का सुधार','परिमार्जन आवेदन','नई जमाबंदी का सृजन','ग़लत जमाबंदी का रद्दीकरण']],['प्रमाण-पत्र',['भू-धारण प्रमाण-पत्र (LPC)','लगान रसीद','अभिलेखों की सत्यापित प्रतियाँ']],['विवादित मामले',['दाखिल-खारिज पर आपत्ति','अंचल अधिकारी के समक्ष सुनवाई','DCLR के समक्ष अपील','समाहर्ता के समक्ष पुनरीक्षण']]],
+ steps:['दस्तावेज़ जाँच','ऑनलाइन आवेदन','स्थल जाँच','सुनवाई','आदेश','आवश्यकता होने पर अपील'],
+ faq:[['दाखिल-खारिज क्या है?','यह भू-अभिलेखों का नामांतरण है: जमाबंदी में पूर्व धारक का नाम हटाया (खारिज) जाता है और नए धारक का नाम दर्ज (दाखिल) किया जाता है।'],['मेरा दाखिल-खारिज अस्वीकृत हो गया। अब क्या करें?','अंचल अधिकारी के आदेश के विरुद्ध अपील होती है। समय-सीमा कम है, अतः आदेश और दस्तावेज़ लेकर यथाशीघ्र संपर्क करें।'],['क्या दाखिल-खारिज से स्वामित्व तय होता है?','नहीं। दाखिल-खारिज राजस्व प्रयोजन का अभिलेख है। स्वत्व का निर्णय दस्तावेज़ों के आधार पर व्यवहार न्यायालय करता है। फिर भी व्यवहार में अद्यतन अभिलेख महत्वपूर्ण है।'],['क्या पुरानी जमाबंदी की त्रुटियाँ सुधारी जा सकती हैं?','हाँ, पोर्टल पर सुधार प्रक्रिया द्वारा या राजस्व प्राधिकारियों के समक्ष दस्तावेज़ों सहित आवेदन देकर।'],['क्या आप राजस्व न्यायालयों में स्वयं उपस्थित होते हैं?','हाँ। अंचल अधिकारी, DCLR और समाहर्ता के समक्ष उपस्थिति इस कार्य का हिस्सा है।']]},
+
+recovery:{title:'धन वसूली',short:'बकाया बिल, ऋण और चेक की राशि की दीवानी, वाणिज्यिक एवं आपराधिक उपायों से वसूली।',
+ hero:'व्यवसायों और व्यक्तियों को उनका बकाया वापस दिलाना — सही समय पर सही उपाय चुनकर।',heroBtn:'वसूली के विकल्प देखें',
+ faq:[['आपराधिक मामला करूँ या दीवानी वाद?','आपराधिक मामला केवल छल, धोखाधड़ी या चेक अनादरण की स्थिति में उपयुक्त है। केवल पैसे का न लौटाना दीवानी मामला है। ग़लत रास्ता चुनने से समय नष्ट होता है और मामला कमज़ोर हो सकता है।'],['वसूली वाद दायर करने की समय-सीमा क्या है?','सामान्यतः राशि देय होने की तिथि से तीन वर्ष, जो लिखित स्वीकृति या आंशिक भुगतान से बढ़ सकती है। आपके दस्तावेज़ों पर इसकी जाँच आवश्यक है।'],['मैं पंजीकृत MSME हूँ। क्या इससे लाभ है?','हाँ। MSMED अधिनियम पंजीकृत सूक्ष्म एवं लघु आपूर्तिकर्ताओं को विलंबित भुगतान पर ब्याज और सुविधा परिषद में संदर्भ का अधिकार देता है।'],['क्या लीगल नोटिस आवश्यक है?','चेक अनादरण मामले में वैधानिक अवधि के भीतर नोटिस अनिवार्य है। अन्य मामलों में सुविचारित नोटिस से अक्सर मुक़दमे के बिना ही भुगतान मिल जाता है।']]},
+
+family:{title:'पारिवारिक एवं वैवाहिक',short:'तलाक़, भरण-पोषण, बच्चों की अभिरक्षा तथा घरेलू हिंसा अधिनियम के अंतर्गत संरक्षण।',
+ hero:'पारिवारिक मामले गोपनीयता के साथ, और क़ानूनी प्रश्न व निजी भावनाओं के बीच स्पष्ट भेद रखते हुए।',
+ overview:['हम परिवार न्यायालय, मजिस्ट्रेट न्यायालयों और पटना उच्च न्यायालय में वैवाहिक, भरण-पोषण, अभिरक्षा और घरेलू हिंसा के मामलों में उपस्थित होते हैं। इन मामलों में पक्षकारों का संबंध मुक़दमे के बाद भी बना रहता है, और हम इसी ध्यान के साथ मामले संचालित करते हैं।','जहाँ समझौता या मध्यस्थता संभव हो, वहाँ विवादित सुनवाई से पहले उसे गंभीरता से आज़माया जाता है। जहाँ संभव न हो, वहाँ विचारण की पूरी तैयारी की जाती है।'],
+ groups:[['आपसी सहमति से तलाक़',['याचिका का प्रारूपण','समझौते की शर्तें','प्रतीक्षा अवधि में छूट','न्यायालय में उपस्थिति']],['विवादित तलाक़',['आधार एवं अभिवचन','अंतरिम आवेदन','साक्ष्य एवं विचारण','अपील']],['भरण-पोषण',['BNSS के अंतर्गत भरण-पोषण','अंतरिम भरण-पोषण','स्थायी निर्वाह-व्यय','बकाया राशि की वसूली']],['अभिरक्षा एवं संरक्षकता',['अभिरक्षा एवं मुलाक़ात का अधिकार','अवयस्क की संरक्षकता','बच्चे का हित सर्वोपरि','अवयस्क की संपत्ति']],['घरेलू हिंसा',['संरक्षण आदेश','निवास आदेश','आर्थिक अनुतोष','घरेलू हिंसा आवेदन में बचाव']],['समझौता',['परिवार न्यायालय में मध्यस्थता','समझौता इकरारनामा','स्त्रीधन की वापसी','मामलों की वापसी एवं शमन']]],
+ steps:['परामर्श','आकलन','रणनीति','दस्तावेज़ीकरण','मध्यस्थता या न्यायालय','समाधान'],
+ faq:[['क्या मध्यस्थता अनिवार्य है?','परिवार न्यायालय सामान्यतः पक्षकारों को परामर्श या मध्यस्थता के लिए भेजते हैं। चैम्बर्स इसे औपचारिकता नहीं, समझौते का वास्तविक अवसर मानता है।'],['क्या ये मामले गोपनीय रखे जाते हैं?','हाँ। पारिवारिक मामले पूर्ण गोपनीयता से देखे जाते हैं, और जहाँ क़ानून अनुमति देता है, वहाँ सुनवाई बंद कमरे में हो सकती है।'],['क्या आप पति और पत्नी दोनों की ओर से मामला लेते हैं?','हाँ। मामले के अनुसार चैम्बर्स किसी भी पक्ष की ओर से कार्य करता है।'],['क्या आपसी तलाक़ में छह महीने की प्रतीक्षा अवधि माफ़ हो सकती है?','उपयुक्त मामलों में, जहाँ पक्षकार वास्तव में अलग हो चुके हों और सभी मुद्दे सुलझा चुके हों, न्यायालय इसे माफ़ कर सकता है।'],['अभिरक्षा के मामले में क्या देखा जाता है?','बच्चे का कल्याण सबसे प्रमुख विचार है, जो माता-पिता के दावों से ऊपर है।']]},
+
+succession:{title:'उत्तराधिकार एवं वसीयत',short:'वसीयत, प्रोबेट, उत्तराधिकार प्रमाण-पत्र और विरासत संबंधी विवाद।',
+ hero:'वसीयत, उत्तराधिकार प्रमाण-पत्र और पारिवारिक समझौते — ऐसे लिखे गए कि बिना विवाद लागू हो सकें।',
+ overview:['उत्तराधिकार का कार्य यह दर्ज करना है कि व्यक्ति अपनी संपत्ति के बारे में क्या चाहता है, और फिर सुनिश्चित करना कि वैसा ही हो। हम स्पष्ट और चुनौती-रोधी वसीयत बनाते हैं, और बाद में न्यायालयों में वारिसों एवं निष्पादकों का प्रतिनिधित्व करते हैं।','जहाँ वसीयत नहीं है, वहाँ हम लागू व्यक्तिगत विधि के अनुसार वारिसों को उनके हिस्से पर सलाह देते हैं और बैंकों, कंपनियों एवं निबंधकों द्वारा माँगे जाने वाले प्रमाण-पत्र प्राप्त कराते हैं।'],
+ groups:[['वसीयत',['वसीयत का प्रारूपण','कोडिसिल एवं संशोधन','निष्पादन एवं साक्षी','वैकल्पिक निबंधन']],['प्रोबेट एवं प्रशासन',['प्रोबेट याचिका','प्रशासन-पत्र','विवादित प्रोबेट','निष्पादक को सहायता']],['उत्तराधिकार प्रमाण-पत्र',['बैंक खाते एवं जमा राशि','शेयर एवं प्रतिभूतियाँ','मृतक को देय ऋण']],['वारिस एवं विरासत',['वारिसान संबंधी दस्तावेज़','व्यक्तिगत विधि के अनुसार हिस्से','पारिवारिक समझौते','विरासत विवाद']]],
+ steps:['विवरण','संपत्ति सूची','संरचना','प्रारूपण','निष्पादन','समीक्षा'],
+ faq:[['छोटी संपत्ति होने पर भी क्या वसीयत आवश्यक है?','हाँ। संपत्ति कितनी भी हो, वसीयत वारिसों के बीच विवाद से बचाती है और संपत्ति के हस्तांतरण को बहुत सरल बनाती है।'],['क्या वसीयत का निबंधन अनिवार्य है?','निबंधन वैकल्पिक है, परंतु इससे वसीयत की प्रामाणिकता सिद्ध करने में सहायता मिलती है और उसे चुनौती देना कठिन हो जाता है।'],['क्या प्रोबेट हमेशा आवश्यक है?','हमेशा नहीं। यह वसीयतकर्ता के धर्म और संपत्ति के स्थान पर निर्भर करता है। हम प्रत्येक मामले में इस पर सलाह देते हैं।'],['उत्तराधिकार प्रमाण-पत्र किस काम आता है?','इससे वारिस मृतक के ऋण और प्रतिभूतियाँ, जैसे बैंक शेष और शेयर, प्राप्त कर सकते हैं।'],['क्या मौजूदा वसीयत बदली जा सकती है?','हाँ, वसीयतकर्ता के जीवनकाल में कोडिसिल या नई वसीयत द्वारा।']]},
+
+documents:{title:'नोटिस एवं दस्तावेज़ीकरण',short:'लीगल नोटिस, उनके उत्तर, इकरारनामे और विलेख — संभावित विवाद को ध्यान में रखकर तैयार।',
+ hero:'ऐसे दस्तावेज़ जो तय बातों को इतनी स्पष्टता से दर्ज करें कि विवाद होने पर भी टिक सकें।',
+ overview:['बहुत-से विवाद काग़ज़ात के सही लेखन से टाले जा सकते हैं, या जीते जा सकते हैं। हम पटना में व्यक्तियों और व्यवसायों के लिए नोटिस, इकरारनामे और विलेख तैयार करते और जाँचते हैं।','जिन व्यवसायों को अनुबंधों और नोटिसों की नियमित समीक्षा चाहिए, वे निरंतर परामर्श के लिए चैम्बर्स को रिटेनर पर रख सकते हैं।'],
+ groups:[['लीगल नोटिस',['माँग नोटिस','चेक अनादरण नोटिस','CPC के अंतर्गत सरकार को नोटिस','नोटिस का उत्तर']],['इकरारनामे',['बिक्री इकरारनामा','आपूर्ति एवं वितरण अनुबंध','सेवा अनुबंध','साझेदारी विलेख','समझौता ज्ञापन (MoU)']],['विलेख',['विक्रय, दान एवं बँटवारा विलेख','पारिवारिक समझौता विलेख','मुख़्तारनामा','पट्टा एवं अनुज्ञप्ति']],['व्यावसायिक दस्तावेज़',['व्यापार की शर्तें','ब्याज धारा सहित बिल','वसूली हेतु उपयुक्त दस्तावेज़','रिटेनर परामर्श']]],
+ steps:['विवरण','जोखिम समीक्षा','प्रारूपण','वार्ता','निष्पादन','अनुवर्ती कार्य'],
+ faq:[['लीगल नोटिस कितनी जल्दी भेजा जा सकता है?','सामान्यतः दस्तावेज़ और निर्देश मिलने के कुछ दिनों के भीतर।'],['क्या लीगल नोटिस का उत्तर देना आवश्यक है?','क़ानूनन हमेशा अनिवार्य नहीं, परंतु अनुत्तरित नोटिस बाद में आपके विरुद्ध प्रयोग हो सकता है। हम प्रत्येक मामले में सलाह देते हैं।'],['क्या आप दूसरे पक्ष द्वारा बनाए इकरारनामे की जाँच करते हैं?','हाँ। हस्ताक्षर से पहले हम मसौदे पर टिप्पणी करते हैं और जोखिम समझाते हैं।'],['क्या व्यवसाय चैम्बर्स को रिटेनर पर रख सकते हैं?','हाँ, नोटिस, अनुबंध और वसूली मामलों की निरंतर समीक्षा के लिए।']]}
+};
+
+/* new practice areas (EN) */
+I.chart='<path d="M4 20h16M6 16l4-4 3 3 6-7"/><path d="M15 8h4v4"/>';
+I.globe='<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>';
+I.rings='<circle cx="8.5" cy="13" r="5"/><circle cx="15.5" cy="11" r="5"/>';
+Object.assign(PAGES,{
+ipo:{icon:'chart',title:'MSME & SME IPO',short:'Legal due diligence, restructuring and documentation for MSMEs listing on the SME platforms of BSE and NSE.',
+ hero:'Legal preparation for growing enterprises raising capital through an SME IPO on BSE SME or NSE Emerge.',
+ overview:['An SME IPO lets a small or medium enterprise raise equity from the public and list on a dedicated SME platform. Before that can happen, the company’s legal house must be in order: its constitution, title to its assets, licences, contracts, litigation and past filings are all examined and disclosed in the offer document.','We act as legal advisors on the Indian law side, working alongside the SEBI-registered merchant banker, statutory auditor and company secretary. Our role is to find and fix legal gaps early, so that they do not delay the issue or appear as risk factors in the prospectus.'],
+ facts:[['Platforms','BSE SME · NSE Emerge'],['Regulation','SEBI ICDR Regulations, 2018 (Ch. IX)'],['Company law','Companies Act, 2013'],['Works with','Merchant banker, CA, CS']],
+ groups:[['IPO Readiness',['Legal health check of the company','Eligibility review against SEBI and exchange norms','Gap analysis and remediation plan','Timeline planning with the merchant banker']],['Corporate Restructuring',['Conversion from private to public company','Alteration of MoA and AoA','Share capital restructuring','Promoter and group entity clean-up']],['Legal Due Diligence',['Title to land and buildings','Licences and statutory approvals','Material contracts','Litigation involving the company, promoters and directors']],['Offer Documentation',['Legal inputs for DRHP and prospectus','Outstanding litigation disclosures','Government approvals section','Legal opinions and certificates']],['Governance',['Board and committee constitution','Independent directors','Related-party transaction policies','Insider trading and listing compliance policies']],['Post-Listing',['Continuing listing compliance','Utilisation of issue proceeds','Migration to main board','Shareholder and regulatory matters']]],
+ timeline:{eye:'The listing journey',h:'From Private Company to Listed Enterprise',sub:'The usual sequence for an SME IPO. Timelines depend on the company’s state of readiness.',steps:[['Readiness assessment','Review of financials, eligibility, corporate records and pending litigation.'],['Conversion & restructuring','The company is converted into a public limited company and its constitution and capital are aligned for listing.'],['Appointment of intermediaries','Merchant banker, registrar, auditor and legal advisor are appointed.'],['Legal due diligence','Title, licences, contracts, litigation and past filings are verified and gaps are cured.'],['Draft offer document','The DRHP is prepared with legal disclosures and filed with the stock exchange.'],['Exchange approval & filing','Observations are answered, in-principle approval is obtained and the prospectus is filed with the Registrar of Companies.'],['Issue & listing','The issue opens, shares are allotted and trading begins on the SME platform.']],note:'Eligibility conditions such as track record, profitability and net worth are prescribed by SEBI and the exchanges and are revised from time to time. They are checked afresh for every issue.'},
+ steps:['Health Check','Restructuring','Due Diligence','Documentation','Approval','Listing'],
+ faq:[['What is an SME IPO?','A public issue by a small or medium enterprise that lists on the SME platform of a stock exchange, such as BSE SME or NSE Emerge, under the SME chapter of the SEBI ICDR Regulations.'],['Can a private limited company go for an IPO?','It must first convert into a public limited company. The conversion, and the changes to its articles and capital, are part of the pre-IPO legal work.'],['Is a merchant banker required?','Yes. An SME IPO must be managed by a SEBI-registered merchant banker. The chambers works with the banker as legal advisor on the issue.'],['Why is legal due diligence so important?','Every material legal fact must be disclosed in the offer document. Defects in title, missing licences or undisclosed litigation can delay approval or expose the company and its directors to liability.'],['Are eligibility rules fixed?','No. SEBI and the exchanges revise eligibility conditions from time to time, so they are checked against the current rules at the start of each engagement.']]},
+
+divorce:{icon:'rings',title:'Divorce',short:'Mutual consent and contested divorce, alimony, custody and settlement, under every personal law.',
+ hero:'Divorce proceedings conducted with discretion, clear advice on the options, and a settlement-first approach where it is possible.',
+ overview:['Divorce is often the most difficult legal step a person takes. We advise on whether a marriage can be dissolved by mutual consent or must be contested, what each route involves, and what can be agreed on alimony, custody, stridhan and property along the way.','We appear before the Family Court at Patna and other districts of Bihar, and in appeals before the Patna High Court. Petitions are filed under the law that applies to the marriage: the Hindu Marriage Act, the Special Marriage Act, Muslim personal law or the Divorce Act for Christian marriages.'],
+ facts:[['Forum','Family Court · Patna High Court'],['Laws','HMA 1955 · SMA 1954 · Divorce Act 1869'],['Routes','Mutual consent · Contested'],['Related','Alimony · Custody · DV']],
+ groups:[['Mutual Consent Divorce',['Joint petition drafting','Settlement agreement','First and second motion','Waiver of the waiting period']],['Contested Divorce',['Cruelty, desertion and other grounds','Written statement and counter-claims','Evidence and cross-examination','Judgment and decree']],['Alimony & Maintenance',['Interim maintenance during the case','Permanent alimony','One-time settlement','Enforcement of orders']],['Children',['Custody and visitation','Child support','Guardianship','Relocation disputes']],['Connected Matters',['Return of stridhan','Domestic violence proceedings','Withdrawal of cases on settlement','Restitution of conjugal rights']],['Appeals',['Appeal against divorce decree','Appeal on maintenance orders','Transfer petitions']]],
+ table:{eye:'At a glance',h:'Mutual Consent or Contested?',sub:'The two routes under the Hindu Marriage Act, 1955, compared.',th:['','Mutual consent','Contested'],rows:[['Provision','Section 13B','Section 13'],['Who files','Husband and wife jointly','Either spouse'],['Pre-condition','Living separately for at least one year','A ground such as cruelty, desertion or adultery'],['Waiting period','Six months after the first motion; may be waived in suitable cases','No statutory waiting period; depends on trial'],['Evidence','Statements of both parties','Full trial with witnesses'],['Usual duration','Months','Often years']],note:'Other personal laws have their own provisions and conditions. Waiver of the six-month period: Amardeep Singh v. Harveen Kaur, (2017) 8 SCC 746.'},
+ steps:['Consultation','Choosing the Route','Petition','Mediation','Hearing & Evidence','Decree'],
+ faq:[['How long does a mutual consent divorce take?','Usually a few months. After the first motion there is a six-month waiting period, which the court may waive where the parties have been separated for long and have settled everything.'],['What are the grounds for a contested divorce?','Under the Hindu Marriage Act they include cruelty, desertion for two years, adultery, conversion, and certain forms of mental disorder, among others. The ground must be pleaded and proved with evidence.'],['Can alimony be settled in one payment?','Yes. In mutual consent divorces a one-time settlement covering alimony and stridhan is common, and is recorded in the decree.'],['What happens to the children?','Custody and visitation are decided on the welfare of the child. In mutual consent cases, the parents agree on arrangements, which the court records.'],['I married under the Special Marriage Act. Does the same law apply?','No. Divorce under the Special Marriage Act has its own provisions, including mutual consent under Section 28. We advise on the law that applies to your marriage.']]},
+
+immigration:{icon:'globe',title:'Immigration & Passport',short:'Passport refusals, permission to travel abroad in pending cases, Look Out Circulars and documents for visas.',
+ hero:'The Indian legal side of travel, study and work abroad: passports, court permissions, Look Out Circulars and the documents embassies ask for.',
+ overview:['Many people in Bihar find that a pending case, a family dispute or a paperwork error stands between them and a passport, a visa or a job abroad. We handle the Indian legal side of these problems: passport refusals and impoundings, court permission to travel while a case is pending, challenges to Look Out Circulars, and the affidavits, certificates and corrections that visa applications need.','Advice on the immigration law of a foreign country is given by practitioners licensed in that country. Where needed, we coordinate with them while handling the Indian proceedings and documents ourselves.'],
+ facts:[['Laws','Passports Act, 1967 · Emigration Act, 1983'],['Forums','Trial courts · Patna High Court'],['Authorities','Regional Passport Office, Patna'],['Covers','Passport · Travel · Documents']],
+ groups:[['Passport Matters',['Refusal of passport','Impounding or revocation','Adverse police verification','Appeals and writ petitions']],['Travel During a Case',['Permission to travel abroad while on bail','No-objection from the trial court','Release of surrendered passport','Modification of bail conditions']],['Look Out Circulars',['Finding out whether an LOC exists','Representations to the issuing authority','Writ petitions to quash an LOC']],['Visa Documentation',['Affidavits and declarations','Marriage registration certificates','Birth certificate and name corrections','Name change by gazette notification']],['Overseas Employment',['Complaints against fraudulent recruiting agents','Recovery of money paid to agents','Emigration clearance issues']],['NRIs & Families',['Powers of attorney for NRIs','Property and succession matters for NRIs','Matrimonial disputes with an overseas spouse']]],
+ table:{eye:'At a glance',h:'Common Problems and Remedies',sub:'The usual starting point for each situation. The right route depends on the facts.',th:['Situation','What can be done','Where'],rows:[['Passport refused because of a pending criminal case','Application for court permission or no-objection to issue the passport','Court where the case is pending'],['Need to travel abroad while on bail','Application to relax bail conditions for a specified period','Court that granted bail'],['Stopped at the airport because of a Look Out Circular','Representation to the issuing authority; writ petition to quash','Issuing authority · High Court'],['Passport impounded or revoked','Appeal under the Passports Act; writ petition where appropriate','Appellate authority · High Court'],['Cheated by a visa or job agent','Police complaint or FIR for cheating; recovery proceedings','Police · Magistrate · Civil court']],note:'These are general starting points only. Each matter is assessed on its own facts before any application is filed.'},
+ steps:['Consultation','Record Check','Strategy','Application','Hearing','Travel or Relief'],
+ faq:[['Can I get a passport if a criminal case is pending against me?','A pending case is a ground on which a passport may be refused, but the court dealing with the case can permit its issue. The application is made in that court with the case details.'],['Can I travel abroad while on bail?','Only with the court’s permission if your bail conditions restrict travel. The court may impose conditions such as a travel itinerary, an undertaking to return, or a security deposit.'],['How do I know if a Look Out Circular has been issued against me?','LOCs are not usually served on the person. Often they come to light only at the airport. We can advise on how to find out and how to challenge one.'],['Do you advise on foreign visa rules?','No. Foreign immigration law is advised on by practitioners licensed in that country. We handle the Indian legal steps and documents, and coordinate with them where needed.'],['An agent took money for a job abroad and disappeared. What can I do?','A complaint of cheating can be filed with the police or before the Magistrate, and civil proceedings can be taken to recover the money. Keep all receipts, messages and documents given by the agent.']]}
+});
+ORDER.splice(0,ORDER.length,'criminal','civil','property','mutation','recovery','ipo','family','divorce','succession','immigration','documents');
+
+/* new practice areas (HI) */
+Object.assign(PAGES_HI,{
+ipo:{title:'MSME एवं SME IPO',short:'BSE एवं NSE के SME प्लेटफ़ॉर्म पर सूचीबद्ध होने वाले MSME के लिए विधिक जाँच, पुनर्गठन और दस्तावेज़ीकरण।',
+ hero:'BSE SME या NSE Emerge पर SME IPO के माध्यम से पूँजी जुटाने वाले उद्यमों की विधिक तैयारी।',
+ overview:['SME IPO के माध्यम से लघु एवं मध्यम उद्यम जनता से पूँजी जुटाकर विशेष SME प्लेटफ़ॉर्म पर सूचीबद्ध हो सकते हैं। इससे पहले कंपनी के विधिक मामलों का व्यवस्थित होना आवश्यक है: उसका संविधान, परिसंपत्तियों पर स्वत्व, अनुज्ञप्तियाँ, अनुबंध, मुक़दमे और पूर्व की फ़ाइलिंग — सबकी जाँच कर प्रस्ताव दस्तावेज़ में प्रकटीकरण किया जाता है।','हम भारतीय विधि के पक्ष पर विधिक सलाहकार के रूप में, SEBI-पंजीकृत मर्चेंट बैंकर, सांविधिक लेखा परीक्षक और कंपनी सचिव के साथ कार्य करते हैं। हमारा उद्देश्य विधिक कमियों को समय रहते पहचानकर दूर करना है, ताकि वे निर्गम में देरी न करें या प्रॉस्पेक्टस में जोखिम कारक के रूप में न आएँ।'],
+ facts:[['प्लेटफ़ॉर्म','BSE SME · NSE Emerge'],['विनियम','SEBI ICDR विनियम, 2018 (अध्याय IX)'],['कंपनी विधि','कंपनी अधिनियम, 2013'],['सहयोग','मर्चेंट बैंकर, CA, CS']],
+ groups:[['IPO की तैयारी',['कंपनी की विधिक स्वास्थ्य जाँच','SEBI एवं एक्सचेंज मानदंडों पर पात्रता समीक्षा','कमियों का विश्लेषण एवं सुधार योजना','मर्चेंट बैंकर के साथ समय-सारणी']],['कॉर्पोरेट पुनर्गठन',['प्राइवेट से पब्लिक कंपनी में रूपांतरण','MoA एवं AoA में परिवर्तन','शेयर पूँजी का पुनर्गठन','प्रवर्तक एवं समूह इकाइयों की व्यवस्था']],['विधिक जाँच (ड्यू डिलिजेंस)',['भूमि एवं भवन पर स्वत्व','अनुज्ञप्तियाँ एवं वैधानिक अनुमोदन','महत्वपूर्ण अनुबंध','कंपनी, प्रवर्तकों एवं निदेशकों से जुड़े मुक़दमे']],['प्रस्ताव दस्तावेज़',['DRHP एवं प्रॉस्पेक्टस हेतु विधिक सामग्री','लंबित मुक़दमों का प्रकटीकरण','सरकारी अनुमोदन खंड','विधिक राय एवं प्रमाण-पत्र']],['शासन व्यवस्था',['बोर्ड एवं समितियों का गठन','स्वतंत्र निदेशक','संबंधित पक्ष लेन-देन नीतियाँ','इनसाइडर ट्रेडिंग एवं लिस्टिंग अनुपालन नीतियाँ']],['लिस्टिंग के बाद',['निरंतर लिस्टिंग अनुपालन','निर्गम राशि का उपयोग','मुख्य बोर्ड पर स्थानांतरण','शेयरधारक एवं नियामक मामले']]],
+ timeline:{eye:'लिस्टिंग की प्रक्रिया',h:'प्राइवेट कंपनी से सूचीबद्ध उद्यम तक',sub:'SME IPO का सामान्य क्रम। समय-सीमा कंपनी की तैयारी पर निर्भर करती है।',steps:[['तैयारी का आकलन','वित्तीय स्थिति, पात्रता, कॉर्पोरेट अभिलेख और लंबित मुक़दमों की समीक्षा।'],['रूपांतरण एवं पुनर्गठन','कंपनी को पब्लिक लिमिटेड में बदला जाता है और उसका संविधान एवं पूँजी लिस्टिंग के अनुरूप की जाती है।'],['मध्यस्थों की नियुक्ति','मर्चेंट बैंकर, रजिस्ट्रार, लेखा परीक्षक और विधिक सलाहकार की नियुक्ति।'],['विधिक जाँच','स्वत्व, अनुज्ञप्तियाँ, अनुबंध, मुक़दमे और पूर्व फ़ाइलिंग का सत्यापन एवं कमियों का सुधार।'],['प्रारूप प्रस्ताव दस्तावेज़','विधिक प्रकटीकरण सहित DRHP तैयार कर स्टॉक एक्सचेंज में दाखिल किया जाता है।'],['एक्सचेंज अनुमोदन एवं फ़ाइलिंग','टिप्पणियों का उत्तर, सैद्धांतिक अनुमोदन, और कंपनी रजिस्ट्रार के पास प्रॉस्पेक्टस दाखिल।'],['निर्गम एवं लिस्टिंग','निर्गम खुलता है, शेयर आवंटित होते हैं और SME प्लेटफ़ॉर्म पर व्यापार शुरू होता है।']],note:'ट्रैक रिकॉर्ड, लाभप्रदता और नेट वर्थ जैसी पात्रता शर्तें SEBI एवं एक्सचेंज निर्धारित करते हैं और समय-समय पर बदलती हैं। प्रत्येक निर्गम के लिए इनकी नए सिरे से जाँच होती है।'},
+ steps:['स्वास्थ्य जाँच','पुनर्गठन','विधिक जाँच','दस्तावेज़ीकरण','अनुमोदन','लिस्टिंग'],
+ faq:[['SME IPO क्या है?','लघु या मध्यम उद्यम द्वारा जारी सार्वजनिक निर्गम, जो SEBI ICDR विनियमों के SME अध्याय के अंतर्गत BSE SME या NSE Emerge जैसे SME प्लेटफ़ॉर्म पर सूचीबद्ध होता है।'],['क्या प्राइवेट लिमिटेड कंपनी IPO ला सकती है?','पहले उसे पब्लिक लिमिटेड कंपनी में बदलना होता है। यह रूपांतरण तथा आर्टिकल्स और पूँजी में परिवर्तन IPO-पूर्व विधिक कार्य का हिस्सा है।'],['क्या मर्चेंट बैंकर आवश्यक है?','हाँ। SME IPO का प्रबंधन SEBI-पंजीकृत मर्चेंट बैंकर द्वारा होना अनिवार्य है। चैम्बर्स निर्गम पर विधिक सलाहकार के रूप में बैंकर के साथ कार्य करता है।'],['विधिक जाँच इतनी महत्वपूर्ण क्यों है?','हर महत्वपूर्ण विधिक तथ्य का प्रस्ताव दस्तावेज़ में प्रकटीकरण आवश्यक है। स्वत्व में दोष, अनुज्ञप्ति का अभाव या अप्रकट मुक़दमे अनुमोदन में देरी कर सकते हैं या कंपनी एवं निदेशकों को दायित्व में डाल सकते हैं।'],['क्या पात्रता नियम स्थिर हैं?','नहीं। SEBI और एक्सचेंज समय-समय पर पात्रता शर्तें बदलते हैं, इसलिए प्रत्येक कार्य की शुरुआत में वर्तमान नियमों से जाँच की जाती है।']]},
+
+divorce:{title:'तलाक़',short:'आपसी सहमति एवं विवादित तलाक़, निर्वाह-व्यय, अभिरक्षा और समझौता — सभी व्यक्तिगत विधियों के अंतर्गत।',
+ hero:'तलाक़ की कार्यवाही गोपनीयता के साथ, विकल्पों पर स्पष्ट सलाह, और जहाँ संभव हो वहाँ समझौते को प्राथमिकता।',
+ overview:['तलाक़ प्रायः व्यक्ति का सबसे कठिन विधिक निर्णय होता है। हम सलाह देते हैं कि विवाह आपसी सहमति से समाप्त हो सकता है या विवादित मामला दायर करना होगा, प्रत्येक रास्ते में क्या शामिल है, और निर्वाह-व्यय, अभिरक्षा, स्त्रीधन एवं संपत्ति पर क्या तय किया जा सकता है।','हम पटना एवं बिहार के अन्य ज़िलों के परिवार न्यायालयों में तथा पटना उच्च न्यायालय में अपीलों में उपस्थित होते हैं। याचिका विवाह पर लागू विधि के अंतर्गत दायर की जाती है: हिंदू विवाह अधिनियम, विशेष विवाह अधिनियम, मुस्लिम व्यक्तिगत विधि या ईसाई विवाहों हेतु तलाक़ अधिनियम।'],
+ facts:[['न्यायालय','परिवार न्यायालय · पटना उच्च न्यायालय'],['विधि','HMA 1955 · SMA 1954 · तलाक़ अधिनियम 1869'],['रास्ते','आपसी सहमति · विवादित'],['संबंधित','निर्वाह-व्यय · अभिरक्षा · घरेलू हिंसा']],
+ groups:[['आपसी सहमति से तलाक़',['संयुक्त याचिका का प्रारूपण','समझौता इकरारनामा','प्रथम एवं द्वितीय मोशन','प्रतीक्षा अवधि में छूट']],['विवादित तलाक़',['क्रूरता, परित्याग एवं अन्य आधार','लिखित कथन एवं प्रति-दावे','साक्ष्य एवं प्रति-परीक्षा','निर्णय एवं डिक्री']],['निर्वाह-व्यय एवं भरण-पोषण',['मामले के दौरान अंतरिम भरण-पोषण','स्थायी निर्वाह-व्यय','एकमुश्त समझौता','आदेशों का निष्पादन']],['बच्चे',['अभिरक्षा एवं मुलाक़ात','बच्चे का भरण-पोषण','संरक्षकता','स्थान परिवर्तन विवाद']],['संबंधित मामले',['स्त्रीधन की वापसी','घरेलू हिंसा की कार्यवाही','समझौते पर मामलों की वापसी','दांपत्य अधिकारों की पुनर्स्थापना']],['अपील',['तलाक़ डिक्री के विरुद्ध अपील','भरण-पोषण आदेश पर अपील','स्थानांतरण याचिका']]],
+ table:{eye:'एक नज़र में',h:'आपसी सहमति या विवादित?',sub:'हिंदू विवाह अधिनियम, 1955 के अंतर्गत दोनों रास्तों की तुलना।',th:['','आपसी सहमति','विवादित'],rows:[['प्रावधान','धारा 13B','धारा 13'],['कौन दायर करता है','पति-पत्नी संयुक्त रूप से','कोई भी पति या पत्नी'],['पूर्व शर्त','कम से कम एक वर्ष से अलग रहना','क्रूरता, परित्याग या व्यभिचार जैसा कोई आधार'],['प्रतीक्षा अवधि','प्रथम मोशन के बाद छह माह; उपयुक्त मामलों में माफ़ हो सकती है','कोई वैधानिक प्रतीक्षा अवधि नहीं; विचारण पर निर्भर'],['साक्ष्य','दोनों पक्षों के बयान','गवाहों सहित पूर्ण विचारण'],['सामान्य अवधि','कुछ महीने','प्रायः कई वर्ष']],note:'अन्य व्यक्तिगत विधियों के अपने प्रावधान एवं शर्तें हैं। छह माह की अवधि में छूट: अमरदीप सिंह बनाम हरवीन कौर, (2017) 8 SCC 746।'},
+ steps:['परामर्श','रास्ते का चयन','याचिका','मध्यस्थता','सुनवाई एवं साक्ष्य','डिक्री'],
+ faq:[['आपसी सहमति से तलाक़ में कितना समय लगता है?','सामान्यतः कुछ महीने। प्रथम मोशन के बाद छह माह की प्रतीक्षा अवधि होती है, जिसे न्यायालय तब माफ़ कर सकता है जब पक्षकार लंबे समय से अलग हों और सब कुछ तय कर चुके हों।'],['विवादित तलाक़ के आधार क्या हैं?','हिंदू विवाह अधिनियम के अंतर्गत इनमें क्रूरता, दो वर्ष का परित्याग, व्यभिचार, धर्म परिवर्तन और कुछ प्रकार के मानसिक विकार आदि शामिल हैं। आधार का अभिवचन कर साक्ष्य से सिद्ध करना होता है।'],['क्या निर्वाह-व्यय एकमुश्त तय हो सकता है?','हाँ। आपसी सहमति के तलाक़ में निर्वाह-व्यय और स्त्रीधन का एकमुश्त समझौता सामान्य है, जिसे डिक्री में दर्ज किया जाता है।'],['बच्चों का क्या होता है?','अभिरक्षा और मुलाक़ात का निर्णय बच्चे के कल्याण के आधार पर होता है। आपसी सहमति के मामलों में माता-पिता व्यवस्था तय करते हैं, जिसे न्यायालय दर्ज करता है।'],['मेरा विवाह विशेष विवाह अधिनियम के अंतर्गत हुआ है। क्या वही विधि लागू होगी?','नहीं। विशेष विवाह अधिनियम में तलाक़ के अपने प्रावधान हैं, जिनमें धारा 28 के अंतर्गत आपसी सहमति शामिल है। हम आपके विवाह पर लागू विधि पर सलाह देते हैं।']]},
+
+immigration:{title:'इमिग्रेशन एवं पासपोर्ट',short:'पासपोर्ट अस्वीकृति, लंबित मामले में विदेश यात्रा की अनुमति, लुक आउट सर्कुलर और वीज़ा हेतु दस्तावेज़।',
+ hero:'विदेश यात्रा, पढ़ाई और नौकरी का भारतीय विधिक पक्ष: पासपोर्ट, न्यायालय की अनुमति, लुक आउट सर्कुलर और दूतावासों द्वारा माँगे जाने वाले दस्तावेज़।',
+ overview:['बिहार में बहुत-से लोगों के पासपोर्ट, वीज़ा या विदेश में नौकरी के रास्ते में कोई लंबित मामला, पारिवारिक विवाद या काग़ज़ी त्रुटि आ जाती है। हम इन समस्याओं का भारतीय विधिक पक्ष देखते हैं: पासपोर्ट की अस्वीकृति एवं ज़ब्ती, मामला लंबित रहते यात्रा हेतु न्यायालय की अनुमति, लुक आउट सर्कुलर को चुनौती, तथा वीज़ा आवेदन हेतु आवश्यक शपथ-पत्र, प्रमाण-पत्र और सुधार।','किसी विदेशी देश की इमिग्रेशन विधि पर सलाह उस देश में लाइसेंसधारी विशेषज्ञ देते हैं। आवश्यकता होने पर हम उनसे समन्वय करते हुए भारतीय कार्यवाही और दस्तावेज़ स्वयं संभालते हैं।'],
+ facts:[['विधि','पासपोर्ट अधिनियम, 1967 · उत्प्रवास अधिनियम, 1983'],['न्यायालय','विचारण न्यायालय · पटना उच्च न्यायालय'],['प्राधिकारी','क्षेत्रीय पासपोर्ट कार्यालय, पटना'],['विषय','पासपोर्ट · यात्रा · दस्तावेज़']],
+ groups:[['पासपोर्ट मामले',['पासपोर्ट की अस्वीकृति','ज़ब्ती या निरस्तीकरण','प्रतिकूल पुलिस सत्यापन','अपील एवं रिट याचिका']],['मामले के दौरान यात्रा',['ज़मानत पर रहते विदेश यात्रा की अनुमति','विचारण न्यायालय से अनापत्ति','जमा पासपोर्ट की वापसी','ज़मानत शर्तों में संशोधन']],['लुक आउट सर्कुलर',['LOC जारी होने की जानकारी प्राप्त करना','जारीकर्ता प्राधिकारी को अभ्यावेदन','LOC निरस्त कराने हेतु रिट याचिका']],['वीज़ा दस्तावेज़',['शपथ-पत्र एवं घोषणाएँ','विवाह पंजीकरण प्रमाण-पत्र','जन्म प्रमाण-पत्र एवं नाम सुधार','राजपत्र द्वारा नाम परिवर्तन']],['विदेश में रोज़गार',['धोखेबाज़ भर्ती एजेंटों के विरुद्ध शिकायत','एजेंटों को दी गई राशि की वसूली','उत्प्रवास मंज़ूरी से जुड़े मामले']],['प्रवासी भारतीय एवं परिवार',['NRI हेतु मुख़्तारनामा','NRI के संपत्ति एवं उत्तराधिकार मामले','विदेश में रह रहे जीवनसाथी से वैवाहिक विवाद']]],
+ table:{eye:'एक नज़र में',h:'सामान्य समस्याएँ और उपाय',sub:'प्रत्येक स्थिति का सामान्य आरंभ बिंदु। सही रास्ता तथ्यों पर निर्भर करता है।',th:['स्थिति','क्या किया जा सकता है','कहाँ'],rows:[['लंबित आपराधिक मामले के कारण पासपोर्ट अस्वीकृत','पासपोर्ट जारी करने हेतु न्यायालय की अनुमति या अनापत्ति का आवेदन','जहाँ मामला लंबित है वह न्यायालय'],['ज़मानत पर रहते विदेश जाना आवश्यक','निर्धारित अवधि हेतु ज़मानत शर्तों में छूट का आवेदन','ज़मानत देने वाला न्यायालय'],['लुक आउट सर्कुलर के कारण हवाई अड्डे पर रोका गया','जारीकर्ता प्राधिकारी को अभ्यावेदन; निरस्तीकरण हेतु रिट','जारीकर्ता प्राधिकारी · उच्च न्यायालय'],['पासपोर्ट ज़ब्त या निरस्त','पासपोर्ट अधिनियम के अंतर्गत अपील; उपयुक्त मामले में रिट','अपीलीय प्राधिकारी · उच्च न्यायालय'],['वीज़ा या नौकरी एजेंट द्वारा धोखा','छल हेतु पुलिस शिकायत या प्राथमिकी; वसूली की कार्यवाही','पुलिस · मजिस्ट्रेट · व्यवहार न्यायालय']],note:'ये केवल सामान्य आरंभ बिंदु हैं। कोई भी आवेदन दायर करने से पहले प्रत्येक मामले का उसके तथ्यों पर आकलन किया जाता है।'},
+ steps:['परामर्श','अभिलेख जाँच','रणनीति','आवेदन','सुनवाई','यात्रा या राहत'],
+ faq:[['क्या आपराधिक मामला लंबित रहते मुझे पासपोर्ट मिल सकता है?','लंबित मामला पासपोर्ट अस्वीकृति का एक आधार है, परंतु मामले की सुनवाई कर रहा न्यायालय इसे जारी करने की अनुमति दे सकता है। आवेदन मामले के विवरण सहित उसी न्यायालय में दिया जाता है।'],['क्या मैं ज़मानत पर रहते विदेश जा सकता हूँ?','यदि ज़मानत की शर्तें यात्रा को सीमित करती हैं तो केवल न्यायालय की अनुमति से। न्यायालय यात्रा कार्यक्रम, वापसी का वचन या प्रतिभूति जमा जैसी शर्तें लगा सकता है।'],['मुझे कैसे पता चलेगा कि मेरे विरुद्ध लुक आउट सर्कुलर जारी हुआ है?','LOC की सूचना सामान्यतः व्यक्ति को नहीं दी जाती। प्रायः इसका पता हवाई अड्डे पर ही चलता है। हम बता सकते हैं कि इसकी जानकारी कैसे लें और इसे कैसे चुनौती दें।'],['क्या आप विदेशी वीज़ा नियमों पर सलाह देते हैं?','नहीं। विदेशी इमिग्रेशन विधि पर उस देश के लाइसेंसधारी विशेषज्ञ सलाह देते हैं। हम भारतीय विधिक चरण और दस्तावेज़ संभालते हैं तथा आवश्यकता होने पर उनसे समन्वय करते हैं।'],['एक एजेंट विदेश में नौकरी के नाम पर पैसे लेकर ग़ायब हो गया। मैं क्या करूँ?','पुलिस या मजिस्ट्रेट के समक्ष छल का परिवाद दायर किया जा सकता है, तथा राशि वसूली हेतु दीवानी कार्यवाही की जा सकती है। एजेंट द्वारा दी गई सभी रसीदें, संदेश और दस्तावेज़ सुरक्षित रखें।']]}
+});
+
+/* ---------- language ---------- */
+let LANG='en';
+try{const s=localStorage.getItem('clc-lang');if(s==='hi'||s==='en')LANG=s}catch(e){}
+const T={
+en:{brand:'Choudhary Law Chambers',brandSub:'Advocates & Legal Consultants',brandShort:'Advocates · Patna',
+ util:'Patna High Court · Civil & Criminal Courts of Bihar',hours:'Mon–Sat',
+ nav:{home:'Home',about:'About',practice:'Practice Areas',founder:'Our Advocate',contact:'Contact',book:'Book a Consultation'},menu:'Menu',
+ gateH:'Disclaimer',gate1:'The Bar Council of India does not permit advocates to solicit work or advertise. By entering this website you acknowledge that there has been no advertisement, solicitation, invitation or inducement of any kind by Choudhary Law Chambers or its members to obtain work through this website.',gate2:'The material here is for general information only and is not legal advice or a legal opinion. Viewing this website, or contacting the chambers through it, does not create an advocate–client relationship.',gateCk:'I have read and understood the disclaimer and wish to proceed.',gateGo:'I Agree — Enter Website',
+ heroEye:'Advocates · Patna High Court',heroH:'Counsel you can rely on, <em>in court and beyond.</em>',heroTag:'विधिक परामर्श एवं न्यायालयीन प्रतिनिधित्व',heroLead:'Criminal defence, civil and property litigation, family matters and commercial recovery for individuals, families and businesses across Bihar.',heroB2:'Our Practice Areas',
+ trust:[['Patna High Court','Bail, quashing, writs and appeals'],['District Courts','Civil, criminal and family courts'],['Revenue Forums','Circle Officer, DCLR and Collector'],['BNS · BNSS · BSA','and legacy IPC and CrPC matters']],
+ aboutEye:'About the chambers',aboutH:'A litigation practice built on preparation',aboutP:['Choudhary Law Chambers is a Patna-based practice appearing before the Patna High Court, the civil and criminal courts of Bihar, and the revenue authorities. The chambers handles criminal, civil, property, matrimonial, succession and commercial recovery matters.','Every brief is run personally, from the first notice to the final order. Clients receive a clear assessment at the start, the right remedy in the right forum, and an update after every date of hearing.'],aboutBtn:'Meet Our Advocate',
+ pillars:[['The Chambers','A focused practice at Boring Road, Patna, with each matter handled from start to finish by the same advocate.'],['Our Vision','To be the chambers clients in Bihar trust for straight advice and careful conduct of their cases.'],['Our Mission','A clear view of the case, the right remedy in the right forum, and a report after every hearing.']],
+ paEye:'Expertise',paH:'Our Practice Areas',paSub:'Litigation and advisory across the areas where people and businesses in Bihar most often need an advocate.',more:'Read more →',consultT:'Legal Consultation',consultP:'Not sure which area your matter falls in? Share the facts and the chambers will guide you to the right remedy.',contactMore:'Contact us →',
+ whyEye:'Why CLC',whyH:'Why Clients Choose the Chambers',why:[['Prepared','Every matter starts with the record: the FIR, the deeds, the khatiyan, the ledger. Arguments are built on documents.'],['Local','Daily practice before the Patna High Court, the courts and the revenue offices of Bihar.'],['Accountable','One advocate responsible for your brief, and an update after every date of hearing.'],['Discreet','Family, property and business matters handled in strict confidence.']],
+ procEye:'How we work',procH:'From Consultation to Resolution',proc:[['Consultation','You explain the facts. We identify the issues, the forum and any limitation.'],['Document Review','FIR, deeds, records and correspondence are examined and gaps noted.'],['Filing','Notice, plaint, petition or application drafted and settled for filing.'],['Hearing','Appearance, evidence and arguments, with updates after each date.']],
+ cliEye:'Who we act for',cliH:'Clients We Serve',cliSub:'Individuals, families and enterprises across Patna and Bihar.',clients:['Individuals & Families','Landowners','Home Buyers','Traders & Distributors','MSMEs','Manufacturers','Builders & Developers','Educational Trusts','Professionals'],
+ fEye:'Our advocate',fName:'Pankaj Kumar Choudhary',fRole:'Advocate · Patna High Court',fPh:'Photograph to be added',fP:['Pankaj Kumar Choudhary founded Choudhary Law Chambers to give clients in Bihar the preparation of a large practice with the personal attention of a small one. He appears before the Patna High Court and the district courts of Bihar in criminal, civil, property, matrimonial and succession matters, and advises businesses on recovery of dues.','His practice is grounded in the BNS, BNSS and BSA framework, with long experience of the earlier IPC, CrPC and Evidence Act, and a working knowledge of Bihar’s revenue and land-record system.'],
+ creds:[['Primary forum','Patna High Court'],['Chambers','Boring Road, Patna'],['Languages','Hindi, English'],['WhatsApp','+91 62041 66690']],
+ ctaH:'Have a legal matter to discuss?',ctaP:'Share the facts with the chambers. We will advise on the right remedy.',ctaWA:'WhatsApp the Chambers',
+ ctaPracH:'Discuss your matter with the chambers',ctaPracP:'A clear assessment of your case, and the right remedy in the right forum.',ctaRecH:'Unsure which remedy applies?',ctaRecP:'Recovery is about the right remedy, at the right time, with the right documents.',
+ faqEye:'Queries',faqH:'Frequently Asked Questions',
+ homeFaq:[['How do I book a consultation?','Send an enquiry using the form below, call, or message the chambers on WhatsApp. We will confirm a time for a meeting at the chambers or by phone.'],['What should I bring to the first meeting?','Copies of everything connected to the matter: FIR or complaint, notices, deeds, khatiyan or jamabandi extracts, agreements, bank records and earlier court orders.'],['How are fees decided?','Fees depend on the forum, the stage of the matter and the work involved. They are discussed and agreed in writing after the first consultation.'],['Does contacting the chambers make you my advocate?','No. An advocate–client relationship begins only after the chambers agrees to take up the matter and terms are settled.']],
+ chEye:'Get in touch',chH:'Visit the Chambers',chSub:'Consultations are by appointment. Send an enquiry or call the chambers to schedule a meeting.',chT:'Chambers',chAddr:'Address',chPh:'Phone',chWa:'WhatsApp',waChat:'Chat on WhatsApp',waLabel:'WhatsApp',chEm:'Email',chHr:'Hours',chHrs:'Monday to Saturday, by appointment',copy:'Copy',copied:'Copied',selected:'Selected',maps:'Open in Maps',
+ fmH:'Request a Consultation',fmSub:'Fill in the details and tap the button. Your enquiry opens in WhatsApp, ready to send to the chambers.',fmName:'Full name',fmPhone:'Mobile number',fmTopic:'Matter concerns',fmCourt:'Court or district (if known)',fmCourtPh:'e.g. Patna High Court',fmMsg:'Brief description',fmMsgPh:'A few lines about the matter. Please do not share confidential details here.',fmElse:'Something else',fmAck:'I understand that sending this enquiry does not create an advocate–client relationship.',fmReq:'Name, mobile number and the acknowledgement are required.',fmErr:'Please add your name, a 10-digit mobile number, and tick the acknowledgement.',fmSend:'Send on WhatsApp',fmOk:'Your enquiry is ready in WhatsApp. Press send there to deliver it to the chambers.',fmOpen:'Open WhatsApp to send',fmEdit:'Edit enquiry',waHead:'New consultation request — Choudhary Law Chambers website',waN:'Name',waP:'Mobile',waT:'Matter',waC:'Court / District',waM:'Details',
+ home:'Home',paCrumb:'Practice Areas',ovEye:'Overview',ovH:'The Practice',scEye:'Scope of work',scH:'Areas of Engagement',mEye:'Method',mH:'Our Process',sideH:'Practice Areas',sideNeed:t=>`Need advice on ${t}?`,sideP:'Speak to the chambers about your matter.',
+ ftAbout:'A litigation practice before the Patna High Court and the courts and revenue authorities of Bihar.',ftPA:'Practice Areas',ftCh:'Chambers',ftDis:'Disclaimer',ftDisP:'This website is for general information only and does not constitute solicitation, advertisement or legal advice, in accordance with the rules of the Bar Council of India. Using it does not create an advocate–client relationship.',ftCopy:'© 2026 Choudhary Law Chambers. All rights reserved.',ftAddr:'E-12, First Floor, Krishna Apartment, Boring Road, Patna',
+ bail:{eye:'At a glance',h:'Where to Apply',sub:'Which provision and which court, depending on the stage of the case.',th:['Situation','Remedy','Forum','Provision (BNSS)'],rows:[['Apprehension of arrest','Anticipatory bail','Sessions Court or High Court','Section 482'],['Arrested for a bailable offence','Bail as of right','Police or Magistrate','Section 478'],['Arrested for a non-bailable offence','Regular bail','Magistrate','Section 480'],['Bail refused below, or serious offence','Regular bail','Sessions Court or High Court','Section 483'],['FIR or proceedings are an abuse of process','Quashing','High Court','Section 528']],note:'For matters pending under the CrPC, the corresponding sections are 438, 436, 437, 439 and 482 respectively.'},
+ jr:{eye:'The mutation journey',h:'From Application to Jamabandi',sub:'Every stage, including what happens when someone objects or the application is rejected.',yes:'Yes',no:'No',allowed:'Allowed',rejected:'Rejected',
+  steps:[['Document check','Registered deed, the previous holder’s jamabandi details, rent receipts and identity documents are collected and checked.'],['Online application','The mutation (dakhil-kharij) application is filed on the Bihar Bhumi portal with the documents uploaded.'],['Field inquiry','The Revenue Karmachari and Circle Inspector verify the application and submit a report to the Circle Officer.'],['Objection filed?','A public notice is issued and interested persons may object.',['File reply and evidence; hearing before the Circle Officer','Proceeds to order on the inquiry report']],['Circle Officer’s order','The Circle Officer allows or rejects the application.',['Jamabandi is created or corrected','Appeal before the DCLR']],['Appeal before the DCLR','The Deputy Collector Land Reforms hears the appeal on the record.',['Further challenge before the Collector; writ before the High Court where the order is illegal','Order implemented in the records']]],
+  end:['Record updated','Your name appears in the jamabandi. Rent receipts and a Land Possession Certificate can now be obtained in your name.'],note:'Authorities and time limits are indicative. The forum and limitation for each step are confirmed in every matter.'},
+ prev:{eye:'Prevention',h:'Prevention Is Better Than Recovery',sub:'The strongest recovery cases are built long before the dispute begins.',view:'View details',ke:'Key elements',docs:'Documents',
+  items:[['Proper Terms of Trade','Every sale should state when payment is due and what happens if it is not paid.',['Payment due date','Interest on delayed payment','Jurisdiction clause','Recovery costs','Udyam registration, where applicable'],['Invoice','Purchase order','Quotation','Agreement']],['Keep a Paper Trail','Record every transaction and every acknowledgment of the debt.',['Emails and WhatsApp messages','Delivery proofs','Ledger confirmations','Part payments'],['Delivery challans','Ledger statements','Bank records']],['Send a Demand Notice','A clear notice often ends the matter without litigation.',['Amount outstanding','Invoice details','Date payment fell due','Time given to pay','Consequences of non-payment'],['Demand notice','Statement of account','Copies of invoices']],['Choose the Right Remedy','Each recovery matter needs its own strategy.',['Nature of the transaction','Documents available','Whether there was fraud','Whether you are an MSME','Whether a cheque was issued'],['All of the above, reviewed together']]]},
+ remCiv:{eye:'Civil action',h:'Civil Remedies for Recovery',sub:'Recover the principal, interest and costs through the right civil proceeding.'},
+ remCri:{eye:'Criminal action',h:'Criminal Remedies for Fraud',sub:'Criminal proceedings are for cheating, fraud or a dishonoured cheque, not merely because money is unpaid.'},
+ tabs:['Overview','Process','Benefits','Documents'],fit:'Best suited for',
+ will:{eye:'Illustration',h:'How a Will Works',sub:'A Will matches what you own to the people you want to receive it. Select an asset.',a:'Assets',b:'Beneficiaries',assets:['House','Agricultural land','Bank deposits','Shares','Jewellery'],bens:['Spouse','Children','Parents','Siblings','Charity'],cap:'Without a Will, the law makes this match for you.'}
+},
+hi:{brand:'चौधरी लॉ चैम्बर्स',brandSub:'अधिवक्ता एवं विधिक परामर्शदाता',brandShort:'अधिवक्ता · पटना',
+ util:'पटना उच्च न्यायालय · बिहार के व्यवहार एवं दंड न्यायालय',hours:'सोम–शनि',
+ nav:{home:'मुखपृष्ठ',about:'परिचय',practice:'कार्यक्षेत्र',founder:'हमारे अधिवक्ता',contact:'संपर्क',book:'परामर्श हेतु समय लें'},menu:'मेनू',
+ gateH:'अस्वीकरण',gate1:'बार काउंसिल ऑफ़ इंडिया अधिवक्ताओं को कार्य हेतु आग्रह करने या विज्ञापन देने की अनुमति नहीं देता। इस वेबसाइट में प्रवेश करके आप स्वीकार करते हैं कि चौधरी लॉ चैम्बर्स या इसके सदस्यों द्वारा इस वेबसाइट के माध्यम से कार्य प्राप्त करने हेतु किसी प्रकार का विज्ञापन, आग्रह, आमंत्रण या प्रलोभन नहीं दिया गया है।',gate2:'यहाँ दी गई सामग्री केवल सामान्य जानकारी हेतु है और यह विधिक सलाह या विधिक राय नहीं है। इस वेबसाइट को देखने या इसके माध्यम से चैम्बर्स से संपर्क करने से अधिवक्ता–मुवक्किल संबंध स्थापित नहीं होता।',gateCk:'मैंने अस्वीकरण पढ़ और समझ लिया है तथा आगे बढ़ना चाहता/चाहती हूँ।',gateGo:'मैं सहमत हूँ — वेबसाइट में प्रवेश करें',
+ heroEye:'अधिवक्ता · पटना उच्च न्यायालय',heroH:'विश्वसनीय विधिक परामर्श, <em>न्यायालय में और उसके बाहर भी।</em>',heroTag:'Legal Counsel & Court Representation',heroLead:'बिहार भर के व्यक्तियों, परिवारों और व्यवसायों के लिए आपराधिक बचाव, दीवानी एवं संपत्ति मुक़दमे, पारिवारिक मामले तथा वाणिज्यिक वसूली।',heroB2:'हमारे कार्यक्षेत्र',
+ trust:[['पटना उच्च न्यायालय','ज़मानत, निरस्तीकरण, रिट एवं अपील'],['ज़िला न्यायालय','दीवानी, फ़ौजदारी एवं परिवार न्यायालय'],['राजस्व न्यायालय','अंचल अधिकारी, DCLR एवं समाहर्ता'],['BNS · BNSS · BSA','तथा पुराने IPC एवं CrPC मामले']],
+ aboutEye:'चैम्बर्स का परिचय',aboutH:'तैयारी पर आधारित मुक़दमा-प्रधान प्रैक्टिस',aboutP:['चौधरी लॉ चैम्बर्स पटना स्थित प्रैक्टिस है, जो पटना उच्च न्यायालय, बिहार के व्यवहार एवं दंड न्यायालयों तथा राजस्व प्राधिकारियों के समक्ष उपस्थित होती है। चैम्बर्स आपराधिक, दीवानी, संपत्ति, वैवाहिक, उत्तराधिकार एवं वाणिज्यिक वसूली के मामले देखता है।','प्रत्येक मामला पहले नोटिस से अंतिम आदेश तक व्यक्तिगत रूप से संचालित होता है। मुवक्किल को आरंभ में स्पष्ट आकलन, सही मंच पर सही उपाय, और हर सुनवाई की तिथि के बाद अद्यतन जानकारी मिलती है।'],aboutBtn:'हमारे अधिवक्ता से मिलें',
+ pillars:[['चैम्बर्स','बोरिंग रोड, पटना में केंद्रित प्रैक्टिस, जहाँ प्रत्येक मामला आरंभ से अंत तक एक ही अधिवक्ता देखते हैं।'],['हमारी दृष्टि','बिहार में ऐसा चैम्बर्स बनना जिस पर मुवक्किल स्पष्ट सलाह और मामलों के सावधानीपूर्ण संचालन के लिए भरोसा करें।'],['हमारा ध्येय','मामले की स्पष्ट समझ, सही मंच पर सही उपाय, और हर सुनवाई के बाद रिपोर्ट।']],
+ paEye:'विशेषज्ञता',paH:'हमारे कार्यक्षेत्र',paSub:'उन क्षेत्रों में मुक़दमा एवं परामर्श, जिनमें बिहार के लोगों और व्यवसायों को सबसे अधिक अधिवक्ता की आवश्यकता होती है।',more:'और पढ़ें →',consultT:'विधिक परामर्श',consultP:'निश्चित नहीं कि आपका मामला किस क्षेत्र में आता है? तथ्य बताइए, चैम्बर्स आपको सही उपाय की ओर मार्गदर्शन करेगा।',contactMore:'संपर्क करें →',
+ whyEye:'CLC क्यों',whyH:'मुवक्किल चैम्बर्स को क्यों चुनते हैं',why:[['तैयारी','हर मामला अभिलेख से शुरू होता है: प्राथमिकी, विलेख, खतियान, खाता-बही। तर्क दस्तावेज़ों पर आधारित होते हैं।'],['स्थानीय अनुभव','पटना उच्च न्यायालय, बिहार के न्यायालयों और राजस्व कार्यालयों में दैनिक प्रैक्टिस।'],['जवाबदेही','आपके मामले के लिए एक ज़िम्मेदार अधिवक्ता, और हर सुनवाई के बाद अद्यतन जानकारी।'],['गोपनीयता','पारिवारिक, संपत्ति और व्यावसायिक मामले पूर्ण गोपनीयता के साथ।']],
+ procEye:'हमारी कार्यप्रणाली',procH:'परामर्श से समाधान तक',proc:[['परामर्श','आप तथ्य बताते हैं। हम मुद्दे, उपयुक्त मंच और परिसीमा पहचानते हैं।'],['दस्तावेज़ अध्ययन','प्राथमिकी, विलेख, अभिलेख और पत्राचार की जाँच, कमियों की पहचान।'],['दाखिला','नोटिस, वादपत्र, याचिका या आवेदन का प्रारूपण और दाखिला।'],['सुनवाई','उपस्थिति, साक्ष्य और बहस, हर तिथि के बाद अद्यतन जानकारी।']],
+ cliEye:'हम किनकी ओर से कार्य करते हैं',cliH:'हमारे मुवक्किल',cliSub:'पटना और बिहार भर के व्यक्ति, परिवार और उद्यम।',clients:['व्यक्ति एवं परिवार','भूस्वामी','गृह ख़रीदार','व्यापारी एवं वितरक','MSME','निर्माता','बिल्डर एवं डेवलपर','शैक्षणिक ट्रस्ट','पेशेवर'],
+ fEye:'हमारे अधिवक्ता',fName:'पंकज कुमार चौधरी',fRole:'अधिवक्ता · पटना उच्च न्यायालय',fPh:'फ़ोटो जोड़ी जानी है',fP:['पंकज कुमार चौधरी ने चौधरी लॉ चैम्बर्स की स्थापना इस उद्देश्य से की कि बिहार के मुवक्किलों को बड़ी प्रैक्टिस जैसी तैयारी और छोटी प्रैक्टिस जैसा व्यक्तिगत ध्यान एक साथ मिले। वे पटना उच्च न्यायालय और बिहार के ज़िला न्यायालयों में आपराधिक, दीवानी, संपत्ति, वैवाहिक और उत्तराधिकार मामलों में उपस्थित होते हैं, तथा व्यवसायों को बकाया वसूली पर परामर्श देते हैं।','उनकी प्रैक्टिस BNS, BNSS और BSA के ढाँचे पर आधारित है, साथ ही पूर्ववर्ती IPC, CrPC और साक्ष्य अधिनियम का लंबा अनुभव तथा बिहार की राजस्व एवं भू-अभिलेख व्यवस्था की व्यावहारिक जानकारी है।'],
+ creds:[['मुख्य न्यायालय','पटना उच्च न्यायालय'],['चैम्बर्स','बोरिंग रोड, पटना'],['भाषाएँ','हिंदी, अंग्रेज़ी'],['WhatsApp','+91 62041 66690']],
+ ctaH:'क्या आपके पास कोई विधिक मामला है?',ctaP:'चैम्बर्स को तथ्य बताइए। हम सही उपाय पर सलाह देंगे।',ctaWA:'चैम्बर्स को WhatsApp करें',
+ ctaPracH:'अपने मामले पर चैम्बर्स से चर्चा करें',ctaPracP:'आपके मामले का स्पष्ट आकलन, और सही मंच पर सही उपाय।',ctaRecH:'निश्चित नहीं कि कौन-सा उपाय लागू होगा?',ctaRecP:'वसूली का अर्थ है सही समय पर, सही दस्तावेज़ों के साथ, सही उपाय।',
+ faqEye:'प्रश्न',faqH:'अक्सर पूछे जाने वाले प्रश्न',
+ homeFaq:[['परामर्श के लिए समय कैसे लें?','नीचे दिए फ़ॉर्म से अनुरोध भेजें, फ़ोन करें, या WhatsApp पर संदेश दें। हम चैम्बर्स में या फ़ोन पर मुलाक़ात का समय निश्चित करेंगे।'],['पहली मुलाक़ात में क्या लाना चाहिए?','मामले से जुड़े सभी काग़ज़ात की प्रतियाँ: प्राथमिकी या परिवाद, नोटिस, विलेख, खतियान या जमाबंदी की प्रति, इकरारनामे, बैंक अभिलेख और पूर्व के न्यायालय आदेश।'],['फ़ीस कैसे तय होती है?','फ़ीस न्यायालय, मामले के चरण और कार्य की मात्रा पर निर्भर करती है। पहले परामर्श के बाद इस पर चर्चा कर लिखित रूप में सहमति बनती है।'],['क्या चैम्बर्स से संपर्क करने से आप मेरे अधिवक्ता बन जाते हैं?','नहीं। अधिवक्ता–मुवक्किल संबंध तभी शुरू होता है जब चैम्बर्स मामला लेने पर सहमत हो और शर्तें तय हो जाएँ।']],
+ chEye:'संपर्क करें',chH:'चैम्बर्स पधारें',chSub:'परामर्श पूर्व-निर्धारित समय पर होता है। मुलाक़ात तय करने के लिए अनुरोध भेजें या फ़ोन करें।',chT:'चैम्बर्स',chAddr:'पता',chPh:'फ़ोन',chWa:'WhatsApp',waChat:'WhatsApp पर बात करें',waLabel:'WhatsApp',chEm:'ईमेल',chHr:'समय',chHrs:'सोमवार से शनिवार, पूर्व-निर्धारित समय पर',copy:'कॉपी',copied:'कॉपी हुआ',selected:'चयनित',maps:'मैप में खोलें',
+ fmH:'परामर्श हेतु अनुरोध',fmSub:'विवरण भरें और बटन दबाएँ। आपका अनुरोध WhatsApp में खुलेगा, चैम्बर्स को भेजने के लिए तैयार।',fmName:'पूरा नाम',fmPhone:'मोबाइल नंबर',fmTopic:'मामले का विषय',fmCourt:'न्यायालय या ज़िला (यदि ज्ञात हो)',fmCourtPh:'जैसे पटना उच्च न्यायालय',fmMsg:'संक्षिप्त विवरण',fmMsgPh:'मामले के बारे में कुछ पंक्तियाँ। कृपया यहाँ गोपनीय जानकारी साझा न करें।',fmElse:'अन्य विषय',fmAck:'मैं समझता/समझती हूँ कि यह अनुरोध भेजने से अधिवक्ता–मुवक्किल संबंध स्थापित नहीं होता।',fmReq:'नाम, मोबाइल नंबर और स्वीकृति आवश्यक है।',fmErr:'कृपया अपना नाम, 10 अंकों का मोबाइल नंबर भरें और स्वीकृति पर टिक करें।',fmSend:'WhatsApp पर भेजें',fmOk:'आपका अनुरोध WhatsApp में तैयार है। चैम्बर्स तक पहुँचाने के लिए वहाँ भेजें (Send) दबाएँ।',fmOpen:'भेजने के लिए WhatsApp खोलें',fmEdit:'अनुरोध बदलें',waHead:'नया परामर्श अनुरोध — चौधरी लॉ चैम्बर्स वेबसाइट',waN:'नाम',waP:'मोबाइल',waT:'विषय',waC:'न्यायालय / ज़िला',waM:'विवरण',
+ home:'मुखपृष्ठ',paCrumb:'कार्यक्षेत्र',ovEye:'परिचय',ovH:'कार्य का स्वरूप',scEye:'कार्य का दायरा',scH:'सेवाओं के क्षेत्र',mEye:'कार्यप्रणाली',mH:'हमारी प्रक्रिया',sideH:'कार्यक्षेत्र',sideNeed:t=>`${t} पर सलाह चाहिए?`,sideP:'अपने मामले के बारे में चैम्बर्स से बात करें।',
+ ftAbout:'पटना उच्च न्यायालय तथा बिहार के न्यायालयों एवं राजस्व प्राधिकारियों के समक्ष मुक़दमा-प्रधान प्रैक्टिस।',ftPA:'कार्यक्षेत्र',ftCh:'चैम्बर्स',ftDis:'अस्वीकरण',ftDisP:'यह वेबसाइट केवल सामान्य जानकारी हेतु है और बार काउंसिल ऑफ़ इंडिया के नियमों के अनुसार यह आग्रह, विज्ञापन या विधिक सलाह नहीं है। इसके उपयोग से अधिवक्ता–मुवक्किल संबंध स्थापित नहीं होता।',ftCopy:'© 2026 चौधरी लॉ चैम्बर्स। सर्वाधिकार सुरक्षित।',ftAddr:'ई-12, प्रथम तल, कृष्णा अपार्टमेंट, बोरिंग रोड, पटना',
+ bail:{eye:'एक नज़र में',h:'कहाँ आवेदन करें',sub:'मामले के चरण के अनुसार कौन-सा प्रावधान और कौन-सा न्यायालय।',th:['स्थिति','उपाय','न्यायालय','प्रावधान (BNSS)'],rows:[['गिरफ़्तारी की आशंका','अग्रिम ज़मानत','सत्र न्यायालय या उच्च न्यायालय','धारा 482'],['ज़मानतीय अपराध में गिरफ़्तारी','अधिकार के रूप में ज़मानत','पुलिस या मजिस्ट्रेट','धारा 478'],['अजमानतीय अपराध में गिरफ़्तारी','नियमित ज़मानत','मजिस्ट्रेट','धारा 480'],['निचली अदालत से ज़मानत अस्वीकृत, या गंभीर अपराध','नियमित ज़मानत','सत्र न्यायालय या उच्च न्यायालय','धारा 483'],['प्राथमिकी या कार्यवाही प्रक्रिया का दुरुपयोग','निरस्तीकरण','उच्च न्यायालय','धारा 528']],note:'CrPC के अंतर्गत लंबित मामलों में संबंधित धाराएँ क्रमशः 438, 436, 437, 439 और 482 हैं।'},
+ jr:{eye:'दाखिल-खारिज की प्रक्रिया',h:'आवेदन से जमाबंदी तक',sub:'हर चरण, यह भी कि आपत्ति होने या आवेदन अस्वीकृत होने पर क्या होता है।',yes:'हाँ',no:'नहीं',allowed:'स्वीकृत',rejected:'अस्वीकृत',
+  steps:[['दस्तावेज़ जाँच','निबंधित विलेख, पूर्व धारक की जमाबंदी का विवरण, लगान रसीदें और पहचान पत्र एकत्र कर जाँचे जाते हैं।'],['ऑनलाइन आवेदन','बिहार भूमि पोर्टल पर दस्तावेज़ अपलोड कर दाखिल-खारिज आवेदन दायर किया जाता है।'],['स्थल जाँच','राजस्व कर्मचारी और अंचल निरीक्षक आवेदन का सत्यापन कर अंचल अधिकारी को प्रतिवेदन देते हैं।'],['आपत्ति दर्ज हुई?','आम सूचना जारी होती है और हितबद्ध व्यक्ति आपत्ति कर सकते हैं।',['उत्तर एवं साक्ष्य दायर करें; अंचल अधिकारी के समक्ष सुनवाई','जाँच प्रतिवेदन के आधार पर आदेश']],['अंचल अधिकारी का आदेश','अंचल अधिकारी आवेदन स्वीकृत या अस्वीकृत करते हैं।',['जमाबंदी सृजित या संशोधित होती है','DCLR के समक्ष अपील']],['DCLR के समक्ष अपील','भूमि सुधार उप समाहर्ता अभिलेख के आधार पर अपील सुनते हैं।',['समाहर्ता के समक्ष आगे की चुनौती; आदेश अवैध होने पर उच्च न्यायालय में रिट','आदेश अभिलेखों में लागू']]],
+  end:['अभिलेख अद्यतन','जमाबंदी में आपका नाम दर्ज हो जाता है। अब लगान रसीद और भू-धारण प्रमाण-पत्र आपके नाम से प्राप्त किए जा सकते हैं।'],note:'प्राधिकारी और समय-सीमाएँ सांकेतिक हैं। प्रत्येक मामले में हर चरण का मंच और परिसीमा सुनिश्चित की जाती है।'},
+ prev:{eye:'रोकथाम',h:'वसूली से बेहतर है रोकथाम',sub:'सबसे मज़बूत वसूली मामले विवाद शुरू होने से बहुत पहले तैयार होते हैं।',view:'विवरण देखें',ke:'मुख्य बिंदु',docs:'दस्तावेज़',
+  items:[['व्यापार की स्पष्ट शर्तें','हर बिक्री में लिखा हो कि भुगतान कब देय है और न होने पर क्या होगा।',['भुगतान की नियत तिथि','विलंबित भुगतान पर ब्याज','क्षेत्राधिकार धारा','वसूली का व्यय','जहाँ लागू हो, उद्यम पंजीकरण'],['बिल (इनवॉइस)','क्रय आदेश','कोटेशन','इकरारनामा']],['काग़ज़ी साक्ष्य रखें','हर लेन-देन और बकाया की हर स्वीकृति का रिकॉर्ड रखें।',['ईमेल एवं WhatsApp संदेश','डिलीवरी के प्रमाण','खाता-बही की पुष्टि','आंशिक भुगतान'],['डिलीवरी चालान','खाता विवरण','बैंक अभिलेख']],['माँग नोटिस भेजें','स्पष्ट नोटिस से अक्सर मामला बिना मुक़दमे के सुलझ जाता है।',['बकाया राशि','बिल का विवरण','भुगतान देय होने की तिथि','भुगतान हेतु दिया गया समय','भुगतान न होने के परिणाम'],['माँग नोटिस','खाते का विवरण','बिलों की प्रतियाँ']],['सही उपाय चुनें','हर वसूली मामले की अपनी रणनीति होती है।',['लेन-देन की प्रकृति','उपलब्ध दस्तावेज़','क्या धोखाधड़ी हुई','क्या आप MSME हैं','क्या चेक दिया गया था'],['ऊपर की सभी बातें, एक साथ समीक्षित']]]},
+ remCiv:{eye:'दीवानी कार्यवाही',h:'वसूली के दीवानी उपाय',sub:'सही दीवानी कार्यवाही से मूलधन, ब्याज और व्यय की वसूली।'},
+ remCri:{eye:'आपराधिक कार्यवाही',h:'धोखाधड़ी के आपराधिक उपाय',sub:'आपराधिक कार्यवाही छल, धोखाधड़ी या चेक अनादरण के लिए है, केवल पैसा न लौटाने के लिए नहीं।'},
+ tabs:['परिचय','प्रक्रिया','लाभ','दस्तावेज़'],fit:'किनके लिए उपयुक्त',
+ will:{eye:'उदाहरण',h:'वसीयत कैसे काम करती है',sub:'वसीयत आपकी संपत्ति को उन लोगों से जोड़ती है जिन्हें आप वह देना चाहते हैं। कोई संपत्ति चुनें।',a:'संपत्ति',b:'लाभार्थी',assets:['मकान','कृषि भूमि','बैंक जमा','शेयर','आभूषण'],bens:['पति/पत्नी','संतान','माता-पिता','भाई-बहन','धर्मार्थ संस्था'],cap:'वसीयत न होने पर यह मिलान क़ानून करता है।'}
+}};
+const REM={
+en:{civil:[
+ {t:'Money Suit',law:'Code of Civil Procedure, 1908',o:'An ordinary civil suit to recover unpaid invoices, service dues, loans and contractual amounts, with interest and costs.',p:['Legal notice demanding payment','Plaint filed with documents and court fee','Summons and written statement','Evidence and arguments','Decree and execution'],b:['Suitable for most unpaid dues','Interest and costs can be awarded','Decree enforceable by attachment'],d:['Invoices and ledger','Agreement or purchase order','Correspondence','Notice and proof of delivery'],fit:'Unpaid invoices, friendly loans, service dues, outstanding balances'},
+ {t:'Summary Suit',law:'Order XXXVII, CPC',o:'A faster procedure for claims based on written contracts, promissory notes or bills of exchange for a fixed sum. The defendant must obtain leave of the court to defend.',p:['Summary suit filed on the written instrument','Defendant enters appearance','Application for leave to defend','Decree if leave is refused'],b:['Quicker than an ordinary suit','Weak defences can be shut out early','Pressure on the debtor to settle'],d:['Written contract or instrument','Statement of account','Demand notice'],fit:'Promissory notes, written loan agreements, acknowledged liquidated debts'},
+ {t:'Commercial Suit',law:'Commercial Courts Act, 2015',o:'For commercial disputes of the specified value, heard by the Commercial Court with strict timelines. Pre-institution mediation is required unless urgent interim relief is sought.',p:['Pre-institution mediation','Plaint with statement of truth','Case management hearing','Time-bound evidence','Judgment'],b:['Strict timelines','Case management by the court','Costs follow the event'],d:['Commercial contract','Invoices and ledgers','Mediation non-starter report'],fit:'Supply disputes, distribution, service contracts, high-value business claims'},
+ {t:'MSME Facilitation Council',law:'MSMED Act, 2006',o:'Registered micro and small suppliers can refer delayed payments to the Micro and Small Enterprises Facilitation Council, which conciliates and, if needed, arbitrates.',p:['Reference filed online (MSME Samadhaan)','Conciliation','Arbitration by the Council','Award'],b:['Statutory compound interest on delayed payment','Buyer must deposit 75% of the award to challenge it','Lower cost than a suit'],d:['Udyam registration','Invoices and delivery proof','Ledger and correspondence'],fit:'Manufacturers and service providers registered as micro or small enterprises'}],
+criminal:[
+ {t:'Cheque Dishonour',law:'Section 138, Negotiable Instruments Act',o:'Criminal complaint where a cheque issued for a debt or liability is dishonoured and payment is not made within 15 days of a legal notice.',p:['Cheque presented within its validity','Notice within 30 days of the return memo','15 days for payment','Complaint within one month after that'],b:['Strong pressure to pay','Compensation up to twice the cheque amount','Presumption in favour of the holder'],d:['Original cheque and return memo','Notice and postal proof','Underlying invoice or agreement'],fit:'Dishonoured cheques, security cheques against existing liabilities'},
+ {t:'Complaint before Magistrate',law:'Section 223, BNSS',o:'A private complaint alleging cheating, criminal breach of trust or misappropriation, where there was dishonest intention from the start.',p:['Complaint with documents','Statement of complainant on oath','Inquiry and summons','Trial'],b:['Complainant controls the case','Court examines the evidence before summoning'],d:['Transaction documents','Evidence of false promise or diversion','Correspondence'],fit:'Cheating, fraud, criminal breach of trust, misappropriation'},
+ {t:'Police Complaint / FIR',law:'Section 173, BNSS',o:'Where the facts require police investigation, such as forged documents, several accused or money that must be traced.',p:['Written complaint to the police','FIR registration','Investigation','Chargesheet and trial'],b:['Police powers of investigation','Recovery of documents and property'],d:['Written complaint','Supporting documents','List of witnesses'],fit:'Forgery, multiple accused, cases needing investigation'}]},
+hi:{civil:[
+ {t:'धन वसूली वाद',law:'सिविल प्रक्रिया संहिता, 1908',o:'बकाया बिल, सेवा शुल्क, ऋण और अनुबंधित राशि की ब्याज एवं व्यय सहित वसूली हेतु सामान्य दीवानी वाद।',p:['भुगतान की माँग करते हुए लीगल नोटिस','दस्तावेज़ों एवं न्यायालय शुल्क सहित वादपत्र','समन एवं लिखित कथन','साक्ष्य एवं बहस','डिक्री एवं निष्पादन']
+ ,b:['अधिकांश बकाया के लिए उपयुक्त','ब्याज एवं व्यय दिलाया जा सकता है','कुर्की द्वारा डिक्री का निष्पादन'],d:['बिल एवं खाता-बही','इकरारनामा या क्रय आदेश','पत्राचार','नोटिस एवं डिलीवरी प्रमाण'],fit:'बकाया बिल, उधार, सेवा शुल्क, शेष राशि'},
+ {t:'संक्षिप्त वाद',law:'आदेश XXXVII, CPC',o:'लिखित अनुबंध, वचन-पत्र या विनिमय-पत्र पर आधारित निश्चित राशि के दावों हेतु त्वरित प्रक्रिया। प्रतिवादी को बचाव के लिए न्यायालय की अनुमति लेनी होती है।',p:['लिखित लिखत पर संक्षिप्त वाद दायर','प्रतिवादी की उपस्थिति','बचाव की अनुमति हेतु आवेदन','अनुमति अस्वीकृत होने पर डिक्री'],b:['सामान्य वाद से तेज़','कमज़ोर बचाव शुरू में ही रोका जा सकता है','देनदार पर समझौते का दबाव'],d:['लिखित अनुबंध या लिखत','खाते का विवरण','माँग नोटिस'],fit:'वचन-पत्र, लिखित ऋण अनुबंध, स्वीकृत निश्चित ऋण'},
+ {t:'वाणिज्यिक वाद',law:'वाणिज्यिक न्यायालय अधिनियम, 2015',o:'निर्दिष्ट मूल्य के वाणिज्यिक विवाद, जिनकी सुनवाई वाणिज्यिक न्यायालय कड़ी समय-सीमा में करता है। तत्काल अंतरिम अनुतोष न माँगा गया हो तो वाद से पूर्व मध्यस्थता अनिवार्य है।',p:['वाद-पूर्व मध्यस्थता','सत्यता कथन सहित वादपत्र','केस प्रबंधन सुनवाई','समयबद्ध साक्ष्य','निर्णय'],b:['कड़ी समय-सीमा','न्यायालय द्वारा केस प्रबंधन','हारने वाला पक्ष व्यय वहन करता है'],d:['वाणिज्यिक अनुबंध','बिल एवं खाता-बही','मध्यस्थता विफलता प्रतिवेदन'],fit:'आपूर्ति, वितरण, सेवा अनुबंध तथा बड़े व्यावसायिक दावे'},
+ {t:'MSME सुविधा परिषद',law:'MSMED अधिनियम, 2006',o:'पंजीकृत सूक्ष्म एवं लघु आपूर्तिकर्ता विलंबित भुगतान का मामला सूक्ष्म एवं लघु उद्यम सुविधा परिषद को भेज सकते हैं, जो सुलह और आवश्यकता होने पर माध्यस्थम् करती है।',p:['ऑनलाइन संदर्भ (MSME समाधान)','सुलह','परिषद द्वारा माध्यस्थम्','अवार्ड'],b:['विलंबित भुगतान पर वैधानिक चक्रवृद्धि ब्याज','अवार्ड को चुनौती देने हेतु ख़रीदार को 75% राशि जमा करनी होती है','वाद से कम ख़र्च'],d:['उद्यम पंजीकरण','बिल एवं डिलीवरी प्रमाण','खाता-बही एवं पत्राचार'],fit:'सूक्ष्म या लघु उद्यम के रूप में पंजीकृत निर्माता एवं सेवा प्रदाता'}],
+criminal:[
+ {t:'चेक अनादरण',law:'धारा 138, परक्राम्य लिखत अधिनियम',o:'ऋण या दायित्व हेतु दिया गया चेक अनादरित होने और लीगल नोटिस के 15 दिनों में भुगतान न होने पर आपराधिक परिवाद।',p:['वैधता अवधि में चेक प्रस्तुत','वापसी ज्ञापन के 30 दिनों में नोटिस','भुगतान हेतु 15 दिन','उसके बाद एक माह में परिवाद'],b:['भुगतान का प्रबल दबाव','चेक राशि के दोगुने तक प्रतिकर','धारक के पक्ष में उपधारणा'],d:['मूल चेक एवं वापसी ज्ञापन','नोटिस एवं डाक प्रमाण','संबंधित बिल या इकरारनामा'],fit:'अनादरित चेक, मौजूदा दायित्व के विरुद्ध सिक्योरिटी चेक'},
+ {t:'मजिस्ट्रेट के समक्ष परिवाद',law:'धारा 223, BNSS',o:'छल, आपराधिक न्यासभंग या दुर्विनियोग का आरोप लगाते हुए निजी परिवाद, जहाँ प्रारंभ से ही बेईमानी का आशय रहा हो।',p:['दस्तावेज़ों सहित परिवाद','शपथ पर परिवादी का बयान','जाँच एवं समन','विचारण'],b:['मामले पर परिवादी का नियंत्रण','समन से पहले न्यायालय साक्ष्य जाँचता है'],d:['लेन-देन के दस्तावेज़','झूठे वादे या धन के दुरुपयोग का साक्ष्य','पत्राचार'],fit:'छल, धोखाधड़ी, आपराधिक न्यासभंग, दुर्विनियोग'},
+ {t:'पुलिस शिकायत / प्राथमिकी',law:'धारा 173, BNSS',o:'जहाँ तथ्यों की पुलिस जाँच आवश्यक हो, जैसे जाली दस्तावेज़, अनेक अभियुक्त या धन का पता लगाना।',p:['पुलिस को लिखित शिकायत','प्राथमिकी दर्ज','अनुसंधान','आरोप-पत्र एवं विचारण'],b:['पुलिस की अनुसंधान शक्तियाँ','दस्तावेज़ों एवं संपत्ति की बरामदगी'],d:['लिखित शिकायत','समर्थक दस्तावेज़','गवाहों की सूची'],fit:'जालसाज़ी, अनेक अभियुक्त, अनुसंधान योग्य मामले'}]}
+};
+const t=()=>T[LANG];
+const P=k=>LANG==='hi'?Object.assign({},PAGES[k],PAGES_HI[k]):PAGES[k];
+const addr=()=>LANG==='hi'?ADDR_HI:ADDR;
+
+/* ---------- icons & helpers ---------- */
+I.court='<path d="M3 21h18M4 18h16M5 18V10M9 18V10M15 18V10M19 18V10M3 10h18L12 4z"/>';
+I.book='<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h7"/>';
+I.check='<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>';
+I.pin='<path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/>';
+I.phone='<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1"/>';
+I.mail='<path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/>';
+I.wa='<path d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.7-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/>';
+I.clock='<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const icon=k=>`<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">${I[k]}</svg>`;
+const sh=(label,title,sub)=>`<div class="sh"><div class="eyebrow">${label}</div><h2>${title}</h2><div class="rule"></div>${sub?`<p>${sub}</p>`:''}</div>`;
+const faqList=f=>`<div class="faq">${f.map((q,i)=>`<details${i?'':' open'}><summary>${esc(q[0])}</summary><p>${esc(q[1])}</p></details>`).join('')}</div>`;
+const WA='https://wa.me/916204166690';
+const langToggle=id=>`<div class="lang" role="group" aria-label="Language / भाषा" id="${id}"><button type="button" data-lang="en" aria-pressed="${LANG==='en'}">EN</button><button type="button" data-lang="hi" aria-pressed="${LANG==='hi'}" lang="hi">हिंदी</button></div>`;
+
+/* ---------- chrome: gate, util bar, header ---------- */
+function renderChrome(){
+ const x=t();
+ $('#gate').innerHTML=`<div class="gate-in"><div class="gate-head"><div class="mark"><span>CLC</span></div><div style="flex:1"><b>${x.brand}</b><small>${x.brandShort}</small></div>${langToggle('lg-gate')}</div>
+ <div class="gate-body"><h2 id="gate-h">${x.gateH}</h2><p>${x.gate1}</p><p>${x.gate2}</p>
+ <label class="ck"><input type="checkbox" id="gate-ck"> ${x.gateCk}</label>
+ <button class="btn btn-navy" id="gate-go" type="button" disabled>${x.gateGo}</button></div></div>`;
+ $('#gate-ck').addEventListener('change',e=>$('#gate-go').disabled=!e.target.checked);
+ $('#gate-go').addEventListener('click',()=>{try{sessionStorage.setItem('clc-gate','1')}catch(e){}$('#gate').hidden=true;document.body.style.overflow=''});
+ $('#hdr').innerHTML=`<div class="wrap nav">
+  <a class="brand" href="#home"><div class="mark"><span>CLC</span></div><div><b>${x.brand}</b><small>${x.brandSub}</small></div></a>
+  <div class="nav-r">${langToggle('lg-hdr')}
+  <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="links" aria-label="${x.menu}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button></div>
+  <nav class="links" id="links">
+   <a href="#home" data-nav="home">${x.nav.home}</a><a href="#about" data-nav="about">${x.nav.about}</a>
+   <div class="dd" id="dd"><button type="button" id="dd-btn" aria-expanded="false">${x.nav.practice} ▾</button><div class="dd-menu" id="dd-menu">${ORDER.map(k=>`<a href="#${k}">${P(k).title}<span>›</span></a>`).join('')}</div></div>
+   <a href="#founder" data-nav="founder">${x.nav.founder}</a><a href="#chambers" data-nav="chambers">${x.nav.contact}</a>
+   <a class="btn btn-gold" href="#chambers">${x.nav.book}</a></nav></div>`;
+ $('#dd-btn').addEventListener('click',e=>{e.stopPropagation();const o=$('#dd').classList.toggle('open');$('#dd-btn').setAttribute('aria-expanded',o)});
+ $('#menu').addEventListener('click',()=>{const o=$('#links').classList.toggle('open');$('#menu').setAttribute('aria-expanded',o)});
+ document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+}
+function setLang(l){
+ if(l===LANG)return;LANG=l;try{localStorage.setItem('clc-lang',l)}catch(e){}
+ document.documentElement.lang=l;const y=scrollY;const ck=$('#gate-ck')&&$('#gate-ck').checked;
+ renderChrome();if(ck){$('#gate-ck').checked=true;$('#gate-go').disabled=false}
+ current=null;route(true);scrollTo({top:y,behavior:'instant'});
+}
+
+/* ---------- shared sections ---------- */
+const chambers=()=>{const x=t();return `<section class="s alt" id="chambers"><div class="wrap">${sh(x.chEye,x.chH,x.chSub)}
+<div class="cham"><div class="cham-info"><h3>${x.chT}</h3><dl>
+<div><span class="ic">${icon('pin')}</span><div><dt>${x.chAddr}</dt><dd>${addr().join('<br>')}</dd></div></div>
+<div><span class="ic">${icon('phone')}</span><div><dt>${x.chPh}</dt><dd><span id="c-ph">${PHONE}</span><button class="copy" type="button" data-copy="c-ph">${x.copy}</button></dd></div></div>
+<div><span class="ic">${icon('wa')}</span><div><dt>${x.chWa}</dt><dd><span id="c-wa">${PHONE}</span><button class="copy" type="button" data-copy="c-wa">${x.copy}</button><br><a class="wa-link" href="${WA}" target="_blank" rel="noopener">${x.waChat} →</a></dd></div></div>
+<div><span class="ic">${icon('mail')}</span><div><dt>${x.chEm}</dt><dd><span id="c-em">${EMAIL}</span><button class="copy" type="button" data-copy="c-em">${x.copy}</button></dd></div></div>
+<div><span class="ic">${icon('clock')}</span><div><dt>${x.chHr}</dt><dd>${x.chHrs}</dd></div></div></dl>
+<div class="acts"><a class="btn btn-gold" href="${WA}" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-line" href="${MAPS}" target="_blank" rel="noopener">${x.maps}</a></div></div>
+<form class="intake" id="intake" novalidate><h3>${x.fmH}</h3><p class="sub">${x.fmSub}</p>
+<div class="f"><label for="q-name">${x.fmName}</label><input id="q-name" autocomplete="name"></div>
+<div class="f"><label for="q-phone">${x.fmPhone}</label><input id="q-phone" inputmode="tel" autocomplete="tel"></div>
+<div class="f"><label for="q-topic">${x.fmTopic}</label><select id="q-topic">${ORDER.map(k=>`<option>${P(k).title}</option>`).join('')}<option>${x.fmElse}</option></select></div>
+<div class="f"><label for="q-court">${x.fmCourt}</label><input id="q-court" placeholder="${x.fmCourtPh}"></div>
+<div class="f full"><label for="q-msg">${x.fmMsg}</label><textarea id="q-msg" placeholder="${x.fmMsgPh}"></textarea></div>
+<label class="ck"><input type="checkbox" id="q-ack"> ${x.fmAck}</label>
+<div class="ff"><small id="q-err" aria-live="polite">${x.fmReq}</small><button class="btn btn-wa-send" type="submit">${icon('wa')}${x.fmSend}</button></div>
+</form></div></div></section>`};
+const cta=(h,p)=>`<section class="cta"><div class="wrap"><div><h2>${h}</h2><p>${p}</p></div><div class="acts"><a class="btn btn-gold" href="#chambers">${t().nav.book}</a><a class="btn btn-line" href="${WA}" target="_blank" rel="noopener">${t().ctaWA}</a></div></div></section>`;
+
+const FACADE=`<svg viewBox="0 0 520 440" fill="none" stroke="#C9A96E" stroke-width="1.3" aria-hidden="true">
+<g opacity=".95"><path d="M60 150 L260 60 L460 150 Z"/><path d="M92 146 L260 72 L428 146"/><circle cx="260" cy="118" r="16"/><path d="M260 106v24M250 114h20M252 114l-4 8h8zM268 114l-4 8h8z"/>
+<rect x="50" y="150" width="420" height="16"/><rect x="58" y="166" width="404" height="10"/>
+${[0,1,2,3,4,5].map(i=>{const x=88+i*68;return `<rect x="${x-14}" y="176" width="28" height="8"/><path d="M${x-10} 184 V352 M${x+10} 184 V352 M${x-3} 188 V348 M${x+3} 188 V348"/><rect x="${x-14}" y="352" width="28" height="8"/>`}).join('')}
+<rect x="44" y="360" width="432" height="10"/><rect x="32" y="370" width="456" height="12"/><rect x="20" y="382" width="480" height="14"/>
+<path d="M234 360V262a26 26 0 0 1 52 0v98"/></g>
+<g stroke-width=".6" opacity=".35"><path d="M0 410H520"/><path d="M40 420H480"/></g></svg>`;
+
+/* ---------- special blocks ---------- */
+function bailBlock(){const b=t().bail;return `<section class="s"><div class="wrap">${sh(b.eye,b.h,b.sub)}
+<div class="tbl sec"><table><thead><tr>${b.th.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${b.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="note">${b.note}</p></div></section>`}
+
+function journeyBlock(){const j=t().jr;
+ const lab=i=>i===4?[j.allowed,j.rejected]:[j.yes,j.no];
+ return `<section class="s" id="journey"><div class="wrap">${sh(j.eye,j.h,j.sub)}
+ <div class="journey">${j.steps.map((s,i)=>`<div class="jstep"><div class="jnum">${i+1}</div><div><h3>${s[0]}</h3><p>${s[1]}</p>${s[2]?`<div class="fork" role="group" aria-label="${esc(s[0])}"><button type="button" aria-pressed="true" data-j="${i}" data-v="0">${lab(i)[0]}</button><button type="button" aria-pressed="false" data-j="${i}" data-v="1">${lab(i)[1]}</button></div><div class="branch" id="br-${i}"><b>${lab(i)[0]}</b>${s[2][0]}</div>`:''}</div></div>`).join('')}
+ <div class="jstep end"><div class="jnum">✓</div><div><h3>${j.end[0]}</h3><p>${j.end[1]}</p></div></div></div>
+ <p class="note">${j.note}</p></div></section>`}
+function journeyWire(){const j=t().jr;
+ document.querySelectorAll('.fork button').forEach(b=>b.addEventListener('click',()=>{
+  const i=+b.dataset.j,v=+b.dataset.v;
+  b.parentNode.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  $('#br-'+i).innerHTML=`<b>${esc(b.textContent)}</b>${j.steps[i][2][v]}`;
+ }))}
+
+function remCard(r,k){return `<article class="rem"><h3>${r.t}</h3><div class="law">${r.law}</div>
+<div class="tabs" role="tablist">${t().tabs.map((n,i)=>`<button type="button" role="tab" aria-selected="${!i}" data-k="${k}" data-i="${i}">${n}</button>`).join('')}</div>
+<div class="panel" id="pn-${k}"><p>${r.o}</p></div><div class="fit"><b>${t().fit}</b>${r.fit}</div></article>`}
+function recoveryBlock(){const x=t(),R=REM[LANG];let k=0;
+ return `<section class="s" id="prevent"><div class="wrap">${sh(x.prev.eye,x.prev.h,x.prev.sub)}
+ <div class="prev">${x.prev.items.map((p,i)=>`<article><span class="n">${i+1}</span><h3>${p[0]}</h3><p>${p[1]}</p><details><summary>${x.prev.view}</summary><div class="kv"><div><h5>${x.prev.ke}</h5><ul>${p[2].map(v=>`<li>${v}</li>`).join('')}</ul></div><div><h5>${x.prev.docs}</h5><ul>${p[3].map(v=>`<li>${v}</li>`).join('')}</ul></div></div></details></article>`).join('')}</div></div></section>
+ <section class="s"><div class="wrap">${sh(x.remCiv.eye,x.remCiv.h,x.remCiv.sub)}<div class="remedies two">${R.civil.map(r=>remCard(r,'c'+(k++))).join('')}</div></div></section>
+ <section class="s"><div class="wrap">${sh(x.remCri.eye,x.remCri.h,x.remCri.sub)}<div class="remedies">${R.criminal.map(r=>remCard(r,'c'+(k++))).join('')}</div></div></section>`}
+function recoveryWire(){const all=[...REM[LANG].civil,...REM[LANG].criminal];
+ document.querySelectorAll('.rem .tabs button').forEach(b=>b.addEventListener('click',()=>{
+  const r=all[+b.dataset.k.slice(1)],i=+b.dataset.i;
+  b.parentNode.querySelectorAll('button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  $('#pn-'+b.dataset.k).innerHTML=i===0?`<p>${r.o}</p>`:i===1?`<ol>${r.p.map(x=>`<li>${x}</li>`).join('')}</ol>`:`<ul>${(i===2?r.b:r.d).map(x=>`<li>${x}</li>`).join('')}</ul>`;
+ }))}
+
+function willBlock(){const w=t().will;return `<section class="s"><div class="wrap">${sh(w.eye,w.h,w.sub)}
+<div class="match"><div class="col"><h5>${w.a}</h5><ul id="wa">${w.assets.map((a,i)=>`<li><button type="button" data-a="${i}">${a}</button></li>`).join('')}</ul></div>
+<svg id="wl" viewBox="0 0 140 320" preserveAspectRatio="none" aria-hidden="true"></svg>
+<div class="col"><h5>${w.b}</h5><ul id="wb">${w.bens.map(b=>`<li><button type="button" tabindex="-1">${b}</button></li>`).join('')}</ul></div></div>
+<p class="match-cap">${w.cap}</p></div></section>`}
+function willWire(){
+ const M=[[0,1],[1],[0,2],[1,3],[1,4]];
+ const draw=a=>{
+  const A=[...document.querySelectorAll('#wa button')],B=[...document.querySelectorAll('#wb button')],svg=$('#wl');
+  A.forEach((x,i)=>x.classList.toggle('on',i===a));B.forEach((x,i)=>x.classList.toggle('on',M[a].includes(i)));
+  const r=svg.getBoundingClientRect(),sc=320/(r.height||320);
+  const y=el=>((el.getBoundingClientRect().top+el.getBoundingClientRect().height/2)-r.top)*sc;
+  svg.innerHTML=M[a].map(j=>`<path d="M0 ${y(A[a])} C70 ${y(A[a])} 70 ${y(B[j])} 140 ${y(B[j])}" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/>`).join('');
+ };
+ document.querySelectorAll('#wa button').forEach(b=>b.addEventListener('click',()=>draw(+b.dataset.a)));
+ requestAnimationFrame(()=>draw(0));
+}
+
+function tableBlock(b){return `<section class="s"><div class="wrap">${sh(b.eye,b.h,b.sub)}
+<div class="tbl"><table><thead><tr>${b.th.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${b.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="note">${b.note}</p></div></section>`}
+function timelineBlock(j){return `<section class="s"><div class="wrap">${sh(j.eye,j.h,j.sub)}
+<div class="journey">${j.steps.map((s,i)=>`<div class="jstep${i===j.steps.length-1?' end':''}"><div class="jnum">${i===j.steps.length-1?'✓':i+1}</div><div><h3>${s[0]}</h3><p>${s[1]}</p></div></div>`).join('')}</div>
+<p class="note">${j.note}</p></div></section>`}
+/* ---------- pages ---------- */
+function home(){const x=t();const pi=['court','check','pen'];return `
+<section class="hero"><div class="wrap hero-grid">
+ <div><div class="eyebrow" style="color:var(--gold-2)">${x.heroEye}</div>
+ <h1>${x.heroH}</h1><div class="deva"${LANG==='en'?' lang="hi"':''}>${x.heroTag}</div>
+ <p class="lead">${x.heroLead}</p>
+ <div class="hero-ctas"><a class="btn btn-gold" href="#chambers">${x.nav.book}</a><a class="btn btn-line" href="#practice">${x.heroB2}</a></div></div>
+ <div class="facade">${FACADE}</div>
+</div></section>
+<div class="trust"><div class="wrap"><div class="trust-in">${x.trust.map((v,i)=>`<div>${icon(['court','scale','map','book'][i])}<div><b>${v[0]}</b><span>${v[1]}</span></div></div>`).join('')}</div></div></div>
+<section class="s" id="about"><div class="wrap about">
+ <div><div class="eyebrow">${x.aboutEye}</div><h2>${x.aboutH}</h2>${x.aboutP.map(p=>`<p>${p}</p>`).join('')}
+ <a class="btn btn-navy" href="#founder" style="margin-top:10px">${x.aboutBtn}</a></div>
+ <div class="pillars">${x.pillars.map((p,i)=>`<div class="pillar"><span class="ic">${icon(pi[i])}</span><div><h3>${p[0]}</h3><p>${p[1]}</p></div></div>`).join('')}</div></div></section>
+<section class="s alt" id="practice"><div class="wrap">${sh(x.paEye,x.paH,x.paSub)}
+<div class="cards">${ORDER.map(k=>`<a class="pa" href="#${k}"><span class="ic">${icon(PAGES[k].icon)}</span><h3>${P(k).title}</h3><p>${P(k).short}</p><span class="more">${x.more}</span></a>`).join('')}
+<a class="pa" href="#chambers"><span class="ic">${icon('gavel')}</span><h3>${x.consultT}</h3><p>${x.consultP}</p><span class="more">${x.contactMore}</span></a></div></div></section>
+<section class="s navy"><div class="wrap">${sh(x.whyEye,x.whyH)}
+<div class="why">${x.why.map((w,i)=>`<div><div class="n">0${i+1}</div><h3>${w[0]}</h3><p>${w[1]}</p></div>`).join('')}</div></div></section>
+<section class="s"><div class="wrap">${sh(x.procEye,x.procH)}
+<div class="process">${x.proc.map((p,i)=>`<div><div class="n">${i+1}</div><h3>${p[0]}</h3><p>${p[1]}</p></div>`).join('')}</div></div></section>
+<section class="s alt"><div class="wrap">${sh(x.cliEye,x.cliH,x.cliSub)}
+<div class="chips">${x.clients.map(c=>`<span>${c}</span>`).join('')}</div></div></section>
+<section class="s" id="founder"><div class="wrap founder">
+ <div class="portrait"><img src="${FOUNDER}" alt="${x.fName}, ${x.fRole}" width="640" height="800" loading="lazy"></div>
+ <div><div class="eyebrow">${x.fEye}</div><h2>${x.fName}</h2><div class="role">${x.fRole}</div>
+ ${x.fP.map(p=>`<p>${p}</p>`).join('')}
+ <dl class="creds">${x.creds.map(c=>`<div><dt>${c[0]}</dt><dd${c[2]?' class="pending"':''}>${c[1]}</dd></div>`).join('')}</dl></div>
+</div></section>
+${cta(x.ctaH,x.ctaP)}
+<section class="s"><div class="wrap">${sh(x.faqEye,x.faqH)}<div class="home-faq">${faqList(x.homeFaq)}</div></div></section>
+${chambers()}`}
+
+function practice(k){const p=P(k),x=t();
+ const special=p.special==='bail'?bailBlock():p.special==='journey'?journeyBlock():p.special==='recovery'?recoveryBlock():p.special==='will'?willBlock():''+(p.table?tableBlock(p.table):'')+(p.timeline?timelineBlock(p.timeline):'');
+ return `
+<section class="phero"><svg class="ghost" viewBox="0 0 24 24">${I[p.icon]}</svg><div class="wrap">
+ <div class="crumbs"><a href="#home">${x.home}</a>/<a href="#practice">${x.paCrumb}</a>/<span>${p.title}</span></div>
+ <h1>${p.title}</h1><p>${p.hero}</p>${p.heroBtn?`<a class="btn btn-line" style="margin-top:26px" href="#prevent">${p.heroBtn} ↓</a>`:''}</div></section>
+<div class="wrap layout"><div class="main">
+${p.noStd?'':`<section>${sh(x.ovEye,x.ovH)}<div class="prose">${p.overview.map(v=>`<p>${v}</p>`).join('')}</div>${p.facts?`<div class="facts">${p.facts.map(f=>`<div><span>${f[0]}</span><b>${f[1]}</b></div>`).join('')}</div>`:''}</section>
+<section>${sh(x.scEye,x.scH)}<div class="groups">${p.groups.map(g=>`<div><h4>${g[0]}</h4><ul>${g[1].map(v=>`<li>${v}</li>`).join('')}</ul></div>`).join('')}</div></section>`}
+${special}
+${p.steps?`<section>${sh(x.mEye,x.mH)}<div class="steps">${p.steps.map((s,i)=>`<div><span>${i+1}</span><h4>${s}</h4></div>`).join('')}</div></section>`:''}
+<section>${sh(x.faqEye,x.faqH)}${faqList(p.faq)}</section>
+</div>
+<aside class="side">
+ <div class="side-box"><h4>${x.sideH}</h4><nav>${ORDER.map(o=>`<a href="#${o}"${o===k?' class="on"':''}>${P(o).title}<span>›</span></a>`).join('')}</nav></div>
+ <div class="side-cta"><h4>${x.sideNeed(p.title)}</h4><p>${x.sideP}</p><span class="ph">${PHONE}</span><a class="btn btn-gold" href="#chambers">${x.nav.book}</a><a class="btn btn-wa" href="${WA}" target="_blank" rel="noopener">${icon('wa')}${x.waChat}</a></div>
+</aside></div>
+${k==='recovery'?cta(x.ctaRecH,x.ctaRecP):cta(x.ctaPracH,x.ctaPracP)}
+${chambers()}`}
+
+function footer(){const x=t();return `<footer class="site"><div class="wrap"><div class="fgrid">
+<div><div class="fbrand"><div class="mark"><span>CLC</span></div><div><b>${x.brand}</b><small>${x.brandShort}</small></div></div>
+<p>${x.ftAbout}</p><p style="font-family:var(--deva);color:var(--gold-2)" lang="hi">सत्य · निष्ठा · न्याय</p></div>
+<div><h6>${x.ftPA}</h6>${ORDER.map(k=>`<a href="#${k}">${P(k).title}</a>`).join('')}</div>
+<div><h6>${x.ftCh}</h6><p>${addr().slice(1).join('<br>')}</p><p>${x.chPh}: ${PHONE}<br>WhatsApp: <a href="${WA}" target="_blank" rel="noopener" style="display:inline;color:var(--gold-2)">${PHONE}</a><br>${EMAIL}</p><p>${x.chHrs}</p></div>
+<div><h6>${x.ftDis}</h6><p>${x.ftDisP}</p></div></div>
+<div class="fbot"><span>${x.ftCopy}</span><span>${x.ftAddr}</span></div></div></footer>`}
+
+function wireCommon(){const x=t();
+ document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+  const el=document.getElementById(b.dataset.copy),v=el.textContent;
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent=x.selected};
+  (navigator.clipboard?navigator.clipboard.writeText(v).then(()=>b.textContent=x.copied,sel):sel());
+  setTimeout(()=>b.textContent=x.copy,1800);
+ }));
+ const f=$('#intake');if(f)f.addEventListener('submit',e=>{e.preventDefault();
+  const v=id=>$(id).value.trim(),n=v('#q-name'),p=v('#q-phone'),a=$('#q-ack').checked,err=$('#q-err');
+  if(!n||!/^[0-9+\s-]{10,15}$/.test(p)||!a){err.textContent=x.fmErr;err.style.color='var(--gold)';return}
+  err.textContent=x.fmReq;err.style.color='';
+  const lines=[`*${x.waHead}*`,'',`${x.waN}: ${n}`,`${x.waP}: ${p}`,`${x.waT}: ${v('#q-topic')}`];
+  if(v('#q-court'))lines.push(`${x.waC}: ${v('#q-court')}`);
+  if(v('#q-msg'))lines.push('',`${x.waM}: ${v('#q-msg')}`);
+  const url=WA+'?text='+encodeURIComponent(lines.join('\n'));
+  let w=null;try{w=window.open(url,'_blank','noopener')}catch(_){}
+  let box=$('#q-done');if(!box){box=document.createElement('div');box.id='q-done';box.className='ok';f.appendChild(box)}
+  box.innerHTML=`<p style="margin:0 0 12px">${x.fmOk}</p><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-wa" style="width:auto;margin:0" href="${url}" target="_blank" rel="noopener">${icon('wa')}${x.fmOpen}</a><button type="button" class="btn btn-outline" id="q-edit">${x.fmEdit}</button></div>`;
+  f.querySelectorAll('.f,.ck,.ff,.sub').forEach(el=>el.hidden=true);
+  $('#q-edit').addEventListener('click',()=>{f.querySelectorAll('.f,.ck,.ff,.sub').forEach(el=>el.hidden=false);box.remove()});
+ });
+}
+
+/* ---------- routing ---------- */
+let current=null;
+function route(keepScroll){
+ const h=(location.hash||'#home').slice(1);
+ const page=PAGES[h]?h:'home';
+ if(page!==current){
+  current=page;
+  $('#app').innerHTML=(page==='home'?home():practice(page))+footer();
+  if(keepScroll!==true)$('#app').firstElementChild.classList.add('fade');
+  document.title=(page==='home'?'':P(page).title+' · ')+t().brand;
+  wireCommon();
+  if(page==='mutation')journeyWire();
+  if(page==='recovery')recoveryWire();
+  if(page==='succession')willWire();
+  if(keepScroll!==true&&(PAGES[h]||h==='home'))scrollTo({top:0,behavior:'instant'});
+ }
+ if(keepScroll!==true&&!PAGES[h]&&h!=='home'){const el=document.getElementById(h);if(el)requestAnimationFrame(()=>el.scrollIntoView())}
+ document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===(page==='home'?h:'')));
+ const L=$('#links');if(L){L.classList.remove('open');$('#menu').setAttribute('aria-expanded','false');$('#dd').classList.remove('open')}
+}
+document.addEventListener('click',e=>{const d=$('#dd');if(d&&!d.contains(e.target))d.classList.remove('open');
+ const a=e.target.closest('a[href^="#"]');if(a&&a.hash===location.hash){e.preventDefault();route()}});
+addEventListener('hashchange',()=>route());
+
+document.documentElement.lang=LANG;
+renderChrome();
+(function(){let ok=false;try{ok=sessionStorage.getItem('clc-gate')==='1'}catch(e){}
+ if(ok)$('#gate').hidden=true;else document.body.style.overflow='hidden'})();
+route();
+
+</script>
+</body></html>
