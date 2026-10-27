@@ -11,13 +11,46 @@
   "theme_color": "#0E2240",
   "lang": "en-IN",
   "icons": [
-    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
-    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
-    {"src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
-    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "shortcuts": [
-    {"name": "WhatsApp the Chambers", "short_name": "WhatsApp", "url": "https://wa.me/916204166690"},
-    {"name": "Book a Consultation", "short_name": "Consult", "url": "/#chambers"}
+    {
+      "name": "WhatsApp the Chambers",
+      "short_name": "WhatsApp",
+      "url": "https://wa.me/916204166690"
+    },
+    {
+      "name": "Book a Consultation",
+      "short_name": "Consult",
+      "url": "/#chambers"
+    },
+    {
+      "name": "हिंदी",
+      "short_name": "हिंदी",
+      "url": "/hi/"
+    }
   ]
 }
