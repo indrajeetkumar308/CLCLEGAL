@@ -1,11 +1,85 @@
+@font-face{font-family:'Source Sans 3 Fallback';src:local('Arial'),local('Helvetica'),local('Liberation Sans');size-adjust:93.6%;ascent-override:109.3%;descent-override:42.4%;line-gap-override:0%}
+@font-face{font-family:'Cormorant Garamond Fallback';src:local('Georgia'),local('Times New Roman'),local('Liberation Serif');size-adjust:84%;ascent-override:110%;descent-override:34%;line-gap-override:0%}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/assets/fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/assets/fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/assets/fonts/cormorant-garamond-latin-700-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/assets/fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url(/assets/fonts/source-sans-3-latin-ext-wght-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url(/assets/fonts/source-sans-3-latin-wght-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Tiro Devanagari Hindi';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/assets/fonts/tiro-devanagari-hindi-devanagari-400-normal.woff2) format('woff2');
+  unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09;
+}
+@font-face {
+  font-family: 'Tiro Devanagari Hindi';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/assets/fonts/tiro-devanagari-hindi-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(/assets/fonts/noto-sans-devanagari-devanagari-wght-normal.woff2) format('woff2');
+  unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09;
+}
 
 :root{
   --bg:#FFFFFF; --alt:#F4F6F9; --surface:#FFFFFF; --ink:#1A2332; --muted:#5A6476; --faint:#8791A2; --line:#E2E6ED;
   --navy:#0E2240; --navy-2:#0A1930; --navy-ink:#EEF2F8; --navy-muted:#A9B5C8; --navy-line:rgba(255,255,255,.12);
   --gold:#A9834C; --gold-2:#C9A96E; --gold-soft:#F6F0E4; --title:#0E2240;
   --shadow:0 1px 2px rgba(14,34,64,.06),0 12px 32px -18px rgba(14,34,64,.28);
-  --serif:"Cormorant Garamond", "Palatino Linotype", Georgia, serif;
-  --sans:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --serif:"Cormorant Garamond","Cormorant Garamond Fallback", "Palatino Linotype", Georgia, serif;
+  --sans:"Source Sans 3","Source Sans 3 Fallback", "Segoe UI", system-ui, sans-serif;
   --deva:"Tiro Devanagari Hindi", "Noto Serif Devanagari", serif;
 }
 @media (prefers-color-scheme: dark){
@@ -423,3 +497,5 @@ html[lang="hi"] .links{gap:24px}
 .cham-info .dt,.cham-info .dd{margin-top:0}.cham-info .dd{margin:4px 0 0}.side-box h2.sbh{font-family:var(--serif);font-weight:600;color:var(--title);line-height:1.15;margin:0}.side-cta h2.sbh{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0 0 8px}
 
 .cham-info .dd a{color:inherit;text-decoration:none}.side-cta a.ph{text-decoration:none}
+
+html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--sans)}
