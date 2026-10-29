@@ -471,6 +471,8 @@ ${chambers()}`}
 const CT={"en": {"h": "Contact Choudhary Law Chambers", "p": "Meet us at our chambers on Boring Road, Patna, or send the outline of your matter on WhatsApp. Consultations are by appointment, Monday to Saturday, 9 am to 9 pm."}, "hi": {"h": "चौधरी लॉ चैम्बर्स से संपर्क करें", "p": "बोरिंग रोड, पटना स्थित हमारे चैम्बर्स में मिलें, या अपने मामले का संक्षिप्त विवरण WhatsApp पर भेजें। परामर्श पूर्व-निर्धारित समय पर, सोमवार से शनिवार, प्रातः 9 से रात्रि 9 बजे तक।"}};
 function contactPage(){const x=t(),c=CT[LANG];return `<section class="phero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="${U('home')}">${x.home}</a>/<span aria-current="page">${x.nav.contact}</span></nav><h1>${c.h}</h1><p>${c.p}</p></div></section>
 ${chambers()}`}
+const ART={"mutation": {"en": {"h": "Dakhil-Kharij Rejected in Bihar? How to Appeal to the DCLR", "p": "Mutation rejected by the Circle Officer? How to appeal to the DCLR in Bihar: the 30-day time limit, documents, hearing, and revision before the Collector.", "e": "Insight", "c": "Read the guide", "u": "/insights/dakhil-kharij-appeal-dclr-bihar/"}, "hi": {"h": "बिहार में दाखिल-खारिज अस्वीकृत? DCLR के समक्ष अपील कैसे करें", "p": "अंचल अधिकारी ने दाखिल-खारिज अस्वीकृत किया? बिहार में DCLR के समक्ष अपील: 30 दिन की समय-सीमा, दस्तावेज़, सुनवाई और समाहर्ता के समक्ष पुनरीक्षण।", "e": "विधिक जानकारी", "c": "मार्गदर्शिका पढ़ें", "u": "/hi/insights/dakhil-kharij-appeal-dclr-bihar/"}}};
+const artCard=a=>`<section><a class="artcard" href="${a.u}"><span class="eyebrow">${a.e}</span><h3>${a.h}</h3><p>${a.p}</p><span class="artcard-cta">${a.c} →</span></a></section>`;
 function practice(k){const p=P(k),x=t();
  const special=p.special==='bail'?bailBlock():p.special==='journey'?journeyBlock():p.special==='recovery'?recoveryBlock():p.special==='will'?willBlock():''+(p.table?tableBlock(p.table):'')+(p.timeline?timelineBlock(p.timeline):'');
  return `
@@ -482,6 +484,7 @@ ${p.noStd?'':`<section>${sh(x.ovEye,x.ovH)}<div class="prose">${p.overview.map(v
 <section>${sh(x.scEye,x.scH)}<div class="groups">${p.groups.map(g=>`<div><h3>${g[0]}</h3><ul>${g[1].map(v=>`<li>${v}</li>`).join('')}</ul></div>`).join('')}</div></section>`}
 ${special}
 ${p.steps?`<section>${sh(x.mEye,x.mH)}<div class="steps">${p.steps.map((s,i)=>`<div><span>${i+1}</span><h3>${s}</h3></div>`).join('')}</div></section>`:''}
+${ART[k]?artCard(ART[k][LANG]):''}
 <section>${sh(x.faqEye,x.faqH)}${faqList(p.faq)}</section>
 </div>
 <aside class="side">

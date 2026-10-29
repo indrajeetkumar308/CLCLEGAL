@@ -498,4 +498,16 @@ html[lang="hi"] .links{gap:24px}
 
 .cham-info .dd a{color:inherit;text-decoration:none}.side-cta a.ph{text-decoration:none}
 
+.artc{max-width:760px;margin:0 auto;padding:56px 0 64px}
+.artc p,.artc li{color:var(--muted);font-size:17.5px;line-height:1.75}
+.artc p{margin:0 0 16px}.artc ul{margin:0 0 20px;padding-left:22px}.artc li{margin:0 0 6px}
+.artc h2{font-size:clamp(26px,3.2vw,34px);margin:40px 0 14px}
+.artc b{color:var(--ink)}
+.artc .faq{margin-top:10px}
+.artc-disc{margin-top:32px!important;padding:16px 18px;border-left:3px solid var(--gold);background:var(--surface);font-size:15.5px!important}
+.artc-rel a{color:var(--gold)}
+.artcard{display:block;border:1px solid var(--gold);border-radius:10px;padding:24px 26px;background:var(--surface);text-decoration:none;color:inherit}
+.artcard h3{margin:8px 0 8px;font-size:24px}.artcard p{margin:0 0 12px;color:var(--muted)}
+.artcard-cta{color:var(--gold);font-weight:600}
+
 html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--sans)}
