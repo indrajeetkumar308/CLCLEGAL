@@ -62,6 +62,11 @@
     message.textContent = copy.message;
     message.style.margin = '0 0 12px';
     panel.appendChild(message);
+    const notice = document.createElement('a');
+    notice.href = hindi ? '/hi/privacy/' : '/privacy/';
+    notice.textContent = hindi ? 'एनालिटिक्स सूचना पढ़ें' : 'Read analytics notice';
+    notice.style.cssText = 'display:block;color:#fff;text-decoration:underline;margin-bottom:12px;font-size:13px';
+    panel.appendChild(notice);
     const controls = document.createElement('div');
     controls.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px';
     function addButton(label, allowed) {
@@ -97,6 +102,11 @@
     link.style.cssText = 'display:inline-block;margin:8px;color:inherit;background:none;border:0;text-decoration:underline;font:inherit;cursor:pointer';
     link.addEventListener('click', displayChoice);
     footer.appendChild(link);
+    const notice = document.createElement('a');
+    notice.href = hindi ? '/hi/privacy/' : '/privacy/';
+    notice.textContent = hindi ? 'एनालिटिक्स सूचना' : 'Analytics notice';
+    notice.style.cssText = 'display:inline-block;margin:8px;color:inherit;text-decoration:underline;font:inherit';
+    footer.appendChild(notice);
   }
   if (getChoice() === 'yes') startAnalytics();
   else if (getChoice() !== 'no') displayChoice();
