@@ -552,3 +552,7 @@ renderChrome();
 (function(){let ok=false;try{ok=sessionStorage.getItem('clc-gate')==='1'}catch(e){}
  if(ok)$('#gate').hidden=true;else document.body.style.overflow='hidden'})();
 route();
+
+
+/* Optional Google Analytics 4: privacy-first consent prompt (EN / HI). */
+(() => { const tag = document.createElement('script'); tag.src = '/assets/analytics.js?v=20261030a'; tag.async = true; document.head.appendChild(tag); })();
