@@ -5,6 +5,7 @@ for(const lang of ['','hi/']){
  const page=await browser.newPage();
  await page.setViewport({width:390,height:844,isMobile:true,deviceScaleFactor:2,hasTouch:true});
  const errs=[];page.on('pageerror',e=>errs.push(String(e)));
+ await page.evaluateOnNewDocument(()=>localStorage.setItem('clc-ga4-consent-v1','no'));
  const response=await page.goto('http://127.0.0.1:8765/'+lang,{waitUntil:'load'});
  console.log('LOAD',lang,response?.status(),page.url(),(await page.content()).slice(0,240));
  const data=await page.evaluate(()=>{
