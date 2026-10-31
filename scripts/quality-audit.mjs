@@ -17,6 +17,16 @@ for(const file of pages){
  if(!/<title>[^<]+<\/title>/i.test(html))problems.push('missing-title');
  if(!/<h1\b/i.test(html))problems.push('missing-h1');
  if(!/<link\b[^>]*rel="canonical"/i.test(html))problems.push('missing-canonical');
+ // Validate all embedded schema.org JSON-LD instead of trusting string substitutions.
+ for(const m of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)){
+  try {JSON.parse(m[1]);} catch {problems.push('invalid-json-ld');}
+ }
+ const buttons=[...html.matchAll(/<button\b[^>]*id="([^"]+)"[^>]*>/gi)];
+ const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]));
+ for(const m of buttons){
+  const controls=(m[0].match(/\baria-controls="([^"]+)"/)||[])[1];
+  if(controls && !ids.has(controls))problems.push('aria-controls-missing-target:'+controls);
+ }
  for(const m of html.matchAll(/<img\b[^>]*>/gi)){
   if(!/\balt\s*=/.test(m[0]))problems.push('image-without-alt');
  }
@@ -31,8 +41,20 @@ for(const file of pages){
  }
  results.push({file,issues:[...new Set(problems)]});
 }
+const reviewTerms=[
+ ['english-solicitation',/book a consultation|why clients choose|counsel you can rely on/gi],
+ ['hindi-solicitation',/परामर्श हेतु समय लें|मुवक्किल चैम्बर्स को क्यों चुनते हैं|विश्वसनीय विधिक परामर्श/gi],
+ ['promotional-claims',/best lawyer|top lawyer|guaranteed success|100% success/gi]
+];
+const complianceReview=pages.flatMap(file=>{
+ const html=fs.readFileSync(file,'utf8');
+ return reviewTerms.flatMap(([type,regex])=>{
+  const matches=[...html.matchAll(regex)];
+  return matches.length?[{file,type,count:matches.length}]:[];
+ });
+});
 const summary={
- date:new Date().toISOString(),pages:pages.length,
+ date:new Date().toISOString(),pages:pages.length,complianceReview,
  issues:results.filter(r=>r.issues.length),counts:{},
  largestAssets:walk('assets').filter(x=>fs.statSync(x).isFile()).map(x=>({file:x,bytes:fs.statSync(x).size})).sort((a,b)=>b.bytes-a.bytes).slice(0,12)
 };

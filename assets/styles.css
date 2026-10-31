@@ -610,3 +610,10 @@ html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--san
  }
  .clc-home #app > section.s#chambers {contain-intrinsic-size:auto 1050px}
 }
+
+/* Respect reduced-motion preferences and keep keyboard focus visible. */
+@media (prefers-reduced-motion: reduce){
+  html:focus-within{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+}
+:where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #B07A27;outline-offset:3px}
