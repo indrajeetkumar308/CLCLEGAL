@@ -136,7 +136,7 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgrou
 section[id]{scroll-margin-top:90px}
 .dd{position:relative}
 .dd-menu{position:absolute;top:100%;left:-24px;background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--gold);min-width:300px;padding:10px 0;display:none;box-shadow:var(--shadow)}
-.dd:hover .dd-menu,.dd.open .dd-menu{display:block}
+.dd.open .dd-menu{display:block}
 .dd-menu a{display:flex;justify-content:space-between;padding:10px 24px;font-size:15px;text-decoration:none;color:var(--ink)}
 .dd-menu a:hover{background:var(--alt);color:var(--gold)}
 .menu-btn{display:none;background:none;border:1px solid var(--line);cursor:pointer;padding:9px;color:var(--title)}
@@ -146,7 +146,7 @@ section[id]{scroll-margin-top:90px}
   .links.open{display:flex}
   .links>a,.dd>button{padding:14px 0;text-align:left;border-bottom:1px solid var(--line);width:100%}
   .links>a::after,.dd>button::after{display:none}
-  .dd-menu,.dd:hover .dd-menu{position:static;display:none;border:0;box-shadow:none;padding:4px 0 8px 10px;min-width:0}
+  .dd-menu{position:static;display:none;border:0;box-shadow:none;padding:4px 0 8px 10px;min-width:0}
   .dd.open .dd-menu{display:block}
   .dd>button[aria-expanded="true"]{color:var(--gold)}
   .dd-menu a{padding:8px 0}
