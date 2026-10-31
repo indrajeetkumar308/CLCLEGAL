@@ -5,7 +5,8 @@ for(const lang of ['','hi/']){
  const page=await browser.newPage();
  await page.setViewport({width:390,height:844,isMobile:true,deviceScaleFactor:2,hasTouch:true});
  const errs=[];page.on('pageerror',e=>errs.push(String(e)));
- await page.goto('http://127.0.0.1:8765/'+lang,{waitUntil:'load'});
+ const response=await page.goto('http://127.0.0.1:8765/'+lang,{waitUntil:'load'});
+ console.log('LOAD',lang,response?.status(),page.url(),(await page.content()).slice(0,240));
  const data=await page.evaluate(()=>{
   const gate=document.querySelector('#gate'),ck=document.querySelector('#gate-ck');
   return {gateShown:!gate.hidden,focused:document.activeElement===ck,menu:!!document.querySelector('#menu'),style:getComputedStyle(document.querySelector('#hdr')).display};
