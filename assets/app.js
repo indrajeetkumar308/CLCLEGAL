@@ -216,7 +216,7 @@ const HOMEA=a=>BASE()+'#'+a;
 const T={
 en:{brand:'Choudhary Law Chambers',brandSub:'Advocates & Legal Consultants',brandShort:'Advocates · Patna',
  util:'Patna High Court · Civil & Criminal Courts of Bihar',hours:'Mon–Sat',
- nav:{home:'Home',about:'About',practice:'Practice Areas',founder:'Our Advocate',contact:'Contact',book:'Book a Consultation'},menu:'Menu',
+ nav:{home:'Home',about:'About',practice:'Practice Areas',founder:'Our Advocate',contact:'Contact',book:'Contact Information'},menu:'Menu',
  gateH:'Disclaimer',gate1:'The Bar Council of India does not permit advocates to solicit work or advertise. By entering this website you acknowledge that there has been no advertisement, solicitation, invitation or inducement of any kind by Choudhary Law Chambers or its members to obtain work through this website.',gate2:'The material here is for general information only and is not legal advice or a legal opinion. Viewing this website, or contacting the chambers through it, does not create an advocate–client relationship.',gateCk:'I have read and understood the disclaimer and wish to proceed.',gateGo:'I Agree — Enter Website',
  heroEye:'Advocates in Patna · Patna High Court',heroH:'Counsel you can rely on, <em>in court and beyond.</em>',heroTag:'विधिक परामर्श एवं न्यायालयीन प्रतिनिधित्व',heroLead:'Criminal defence, civil and property litigation, family matters and commercial recovery for individuals, families and businesses across Bihar.',heroB2:'Our Practice Areas',
  trust:[['Patna High Court','Bail, quashing, writs and appeals'],['District Courts','Civil, criminal and family courts'],['Revenue Forums','Circle Officer, DCLR and Collector'],['BNS · BNSS · BSA','and legacy IPC and CrPC matters']],
@@ -249,7 +249,7 @@ en:{brand:'Choudhary Law Chambers',brandSub:'Advocates & Legal Consultants',bran
 },
 hi:{brand:'चौधरी लॉ चैम्बर्स',brandSub:'अधिवक्ता एवं विधिक परामर्शदाता',brandShort:'अधिवक्ता · पटना',
  util:'पटना उच्च न्यायालय · बिहार के व्यवहार एवं दंड न्यायालय',hours:'सोम–शनि',
- nav:{home:'मुखपृष्ठ',about:'परिचय',practice:'कार्यक्षेत्र',founder:'हमारे अधिवक्ता',contact:'संपर्क',book:'परामर्श हेतु समय लें'},menu:'मेनू',
+ nav:{home:'मुखपृष्ठ',about:'परिचय',practice:'कार्यक्षेत्र',founder:'हमारे अधिवक्ता',contact:'संपर्क',book:'संपर्क जानकारी'},menu:'मेनू',
  gateH:'अस्वीकरण',gate1:'बार काउंसिल ऑफ़ इंडिया अधिवक्ताओं को कार्य हेतु आग्रह करने या विज्ञापन देने की अनुमति नहीं देता। इस वेबसाइट में प्रवेश करके आप स्वीकार करते हैं कि चौधरी लॉ चैम्बर्स या इसके सदस्यों द्वारा इस वेबसाइट के माध्यम से कार्य प्राप्त करने हेतु किसी प्रकार का विज्ञापन, आग्रह, आमंत्रण या प्रलोभन नहीं दिया गया है।',gate2:'यहाँ दी गई सामग्री केवल सामान्य जानकारी हेतु है और यह विधिक सलाह या विधिक राय नहीं है। इस वेबसाइट को देखने या इसके माध्यम से चैम्बर्स से संपर्क करने से अधिवक्ता–मुवक्किल संबंध स्थापित नहीं होता।',gateCk:'मैंने अस्वीकरण पढ़ और समझ लिया है तथा आगे बढ़ना चाहता/चाहती हूँ।',gateGo:'मैं सहमत हूँ — वेबसाइट में प्रवेश करें',
  heroEye:'पटना में अधिवक्ता · पटना उच्च न्यायालय',heroH:'विश्वसनीय विधिक परामर्श, <em>न्यायालय में और उसके बाहर भी।</em>',heroTag:'Legal Counsel & Court Representation',heroLead:'बिहार भर के व्यक्तियों, परिवारों और व्यवसायों के लिए आपराधिक बचाव, दीवानी एवं संपत्ति मुक़दमे, पारिवारिक मामले तथा वाणिज्यिक वसूली।',heroB2:'हमारे कार्यक्षेत्र',
  trust:[['पटना उच्च न्यायालय','ज़मानत, निरस्तीकरण, रिट एवं अपील'],['ज़िला न्यायालय','दीवानी, फ़ौजदारी एवं परिवार न्यायालय'],['राजस्व न्यायालय','अंचल अधिकारी, DCLR एवं समाहर्ता'],['BNS · BNSS · BSA','तथा पुराने IPC एवं CrPC मामले']],
@@ -339,7 +339,7 @@ function renderChrome(){
   <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="links" aria-label="${x.menu}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button></div>
   <nav class="links" id="links">
    <a href="${U('home')}" data-nav="home">${x.nav.home}</a><a href="${HOMEA('about')}" data-nav="about">${x.nav.about}</a>
-   <div class="dd" id="dd"><button type="button" id="dd-btn" aria-expanded="false">${x.nav.practice} ▾</button><div class="dd-menu" id="dd-menu">${ORDER.map(k=>`<a href="${U(k)}">${P(k).title}<span>›</span></a>`).join('')}</div></div>
+   <div class="dd" id="dd"><button type="button" id="dd-btn" aria-expanded="false" aria-controls="dd-menu" aria-haspopup="true">${x.nav.practice} ▾</button><div class="dd-menu" id="dd-menu">${ORDER.map(k=>`<a href="${U(k)}">${P(k).title}<span>›</span></a>`).join('')}</div></div>
    <a href="${HOMEA('founder')}" data-nav="founder">${x.nav.founder}</a><a href="${U('contact')}" data-nav="contact"${CUR()==='contact'?' aria-current="page"':''}>${x.nav.contact}</a>
    <a class="btn btn-gold" href="#chambers">${x.nav.book}</a></nav></div>`;
  $('#dd-btn').addEventListener('click',e=>{e.stopPropagation();const o=$('#dd').classList.toggle('open');$('#dd-btn').setAttribute('aria-expanded',String(o))});
@@ -569,7 +569,7 @@ function closeMobileMenuOnOutside(e){
 document.addEventListener('pointerdown',closeMobileMenuOnOutside);
 document.addEventListener('click',closeMobileMenuOnOutside);
 
-document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;const d=$('#dd'),m=$('#links');if(d){d.classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}if(m){m.classList.remove('open');$('#menu').setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;const d=$('#dd'),m=$('#links'),db=$('#dd-btn'),mb=$('#menu');const opened=d?.classList.contains('open')||m?.classList.contains('open');if(!opened)return;e.preventDefault();const focus=d?.classList.contains('open')?db:mb;closeMobileMenu();focus?.focus();});
 
 addEventListener('hashchange',navState);
 
