@@ -18,13 +18,13 @@ for(const file of pages){
  if(!/<h1\b/i.test(html))problems.push('missing-h1');
  if(!/<link\b[^>]*rel="canonical"/i.test(html))problems.push('missing-canonical');
  // Validate all embedded schema.org JSON-LD instead of trusting string substitutions.
- for(const m of html.matchAll(/<script\\b[^>]*type=["']application\\/ld\\+json["'][^>]*>([\\s\\S]*?)<\\/script>/gi)){
+ for(const m of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)){
   try {JSON.parse(m[1]);} catch {problems.push('invalid-json-ld');}
  }
- const buttons=[...html.matchAll(/<button\\b[^>]*id="([^"]+)"[^>]*>/gi)];
- const ids=new Set([...html.matchAll(/\\bid="([^"]+)"/g)].map(x=>x[1]));
+ const buttons=[...html.matchAll(/<button\b[^>]*id="([^"]+)"[^>]*>/gi)];
+ const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]));
  for(const m of buttons){
-  const controls=(m[0].match(/\\baria-controls="([^"]+)"/)||[])[1];
+  const controls=(m[0].match(/\baria-controls="([^"]+)"/)||[])[1];
   if(controls && !ids.has(controls))problems.push('aria-controls-missing-target:'+controls);
  }
  for(const m of html.matchAll(/<img\b[^>]*>/gi)){
