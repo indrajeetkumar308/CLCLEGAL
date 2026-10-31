@@ -38,19 +38,19 @@
   ],
   "shortcuts": [
     {
-      "name": "WhatsApp the Chambers",
-      "short_name": "WhatsApp",
-      "url": "https://wa.me/916204166690"
+      "name": "Citizen Legal Guides",
+      "short_name": "Citizen Guides",
+      "url": "/citizen-guides/"
     },
     {
-      "name": "Book a Consultation",
-      "short_name": "Consult",
-      "url": "/#chambers"
+      "name": "Cyber Fraud Help",
+      "short_name": "Cyber Help",
+      "url": "/citizen-guides/cyber-fraud-help/"
     },
     {
-      "name": "हिंदी",
+      "name": "हिंदी नागरिक गाइड",
       "short_name": "हिंदी",
-      "url": "/hi/"
+      "url": "/hi/citizen-guides/"
     }
   ]
 }
