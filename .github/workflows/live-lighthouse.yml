@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - .github/workflows/live-lighthouse.yml
+      - assets/home-runtime.js
+      - index.html
+      - hi/index.html
   workflow_dispatch:
 permissions:
   contents: read
