@@ -569,7 +569,7 @@ function closeMobileMenuOnOutside(e){
 document.addEventListener('pointerdown',closeMobileMenuOnOutside);
 document.addEventListener('click',closeMobileMenuOnOutside);
 
-document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;const d=$('#dd'),m=$('#links');if(d){d.classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}if(m){m.classList.remove('open');$('#menu').setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;const d=$('#dd'),m=$('#links'),db=$('#dd-btn'),mb=$('#menu');const opened=d?.classList.contains('open')||m?.classList.contains('open');if(!opened)return;e.preventDefault();const focus=d?.classList.contains('open')?db:mb;closeMobileMenu();focus?.focus();});
 
 addEventListener('hashchange',navState);
 
