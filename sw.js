@@ -49,7 +49,12 @@ async function store(cacheName, request, response, maxEntries) {
 
 function isStaticAsset(pathname) {
   if (pathname === '/assets/analytics.js') return false;
-  return /^\\/(?:assets\\/(?:fonts\\/[^/]+\\.woff2|[^/]+\\.(?:css|js))|images\\/[^/]+\\.(?:png|jpg|jpeg|webp)|icons\\/[^/]+\\.png|manifest\\.webmanifest|logo\\.png)$/i.test(pathname);
+  if (pathname === '/manifest.webmanifest' || pathname === '/logo.png') return true;
+  if (pathname.startsWith('/assets/fonts/')) return pathname.endsWith('.woff2');
+  if (pathname.startsWith('/assets/')) return /\.(css|js)$/i.test(pathname);
+  if (pathname.startsWith('/images/')) return /\.(png|jpe?g|webp)$/i.test(pathname);
+  if (pathname.startsWith('/icons/')) return pathname.endsWith('.png');
+  return false;
 }
 
 self.addEventListener('fetch', event => {
