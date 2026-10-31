@@ -1,0 +1,30 @@
+name: Mobile homepage smoke test
+on:
+  pull_request:
+    paths:
+      - 'assets/home-runtime.js'
+      - 'index.html'
+      - 'hi/index.html'
+      - 'scripts/home-runtime-smoke.mjs'
+      - '.github/workflows/mobile-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  mobile-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser controller
+        run: npm install --no-save puppeteer-core@24
+      - name: Check Chrome availability
+        run: google-chrome --version
+      - name: Serve local pre-rendered website
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/clc-server.log 2>&1 &
+          sleep 2
+      - name: Verify English/Hindi mobile site interactions
+        run: node scripts/home-runtime-smoke.mjs
