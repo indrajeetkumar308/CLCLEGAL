@@ -573,6 +573,21 @@ document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;const d=$('#d
 
 addEventListener('hashchange',navState);
 
+/* Keyboard-accessible shortcut to page content. Kept out of the visual layout
+   unless a keyboard user gives it focus. */
+(function addAccessibleSkipLink(){
+ const header=document.getElementById('hdr');
+ if(!header||document.querySelector('.clc-skip-link'))return;
+ const link=document.createElement('a');
+ link.className='clc-skip-link';
+ link.href='#app';
+ link.textContent=LANG==='hi'?'मुख्य सामग्री पर जाएँ':'Skip to main content';
+ header.parentNode.insertBefore(link,header);
+ link.addEventListener('click',()=>{
+  const main=document.getElementById('app');
+  if(main){main.setAttribute('tabindex','-1');main.focus({preventScroll:true})}
+ });
+})();
 document.documentElement.lang=LANG;
 renderChrome();
 (function(){let ok=false;try{ok=sessionStorage.getItem('clc-gate')==='1'}catch(e){}
