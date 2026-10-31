@@ -562,3 +562,12 @@ html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--san
 #clc-ios-help a{color:var(--gold);text-decoration:underline}
 #clc-ios-install:focus-visible,#clc-ios-help button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 @media(min-width:981px){#clc-ios-install,#clc-ios-help{display:none!important}}
+
+/* Clickable citizen-information cards retain the homepage's original layout. */
+.trust-in>div>a.trust-guide-link{display:flex;align-items:flex-start;gap:16px;width:100%;color:inherit;text-decoration:none}
+.trust-in>div>a.trust-guide-link svg{width:30px;height:30px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.4}
+.trust-guide-copy{display:block;min-width:0}
+.trust-guide-copy b{display:block;font-family:var(--serif);font-size:20px;color:var(--title);line-height:1.2}
+.trust-guide-copy>span{font-size:14px;color:var(--muted)}
+.trust-guide-link:hover .trust-guide-copy b,.trust-guide-link:focus-visible .trust-guide-copy b{color:var(--gold)}
+.trust-guide-link:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
