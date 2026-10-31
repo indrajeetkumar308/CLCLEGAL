@@ -4,6 +4,8 @@ on:
     paths:
       - .github/workflows/live-lighthouse.yml
       - assets/home-runtime.js
+      - assets/styles.css
+      - sw.js
       - index.html
       - hi/index.html
   workflow_dispatch:
