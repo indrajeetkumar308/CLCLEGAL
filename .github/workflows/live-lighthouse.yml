@@ -1,0 +1,68 @@
+name: Live Lighthouse performance — CLC Legal
+on:
+  push:
+    paths:
+      - .github/workflows/live-lighthouse.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Chrome
+        run: |
+          which google-chrome || which chromium || true
+          google-chrome --version || true
+      - name: Lighthouse mobile — production homepage
+        run: |
+          mkdir -p lighthouse-reports
+          npx --yes lighthouse@13.6.0 https://clclegal.in/ \
+            --only-categories=performance \
+            --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" \
+            --output=json --output-path=lighthouse-reports/mobile.json \
+            --max-wait-for-load=45000 --quiet
+      - name: Lighthouse desktop — production homepage
+        if: always()
+        run: |
+          mkdir -p lighthouse-reports
+          npx --yes lighthouse@13.6.0 https://clclegal.in/ \
+            --only-categories=performance --preset=desktop \
+            --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" \
+            --output=json --output-path=lighthouse-reports/desktop.json \
+            --max-wait-for-load=45000 --quiet
+      - name: Report actual lab scores and metrics
+        if: always()
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const rows=[];
+          for (const mode of ['mobile','desktop']) {
+            const p='lighthouse-reports/'+mode+'.json';
+            if(!fs.existsSync(p)) { rows.push([mode,'not completed','-','-','-','-','-']); continue; }
+            const l=JSON.parse(fs.readFileSync(p,'utf8'));
+            const a=l.audits||{};
+            const num=k=>a[k]?.numericValue;
+            const score=l.categories?.performance?.score;
+            const time=n=>Number.isFinite(n)?(n/1000).toFixed(2)+' s':'—';
+            const cls=n=>Number.isFinite(n)?n.toFixed(3):'—';
+            const tbt=n=>Number.isFinite(n)?Math.round(n)+' ms':'—';
+            rows.push([mode,Number.isFinite(score)?Math.round(score*100):'unavailable',time(num('first-contentful-paint')),time(num('largest-contentful-paint')),time(num('speed-index')),tbt(num('total-blocking-time')),cls(num('cumulative-layout-shift'))]);
+            console.log(mode,'score',score,'finalURL',l.finalDisplayedUrl,'error',l.runtimeError?.message||'none');
+          }
+          const table=['| Device | Performance / 100 | FCP | LCP | Speed Index | TBT | CLS |','|---|---:|---:|---:|---:|---:|---:|',...rows.map(x=>'| '+x.join(' | ')+' |')].join('\n');
+          console.log(table);
+          if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'# Lighthouse live homepage measurements\n\n'+table+'\n\nSingle lab runs; not field Core Web Vitals or a guarantee of user experience.\n');
+          NODE
+      - name: Upload Lighthouse JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clc-lighthouse-mobile-desktop
+          path: lighthouse-reports/*.json
+          if-no-files-found: warn
