@@ -14,6 +14,7 @@ for(const lang of ['','hi/']){
  console.log('DOM',JSON.stringify(data));
  if(!data.gateShown||!data.focused||!data.menu)throw Error(lang+' gate broken '+JSON.stringify(data));
  await page.click('#gate-ck');await page.click('#gate-go');
+ console.log('AFTER ACCEPT',page.url(),(await page.content()).slice(0,200));
  const accepted=await page.evaluate(()=>document.querySelector('#gate').hidden&&document.querySelector('#app').inert===false);
  if(!accepted)throw Error(lang+' consent not accepted');
  await page.click('#menu');
