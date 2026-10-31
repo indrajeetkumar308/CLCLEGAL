@@ -571,3 +571,15 @@ html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--san
 .trust-guide-copy>span{font-size:14px;color:var(--muted)}
 .trust-guide-link:hover .trust-guide-copy b,.trust-guide-link:focus-visible .trust-guide-copy b{color:var(--gold)}
 .trust-guide-link:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+
+
+/* Educational resources below the homepage legal-process timeline. */
+.process-resources{max-width:1010px;margin:42px auto 0;border-top:1px solid var(--line);padding-top:24px;text-align:center}
+.process-resources h3{font-family:var(--serif);font-size:25px;color:var(--title);margin:0 0 18px}
+.process-resource-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.process-resource-links a{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border:1px solid var(--line);background:var(--surface);color:var(--title);border-radius:5px;text-decoration:none;font-weight:600;line-height:1.4;transition:border-color .2s,color .2s}
+.process-resource-links a:hover{border-color:var(--gold);color:var(--gold)}
+.process-resource-links a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.process-resource-links a span{color:var(--gold)}
+.process-resources .process-note{font-size:13px;color:var(--muted);margin:16px auto 0;max-width:76ch;line-height:1.6}
+@media(max-width:620px){.process-resources{margin-top:34px;text-align:left}.process-resource-links{flex-direction:column;align-items:stretch}.process-resource-links a{justify-content:space-between}.process-resources h3{text-align:left}}
