@@ -111,7 +111,17 @@
     document.addEventListener('pointerdown',outside);
     document.addEventListener('click',outside);
   }
-  document.addEventListener('keydown',e => {if(e.key === 'Escape')closeMenu();});
+  document.addEventListener('keydown',e => {
+    if (e.key !== 'Escape') return;
+    const mobileOpen = links?.classList.contains('open');
+    const dropdownOpen = drop?.classList.contains('open');
+    if (mobileOpen || dropdownOpen) {
+      e.preventDefault();
+      const target = dropdownOpen && (!mobileOpen || drop.contains(document.activeElement)) ? dropButton : menu;
+      closeMenu();
+      target?.focus();
+    }
+  });
   const navState = () => {
     const hash=location.hash.slice(1);
     $$('[data-nav]').forEach(a => {
