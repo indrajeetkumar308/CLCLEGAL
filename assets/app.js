@@ -342,6 +342,9 @@ function renderChrome(){
    <div class="dd" id="dd"><button type="button" id="dd-btn" aria-expanded="false" aria-controls="dd-menu" aria-haspopup="true">${x.nav.practice} ▾</button><div class="dd-menu" id="dd-menu">${ORDER.map(k=>`<a href="${U(k)}">${P(k).title}<span>›</span></a>`).join('')}</div></div>
    <a href="${HOMEA('founder')}" data-nav="founder">${x.nav.founder}</a><a href="${U('contact')}" data-nav="contact"${CUR()==='contact'?' aria-current="page"':''}>${x.nav.contact}</a>
    <a class="btn btn-gold" href="#chambers">${x.nav.book}</a></nav></div>`;
+ // Use the WAI-ARIA disclosure pattern for ordinary navigation links.
+ $('#dd-btn').setAttribute('aria-controls','dd-menu');
+ $('#dd-btn').removeAttribute('aria-haspopup');
  $('#dd-btn').addEventListener('click',e=>{e.stopPropagation();const o=$('#dd').classList.toggle('open');$('#dd-btn').setAttribute('aria-expanded',String(o))});
  $('#menu').addEventListener('click',()=>{const o=$('#links').classList.toggle('open');$('#menu').setAttribute('aria-expanded',String(o));if(!o){$('#dd').classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}});
  document.querySelectorAll('.lang a').forEach(b=>b.addEventListener('click',()=>{try{localStorage.setItem('clc-lang',b.dataset.lang)}catch(e){}}));

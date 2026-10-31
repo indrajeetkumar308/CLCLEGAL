@@ -87,6 +87,9 @@
     if (dropButton) dropButton.setAttribute('aria-expanded','false');
   };
   if (drop && dropButton) {
+    // Disclosure navigation contains ordinary links, not ARIA menuitems.
+    dropButton.setAttribute('aria-controls','dd-menu');
+    dropButton.removeAttribute('aria-haspopup');
     dropButton.addEventListener('click',e => {
       e.stopPropagation();
       const open = drop.classList.toggle('open');
