@@ -9,8 +9,9 @@ for(const lang of ['','hi/']){
  console.log('LOAD',lang,response?.status(),page.url(),(await page.content()).slice(0,240));
  const data=await page.evaluate(()=>{
   const gate=document.querySelector('#gate'),ck=document.querySelector('#gate-ck');
-  return {gateShown:!gate.hidden,focused:document.activeElement===ck,menu:!!document.querySelector('#menu'),style:getComputedStyle(document.querySelector('#hdr')).display};
+  return {gateShown:gate?!gate.hidden:null,focused:document.activeElement===ck,menu:!!document.querySelector('#menu'),style:document.querySelector('#hdr')?getComputedStyle(document.querySelector('#hdr')).display:null,hasGateHtml:document.documentElement.outerHTML.includes('id="gate"'),bodyStart:document.body?.outerHTML.slice(0,400)};
  });
+ console.log('DOM',JSON.stringify(data));
  if(!data.gateShown||!data.focused||!data.menu)throw Error(lang+' gate broken '+JSON.stringify(data));
  await page.click('#gate-ck');await page.click('#gate-go');
  const accepted=await page.evaluate(()=>document.querySelector('#gate').hidden&&document.querySelector('#app').inert===false);
