@@ -617,3 +617,128 @@ html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--san
   *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
 }
 :where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #B07A27;outline-offset:3px}
+
+
+/* Chambers contact details: compact, readable and finger-friendly on mobile.
+   Scoped to this panel; the enquiry form, branding and other page sections remain unchanged. */
+.cham-info{
+  min-width:0;
+  padding:36px 32px;
+}
+.cham-info h3{
+  margin:0 0 20px;
+  font-size:clamp(26px,3vw,31px);
+  line-height:1.2;
+}
+.cham-info .dl{
+  display:grid;
+  gap:10px;
+  margin:0;
+}
+.cham-info .dl>div{
+  display:grid;
+  grid-template-columns:40px minmax(0,1fr);
+  align-items:start;
+  gap:13px;
+  min-width:0;
+  padding:15px;
+  border:1px solid rgba(201,169,110,.24);
+  border-radius:10px;
+  background:rgba(255,255,255,.035);
+}
+.cham-info .dl>div>div{min-width:0}
+.cham-info .ic{
+  width:40px;
+  height:40px;
+  border:1px solid rgba(201,169,110,.55);
+  border-radius:8px;
+  background:rgba(201,169,110,.08);
+}
+.cham-info .dt{
+  margin:0 0 5px;
+  font-size:11px;
+  letter-spacing:.13em;
+  line-height:1.35;
+  color:#e8c88d;
+}
+.cham-info .dd{
+  margin:0;
+  min-width:0;
+  color:#fff;
+  font-size:15px;
+  line-height:1.55;
+  overflow-wrap:anywhere;
+}
+.cham-info .dd a:not(.wa-link){
+  color:#fff;
+  text-decoration:underline;
+  text-decoration-color:rgba(255,255,255,.32);
+  text-underline-offset:3px;
+}
+.cham-info .dd a:hover,
+.cham-info .dd a:focus-visible{
+  color:#f1d39c;
+  text-decoration-color:currentColor;
+}
+.cham-info .dd .wa-link{
+  display:inline-block;
+  margin-top:7px;
+  color:#f1d39c;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.cham-info .copy{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  min-width:58px;
+  margin:4px 0 0 8px;
+  padding:6px 10px;
+  vertical-align:middle;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:6px;
+  background:rgba(255,255,255,.1);
+  color:#fff;
+  font:600 12px var(--sans);
+  line-height:1.1;
+  letter-spacing:.02em;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.cham-info .copy:hover,
+.cham-info .copy:focus-visible{
+  background:rgba(201,169,110,.2);
+  border-color:#f1d39c;
+  color:#fff;
+}
+.cham-info .acts{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:18px;
+}
+.cham-info .acts .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:11px 12px;
+  text-align:center;
+}
+@media (max-width:560px){
+  .cham-info{padding:25px 18px 26px}
+  .cham-info h3{margin-bottom:17px}
+  .cham-info .dl{gap:9px}
+  .cham-info .dl>div{padding:13px 12px;grid-template-columns:38px minmax(0,1fr);gap:11px}
+  .cham-info .ic{width:38px;height:38px}
+  .cham-info .dd{font-size:14.5px}
+  .cham-info .acts{margin-top:15px}
+}
+@media (max-width:350px){
+  .cham-info{padding-inline:13px}
+  .cham-info .dl>div{padding-inline:10px;gap:9px}
+  .cham-info .copy{margin-left:0}
+}
