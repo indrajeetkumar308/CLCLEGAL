@@ -16,6 +16,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check assets/app.js
+          node --check assets/home-runtime.js
           node --check assets/analytics.js
           node --check assets/reading-mode.js
           node --check sw.js
