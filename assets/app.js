@@ -332,7 +332,7 @@ function renderChrome(){
  <label class="ck"><input type="checkbox" id="gate-ck"> ${x.gateCk}</label>
  <button class="btn btn-navy" id="gate-go" type="button" disabled>${x.gateGo}</button></div></div>`;
  $('#gate-ck').addEventListener('change',e=>$('#gate-go').disabled=!e.target.checked);
- $('#gate-go').addEventListener('click',()=>{try{sessionStorage.setItem('clc-gate','1')}catch(e){}$('#gate').hidden=true;document.body.style.overflow=''});
+ $('#gate-go').addEventListener('click',()=>{try{sessionStorage.setItem('clc-gate','1')}catch(e){}$('#gate').hidden=true;document.body.style.overflow='';setCLCBackgroundInert(false);const main=$('#app');if(main){main.setAttribute('tabindex','-1');main.focus({preventScroll:true})}});
  if(!PRE)$('#hdr').innerHTML=`<div class="wrap nav">
   <a class="brand" href="${U('home')}"><div class="mark"><span>CLC</span></div><div><b>${x.brand}</b><small>${x.brandSub}</small></div></a>
   <div class="nav-r">${langToggle('lg-hdr')}
@@ -590,8 +590,27 @@ addEventListener('hashchange',navState);
 })();
 document.documentElement.lang=LANG;
 renderChrome();
-(function(){let ok=false;try{ok=sessionStorage.getItem('clc-gate')==='1'}catch(e){}
- if(ok)$('#gate').hidden=true;else document.body.style.overflow='hidden'})();
+/* The disclaimer is a real modal: background content is not keyboard reachable
+   until a visitor acknowledges the neutral information notice. */
+function setCLCBackgroundInert(value){
+ for(const selector of ['#hdr','#app','.clc-skip-link']){
+  const el=document.querySelector(selector);if(el)el.inert=value;
+ }
+}
+(function(){
+ let ok=false;try{ok=sessionStorage.getItem('clc-gate')==='1'}catch(e){}
+ const gate=$('#gate');if(!gate)return;
+ if(ok){gate.hidden=true;setCLCBackgroundInert(false)}
+ else {document.body.style.overflow='hidden';setCLCBackgroundInert(true);const ck=$('#gate-ck');if(ck)ck.focus({preventScroll:true})}
+ document.addEventListener('keydown',e=>{
+  if(e.key!=='Tab'||gate.hidden||document.documentElement.classList.contains('gate-ok'))return;
+  const controls=[...gate.querySelectorAll('a[href],button:not([disabled]),input:not([disabled])')].filter(el=>!el.hidden&&!el.closest('[hidden]'));
+  if(!controls.length)return;
+  const first=controls[0],last=controls[controls.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+ });
+})();
 route();
 
 
