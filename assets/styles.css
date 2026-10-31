@@ -511,3 +511,32 @@ html[lang="hi"] .links{gap:24px}
 .artcard-cta{color:var(--gold);font-weight:600}
 
 html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--sans)}
+
+
+/* Desktop palette parity: preserve original desktop layout and mobile appearance. */
+@media (min-width:981px){
+  /* Match the mobile light palette on desktop even if the computer requests dark mode.
+     Keep every existing layout, spacing, font, navigation and breakpoint rule unchanged. */
+  :root,
+  :root[data-theme="dark"],
+  :root:not([data-theme="light"]){
+    color-scheme:light;
+    --bg:#FFFFFF;
+    --alt:#F4F6F9;
+    --surface:#FFFFFF;
+    --ink:#1A2332;
+    --muted:#5A6476;
+    --faint:#8791A2;
+    --line:#E2E6ED;
+    --navy:#0E2240;
+    --navy-2:#0A1930;
+    --navy-ink:#EEF2F8;
+    --navy-muted:#A9B5C8;
+    --navy-line:rgba(255,255,255,.12);
+    --gold:#A9834C;
+    --gold-2:#C9A96E;
+    --gold-soft:#F6F0E4;
+    --title:#0E2240;
+    --shadow:0 1px 2px rgba(14,34,64,.06),0 12px 32px -18px rgba(14,34,64,.28);
+  }
+}
