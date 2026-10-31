@@ -47,13 +47,16 @@ async function store(cacheName, request, response, maxEntries) {
   }
 }
 
+function hasExtension(pathname, extensions) {
+  return extensions.some(ext => pathname.toLowerCase().endsWith(ext));
+}
 function isStaticAsset(pathname) {
   if (pathname === '/assets/analytics.js') return false;
   if (pathname === '/manifest.webmanifest' || pathname === '/logo.png') return true;
-  if (pathname.startsWith('/assets/fonts/')) return pathname.endsWith('.woff2');
-  if (pathname.startsWith('/assets/')) return /\.(css|js)$/i.test(pathname);
-  if (pathname.startsWith('/images/')) return /\.(png|jpe?g|webp)$/i.test(pathname);
-  if (pathname.startsWith('/icons/')) return pathname.endsWith('.png');
+  if (pathname.startsWith('/assets/fonts/')) return hasExtension(pathname, ['.woff2']);
+  if (pathname.startsWith('/assets/')) return hasExtension(pathname, ['.css', '.js']);
+  if (pathname.startsWith('/images/')) return hasExtension(pathname, ['.png', '.jpg', '.jpeg', '.webp']);
+  if (pathname.startsWith('/icons/')) return hasExtension(pathname, ['.png']);
   return false;
 }
 
