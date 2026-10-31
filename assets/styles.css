@@ -599,3 +599,14 @@ html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--san
 .process-resource-links a:hover,.clc-resource-number,.clc-resource-links a,
 .artc .cr-fraud-eyebrow,.artc .cr-navigator .cr-navigator-category{color:var(--gold-text,var(--gold))}
 .gate[hidden]{display:none}
+
+/* Defer rendering of lower homepage sections until near the viewport.
+   Existing layout, content, keyboard navigation and anchors are preserved. */
+@supports (content-visibility:auto) {
+ .clc-home #app > section.s:not(#about):not(#practice),
+ .clc-home #app > section.cta {
+   content-visibility:auto;
+   contain-intrinsic-size:auto 650px;
+ }
+ .clc-home #app > section.s#chambers {contain-intrinsic-size:auto 1050px}
+}

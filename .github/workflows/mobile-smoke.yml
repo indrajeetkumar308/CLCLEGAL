@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'assets/home-runtime.js'
+      - 'assets/styles.css'
       - 'index.html'
       - 'hi/index.html'
       - 'scripts/home-runtime-smoke.mjs'
