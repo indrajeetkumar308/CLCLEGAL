@@ -583,3 +583,7 @@ html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--san
 .process-resource-links a span{color:var(--gold)}
 .process-resources .process-note{font-size:13px;color:var(--muted);margin:16px auto 0;max-width:76ch;line-height:1.6}
 @media(max-width:620px){.process-resources{margin-top:34px;text-align:left}.process-resource-links{flex-direction:column;align-items:stretch}.process-resource-links a{justify-content:space-between}.process-resources h3{text-align:left}}
+
+/* Visible only on keyboard focus: accessibility skip link. */
+.clc-skip-link{position:fixed;z-index:1001;left:12px;top:12px;padding:12px 18px;background:var(--navy);color:#fff;border:2px solid var(--gold-2);border-radius:6px;text-decoration:none;font-weight:700;transform:translateY(-150px)}
+.clc-skip-link:focus{transform:translateY(0);outline:3px solid var(--gold);outline-offset:2px}
