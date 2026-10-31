@@ -544,7 +544,30 @@ function route(){
 }
 function navState(){const h=location.hash.slice(1);document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',(CUR()==='home'&&a.dataset.nav===(h||'home'))||(CUR()==='contact'&&a.dataset.nav==='contact')));
  const L=$('#links');if(L){L.classList.remove('open');$('#menu').setAttribute('aria-expanded','false');$('#dd').classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}}
-document.addEventListener('click',e=>{const d=$('#dd');if(d&&!d.contains(e.target)){d.classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}});
+// Close the whole mobile menu when tapping outside its panel, not just Practice Areas.
+// Ignore taps on the hamburger itself, so its own toggle event remains in control.
+function closeMobileMenu(){
+ const links=$('#links'),menu=$('#menu'),dd=$('#dd'),ddButton=$('#dd-btn');
+ if(links)links.classList.remove('open');
+ if(menu)menu.setAttribute('aria-expanded','false');
+ if(dd)dd.classList.remove('open');
+ if(ddButton)ddButton.setAttribute('aria-expanded','false');
+}
+function closeMobileMenuOnOutside(e){
+ const links=$('#links'),menu=$('#menu'),dd=$('#dd'),ddButton=$('#dd-btn');
+ const target=e.target;
+ if(links&&links.classList.contains('open')){
+  if(links.contains(target)||(menu&&menu.contains(target)))return;
+  closeMobileMenu();
+ }else if(dd&&dd.classList.contains('open')&&!dd.contains(target)){
+  // Preserve the original outside-click behaviour for the desktop submenu.
+  dd.classList.remove('open');
+  if(ddButton)ddButton.setAttribute('aria-expanded','false');
+ }
+}
+document.addEventListener('pointerdown',closeMobileMenuOnOutside);
+document.addEventListener('click',closeMobileMenuOnOutside);
+
 document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;const d=$('#dd'),m=$('#links');if(d){d.classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}if(m){m.classList.remove('open');$('#menu').setAttribute('aria-expanded','false')}});
 
 addEventListener('hashchange',navState);
