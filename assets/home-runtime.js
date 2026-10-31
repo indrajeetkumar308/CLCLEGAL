@@ -6,6 +6,7 @@
   const $$ = selector => [...document.querySelectorAll(selector)];
   const hi = document.documentElement.lang.toLowerCase().startsWith('hi');
   const WA = 'https://wa.me/916204166690';
+  let analyticsInjected = false;
   const words = hi ? {
     copy:'कॉपी',copied:'कॉपी किया',selected:'चयनित',
     invalid:'नाम, सही मोबाइल नंबर और सहमति आवश्यक हैं।',
@@ -53,6 +54,7 @@
       document.body.style.overflow = '';
       backgroundInert(false);
       if (main) {main.tabIndex = -1; main.focus({preventScroll:true});}
+      startAnalytics();
     });
     let accepted = false;
     try { accepted = sessionStorage.getItem('clc-gate') === '1'; } catch (_) {}
@@ -205,10 +207,13 @@
 
   // Consent manager executes after initial document loading (not a render blocker).
   const startAnalytics = () => {
+    if (analyticsInjected) return;
+    analyticsInjected = true;
     const tag=document.createElement('script');
     tag.src='/assets/analytics.js?v=20261030a';
     tag.async=true;document.head.appendChild(tag);
   };
-  if (document.readyState === 'complete') startAnalytics();
-  else window.addEventListener('load',startAnalytics,{once:true});
+  const afterLoad = () => {if (!gate || gate.hidden) startAnalytics();};
+  if (document.readyState === 'complete') afterLoad();
+  else window.addEventListener('load',afterLoad,{once:true});
 })();
