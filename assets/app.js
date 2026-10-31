@@ -342,8 +342,8 @@ function renderChrome(){
    <div class="dd" id="dd"><button type="button" id="dd-btn" aria-expanded="false">${x.nav.practice} ▾</button><div class="dd-menu" id="dd-menu">${ORDER.map(k=>`<a href="${U(k)}">${P(k).title}<span>›</span></a>`).join('')}</div></div>
    <a href="${HOMEA('founder')}" data-nav="founder">${x.nav.founder}</a><a href="${U('contact')}" data-nav="contact"${CUR()==='contact'?' aria-current="page"':''}>${x.nav.contact}</a>
    <a class="btn btn-gold" href="#chambers">${x.nav.book}</a></nav></div>`;
- $('#dd-btn').addEventListener('click',e=>{e.stopPropagation();const o=$('#dd').classList.toggle('open');$('#dd-btn').setAttribute('aria-expanded',o)});
- $('#menu').addEventListener('click',()=>{const o=$('#links').classList.toggle('open');$('#menu').setAttribute('aria-expanded',o)});
+ $('#dd-btn').addEventListener('click',e=>{e.stopPropagation();const o=$('#dd').classList.toggle('open');$('#dd-btn').setAttribute('aria-expanded',String(o))});
+ $('#menu').addEventListener('click',()=>{const o=$('#links').classList.toggle('open');$('#menu').setAttribute('aria-expanded',String(o));if(!o){$('#dd').classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}});
  document.querySelectorAll('.lang a').forEach(b=>b.addEventListener('click',()=>{try{localStorage.setItem('clc-lang',b.dataset.lang)}catch(e){}}));
 }
 function setLang(l){
@@ -543,8 +543,10 @@ function route(){
  const h=location.hash.slice(1);if(h){const el=document.getElementById(h);if(el)requestAnimationFrame(()=>el.scrollIntoView())}
 }
 function navState(){const h=location.hash.slice(1);document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',(CUR()==='home'&&a.dataset.nav===(h||'home'))||(CUR()==='contact'&&a.dataset.nav==='contact')));
- const L=$('#links');if(L){L.classList.remove('open');$('#menu').setAttribute('aria-expanded','false');$('#dd').classList.remove('open')}}
-document.addEventListener('click',e=>{const d=$('#dd');if(d&&!d.contains(e.target))d.classList.remove('open')});
+ const L=$('#links');if(L){L.classList.remove('open');$('#menu').setAttribute('aria-expanded','false');$('#dd').classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}}
+document.addEventListener('click',e=>{const d=$('#dd');if(d&&!d.contains(e.target)){d.classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;const d=$('#dd'),m=$('#links');if(d){d.classList.remove('open');$('#dd-btn').setAttribute('aria-expanded','false')}if(m){m.classList.remove('open');$('#menu').setAttribute('aria-expanded','false')}});
+
 addEventListener('hashchange',navState);
 
 document.documentElement.lang=LANG;
@@ -553,6 +555,31 @@ renderChrome();
  if(ok)$('#gate').hidden=true;else document.body.style.overflow='hidden'})();
 route();
 
+
+
+/* iOS standalone web app installation guidance. iOS uses Share > Add to Home Screen,
+   not the beforeinstallprompt API; this adds no trackers or registration forms. */
+(function clcIOSInstall(){
+ const ua=navigator.userAgent||'';
+ const isiOS=/iPhone|iPad|iPod/.test(ua) || (navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+ const standalone=matchMedia('(display-mode: standalone)').matches || navigator.standalone===true;
+ if(!isiOS||standalone||document.getElementById('clc-ios-install'))return;
+ const button=document.createElement('button');button.type='button';button.id='clc-ios-install';
+ button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls','clc-ios-help');
+ button.textContent=document.documentElement.lang==='hi'?'iPhone पर ऐप जोड़ें':'Install on iPhone';
+ const popup=document.createElement('aside');popup.id='clc-ios-help';popup.hidden=true;
+ popup.setAttribute('aria-label','iPhone Home Screen installation instructions');
+ const hi=document.documentElement.lang==='hi';
+ popup.innerHTML=hi
+  ? '<button type="button" aria-label="बंद करें">×</button><h2>iPhone पर CLC ऐप जोड़ें</h2><p>Safari में वेबसाइट खोलें, फिर:</p><ol><li>नीचे Share (शेयर) आइकन दबाएँ।</li><li><strong>Add to Home Screen</strong> चुनें।</li><li>यदि विकल्प उपलब्ध हो तो <strong>Open as Web App</strong> चालू रखें, फिर <strong>Add</strong> दबाएँ।</li></ol><p>यह वेबसाइट का होम-स्क्रीन वेब ऐप है, App Store से डाउनलोड नहीं।</p>'
+  : '<button type="button" aria-label="Close">×</button><h2>Install CLC on iPhone</h2><p>Open this website in Safari, then:</p><ol><li>Tap Share.</li><li>Select <strong>Add to Home Screen</strong>.</li><li>If shown, keep <strong>Open as Web App</strong> enabled, then tap <strong>Add</strong>.</li></ol><p>This installs a Home Screen web app, not an App Store application.</p>';
+ document.body.appendChild(button);document.body.appendChild(popup);
+ const close=()=>{popup.hidden=true;button.setAttribute('aria-expanded','false')};
+ button.addEventListener('click',()=>{const opening=popup.hidden;popup.hidden=!opening;button.setAttribute('aria-expanded',String(opening))});
+ popup.querySelector('button').addEventListener('click',close);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+ document.addEventListener('pointerdown',e=>{if(!popup.hidden&&!popup.contains(e.target)&&e.target!==button)close()});
+})();
 
 /* Optional Google Analytics 4: privacy-first consent prompt (EN / HI). */
 (() => { const tag = document.createElement('script'); tag.src = '/assets/analytics.js?v=20261030a'; tag.async = true; document.head.appendChild(tag); })();
