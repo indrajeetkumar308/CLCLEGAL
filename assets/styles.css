@@ -587,3 +587,15 @@ html[lang="en"] .lang a[lang="hi"]{font-family:"Tiro Devanagari Hindi",var(--san
 /* Visible only on keyboard focus: accessibility skip link. */
 .clc-skip-link{position:fixed;z-index:1001;left:12px;top:12px;padding:12px 18px;background:var(--navy);color:#fff;border:2px solid var(--gold-2);border-radius:6px;text-decoration:none;font-weight:700;transform:translateY(-150px)}
 .clc-skip-link:focus{transform:translateY(0);outline:3px solid var(--gold);outline-offset:2px}
+
+/* WCAG AA text accents on light surfaces; preserve branded gold borders and art. */
+@media (prefers-color-scheme: light){
+  :root{--gold-text:#876333}
+}
+@media (min-width:981px){
+  :root{--gold-text:#876333}
+}
+.eyebrow,.trust-guide-link:hover .trust-guide-copy b,.trust-guide-link:focus-visible .trust-guide-copy b,
+.process-resource-links a:hover,.clc-resource-number,.clc-resource-links a,
+.artc .cr-fraud-eyebrow,.artc .cr-navigator .cr-navigator-category{color:var(--gold-text,var(--gold))}
+.gate[hidden]{display:none}
