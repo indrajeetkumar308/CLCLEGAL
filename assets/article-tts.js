@@ -7,6 +7,9 @@
     mount.hidden=true;
     return;
   }
+  // Reading Mode installs its toolbar before this deferred script executes.
+  const reader=document.querySelector('#clc-reader .reader-inner');
+  if(reader)reader.append(mount);
   const synth=window.speechSynthesis;
   const pageLang=document.documentElement.lang.toLowerCase().startsWith('hi')?'hi':'en';
   const words={
@@ -15,15 +18,15 @@
   }[pageLang];
   let selected=pageLang;
   try {const saved=localStorage.getItem('clc-tts-lang');if(saved==='en'||saved==='hi')selected=saved;} catch(_) {}
-  mount.innerHTML='<div class="clc-tts-heading"><span aria-hidden="true">🔊</span> '+words.heading+'</div><div class="clc-tts-controls"><label for="clc-tts-language">'+words.language+'</label><select id="clc-tts-language"><option value="en">English</option><option value="hi">हिन्दी</option></select><button type="button" id="clc-tts-play" disabled>'+words.play+'</button><button type="button" id="clc-tts-stop" disabled>'+words.stop+'</button></div><p id="clc-tts-status" role="status" aria-live="polite"></p>';
+  mount.innerHTML='<div class="clc-tts-controls"><label for="clc-tts-language">'+words.language+'</label><select id="clc-tts-language"><option value="en">English</option><option value="hi">हिन्दी</option></select><button type="button" id="clc-tts-play" disabled>🔊 '+words.play+'</button><button type="button" id="clc-tts-stop" disabled>'+words.stop+'</button></div><p id="clc-tts-status" role="status" aria-live="polite"></p>';
   const select=mount.querySelector('select'),play=mount.querySelector('#clc-tts-play'),stop=mount.querySelector('#clc-tts-stop'),status=mount.querySelector('#clc-tts-status');
   select.value=selected;
   play.setAttribute('aria-label',words.play);
   stop.setAttribute('aria-label',words.stop);
   let voices=[],voiceCheckComplete=false,active=false,paused=false,run=0,index=0,chunks=[],voice=null;
-  function voiceFor(lang){const matches=voices.filter(v=>v.lang.toLowerCase().startsWith(lang+'-')||v.lang.toLowerCase()===lang);return matches.find(v=>v.lang.toLowerCase()===lang+'-in')||matches[0]||null;}
+  function voiceFor(lang){const matches=voices.filter(v=>v.lang.toLowerCase().startsWith(lang+'-')||v.lang.toLowerCase()===lang);return matches.find(v=>v.lang.toLowerCase()===lang+'-in')||null;}
   function reset(message=''){
-    active=false;paused=false;chunks=[];index=0;voice=null;play.textContent=words.play;play.setAttribute('aria-label',words.play);stop.disabled=true;status.textContent=message;
+    active=false;paused=false;chunks=[];index=0;voice=null;play.textContent='🔊 '+words.play;play.setAttribute('aria-label',words.play);stop.disabled=true;status.textContent=message;
   }
   function stopSpeech(message=''){
     ++run;synth.cancel();reset(message);
@@ -107,8 +110,8 @@
   });
   play.addEventListener('click',async()=>{
     if(active){
-      if(paused){paused=false;synth.resume();play.textContent=words.pause;play.setAttribute('aria-label',words.pause);status.textContent=words.playing;}
-      else{paused=true;synth.pause();play.textContent=words.resume;play.setAttribute('aria-label',words.resume);status.textContent=words.paused;}
+      if(paused){paused=false;synth.resume();play.textContent='⏸ '+words.pause;play.setAttribute('aria-label',words.pause);status.textContent=words.playing;}
+      else{paused=true;synth.pause();play.textContent='▶ '+words.resume;play.setAttribute('aria-label',words.resume);status.textContent=words.paused;}
       return;
     }
     voice=voiceFor(selected);
