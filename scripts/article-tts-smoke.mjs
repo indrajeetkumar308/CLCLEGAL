@@ -27,6 +27,8 @@ for(const lang of ['en','hi'])for(const width of [390,1440]){
  const res=await page.goto(url,{waitUntil:'load'});
  if(res.status()!==200)throw Error(url+': HTTP '+res.status());
  await page.waitForSelector('#clc-tts-play:not([disabled])');
+ const toolbar=await page.$eval('#clc-article-tts',el=>!!el.closest('#clc-reader .reader-inner'));
+ if(!toolbar)throw Error('Audio player must be beside Reading Mode');
  await page.screenshot({path:'reports/article-tts/'+lang+'-'+width+'.png',fullPage:false});
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth);
  if(overflow)throw Error(lang+width+' horizontal overflow');
