@@ -1,0 +1,14 @@
+/* Native article narration: zero height reserved until populated by deferred JS. */
+.clc-tts{box-sizing:border-box;max-width:100%;min-height:118px;margin:18px 0 22px;padding:15px 18px;border:1px solid var(--line,#d7cdbd);border-left:4px solid var(--gold,#c9a96e);border-radius:10px;background:var(--surface,#fff);color:var(--ink,#14243b);font-family:var(--sans,system-ui,sans-serif)}
+.clc-tts:empty{visibility:hidden}
+.clc-tts *{box-sizing:border-box}
+.clc-tts-heading{font-weight:700;font-size:15px;margin-bottom:10px;color:var(--title,#14243b)}
+.clc-tts-controls{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px}
+.clc-tts-controls label{font-size:13px;font-weight:600}
+.clc-tts-controls select,.clc-tts-controls button{min-height:42px;border-radius:6px;border:1px solid var(--line,#c2b9a8);padding:7px 10px;font:600 14px var(--sans,system-ui,sans-serif)}
+.clc-tts-controls select{max-width:100%;background:#fff;color:#102544}
+.clc-tts-controls button{background:var(--navy,#102544);color:#fff;cursor:pointer}
+.clc-tts-controls button[disabled]{opacity:.55;cursor:not-allowed}
+.clc-tts-controls button:focus-visible,.clc-tts-controls select:focus-visible{outline:3px solid var(--gold,#c9a96e);outline-offset:3px}
+#clc-tts-status{font-size:13px;min-height:1.4em;margin:8px 0 0}
+@media(max-width:420px){.clc-tts{padding:12px}.clc-tts-controls{gap:8px}.clc-tts-controls select{flex:1 1 110px;min-width:0}.clc-tts-controls button{flex:1 1 70px}}
