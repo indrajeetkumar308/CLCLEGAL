@@ -1,0 +1,38 @@
+name: Article narration browser tests
+on:
+  pull_request:
+    paths:
+      - 'assets/article-tts.js'
+      - 'assets/article-tts.css'
+      - 'insights/**'
+      - 'hi/insights/**'
+      - 'scripts/article-tts-smoke.mjs'
+      - '.github/workflows/article-tts.yml'
+permissions:
+  contents: read
+jobs:
+  article-tts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install test browser controller
+        run: npm install --no-save puppeteer-core@24
+      - name: Start local server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/clc-tts-server.log 2>&1 &
+          sleep 2
+      - name: Static site audit
+        run: node scripts/quality-audit.mjs
+      - name: Test EN and HI at mobile and desktop widths
+        run: node scripts/article-tts-smoke.mjs
+      - name: Upload player screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article-tts-en-hi-mobile-desktop
+          path: reports/article-tts/*.png
+          if-no-files-found: warn

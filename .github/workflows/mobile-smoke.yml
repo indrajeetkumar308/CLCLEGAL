@@ -7,6 +7,10 @@ on:
       - 'index.html'
       - 'hi/index.html'
       - 'scripts/home-runtime-smoke.mjs'
+      - 'assets/article-tts.js'
+      - 'assets/article-tts.css'
+      - 'insights/**'
+      - 'hi/insights/**'
       - '.github/workflows/mobile-smoke.yml'
 permissions:
   contents: read
