@@ -17,7 +17,6 @@ window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup)
   const onScroll=()=>{if(window.scrollY>startY+8)hide();};
   window.addEventListener('scroll',onScroll,{passive:true});
   const timer=setTimeout(hide,30000);
-  button.addEventListener('click',()=>{if(!dismissed){clearTimeout(timer);window.removeEventListener('scroll',onScroll);}}, {once:true});
   if(window.scrollY>startY+8)hide();
   return hide;
 };
