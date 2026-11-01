@@ -45,8 +45,9 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Priority | Task | Suggested owner |
 |---|---|---|
-| 3 | New article: Checking land title in Bihar before buying | Claude |
-| 4 | BCI Rule 36 wording review across all pages (see `docs/quality-and-bci-review.md`) | Pk, with either AI |
+| 1 | New article: Checking land title in Bihar before buying | Claude |
+| 2 | Around 15 Nov: compare Search Console clicks for "mutation appeal" after the #25 title change | Claude |
+| 3 | BCI Rule 36 wording review across all pages (see `docs/quality-and-bci-review.md`) | Pk, with either AI |
 
 ---
 
@@ -59,6 +60,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 | 2026-10-28 | Claude | Self-hosted fonts, layout-shift fix | d23c9af |
 | 2026-10-29 | Claude | Immigration title, DCLR FAQ, brand spelling variants | 2e926ba |
 | 2026-10-29 | Claude | First article: DCLR mutation appeal (EN + HI) | de7d5ac |
-| 2026-11-01 | Claude | DCLR article: title/description/H1 now lead with "Mutation Appeal" (EN) and "म्यूटेशन अपील" (HI); Search Console showed position 4–5 with low clicks | this PR |
-| 2026-11-01 | Claude | Article: Jamabandi correction through Parimarjan Plus (EN + HI); only facts verified on official portals; all links tested; linked from DCLR article; sitemap | this PR |
+| 2026-11-01 | Claude | DCLR article: title/description/H1 now lead with "Mutation Appeal" (EN) and "म्यूटेशन अपील" (HI); Search Console showed position 4–5 with low clicks | #25 |
+| 2026-11-01 | Claude | Article: Jamabandi correction through Parimarjan Plus (EN + HI); only facts verified on official portals; all links tested; linked from DCLR article; sitemap | #26 |
+| 2026-11-01 | Claude | Internal linking: new Insights index (/insights/, /hi/insights/) listing all articles; Jamabandi card on Mutation pages, Jamabandi + DCLR cards on Property pages; "Legal Insights" footer link on all pages; sitemap +2. Also added one Jamabandi link to the Land Records card in Citizen Guides (ChatGPT's area, small change only) | this PR |
 | up to 2026-10-31 | ChatGPT | Homepage performance, PWA caching, accessibility, citizen guides, privacy page, CI tests, consent | #21, #22, #23 and earlier |

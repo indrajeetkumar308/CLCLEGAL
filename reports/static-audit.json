@@ -1,9 +1,14 @@
 {
-  "date": "2026-11-01T06:02:58.510Z",
-  "pages": 49,
+  "date": "2026-11-01T06:16:55.347Z",
+  "pages": 51,
   "complianceReview": [
     {
       "file": "hi/insights/dakhil-kharij-appeal-dclr-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/index.html",
       "type": "hindi-solicitation",
       "count": 1
     },
@@ -19,6 +24,11 @@
     },
     {
       "file": "insights/dakhil-kharij-appeal-dclr-bihar/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/index.html",
       "type": "english-solicitation",
       "count": 1
     },
