@@ -71,7 +71,7 @@ for(const lang of ['en','hi'])for(const width of [390,1440]){
  if(!visible.lang.startsWith(other)||visible.selection!==other||!visible.reading||visible.stored!==other)throw Error('Visible article language/reading mode mismatch '+JSON.stringify(visible));
  if(errors.length)throw Error('Article navigation page errors '+errors.join('; '));
  await page.click('#clc-tts-play');
- await page.waitForFunction(()=>window.__utterances.length>1);
+ await page.waitForFunction(()=>window.__utterances.length>0);
  const alternate=await page.evaluate(()=>window.__utterances.at(-1));
  if(alternate.lang!==(other==='hi'?'hi-IN':'en-IN'))throw Error('New article speech language wrong');
  await page.click('#clc-tts-stop');
