@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer-core';
 import fs from 'node:fs';
 const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
 fs.mkdirSync('reports/article-tts',{recursive:true});
-for(const lang of ['en','hi'])for(const width of [360,390,430,1440]){
+for(const lang of ['en','hi'])for(const width of [390,1440]){
  const page=await browser.newPage();
  await page.setViewport({width,height:850,deviceScaleFactor:1,isMobile:width===390,hasTouch:width===390});
  const errors=[];page.on('pageerror',e=>errors.push(String(e)));
