@@ -45,7 +45,6 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Priority | Task | Suggested owner |
 |---|---|---|
-| 1 | Article title fix: "Mutation Appeal to DCLR in Bihar: Steps & 30-Day Limit" (Search Console shows position 4–5 but low clicks for "mutation appeal") | Claude |
 | 2 | New article: Jamabandi correction / Parimarjan on Bihar Bhumi (EN + HI) | Claude |
 | 3 | New article: Checking land title in Bihar before buying | Claude |
 | 4 | BCI Rule 36 wording review across all pages (see `docs/quality-and-bci-review.md`) | Pk, with either AI |
@@ -61,4 +60,5 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 | 2026-10-28 | Claude | Self-hosted fonts, layout-shift fix | d23c9af |
 | 2026-10-29 | Claude | Immigration title, DCLR FAQ, brand spelling variants | 2e926ba |
 | 2026-10-29 | Claude | First article: DCLR mutation appeal (EN + HI) | de7d5ac |
+| 2026-11-01 | Claude | DCLR article: title/description/H1 now lead with "Mutation Appeal" (EN) and "म्यूटेशन अपील" (HI); Search Console showed position 4–5 with low clicks | this PR |
 | up to 2026-10-31 | ChatGPT | Homepage performance, PWA caching, accessibility, citizen guides, privacy page, CI tests, consent | #21, #22, #23 and earlier |

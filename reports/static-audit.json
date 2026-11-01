@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-01T05:10:54.296Z",
+  "pages": 47,
+  "complianceReview": [
+    {
+      "file": "hi/insights/dakhil-kharij-appeal-dclr-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "index.html",
+      "type": "english-solicitation",
+      "count": 2
+    },
+    {
+      "file": "insights/dakhil-kharij-appeal-dclr-bihar/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    }
+  ],
+  "issues": [
+    {
+      "file": "404.html",
+      "issues": [
+        "missing-canonical"
+      ]
+    }
+  ],
+  "counts": {
+    "missing-canonical": 1
+  },
+  "largestAssets": [
+    {
+      "file": "assets/app.js",
+      "bytes": 193504
+    },
+    {
+      "file": "assets/fonts/noto-sans-devanagari-devanagari-wght-normal.woff2",
+      "bytes": 121192
+    },
+    {
+      "file": "assets/fonts/tiro-devanagari-hindi-devanagari-400-normal.woff2",
+      "bytes": 98828
+    },
+    {
+      "file": "assets/fonts/source-sans-3-latin-ext-wght-normal.woff2",
+      "bytes": 60088
+    },
+    {
+      "file": "assets/styles.css",
+      "bytes": 46521
+    },
+    {
+      "file": "assets/fonts/source-sans-3-latin-wght-normal.woff2",
+      "bytes": 28872
+    },
+    {
+      "file": "assets/fonts/tiro-devanagari-hindi-latin-400-normal.woff2",
+      "bytes": 26948
+    },
+    {
+      "file": "assets/fonts/cormorant-garamond-latin-500-italic.woff2",
+      "bytes": 23924
+    },
+    {
+      "file": "assets/fonts/cormorant-garamond-latin-600-normal.woff2",
+      "bytes": 23396
+    },
+    {
+      "file": "assets/fonts/cormorant-garamond-latin-500-normal.woff2",
+      "bytes": 23312
+    },
+    {
+      "file": "assets/fonts/cormorant-garamond-latin-700-normal.woff2",
+      "bytes": 22340
+    },
+    {
+      "file": "assets/home-runtime.js",
+      "bytes": 12276
+    }
+  ]
+}
