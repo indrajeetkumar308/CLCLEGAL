@@ -487,8 +487,7 @@ html[lang="hi"] .links{gap:24px}
 .btn-wa{background:#1F8F5F;color:#fff;margin-top:10px;width:100%}
 .btn-wa:hover{background:#177148}
 .btn-wa svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.6}
-.wa::before{content:attr(data-label);position:absolute;right:66px;top:50%;transform:translateY(-50%);background:#1F8F5F;color:#fff;font:600 13.5px var(--sans);padding:8px 14px;border-radius:20px;white-space:nowrap;box-shadow:0 8px 20px -10px rgba(0,0,0,.5)}
-@media (max-width:760px){.wa::before{display:none}.util .r span:first-child{display:none}}
+@media (max-width:760px){.util .r span:first-child{display:none}}
 .portrait img{position:relative;display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 .btn-wa-send{background:#1F8F5F;color:#fff}
 .btn-wa-send:hover{background:#177148}
