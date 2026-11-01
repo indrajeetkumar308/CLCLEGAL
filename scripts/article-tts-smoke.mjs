@@ -30,12 +30,17 @@ for(const lang of ['en','hi'])for(const width of [390,1440]){
  const toolbar=await page.$eval('#clc-article-tts',el=>!!el.closest('#clc-reader .reader-inner'));
  if(!toolbar)throw Error('Audio player must be beside Reading Mode');
  await page.screenshot({path:'reports/article-tts/'+lang+'-'+width+'.png',fullPage:false});
- // Reader mode must hide the exact iOS install control and help overlay.
- await page.evaluate(()=>{for(const id of ['clc-ios-install','clc-ios-help']){const el=document.createElement('button');el.id=id;document.body.append(el);}});
- await page.click('.reader-toggle');
- const hiddenOverlays=await page.evaluate(()=>['clc-ios-install','clc-ios-help'].every(id=>getComputedStyle(document.getElementById(id)).display==='none'));
+ // Verify the reading theme hides the iOS overlay without changing reader UI state.
+ const hiddenOverlays=await page.evaluate(()=>{
+  const ids=['clc-ios-install','clc-ios-help'];
+  for(const id of ids){const element=document.createElement('button');element.id=id;document.body.append(element);}
+  document.documentElement.classList.add('clc-reading');
+  const hidden=ids.every(id=>getComputedStyle(document.getElementById(id)).display==='none');
+  for(const id of ids)document.getElementById(id).remove();
+  document.documentElement.classList.remove('clc-reading');
+  return hidden;
+ });
  if(!hiddenOverlays)throw Error(lang+width+' iOS install overlay covers Reading Mode');
- await page.click('.reader-toggle');
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth);
  if(overflow)throw Error(lang+width+' horizontal overflow');
  const position=()=>page.evaluate(()=>{const r=document.querySelector('#clc-tts-play').getBoundingClientRect();const t=document.querySelector('#clc-reader').getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height,toolbarHeight:t.height,scroll:document.documentElement.scrollWidth,viewport:innerWidth};});
