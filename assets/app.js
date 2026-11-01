@@ -1,3 +1,25 @@
+
+/* Hide installation guidance on the first downward page scroll or after 30 seconds.
+   Shared by iOS guidance and native install prompts; no persistent dismissal tracking. */
+window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup){
+  if(!button)return;
+  let dismissed=false;
+  const startY=window.scrollY;
+  const hide=()=>{
+    if(dismissed)return;
+    dismissed=true;
+    button.hidden=true;button.style.display='none';
+    if(popup){popup.hidden=true;popup.style.display='none';}
+    button.setAttribute('aria-expanded','false');
+    window.removeEventListener('scroll',onScroll);
+    clearTimeout(timer);
+  };
+  const onScroll=()=>{if(window.scrollY>startY+8)hide();};
+  window.addEventListener('scroll',onScroll,{passive:true});
+  const timer=setTimeout(hide,30000);
+  if(window.scrollY>startY+8)hide();
+  return hide;
+};
 const SLUG={"criminal": "criminal-defence-lawyer-patna", "civil": "civil-lawyer-patna", "property": "property-lawyer-patna", "mutation": "mutation-dakhil-kharij-bihar", "recovery": "money-recovery-cheque-bounce-lawyer-patna", "ipo": "sme-ipo-legal-advisor", "family": "family-matrimonial-lawyer-patna", "divorce": "divorce-lawyer-patna", "succession": "succession-certificate-will-lawyer-patna", "immigration": "passport-immigration-lawyer-patna", "documents": "legal-notice-agreement-drafting-patna", "contact": "contact"};
 const H1_EN={"criminal": "Criminal Defence Advocate in Patna", "civil": "Civil Litigation Advocate in Patna", "property": "Property & Title Advocate in Patna", "mutation": "Mutation (Dakhil-Kharij) & Land Records in Bihar", "recovery": "Money Recovery Advocate in Patna", "ipo": "MSME & SME IPO Legal Advisory", "family": "Family & Matrimonial Advocate in Patna", "divorce": "Divorce Advocate in Patna", "succession": "Succession & Wills Advocate in Patna", "immigration": "Immigration & Passport Lawyer in Patna", "documents": "Legal Notices & Documentation in Patna"};
 const H1_HI={"criminal": "पटना में आपराधिक बचाव अधिवक्ता", "civil": "पटना में दीवानी मुक़दमे के अधिवक्ता", "property": "पटना में संपत्ति एवं स्वत्व अधिवक्ता", "mutation": "बिहार में दाखिल-खारिज एवं भू-अभिलेख", "recovery": "पटना में धन वसूली अधिवक्ता", "ipo": "MSME एवं SME IPO विधिक सलाह", "family": "पटना में पारिवारिक एवं वैवाहिक अधिवक्ता", "divorce": "पटना में तलाक़ के अधिवक्ता", "succession": "पटना में उत्तराधिकार एवं वसीयत अधिवक्ता", "immigration": "पटना में इमिग्रेशन एवं पासपोर्ट अधिवक्ता", "documents": "पटना में लीगल नोटिस एवं दस्तावेज़ीकरण"};
@@ -635,6 +657,7 @@ route();
   ? '<button type="button" aria-label="बंद करें">×</button><h2>iPhone पर CLC ऐप जोड़ें</h2><p>Safari में वेबसाइट खोलें, फिर:</p><ol><li>नीचे Share (शेयर) आइकन दबाएँ।</li><li><strong>Add to Home Screen</strong> चुनें।</li><li>यदि विकल्प उपलब्ध हो तो <strong>Open as Web App</strong> चालू रखें, फिर <strong>Add</strong> दबाएँ।</li></ol><p>यह वेबसाइट का होम-स्क्रीन वेब ऐप है, App Store से डाउनलोड नहीं।</p>'
   : '<button type="button" aria-label="Close">×</button><h2>Install CLC on iPhone</h2><p>Open this website in Safari, then:</p><ol><li>Tap Share.</li><li>Select <strong>Add to Home Screen</strong>.</li><li>If shown, keep <strong>Open as Web App</strong> enabled, then tap <strong>Add</strong>.</li></ol><p>This installs a Home Screen web app, not an App Store application.</p>';
  document.body.appendChild(button);document.body.appendChild(popup);
+ window.clcAutoHideInstall(button,popup);
  const close=()=>{popup.hidden=true;button.setAttribute('aria-expanded','false')};
  button.addEventListener('click',()=>{const opening=popup.hidden;popup.hidden=!opening;button.setAttribute('aria-expanded',String(opening))});
  popup.querySelector('button').addEventListener('click',close);

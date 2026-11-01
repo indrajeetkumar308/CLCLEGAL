@@ -1,3 +1,25 @@
+
+/* Hide installation guidance on the first downward page scroll or after 30 seconds.
+   Shared by iOS guidance and native install prompts; no persistent dismissal tracking. */
+window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup){
+  if(!button)return;
+  let dismissed=false;
+  const startY=window.scrollY;
+  const hide=()=>{
+    if(dismissed)return;
+    dismissed=true;
+    button.hidden=true;button.style.display='none';
+    if(popup){popup.hidden=true;popup.style.display='none';}
+    button.setAttribute('aria-expanded','false');
+    window.removeEventListener('scroll',onScroll);
+    clearTimeout(timer);
+  };
+  const onScroll=()=>{if(window.scrollY>startY+8)hide();};
+  window.addEventListener('scroll',onScroll,{passive:true});
+  const timer=setTimeout(hide,30000);
+  if(window.scrollY>startY+8)hide();
+  return hide;
+};
 /* CLC Legal homepage: small controller for pre-rendered EN/HI pages.
    Do not include practice-area data or re-render already-present HTML. */
 (() => {
@@ -209,6 +231,7 @@
       ? '<button type="button" aria-label="बंद करें">×</button><h2>iPhone पर CLC ऐप जोड़ें</h2><p>Safari में वेबसाइट खोलें, फिर:</p><ol><li>नीचे Share (शेयर) आइकन दबाएँ।</li><li><strong>Add to Home Screen</strong> चुनें।</li><li>यदि विकल्प उपलब्ध हो तो <strong>Open as Web App</strong> चालू रखें, फिर <strong>Add</strong> दबाएँ।</li></ol><p>यह वेबसाइट का होम-स्क्रीन वेब ऐप है, App Store से डाउनलोड नहीं।</p>'
       : '<button type="button" aria-label="Close">×</button><h2>Install CLC on iPhone</h2><p>Open this website in Safari, then:</p><ol><li>Tap Share.</li><li>Select <strong>Add to Home Screen</strong>.</li><li>If shown, keep <strong>Open as Web App</strong> enabled, then tap <strong>Add</strong>.</li></ol><p>This installs a Home Screen web app, not an App Store application.</p>';
     document.body.append(button,popup);
+    window.clcAutoHideInstall(button,popup);
     const close = () => {popup.hidden=true;button.setAttribute('aria-expanded','false');};
     button.addEventListener('click',()=>{const opened=popup.hidden;popup.hidden=!opened;button.setAttribute('aria-expanded',String(opened));});
     popup.querySelector('button').addEventListener('click',close);
