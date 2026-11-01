@@ -122,7 +122,7 @@
       e.preventDefault();
       const target = mobileOpen ? menu : dropButton;
       closeMenu();
-      target?.focus();
+      if(target?.isConnected){target.focus({preventScroll:true});if(document.activeElement!==target)requestAnimationFrame(()=>{if(target.isConnected)target.focus({preventScroll:true});});}
     }
   });
   const navState = () => {
