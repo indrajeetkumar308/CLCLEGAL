@@ -37,7 +37,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-01 | ChatGPT | Compact TTS play button beside Reading Mode; require Indian English/Hindi voice | `assets/article-tts.js`, `assets/article-tts.css`, `assets/reading-mode.css`, eight article asset version links, `scripts/article-tts-smoke.mjs` | pending |
 
 ---
 
