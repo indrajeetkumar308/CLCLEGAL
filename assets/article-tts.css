@@ -1,25 +1,25 @@
-/* Compact audio controls alongside Reading Mode, with a mobile-safe wrap. */
-#clc-reader .clc-tts{flex:0 1 auto;min-width:0;margin:0 0 0 auto;padding:0;border:0;background:transparent;color:var(--ink);font-family:var(--sans,system-ui,sans-serif)}
+/* Stable playback geometry: changing Play/Pause/Resume labels cannot reflow controls. */
+#clc-reader .clc-tts{flex:0 0 auto;min-width:0;margin:0 0 0 auto;padding:0;border:0;background:transparent;color:var(--ink);font-family:var(--sans,system-ui,sans-serif)}
 #clc-reader .clc-tts[hidden]{display:none}
-#clc-reader .clc-tts-controls{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex-wrap:wrap;min-width:0}
+#clc-reader .clc-tts-controls{display:grid;grid-template-columns:auto minmax(94px,108px) 112px 72px;align-items:center;justify-content:end;gap:8px;min-width:0}
 #clc-reader .clc-tts-controls label{font-size:13px;white-space:nowrap}
-#clc-reader .clc-tts-controls select{min-width:85px;max-width:120px;background:var(--surface,#fff);color:var(--ink);font:600 13px var(--sans,system-ui,sans-serif)}
-#clc-reader .clc-tts-controls button{background:var(--navy,#102544);color:#fff;border-color:var(--navy,#102544);font:600 13px var(--sans,system-ui,sans-serif);white-space:nowrap}
+#clc-reader .clc-tts-controls select{width:100%;min-width:0;max-width:100%;background:var(--surface,#fff);color:var(--ink);font:600 13px var(--sans,system-ui,sans-serif)}
+#clc-reader .clc-tts-controls button{width:100%;min-width:0;background:var(--navy,#102544);color:#fff;border-color:var(--navy,#102544);font:600 13px var(--sans,system-ui,sans-serif);white-space:nowrap;text-align:center;padding-inline:6px}
 #clc-reader .clc-tts-controls button:disabled{opacity:.55;cursor:not-allowed}
 #clc-reader .clc-tts-controls :focus-visible{outline:3px solid var(--gold,#c9a96e);outline-offset:2px}
-#clc-reader #clc-tts-status{margin:2px 0 0;font-size:12px;min-height:0;color:var(--muted);text-align:right}
-#clc-reader #clc-tts-status:empty{display:none}
-@media(max-width:600px){
- #clc-reader .reader-inner{justify-content:space-between}
- #clc-reader .clc-tts{flex:1 1 auto}
- #clc-reader .clc-tts-controls{gap:5px}
- #clc-reader .clc-tts-controls label{font-size:12px}
- #clc-reader .clc-tts-controls select{min-width:65px;max-width:94px;padding:6px}
- #clc-reader .clc-tts-controls button{padding:7px 8px;font-size:12px}
+#clc-reader #clc-tts-status{margin:2px 0 0;font-size:12px;line-height:18px;min-height:18px;color:var(--muted);text-align:right}
+#clc-reader #clc-tts-status:empty{visibility:hidden}
+@media(max-width:760px){
+ #clc-reader .reader-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:8px 12px}
+ #clc-reader .reader-toggle{grid-column:1;grid-row:1;justify-self:start}
+ #clc-reader .reader-options:not([hidden]){grid-column:1/-1;grid-row:3}
+ #clc-reader .clc-tts{grid-column:1/-1;grid-row:2;width:100%;margin:0}
+ #clc-reader .clc-tts-controls{grid-template-columns:minmax(0,1fr) minmax(84px,110px) 112px 72px;justify-content:stretch}
 }
-@media(max-width:380px){
- #clc-reader .clc-tts{flex:1 1 100%;margin:0}
- #clc-reader .clc-tts-controls{justify-content:flex-start}
- #clc-reader #clc-tts-status{text-align:left}
+@media(max-width:390px){
+ #clc-reader .clc-tts-controls{grid-template-columns:minmax(0,1fr) minmax(68px,86px) 100px 64px;gap:5px}
+ #clc-reader .clc-tts-controls label{font-size:12px}
+ #clc-reader .clc-tts-controls select{padding-inline:5px;font-size:12px}
+ #clc-reader .clc-tts-controls button{font-size:12px;padding-inline:3px}
 }
 @media print{#clc-reader .clc-tts{display:none}}
