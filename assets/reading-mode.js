@@ -62,4 +62,16 @@
     if (event.key === 'Escape' && active) { event.preventDefault(); setActive(false); }
   });
   paint();
+  // Restore the reader view after a language change initiated by the audio selector.
+  try {
+    const raw=sessionStorage.getItem('clc-reader-language-return');
+    if(raw){
+      sessionStorage.removeItem('clc-reader-language-return');
+      const state=JSON.parse(raw);
+      if(state.path===location.pathname && state.reading===true){
+        active=true;
+        paint();
+      }
+    }
+  }catch(_){}
 })();
