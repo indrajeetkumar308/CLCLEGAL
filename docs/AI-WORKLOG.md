@@ -37,7 +37,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-01 | ChatGPT | Auto-hide all supported device installation prompts on downward scroll or 30-second timeout | `assets/app.js`, `assets/home-runtime.js`, `index.html`, `hi/index.html`, install browser tests, cache-version references | pending |
 
 ---
 
