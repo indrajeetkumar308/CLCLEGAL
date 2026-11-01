@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-01T06:54:27.366Z",
+  "date": "2026-11-01T15:02:13.626Z",
   "pages": 51,
   "complianceReview": [
     {
@@ -52,7 +52,7 @@
   "largestAssets": [
     {
       "file": "assets/app.js",
-      "bytes": 193504
+      "bytes": 193534
     },
     {
       "file": "assets/fonts/noto-sans-devanagari-devanagari-wght-normal.woff2",
@@ -68,7 +68,7 @@
     },
     {
       "file": "assets/styles.css",
-      "bytes": 46238
+      "bytes": 46728
     },
     {
       "file": "assets/fonts/source-sans-3-latin-wght-normal.woff2",
@@ -96,7 +96,7 @@
     },
     {
       "file": "assets/home-runtime.js",
-      "bytes": 12276
+      "bytes": 12216
     }
   ]
 }
