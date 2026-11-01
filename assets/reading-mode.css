@@ -14,7 +14,7 @@ html.clc-reading[data-reader-theme="light"]{--reader-bg:#fff;--reader-fg:#172638
 html.clc-reading[data-reader-theme="dark"]{--reader-bg:#17212c;--reader-fg:#f0eee8;--reader-muted:#c7ced7;--reader-line:#52606e;--reader-link:#e6bf7e;color-scheme:dark}
 html.clc-reading body{background:var(--reader-bg)}
 html.clc-reading #app{--bg:var(--reader-bg);--surface:var(--reader-bg);--alt:var(--reader-bg);--ink:var(--reader-fg);--title:var(--reader-fg);--muted:var(--reader-muted);--line:var(--reader-line);--gold:var(--reader-link);background:var(--reader-bg);color:var(--reader-fg)}
-html.clc-reading header,html.clc-reading #app>footer,html.clc-reading .wa,html.clc-reading #clc-install,html.clc-reading .phero .crumbs{display:none!important}
+html.clc-reading header,html.clc-reading #app>footer,html.clc-reading .wa,html.clc-reading #clc-ios-install,html.clc-reading #clc-ios-help,html.clc-reading #clc-install,html.clc-reading .phero .crumbs{display:none!important}
 html.clc-reading #clc-reader{position:sticky;top:0;z-index:50;scroll-margin-top:0}
 html.clc-reading .phero{background:var(--reader-bg);color:var(--reader-fg);padding:36px 0 24px;border-bottom:1px solid var(--reader-line)}
 html.clc-reading .phero .wrap,html.clc-reading #app>.wrap{max-width:800px;width:100%;padding-left:20px;padding-right:20px;margin:auto}
