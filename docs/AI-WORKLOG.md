@@ -37,7 +37,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-01 | ChatGPT | Stop Play/Pause/Resume controls moving on iPhone by stabilizing responsive TTS toolbar layout | `assets/article-tts.css`, 8 article CSS cache-version references, `scripts/article-tts-smoke.mjs` | pending |
 
 ---
 
