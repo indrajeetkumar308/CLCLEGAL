@@ -572,7 +572,7 @@ function closeMobileMenuOnOutside(e){
 document.addEventListener('pointerdown',closeMobileMenuOnOutside);
 document.addEventListener('click',closeMobileMenuOnOutside);
 
-document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;const d=$('#dd'),m=$('#links'),db=$('#dd-btn'),mb=$('#menu');const opened=d?.classList.contains('open')||m?.classList.contains('open');if(!opened)return;e.preventDefault();const mobileOpen=!!m?.classList.contains('open');const focus=mobileOpen?mb:db;closeMobileMenu();focus?.focus();});
+document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;const d=$('#dd'),m=$('#links'),db=$('#dd-btn'),mb=$('#menu');const opened=d?.classList.contains('open')||m?.classList.contains('open');if(!opened)return;e.preventDefault();const mobileOpen=!!m?.classList.contains('open');const focus=mobileOpen?mb:db;closeMobileMenu();if(focus?.isConnected){focus.focus({preventScroll:true});if(document.activeElement!==focus)requestAnimationFrame(()=>{if(focus.isConnected)focus.focus({preventScroll:true});});}});
 
 addEventListener('hashchange',navState);
 
