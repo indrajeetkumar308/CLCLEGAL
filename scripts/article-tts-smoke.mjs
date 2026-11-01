@@ -43,6 +43,10 @@ for(const lang of ['en','hi'])for(const width of [390,1440]){
  const stopped=await page.$eval('#clc-tts-status',e=>e.textContent);
  if(!stopped)throw Error('Stop not announced');
  const other=lang==='hi'?'en':'hi';
+ // In the local HTTP test server, point production hreflang URLs at the same local origin.
+ await page.evaluate(()=>document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(link=>{
+  const target=new URL(link.href);if(target.hostname==='clclegal.in')link.href=location.origin+target.pathname;
+ }));
  await page.select('#clc-tts-language',other);
  await page.click('#clc-tts-play');
  await page.waitForFunction(()=>window.__utterances.length>1,{timeout:8000}).catch(async error=>{const debug=await page.evaluate(()=>({status:document.querySelector('#clc-tts-status')?.textContent,button:document.querySelector('#clc-tts-play')?.disabled,selected:document.querySelector('#clc-tts-language')?.value,utterances:window.__utterances}));throw new Error(lang+width+' alternate narration failed '+JSON.stringify(debug)+' '+error.message);});
