@@ -41,15 +41,15 @@ for(const file of pages){
  }
  results.push({file,issues:[...new Set(problems)]});
 }
-// Technical article SEO: canonical language and bilingual alternate coverage.
-for(const file of pages.filter(p=>/(^|\\/)(?:hi\\/)?insights\\/[^/]+\\/index\\.html$/.test(p.replaceAll('\\\\','/')))){
+// Verify bilingual article discoverability without touching editorial content.
+for(const file of pages.filter(p=>p.replaceAll('\\','/').includes('/insights/') && !p.endsWith('/insights/index.html'))){
  const html=fs.readFileSync(file,'utf8');
- const match=html.match(/<html\\b[^>]*lang="(en|hi)(?:-[A-Z]+)?"/i);
- const lang=match?.[1];
- const expected=lang==='hi'?'hi-IN':'en-IN';
- const missing=['en-IN','hi-IN'].filter(code=>!new RegExp('<link\\\\b[^>]*rel="alternate"[^>]*hreflang="'+code+'"','i').test(html));
- const canonical=(html.match(/<link\\b[^>]*rel="canonical"[^>]*href="([^"]+)"/i)||[])[1];
- if(missing.length || !canonical || !(lang==='hi'?canonical.includes('/hi/insights/'):canonical.includes('/insights/')&&!canonical.includes('/hi/insights/'))){
+ const isHindi=file.replaceAll('\\','/').includes('/hi/insights/');
+ const missing=['en-IN','hi-IN'].filter(code=>!html.includes('hreflang="'+code+'"'));
+ const canonicalTag=html.split('\n').find(line=>line.includes('rel="canonical"'))||'';
+ const expected=isHindi?'/hi/insights/':'/insights/';
+ const canonicalOK=canonicalTag.includes(expected) && (isHindi||!canonicalTag.includes('/hi/insights/'));
+ if(missing.length||!canonicalOK){
   const entry=results.find(x=>x.file===file);
   if(entry)entry.issues.push('article-hreflang-or-canonical-mismatch');
  }
