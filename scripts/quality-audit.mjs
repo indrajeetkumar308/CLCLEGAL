@@ -41,6 +41,19 @@ for(const file of pages){
  }
  results.push({file,issues:[...new Set(problems)]});
 }
+// Technical article SEO: canonical language and bilingual alternate coverage.
+for(const file of pages.filter(p=>/(^|\\/)(?:hi\\/)?insights\\/[^/]+\\/index\\.html$/.test(p.replaceAll('\\\\','/')))){
+ const html=fs.readFileSync(file,'utf8');
+ const match=html.match(/<html\\b[^>]*lang="(en|hi)(?:-[A-Z]+)?"/i);
+ const lang=match?.[1];
+ const expected=lang==='hi'?'hi-IN':'en-IN';
+ const missing=['en-IN','hi-IN'].filter(code=>!new RegExp('<link\\\\b[^>]*rel="alternate"[^>]*hreflang="'+code+'"','i').test(html));
+ const canonical=(html.match(/<link\\b[^>]*rel="canonical"[^>]*href="([^"]+)"/i)||[])[1];
+ if(missing.length || !canonical || !(lang==='hi'?canonical.includes('/hi/insights/'):canonical.includes('/insights/')&&!canonical.includes('/hi/insights/'))){
+  const entry=results.find(x=>x.file===file);
+  if(entry)entry.issues.push('article-hreflang-or-canonical-mismatch');
+ }
+}
 const reviewTerms=[
  ['english-solicitation',/book a consultation|why clients choose|counsel you can rely on/gi],
  ['hindi-solicitation',/परामर्श हेतु समय लें|मुवक्किल चैम्बर्स को क्यों चुनते हैं|विश्वसनीय विधिक परामर्श/gi],
