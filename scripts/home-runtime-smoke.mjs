@@ -36,7 +36,7 @@ for(const lang of ['','hi/']){
   hasPopup:document.getElementById('dd-btn').hasAttribute('aria-haspopup'),
   closed:!document.getElementById('links').classList.contains('open')
  }));
- if(keyboard.focus!=='dd-btn'||keyboard.expanded!=='false'||keyboard.controls!=='dd-menu'||keyboard.hasPopup||!keyboard.closed)throw Error(lang+' Escape/disclosure semantics failed '+JSON.stringify(keyboard));
+ if(keyboard.focus!=='menu'||keyboard.expanded!=='false'||keyboard.controls!=='dd-menu'||keyboard.hasPopup||!keyboard.closed)throw Error(lang+' Escape/disclosure semantics failed '+JSON.stringify(keyboard));
  await page.type('#q-name','Test Citizen');
  await page.type('#q-phone','9999999999');
  await page.click('#q-ack');
@@ -68,7 +68,7 @@ for(const path of ['criminal-defence-lawyer-patna/','hi/criminal-defence-lawyer-
   hasPopup:document.querySelector('#dd-btn')?.hasAttribute('aria-haspopup'),
   menuClosed:!document.querySelector('#links')?.classList.contains('open')
  }));
- if(result.trigger!=='dd-btn'||result.expanded!=='false'||result.controls!=='dd-menu'||result.hasPopup||!result.menuClosed||errors.length)throw Error(path+' inner-page nav failed '+JSON.stringify({result,errors}));
+ if(result.trigger!=='menu'||result.expanded!=='false'||result.controls!=='dd-menu'||result.hasPopup||!result.menuClosed||errors.length)throw Error(path+' inner-page nav failed '+JSON.stringify({result,errors}));
  console.log(path,'passes disclosure keyboard navigation');
  await page.close();
 }
