@@ -77,9 +77,9 @@
   }
   function sentences(text){
     return (text.match(/[^.!?।\n]+[.!?।]?/g)||[]).map(t=>t.trim()).filter(Boolean).flatMap(t=>{
-      if(t.length<=210)return[t];
+      if(t.length<=120)return[t];
       const words=t.split(/\s+/),out=[];let part='';
-      for(const word of words){if((part+' '+word).length>180&&part){out.push(part);part='';}part+=(part?' ':'')+word;}
+      for(const word of words){if((part+' '+word).length>110&&part){out.push(part);part='';}part+=(part?' ':'')+word;}
       if(part)out.push(part);return out;
     });
   }
@@ -102,7 +102,7 @@
     utterance.rate=1;
     utterance.onend=()=>next(token);
     utterance.onerror=e=>{if(token!==run||!active)return;if(e.error==='interrupted'||e.error==='canceled')return;stopSpeech(words.error);};
-    synth.speak(utterance);
+    try{synth.speak(utterance);}catch(_){stopSpeech(words.error);}
   }
   select.addEventListener('change',()=>{
     const target=select.value;
