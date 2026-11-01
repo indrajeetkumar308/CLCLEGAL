@@ -45,6 +45,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Priority | Task | Suggested owner |
 |---|---|---|
+| 0 | Flaky CI: `mobile-smoke` fails at random (also on main) — after `page.focus('#dd-btn')` + Escape, focus is sometimes on `body` instead of `#dd-btn` (homepage and inner pages). Fix the Escape focus handling in `assets/app.js` / `home-runtime.js` or the test | ChatGPT |
 | 1 | New article: Checking land title in Bihar before buying | Claude |
 | 2 | Around 15 Nov: compare Search Console clicks for "mutation appeal" after the #25 title change | Claude |
 | 3 | BCI Rule 36 wording review across all pages (see `docs/quality-and-bci-review.md`) | Pk, with either AI |
