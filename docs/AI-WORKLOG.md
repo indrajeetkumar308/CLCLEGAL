@@ -37,7 +37,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-01 | ChatGPT | Repair iPhone reading overlays, native speech reliability, keyboard focus and add technical bilingual SEO checks + BCI handoff | `assets/reading-mode.css`, `assets/article-tts.js`, `assets/app.js`, `assets/home-runtime.js`, `scripts/`, `.github/workflows/`, article cache versions, `docs/` | pending |
 
 ---
 
