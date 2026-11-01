@@ -45,6 +45,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Priority | Task | Suggested owner |
 |---|---|---|
+| 0 | Flaky CI: `mobile-smoke` fails at random (also on main) — after `page.focus('#dd-btn')` + Escape, focus is sometimes on `body` instead of `#dd-btn` (homepage and inner pages). Fix the Escape focus handling in `assets/app.js` / `home-runtime.js` or the test | ChatGPT |
 | 1 | New article: Checking land title in Bihar before buying | Claude |
 | 2 | Around 15 Nov: compare Search Console clicks for "mutation appeal" after the #25 title change | Claude |
 | 3 | BCI Rule 36 wording review across all pages (see `docs/quality-and-bci-review.md`) | Pk, with either AI |
@@ -65,4 +66,5 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 | 2026-11-01 | Claude | Internal linking: new Insights index (/insights/, /hi/insights/) listing all articles; Jamabandi card on Mutation pages, Jamabandi + DCLR cards on Property pages; "Legal Insights" footer link on all pages; sitemap +2. Also added one Jamabandi link to the Land Records card in Citizen Guides (ChatGPT's area, small change only) | #27 |
 | 2026-11-01 | Claude | Floating WhatsApp button: icon only, removed the "WhatsApp: +91…" text label (Pk's request; CSS is ChatGPT's area, one rule removed); styles.css cache version unified to v=20261101a on all pages | #28 |
 | 2026-11-01 | Claude | DCLR article (EN + HI): "Sources" line at the end — Bihar Bhumi, Bihar Land Mutation Act 2011 (PRS India PDF), Rules 2012 (LBSNAA PDF); Act s.7–8 and Rules 11–12 checked against the text (30-day appeal; revision to Collector within 30 days) | #29 |
+| 2026-11-01 | Claude | Citizen Guides link was only in the homepage menu: added "Citizen Guides" / "नागरिक गाइड" to the top menu on all inner pages (32) and to the footer on all pages (48). Header/nav is ChatGPT's area; link only, no CSS/JS change | this PR |
 | up to 2026-10-31 | ChatGPT | Homepage performance, PWA caching, accessibility, citizen guides, privacy page, CI tests, consent | #21, #22, #23 and earlier |
