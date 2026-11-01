@@ -37,7 +37,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-01 | ChatGPT | Add native browser Listen-to-article player with EN/HI choice, tests and screenshots | `assets/article-tts.js`, `assets/article-tts.css`, `insights/*/index.html`, `hi/insights/*/index.html`, tests | pending |
 
 ---
 
