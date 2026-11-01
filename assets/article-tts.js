@@ -104,7 +104,7 @@
   });
   play.addEventListener('click',async()=>{
     if(active){
-      if(paused){paused=false;synth.resume();play.textContent=words.pause;play.setAttribute('aria-label',words.pause);status.textContent=words.playing;next(run);}
+      if(paused){paused=false;synth.resume();play.textContent=words.pause;play.setAttribute('aria-label',words.pause);status.textContent=words.playing;}
       else{paused=true;synth.pause();play.textContent=words.resume;play.setAttribute('aria-label',words.resume);status.textContent=words.paused;}
       return;
     }
