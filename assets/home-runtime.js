@@ -120,7 +120,7 @@
     const dropdownOpen = drop?.classList.contains('open');
     if (mobileOpen || dropdownOpen) {
       e.preventDefault();
-      const target = dropdownOpen && (!mobileOpen || drop.contains(document.activeElement)) ? dropButton : menu;
+      const target = mobileOpen ? menu : dropButton;
       closeMenu();
       target?.focus();
     }
