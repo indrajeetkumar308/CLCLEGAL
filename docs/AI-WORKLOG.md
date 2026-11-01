@@ -37,7 +37,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-01 | ChatGPT | Synchronize visible EN/HI article with narration language selector and preserve Reading Mode | `assets/article-tts.js`, `assets/reading-mode.js`, 8 article JS version tags, `scripts/article-tts-smoke.mjs` | pending |
 
 ---
 
