@@ -9,7 +9,7 @@ for(const lang of ['en','hi'])for(const width of [390,1440]){
  await page.evaluateOnNewDocument(()=>{
   sessionStorage.setItem('clc-gate','1');
   localStorage.setItem('clc-ga4-consent-v1','no');
-  localStorage.removeItem('clc-tts-lang');
+  if(!sessionStorage.getItem('tts-test-started')){localStorage.removeItem('clc-tts-lang');sessionStorage.setItem('tts-test-started','1');}
   window.__utterances=[];
   const fake={
    paused:false,
@@ -57,13 +57,23 @@ for(const lang of ['en','hi'])for(const width of [390,1440]){
  await page.evaluate(()=>document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(link=>{
   const target=new URL(link.href);if(target.hostname==='clclegal.in')link.href=location.origin+target.pathname;
  }));
+ await page.click('.reader-toggle');
  await page.select('#clc-tts-language',other);
+ await page.waitForFunction(expected=>location.pathname.startsWith(expected),{},other==='hi'?'/hi/insights/':'/insights/');
+ await page.waitForSelector('#clc-tts-language');
+ const visible=await page.evaluate(()=>({
+  lang:document.documentElement.lang,
+  selection:document.querySelector('#clc-tts-language')?.value,
+  title:document.querySelector('h1')?.textContent,
+  reading:document.documentElement.classList.contains('clc-reading'),
+  stored:localStorage.getItem('clc-tts-lang')
+ }));
+ if(!visible.lang.startsWith(other)||visible.selection!==other||!visible.reading||visible.stored!==other)throw Error('Visible article language/reading mode mismatch '+JSON.stringify(visible));
+ if(errors.length)throw Error('Article navigation page errors '+errors.join('; '));
  await page.click('#clc-tts-play');
- await page.waitForFunction(()=>window.__utterances.length>1,{timeout:8000}).catch(async error=>{const debug=await page.evaluate(()=>({status:document.querySelector('#clc-tts-status')?.textContent,button:document.querySelector('#clc-tts-play')?.disabled,selected:document.querySelector('#clc-tts-language')?.value,utterances:window.__utterances}));throw new Error(lang+width+' alternate narration failed '+JSON.stringify(debug)+' '+error.message);});
+ await page.waitForFunction(()=>window.__utterances.length>0);
  const alternate=await page.evaluate(()=>window.__utterances.at(-1));
- if(alternate.lang!==(other==='hi'?'hi-IN':'en-IN'))throw Error('Alternate language not spoken');
- const local=await page.evaluate(()=>localStorage.getItem('clc-tts-lang'));
- if(local!==other)throw Error('Language choice not saved');
+ if(alternate.lang!==(other==='hi'?'hi-IN':'en-IN'))throw Error('New article speech language wrong');
  await page.click('#clc-tts-stop');
  if(errors.length)throw Error(lang+width+' console errors: '+errors.join('; '));
  console.log(lang,width,'pass',spoken.lang,alternate.lang,'overflow',overflow);

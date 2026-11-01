@@ -56,6 +56,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
+| 2026-11-01 | ChatGPT | Change visible article to published EN/HI alternate when narration language changes; retain Reading Mode and no autoplay | #36 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Fix iPhone narration Play/Pause/Resume button shifting with stable toolbar tracks and geometry tests | #34 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Compact article audio controls beside Reading Mode; require Indian English/Hindi voice; responsive test coverage | #33 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Native bilingual article narration (Web Speech API), voice selection, EN/HI article fetch, accessible Play/Pause/Stop, responsive styles; four viewport tests and screenshots | #32 (PR, unmerged) |

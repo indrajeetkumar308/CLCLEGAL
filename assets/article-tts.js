@@ -20,7 +20,9 @@
   try {const saved=localStorage.getItem('clc-tts-lang');if(saved==='en'||saved==='hi')selected=saved;} catch(_) {}
   mount.innerHTML='<div class="clc-tts-controls"><label for="clc-tts-language">'+words.language+'</label><select id="clc-tts-language"><option value="en">English</option><option value="hi">हिन्दी</option></select><button type="button" id="clc-tts-play" disabled>🔊 '+words.play+'</button><button type="button" id="clc-tts-stop" disabled>'+words.stop+'</button></div><p id="clc-tts-status" role="status" aria-live="polite"></p>';
   const select=mount.querySelector('select'),play=mount.querySelector('#clc-tts-play'),stop=mount.querySelector('#clc-tts-stop'),status=mount.querySelector('#clc-tts-status');
-  select.value=selected;
+  // The selector always describes the article currently visible on the page.
+  selected=pageLang;
+  select.value=pageLang;
   play.setAttribute('aria-label',words.play);
   stop.setAttribute('aria-label',words.stop);
   let voices=[],voiceCheckComplete=false,active=false,paused=false,run=0,index=0,chunks=[],voice=null;
@@ -103,10 +105,21 @@
     synth.speak(utterance);
   }
   select.addEventListener('change',()=>{
+    const target=select.value;
     stopSpeech();
-    selected=select.value;
-    try{localStorage.setItem('clc-tts-lang',selected);}catch(_){}
-    refreshVoices();
+    if(target===pageLang)return;
+    const alt=document.querySelector('link[rel="alternate"][hreflang="'+target+'-IN"]');
+    if(!alt){select.value=pageLang;status.textContent=words.error;return;}
+    const url=new URL(alt.href,location.href);
+    if(url.origin!==location.origin){select.value=pageLang;status.textContent=words.error;return;}
+    try{
+      localStorage.setItem('clc-tts-lang',target);
+      sessionStorage.setItem('clc-reader-language-return',JSON.stringify({
+        path:url.pathname,reading:document.documentElement.classList.contains('clc-reading')
+      }));
+    }catch(_){}
+    // Navigate to the published alternate, keeping canonical URL, menus and visible text in sync.
+    location.assign(url.href);
   });
   play.addEventListener('click',async()=>{
     if(active){
