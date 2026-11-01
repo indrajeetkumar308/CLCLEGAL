@@ -56,6 +56,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
+| 2026-11-01 | ChatGPT | Compact article audio controls beside Reading Mode; require Indian English/Hindi voice; responsive test coverage | #33 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Native bilingual article narration (Web Speech API), voice selection, EN/HI article fetch, accessible Play/Pause/Stop, responsive styles; four viewport tests and screenshots | #32 (PR, unmerged) |
 | 2026-10-27 | Claude | SEO rebuild: one URL per practice area (EN + HI), titles, canonical, hreflang, JSON-LD, sitemap, robots, 404 | 2bf7ed9 |
 | 2026-10-28 | Claude | Home title and description, LawFirm schema, click-to-call and mailto links, Contact page | bbb0999, 634705e |
