@@ -9,6 +9,7 @@ for(const lang of ['en','hi'])for(const width of [390,1440]){
  await page.evaluateOnNewDocument(()=>{
   sessionStorage.setItem('clc-gate','1');
   localStorage.setItem('clc-ga4-consent-v1','no');
+  localStorage.removeItem('clc-tts-lang');
   window.__utterances=[];
   const fake={
    paused:false,
