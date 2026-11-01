@@ -73,4 +73,21 @@ for(const path of ['criminal-defence-lawyer-patna/','hi/criminal-defence-lawyer-
  await page.close();
 }
 
+
+for(const path of ['/','/hi/','/insights/dakhil-kharij-appeal-dclr-bihar/']){
+ const page=await browser.newPage();
+ await page.setUserAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1');
+ await page.setViewport({width:390,height:844,isMobile:true,hasTouch:true});
+ await page.evaluateOnNewDocument(()=>{sessionStorage.setItem('clc-gate','1');localStorage.setItem('clc-ga4-consent-v1','no');});
+ await page.goto('http://127.0.0.1:8765'+path,{waitUntil:'load'});
+ await page.waitForSelector('#clc-ios-install');
+ const visible=await page.$eval('#clc-ios-install',el=>getComputedStyle(el).display!=='none');
+ if(!visible)throw Error(path+' install guidance missing');
+ await page.evaluate(()=>scrollTo(0,110));
+ await page.waitForFunction(()=>getComputedStyle(document.querySelector('#clc-ios-install')).display==='none');
+ const dismissed=await page.$eval('#clc-ios-install',el=>el.hidden);
+ if(!dismissed)throw Error(path+' scroll failed to dismiss installation guidance');
+ await page.close();
+}
+
 await browser.close();
