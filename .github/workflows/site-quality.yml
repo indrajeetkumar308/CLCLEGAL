@@ -19,6 +19,7 @@ jobs:
           node --check assets/home-runtime.js
           node --check assets/analytics.js
           node --check assets/reading-mode.js
+          node --check assets/article-tts.js
           node --check sw.js
       - name: Validate PWA manifest
         run: node -e "JSON.parse(require('fs').readFileSync('manifest.webmanifest','utf8'))"
