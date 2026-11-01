@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer-core';
 import fs from 'node:fs';
 const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
 fs.mkdirSync('reports/article-tts',{recursive:true});
-for(const lang of ['en','hi'])for(const width of [390,1440]){
+for(const lang of ['en','hi'])for(const width of [360,390,430,1440]){
  const page=await browser.newPage();
  await page.setViewport({width,height:850,deviceScaleFactor:1,isMobile:width===390,hasTouch:width===390});
  const errors=[];page.on('pageerror',e=>errors.push(String(e)));
@@ -32,16 +32,23 @@ for(const lang of ['en','hi'])for(const width of [390,1440]){
  await page.screenshot({path:'reports/article-tts/'+lang+'-'+width+'.png',fullPage:false});
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth);
  if(overflow)throw Error(lang+width+' horizontal overflow');
+ const position=()=>page.evaluate(()=>{const r=document.querySelector('#clc-tts-play').getBoundingClientRect();const t=document.querySelector('#clc-reader').getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height,toolbarHeight:t.height,scroll:document.documentElement.scrollWidth,viewport:innerWidth};});
+ const before=await position();
  const initial=await page.$eval('#clc-tts-language',e=>e.value);
  if(initial!==lang)throw Error('Wrong default language: '+initial);
  await page.click('#clc-tts-play');
  await page.waitForFunction(()=>window.__utterances.length>0);
  const spoken=await page.evaluate(()=>window.__utterances[0]);
  if(spoken.lang!==(lang==='hi'?'hi-IN':'en-IN'))throw Error('Wrong spoken language');
+ const playingPosition=await position();
  await page.click('#clc-tts-play'); // pause
  const paused=await page.$eval('#clc-tts-status',e=>e.textContent);
  if(!paused)throw Error('Pause not announced');
+ const pausedPosition=await position();
  await page.click('#clc-tts-play'); // resume
+ const resumedPosition=await position();
+ const positions=[before,playingPosition,pausedPosition,resumedPosition];
+ if(positions.some(p=>Math.abs(p.x-before.x)>1||Math.abs(p.y-before.y)>1||Math.abs(p.w-before.w)>1||Math.abs(p.toolbarHeight-before.toolbarHeight)>1||p.scroll>p.viewport))throw Error('Audio controls shift on '+lang+' '+width+': '+JSON.stringify(positions));
  await page.click('#clc-tts-stop');
  const stopped=await page.$eval('#clc-tts-status',e=>e.textContent);
  if(!stopped)throw Error('Stop not announced');
