@@ -1,9 +1,12 @@
 (() => {
   'use strict';
-  if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) return;
   const mount=document.getElementById('clc-article-tts');
   const article=document.querySelector('article.artc');
   if (!mount || !article) return;
+  if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+    mount.hidden=true;
+    return;
+  }
   const synth=window.speechSynthesis;
   const pageLang=document.documentElement.lang.toLowerCase().startsWith('hi')?'hi':'en';
   const words={
@@ -17,7 +20,7 @@
   select.value=selected;
   play.setAttribute('aria-label',words.play);
   stop.setAttribute('aria-label',words.stop);
-  let voices=[],active=false,paused=false,run=0,index=0,chunks=[],voice=null;
+  let voices=[],voiceCheckComplete=false,active=false,paused=false,run=0,index=0,chunks=[],voice=null;
   function voiceFor(lang){const matches=voices.filter(v=>v.lang.toLowerCase().startsWith(lang+'-')||v.lang.toLowerCase()===lang);return matches.find(v=>v.lang.toLowerCase()===lang+'-in')||matches[0]||null;}
   function reset(message=''){
     active=false;paused=false;chunks=[];index=0;voice=null;play.textContent=words.play;play.setAttribute('aria-label',words.play);stop.disabled=true;status.textContent=message;
@@ -30,10 +33,10 @@
     if(loaded.length) voices=loaded;
     for(const lang of ['en','hi']) {
       const option=select.querySelector('option[value="'+lang+'"]');
-      option.disabled=voices.length>0&&!voiceFor(lang);
+      option.disabled=(voices.length>0 || voiceCheckComplete)&&!voiceFor(lang);
     }
     play.disabled=!voices.length||!voiceFor(select.value);
-    if(voices.length&&!voiceFor(select.value)){
+    if((voices.length || voiceCheckComplete)&&!voiceFor(select.value)){
       status.textContent=words.missing[select.value];
       stopSpeech(words.missing[select.value]);
     } else if(!active)status.textContent='';
@@ -44,7 +47,7 @@
   // Some engines expose their voice list after DOM ready, without firing voiceschanged.
   if(!voices.length) {
     const retry=setInterval(()=>{refreshVoices();if(voices.length)clearInterval(retry);},300);
-    setTimeout(()=>clearInterval(retry),4500);
+    setTimeout(()=>{clearInterval(retry);voiceCheckComplete=true;refreshVoices();},4500);
   }
   function readingText(doc){
     const main=doc.querySelector('article.artc'),heading=doc.querySelector('h1');
