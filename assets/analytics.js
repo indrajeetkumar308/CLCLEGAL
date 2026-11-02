@@ -8,18 +8,22 @@
   // Read and consume the device switch before consulting stored GA consent.
   // Keep unrelated query parameters and the URL fragment intact.
   let internalDevice = false;
+  let internalSwitch = null;
   try {
     const url = new URL(location.href);
-    const value = url.searchParams.get('internal');
-    if (value === '1') localStorage.setItem(internalKey, '1');
-    else if (value === '0') localStorage.removeItem(internalKey);
-    if (value === '1' || value === '0') {
+    internalSwitch = url.searchParams.get('internal');
+    if (internalSwitch === '1' || internalSwitch === '0') {
       url.searchParams.delete('internal');
       try { history.replaceState(history.state, '', url.pathname + url.search + url.hash); } catch (_) {}
     }
-    internalDevice = localStorage.getItem(internalKey) === '1';
-  } catch (_) { /* Storage may be disabled; never break the consent manager. */ }
-
+  } catch (_) { /* Malformed location or blocked history: do not interrupt consent. */ }
+  // An explicit ?internal=1 must disable tracking even when storage is unavailable.
+  internalDevice = internalSwitch === '1';
+  try {
+    if (internalSwitch === '1') localStorage.setItem(internalKey, '1');
+    else if (internalSwitch === '0') localStorage.removeItem(internalKey);
+    if (internalSwitch !== '0') internalDevice = internalDevice || localStorage.getItem(internalKey) === '1';
+  } catch (_) { /* Private browsing can disallow localStorage. */ }
   const copy = hindi ? {
     message: 'क्या आप वेबसाइट उपयोग के आँकड़े एकत्र करने की अनुमति देते हैं? Google Analytics केवल आपकी सहमति के बाद चालू होगा। विज्ञापन ट्रैकिंग बंद रखी गई है।',
     allow: 'अनुमति दें', reject: 'अस्वीकार करें', settings: 'Analytics सेटिंग्स'
@@ -130,7 +134,7 @@
       const note = document.createElement('small');
       note.id = 'clc-internal-note';
       note.textContent = hindi ? 'इस डिवाइस पर एनालिटिक्स बंद (आंतरिक)' : 'Analytics off on this device (internal)';
-      note.style.cssText = 'display:block;margin:6px 8px;font:12px/1.5 inherit;opacity:.7';
+      note.style.cssText = 'display:block;margin:6px 8px;font-size:12px;line-height:1.5;opacity:.7';
       footer.appendChild(note);
     }
   }
