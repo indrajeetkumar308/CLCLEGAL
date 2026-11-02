@@ -33,6 +33,19 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 ---
 
+## SEO change rules (agreed with Pk, 2 Nov 2026)
+
+1. **Never change a page URL.** The site is on GitHub Pages and cannot do server redirects; a changed URL loses its Google history.
+2. **After changing a page's title or H1, leave them alone for at least 4–6 weeks.** Check Search Console data before changing again.
+3. **Add, do not delete.** Do not remove sections, FAQs or articles that people read; correct or extend them instead.
+4. **No site-wide redesign at once.** Change layout or templates in small steps.
+5. **No keyword stuffing**, and no "best / top / expert" wording (BCI Rule 36).
+6. New articles, new FAQs, corrections and internal links are always fine.
+
+**Frozen until 15 Dec 2026:** title and H1 of `/property-lawyer-patna/` and `/hi/property-lawyer-patna/` (changed in #39). Only factual corrections until then.
+
+---
+
 ## In progress (only one AI per file at a time)
 
 | Started | AI | Task | Files / pages | PR |
@@ -78,5 +91,5 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 | 2026-11-02 | Claude | Property page (EN + HI): H1 "Property Lawyer in Patna: Title, Land Records and Disputes"; new "Courts and Forums" section (civil courts, revenue authorities, Bihar Land Tribunal, RERA Bihar, Patna HC) with official links; documents checklist; 4 FAQs + FAQPage JSON-LD. Facts checked against Bihar Land Mutation Rules 2012, Land Tribunal and RERA Bihar official pages, Suraj Bhan judgment | #39 |
 | 2026-11-02 | Claude | WhatsApp Channel "CLC Legal - Bihar Law Guides" (https://whatsapp.com/channel/0029Vb9imazJpe8e5YZzzE18): footer link on all pages, "follow" line at the end of every article (EN + HI), added to LawFirm sameAs in JSON-LD | #40 |
 | 2026-11-02 | Claude | quality-audit.mjs: Hindi article check read 'hi/insights/...' (no leading slash) as English, so all 4 Hindi articles were falsely flagged 'article-hreflang-or-canonical-mismatch'. One-line fix (prefix '/'). The pages' canonical/hreflang were already correct. CI script is ChatGPT's area; logic otherwise unchanged | this PR |
-| 2026-11-02 | Claude | Ahrefs Site Audit fixes: JSON-LD `@type` "LawFirm" (not a schema.org type) changed to "LegalService" on 32 pages (@id unchanged); 3 meta descriptions trimmed under 160 characters (divorce EN, home HI, immigration EN). Titles left as is (change rules) | this PR |
+| 2026-11-02 | Claude | Ahrefs Site Audit fixes: JSON-LD `@type` "LawFirm" (not a schema.org type) changed to "LegalService" on 32 pages (@id unchanged); 3 meta descriptions trimmed under 160 characters (divorce EN, home HI, immigration EN). Titles left as is (change rules) | #45 |
 | up to 2026-10-31 | ChatGPT | Homepage performance, PWA caching, accessibility, citizen guides, privacy page, CI tests, consent | #21, #22, #23 and earlier |
