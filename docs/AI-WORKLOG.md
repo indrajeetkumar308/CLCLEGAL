@@ -56,7 +56,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
-| 2026-11-02 | ChatGPT | Critical first-paint CSS, nonblocking stylesheet and Hindi/Latin font preload on four Lighthouse routes; 3-run mobile median comparison workflow, server-cache/forced-reflow follow-up required | #43 (PR, pending Lighthouse medians) |
+| 2026-11-02 | ChatGPT | Critical CSS experiment and mobile Lighthouse regression guard. Measured 3-run medians (before→after): home 100→99, hi 86→88, property 100→99, DCLR article 97→93; PR must not merge as a performance win until regressions resolved. Cache headers depend on hosting/CDN settings. | #43 (PR, NOT ready to merge) |
 | 2026-11-01 | ChatGPT | Auto-dismiss installation prompts on first downward scroll or after 30 seconds across iOS guidance and native install option; EN/HI mobile scroll tests and cache refresh | #38 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Reader iPhone overlay fix, shorter native speech chunks, improved Escape-focus fallback, updated asset caches, technical EN/HI hreflang audit; legal/BCI editorial review deferred to Pk/Claude | #37 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Change visible article to published EN/HI alternate when narration language changes; retain Reading Mode and no autoplay | #36 (PR, unmerged) |
