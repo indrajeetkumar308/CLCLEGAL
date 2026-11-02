@@ -65,7 +65,7 @@ jobs:
             output.push(line);
           }
           fs.writeFileSync(folder+'medians.json',JSON.stringify(output,null,2));
-          const table=['| Page | Before | After | FCP before/after (ms) | LCP before/after (ms) | TBT before/after (ms) |','|---|---:|---:|---:|---:|---:|',...output.map(x=>`| ${x.route} | ${x.before.score} | ${x.after.score} | ${x.before.fcp}/${x.after.fcp} | ${x.before.lcp}/${x.after.lcp} | ${x.before.tbt}/${x.after.tbt} |`)].join('\n');
+          const table=['| Page | Before | After | FCP B/A (ms) | LCP B/A (ms) | TBT B/A (ms) | CLS B/A |','|---|---:|---:|---:|---:|---:|---:|',...output.map(x=>`| ${x.route} | ${x.before.score} | ${x.after.score} | ${x.before.fcp}/${x.after.fcp} | ${x.before.lcp}/${x.after.lcp} | ${x.before.tbt}/${x.after.tbt} | ${x.before.cls}/${x.after.cls} |`)].join('\n');
           console.log(table);
           if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,table+'\n');
           NODE
