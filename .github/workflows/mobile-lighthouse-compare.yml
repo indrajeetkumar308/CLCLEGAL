@@ -67,6 +67,11 @@ jobs:
           fs.writeFileSync(folder+'medians.json',JSON.stringify(output,null,2));
           const table=['| Page | Before | After | FCP B/A (ms) | LCP B/A (ms) | TBT B/A (ms) | CLS B/A |','|---|---:|---:|---:|---:|---:|---:|',...output.map(x=>`| ${x.route} | ${x.before.score} | ${x.after.score} | ${x.before.fcp}/${x.after.fcp} | ${x.before.lcp}/${x.after.lcp} | ${x.before.tbt}/${x.after.tbt} | ${x.before.cls}/${x.after.cls} |`)].join('\n');
           console.log(table);
+          const regressions=output.filter(x=>x.after.score<x.before.score || x.after.cls>x.before.cls+0.02);
+          if(regressions.length){
+            console.error('Mobile performance regression detected: '+regressions.map(x=>x.route).join(', '));
+            process.exitCode=1;
+          }
           if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,table+'\n');
           NODE
       - uses: actions/upload-artifact@v4
