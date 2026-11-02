@@ -1,0 +1,29 @@
+name: Internal GA4 device opt-out tests
+on:
+  pull_request:
+    paths:
+      - 'assets/analytics.js'
+      - 'assets/app.js'
+      - 'assets/home-runtime.js'
+      - 'scripts/internal-analytics-smoke.mjs'
+      - '.github/workflows/internal-analytics-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  internal-analytics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser controller
+        run: npm install --no-save puppeteer-core@24
+      - name: Run local website
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/clc-internal-smoke.log 2>&1 &
+          sleep 2
+      - name: Verify consent and internal device GA blocking at 390px and 1440px
+        run: node scripts/internal-analytics-smoke.mjs
