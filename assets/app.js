@@ -666,4 +666,4 @@ route();
 })();
 
 /* Optional Google Analytics 4: privacy-first consent prompt (EN / HI). */
-(() => { const tag = document.createElement('script'); tag.src = '/assets/analytics.js?v=20261030a'; tag.async = true; document.head.appendChild(tag); })();
+(() => { const tag = document.createElement('script'); tag.src = '/assets/analytics.js?v=20261102internal'; tag.async = true; document.head.appendChild(tag); })();
