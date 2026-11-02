@@ -5,7 +5,8 @@ const browser=await puppeteer.launch({executablePath:process.env.CHROME_BIN||'/u
 const origin='http://127.0.0.1:8765';
 try {
  for(const width of [390,1440]) for(const route of ['/','/hi/','/property-lawyer-patna/','/hi/property-lawyer-patna/']){
-  const page=await browser.newPage();
+  const context=await browser.createBrowserContext();
+  const page=await context.newPage();
   await page.setViewport({width,height:850});
   const errors=[],ga=[];
   page.on('pageerror',e=>errors.push(e.message));
@@ -39,7 +40,7 @@ try {
   assert.equal(await page.evaluate(()=>localStorage.getItem('clc-internal')),null);
   assert.ok(ga.length>0,'GA did not resume on opt-in device '+route);
   assert.deepEqual(errors,[],'Browser errors '+route+' '+width);
-  await page.close();
+  await context.close();
   console.log('PASS',route,width);
  }
 } finally {await browser.close();}
