@@ -44,7 +44,7 @@ for(const file of pages){
 // Verify bilingual article discoverability without touching editorial content.
 for(const file of pages.filter(p=>p.replaceAll('\\','/').includes('/insights/') && !p.endsWith('/insights/index.html'))){
  const html=fs.readFileSync(file,'utf8');
- const isHindi=file.replaceAll('\\','/').includes('/hi/insights/');
+ const isHindi=('/'+file.replaceAll('\\','/')).includes('/hi/insights/');
  const missing=['en-IN','hi-IN'].filter(code=>!html.includes('hreflang="'+code+'"'));
  const canonicalTag=html.split('\n').find(line=>line.includes('rel="canonical"'))||'';
  const expected=isHindi?'/hi/insights/':'/insights/';
