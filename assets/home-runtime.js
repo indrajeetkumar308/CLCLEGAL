@@ -246,7 +246,7 @@ window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup)
     if (analyticsInjected) return;
     analyticsInjected = true;
     const tag=document.createElement('script');
-    tag.src='/assets/analytics.js?v=20261030a';
+    tag.src='/assets/analytics.js?v=20261102internal';
     tag.async=true;document.head.appendChild(tag);
   };
   const afterLoad = () => {if (!gate || gate.hidden) startAnalytics();};
