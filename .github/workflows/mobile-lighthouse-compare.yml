@@ -1,0 +1,82 @@
+name: Four-page mobile Lighthouse median comparison
+on:
+  pull_request:
+    paths:
+      - 'assets/critical.css'
+      - 'index.html'
+      - 'hi/index.html'
+      - 'property-lawyer-patna/index.html'
+      - 'insights/dakhil-kharij-appeal-dclr-bihar/index.html'
+      - '.github/workflows/mobile-lighthouse-compare.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: candidate
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: baseline
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Start both website versions
+        run: |
+          (cd baseline && python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/clc-before.log 2>&1) &
+          (cd candidate && python3 -m http.server 8766 --bind 127.0.0.1 >/tmp/clc-after.log 2>&1) &
+          sleep 3
+      - name: Run three mobile Lighthouse reports per URL and version
+        run: |
+          mkdir -p candidate/reports/lighthouse-compare
+          for version in before after; do
+            if [ "$version" = before ]; then port=8765; else port=8766; fi
+            for route in home hi property article; do
+              case "$route" in
+                home) path=/ ;;
+                hi) path=/hi/ ;;
+                property) path=/property-lawyer-patna/ ;;
+                article) path=/insights/dakhil-kharij-appeal-dclr-bihar/ ;;
+              esac
+              for run in 1 2 3; do
+                npx --yes lighthouse@13.6.0 "http://127.0.0.1:$port$path" --only-categories=performance --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --output=json --output-path="candidate/reports/lighthouse-compare/$version-$route-$run.json" --max-wait-for-load=30000 --quiet
+              done
+            done
+          done
+      - name: Calculate comparable medians
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const folder='candidate/reports/lighthouse-compare/';
+          const median=values=>values.sort((a,b)=>a-b)[1];
+          const output=[];
+          for(const route of ['home','hi','property','article']){
+            const line={route};
+            for(const v of ['before','after']){
+              const reports=[1,2,3].map(n=>JSON.parse(fs.readFileSync(folder+v+'-'+route+'-'+n+'.json','utf8')));
+              const numbers=(f)=>median(reports.map(f));
+              line[v]={score:Math.round(numbers(r=>r.categories.performance.score)*100),fcp:Math.round(numbers(r=>r.audits['first-contentful-paint'].numericValue)),lcp:Math.round(numbers(r=>r.audits['largest-contentful-paint'].numericValue)),tbt:Math.round(numbers(r=>r.audits['total-blocking-time'].numericValue)),cls:Math.round(numbers(r=>r.audits['cumulative-layout-shift'].numericValue)*1000)/1000};
+            }
+            output.push(line);
+          }
+          fs.writeFileSync(folder+'medians.json',JSON.stringify(output,null,2));
+          const table=['| Page | Before | After | FCP B/A (ms) | LCP B/A (ms) | TBT B/A (ms) | CLS B/A |','|---|---:|---:|---:|---:|---:|---:|',...output.map(x=>`| ${x.route} | ${x.before.score} | ${x.after.score} | ${x.before.fcp}/${x.after.fcp} | ${x.before.lcp}/${x.after.lcp} | ${x.before.tbt}/${x.after.tbt} | ${x.before.cls}/${x.after.cls} |`)].join('\n');
+          console.log(table);
+          const regressions=output.filter(x=>x.after.score<x.before.score || x.after.cls>x.before.cls+0.02);
+          if(regressions.length){
+            console.error('Mobile performance regression detected: '+regressions.map(x=>x.route).join(', '));
+            process.exitCode=1;
+          }
+          if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,table+'\n');
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mobile-lighthouse-four-pages-before-after
+          path: candidate/reports/lighthouse-compare/
+          if-no-files-found: warn
