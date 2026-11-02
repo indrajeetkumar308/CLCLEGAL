@@ -4,6 +4,22 @@
   const measurementId = 'G-1NV6MN3JJ5';
   const preferenceKey = 'clc-ga4-consent-v1';
   const hindi = (document.documentElement.lang || '').toLowerCase().startsWith('hi');
+  const internalKey = 'clc-internal';
+  // Read and consume the device switch before consulting stored GA consent.
+  // Keep unrelated query parameters and the URL fragment intact.
+  let internalDevice = false;
+  try {
+    const url = new URL(location.href);
+    const value = url.searchParams.get('internal');
+    if (value === '1') localStorage.setItem(internalKey, '1');
+    else if (value === '0') localStorage.removeItem(internalKey);
+    if (value === '1' || value === '0') {
+      url.searchParams.delete('internal');
+      try { history.replaceState(history.state, '', url.pathname + url.search + url.hash); } catch (_) {}
+    }
+    internalDevice = localStorage.getItem(internalKey) === '1';
+  } catch (_) { /* Storage may be disabled; never break the consent manager. */ }
+
   const copy = hindi ? {
     message: 'क्या आप वेबसाइट उपयोग के आँकड़े एकत्र करने की अनुमति देते हैं? Google Analytics केवल आपकी सहमति के बाद चालू होगा। विज्ञापन ट्रैकिंग बंद रखी गई है।',
     allow: 'अनुमति दें', reject: 'अस्वीकार करें', settings: 'Analytics सेटिंग्स'
@@ -19,7 +35,7 @@
     try { localStorage.setItem(preferenceKey, value); } catch (_) { /* storage unavailable */ }
   }
   function startAnalytics() {
-    if (window.__clcGa4Started) return;
+    if (internalDevice || window.__clcGa4Started) return;
     window.__clcGa4Started = true;
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -107,6 +123,16 @@
     notice.textContent = hindi ? 'एनालिटिक्स सूचना' : 'Analytics notice';
     notice.style.cssText = 'display:inline-block;margin:8px;color:inherit;text-decoration:underline;font:inherit';
     footer.appendChild(notice);
+  }
+  if (internalDevice) {
+    const footer = document.querySelector('footer');
+    if (footer && !document.getElementById('clc-internal-note')) {
+      const note = document.createElement('small');
+      note.id = 'clc-internal-note';
+      note.textContent = hindi ? 'इस डिवाइस पर एनालिटिक्स बंद (आंतरिक)' : 'Analytics off on this device (internal)';
+      note.style.cssText = 'display:block;margin:6px 8px;font:12px/1.5 inherit;opacity:.7';
+      footer.appendChild(note);
+    }
   }
   if (getChoice() === 'yes') startAnalytics();
   else if (getChoice() !== 'no') displayChoice();
