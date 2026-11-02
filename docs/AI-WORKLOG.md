@@ -37,7 +37,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-02 | ChatGPT | Mobile PSI: critical CSS, gate first paint, font waterfall, forced reflow/cache review, Lighthouse 3-run medians on four URLs | `assets/styles.css`, 4+ page heads, `scripts/mobile-lighthouse-compare.mjs`, `.github/workflows/`, `docs/` | pending |
 
 ---
 
