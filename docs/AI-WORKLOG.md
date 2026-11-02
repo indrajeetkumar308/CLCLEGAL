@@ -37,7 +37,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| 2026-11-02 | ChatGPT | Mobile PSI: critical CSS, gate first paint, font waterfall, forced reflow/cache review, Lighthouse 3-run medians on four URLs | `assets/styles.css`, 4+ page heads, `scripts/mobile-lighthouse-compare.mjs`, `.github/workflows/`, `docs/` | pending |
+| — | — | — | — | — |
 
 ---
 
@@ -56,6 +56,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
+| 2026-11-02 | ChatGPT | Critical first-paint CSS, nonblocking stylesheet and Hindi/Latin font preload on four Lighthouse routes; 3-run mobile median comparison workflow, server-cache/forced-reflow follow-up required | #43 (PR, pending Lighthouse medians) |
 | 2026-11-01 | ChatGPT | Auto-dismiss installation prompts on first downward scroll or after 30 seconds across iOS guidance and native install option; EN/HI mobile scroll tests and cache refresh | #38 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Reader iPhone overlay fix, shorter native speech chunks, improved Escape-focus fallback, updated asset caches, technical EN/HI hreflang audit; legal/BCI editorial review deferred to Pk/Claude | #37 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Change visible article to published EN/HI alternate when narration language changes; retain Reading Mode and no autoplay | #36 (PR, unmerged) |
