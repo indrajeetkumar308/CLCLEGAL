@@ -59,7 +59,6 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 | Priority | Task | Suggested owner |
 |---|---|---|
 | 0 | Flaky CI: `mobile-smoke` fails at random (also on main) — after `page.focus('#dd-btn')` + Escape, focus is sometimes on `body` instead of `#dd-btn` (homepage and inner pages). Fix the Escape focus handling in `assets/app.js` / `home-runtime.js` or the test | ChatGPT |
-| 1 | New article: Checking land title in Bihar before buying | Claude |
 | 2 | Around 15 Nov: compare Search Console clicks for "mutation appeal" after the #25 title change | Claude |
 | 3 | BCI Rule 36 wording review across all pages (see `docs/quality-and-bci-review.md`) | Pk, with either AI |
 
@@ -93,5 +92,6 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 | 2026-11-02 | Claude | quality-audit.mjs: Hindi article check read 'hi/insights/...' (no leading slash) as English, so all 4 Hindi articles were falsely flagged 'article-hreflang-or-canonical-mismatch'. One-line fix (prefix '/'). The pages' canonical/hreflang were already correct. CI script is ChatGPT's area; logic otherwise unchanged | this PR |
 | 2026-11-02 | Claude | Ahrefs Site Audit fixes: JSON-LD `@type` "LawFirm" (not a schema.org type) changed to "LegalService" on 32 pages (@id unchanged); 3 meta descriptions trimmed under 160 characters (divorce EN, home HI, immigration EN). Titles left as is (change rules) | #45 |
 | 2026-11-02 | Claude | Ahrefs audit, round 2: Patna High Court guide titles (EN + HI) shortened under 60 characters (dropped "Citizen Guides" suffix); Hindi privacy meta description extended (was 57 characters); 4 articles BlogPosting to Article schema. Redirect warnings (http/www to https://clclegal.in) are correct and left as is | #46 |
-| 2026-11-02 | Claude | Ahrefs audit, round 3: removed `inLanguage` from the Service JSON-LD nodes on 22 practice pages (not a valid Service property; caused the remaining schema.org errors); Hindi district-courts guide meta description extended (was 86 characters). "Article schema missing" on 4 Hindi practice pages and "Organization schema" on home are Ahrefs page-type guesses, left as is | this PR |
+| 2026-11-02 | Claude | Ahrefs audit, round 3: removed `inLanguage` from the Service JSON-LD nodes on 22 practice pages (not a valid Service property; caused the remaining schema.org errors); Hindi district-courts guide meta description extended (was 86 characters). "Article schema missing" on 4 Hindi practice pages and "Organization schema" on home are Ahrefs page-type guesses, left as is | #47 |
+| 2026-11-03 | Claude | New article (EN + HI): How to check land before buying in Bihar (/insights/check-land-before-buying-bihar/). Title from Google search phrasing; every portal link opened 3 Nov 2026; law points tied to TPA s.54, Registration Act s.17, Suraj Bhan, Mutation Rules r.11. Cards on property page + Insights index, related links from DCLR and Jamabandi articles, sitemap +2 | this PR |
 | up to 2026-10-31 | ChatGPT | Homepage performance, PWA caching, accessibility, citizen guides, privacy page, CI tests, consent | #21, #22, #23 and earlier |
