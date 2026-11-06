@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-06 | ChatGPT | Move FIR Quashing article into existing Criminal Defence Insight card section EN/HI; remove separate duplicate panel | Criminal Defence EN/HI | In progress |
 
 ---
 
