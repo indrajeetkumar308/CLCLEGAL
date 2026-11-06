@@ -781,3 +781,13 @@ footer .clc-linkedin-footer:focus-visible{
 .clc-category-links a{text-decoration:underline;text-underline-offset:3px;color:var(--gold-text,var(--gold))}
 .clc-category-group .artcard{margin-bottom:12px}
 @media (max-width:480px){.clc-category-jump{gap:7px}.clc-category-jump a{font-size:13px;padding:7px 9px}.clc-category-group{margin:26px 0 32px}}
+
+/* Contextual article and citizen-resource links on Practice Area pages. */
+.clc-practice-resources{margin:0 0 28px;padding:20px 22px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px}
+.clc-practice-resources h2{font-size:clamp(21px,2.5vw,27px);line-height:1.3;margin:0 0 10px}
+.clc-practice-resources p{margin:0 0 10px;font-size:15.5px;line-height:1.6;color:var(--muted)}
+.clc-practice-resources p:last-child{margin-bottom:0}
+.clc-practice-resources ul{margin:4px 0 14px;padding-left:20px}
+.clc-practice-resources li{margin:4px 0;line-height:1.6}
+.clc-practice-resources a{color:var(--gold-text,var(--gold));text-decoration:underline;text-underline-offset:3px}
+@media (max-width:480px){.clc-practice-resources{padding:16px}}
