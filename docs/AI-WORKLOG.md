@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-06 | ChatGPT | Plain-English FIR quashing article (Section 528 BNSS), navigation link and sitemap; legal review by owner required | `insights/fir-quashing-section-528-bnss/index.html`, `insights/index.html`, `sitemap.xml` | In progress |
 
 ---
 
