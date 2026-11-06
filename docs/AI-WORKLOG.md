@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-06 | ChatGPT | Add full Hindi Article 226 translation with examples and reciprocal SEO links to PR #61; legal editorial review | Writ EN/HI, Insights HI, Civil HI, Citizen Guides HI, sitemap | #61 |
 
 ---
 
