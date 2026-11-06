@@ -12,4 +12,4 @@ When finished:
 1. Open a pull request. Never push to `main`. Never merge.
 2. In the same pull request, update `docs/AI-WORKLOG.md`: add or move your task to "Done" with the PR number.
 
-Legal content: no superlatives or promises (Bar Council of India Rule 36). Flag anything the owner must verify.
+Navigation requirement (owner instruction, 6 Nov 2026): Every public inner page and article must have a **visible, readable, accessible breadcrumb trail** above its heading on desktop and mobile, with working parent links and matching BreadcrumbList structured data when applicable. Do not rely on schema alone or low-contrast breadcrumb text. Check this requirement before every new page or page redesign. The homepage is the root and does not need its own breadcrumb.\n\nLegal content: no superlatives or promises (Bar Council of India Rule 36). Flag anything the owner must verify.
