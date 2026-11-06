@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| 2026-11-06 | ChatGPT | Move FIR Quashing article into existing Criminal Defence Insight card section EN/HI; remove separate duplicate panel | Criminal Defence EN/HI | In progress |
+| — | — | — | — | — |
 
 ---
 
@@ -68,6 +68,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
+| 2026-11-06 | ChatGPT | FIR Quashing native article card on Criminal Defence EN/HI alongside Bail; removed off-pattern resource panel | #60 (PR, open) |
 | 2026-11-06 | ChatGPT | Category-group 11 articles EN/HI, Citizen Guide links, Practice Area resource panels, responsive styling | #59 (PR, open) |
 | 2026-11-06 | ChatGPT | Increase visible breadcrumb contrast on inner pages; add permanent breadcrumb navigation rule to AGENTS.md | #58 (PR, open) |
 | 2026-11-06 | ChatGPT | FIR quashing EN/HI switch, new Hindi counterpart, sitemap/index update, prevent byline firm name wrapping | #57 (PR; review before merge) |
