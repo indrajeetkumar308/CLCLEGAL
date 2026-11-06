@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-06 | ChatGPT | Research SEO competitors and draft source-backed Article 226 writ petition guide; link existing Civil Litigation article cards; owner/Claude review | Article, Insights index, Civil Litigation, sitemap, SEO research notes | In progress |
 
 ---
 
