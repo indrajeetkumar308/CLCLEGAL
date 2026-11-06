@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-06 | ChatGPT | Restore FIR quashing EN/HI switch, translate Hindi article, fix header/byline wrapping | English/Hindi FIR article pages, sitemap, Hindi Insights index | In progress |
 
 ---
 
