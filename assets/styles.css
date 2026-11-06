@@ -316,7 +316,13 @@ footer.site{background:var(--navy-2);color:var(--navy-muted);padding-top:72px;fo
 /* practice page */
 .phero{background:radial-gradient(ellipse at 80% 20%,#1B3968 0%,var(--navy) 50%,var(--navy-2) 100%);color:#fff;position:relative;overflow:hidden}
 .phero .wrap{position:relative;z-index:1;padding-block:70px 76px}
-.crumbs{font-size:14px;color:var(--navy-muted);display:flex;gap:10px;flex-wrap:wrap}
+/* Breadcrumbs are primary navigation, not decoration: visible on every inner page. */
+.crumbs{font-size:15px;color:#fff;display:flex;align-items:center;gap:10px;flex-wrap:wrap;line-height:1.6;font-weight:600}
+.phero .crumbs{width:fit-content;max-width:100%;background:rgba(0,0,0,.20);border:1px solid rgba(255,255,255,.34);border-radius:8px;padding:8px 12px}
+.phero .crumbs a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.7);text-underline-offset:3px}
+.phero .crumbs a:hover,.phero .crumbs a:focus-visible{color:#ffe0a5;text-decoration-color:currentColor}
+.phero .crumbs span[aria-current="page"]{color:#ffe0a5}
+@media (max-width:480px){.phero .crumbs{font-size:13.5px;gap:7px;padding:7px 10px}}
 .crumbs a{text-decoration:none}
 .crumbs a:hover{color:var(--gold-2)}
 .crumbs span{color:var(--gold-2)}
