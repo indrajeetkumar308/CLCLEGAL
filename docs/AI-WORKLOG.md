@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-06 | ChatGPT | Category-group existing articles and Citizen Guides; link relevant Practice Areas; preserve URLs and breadcrumbs | Insights EN/HI, Citizen Guides EN/HI, selected Practice Areas EN/HI, styling | In progress |
 
 ---
 
