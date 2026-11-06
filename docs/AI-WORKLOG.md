@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| 2026-11-06 | ChatGPT | Category-group existing articles and Citizen Guides; link relevant Practice Areas; preserve URLs and breadcrumbs | Insights EN/HI, Citizen Guides EN/HI, selected Practice Areas EN/HI, styling | In progress |
+| — | — | — | — | — |
 
 ---
 
@@ -68,6 +68,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
+| 2026-11-06 | ChatGPT | Category-group 11 articles EN/HI, Citizen Guide links, Practice Area resource panels, responsive styling | #59 (PR, open) |
 | 2026-11-06 | ChatGPT | Increase visible breadcrumb contrast on inner pages; add permanent breadcrumb navigation rule to AGENTS.md | #58 (PR, open) |
 | 2026-11-06 | ChatGPT | FIR quashing EN/HI switch, new Hindi counterpart, sitemap/index update, prevent byline firm name wrapping | #57 (PR; review before merge) |
 | 2026-11-06 | ChatGPT | Plain-English FIR quashing article (Section 528 BNSS), Insights index, sitemap; legal/BCI owner review required before merge | #56 (PR, open) |
