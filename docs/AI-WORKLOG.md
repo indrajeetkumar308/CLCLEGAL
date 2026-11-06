@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| 2026-11-06 | ChatGPT | Add full Hindi Article 226 translation with examples and reciprocal SEO links to PR #61; legal editorial review | Writ EN/HI, Insights HI, Civil HI, Citizen Guides HI, sitemap | #61 |
+| — | — | — | — | — |
 
 ---
 
@@ -68,6 +68,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
+| 2026-11-06 | ChatGPT | Add full Hindi translation of Article 226 guide with six examples, reciprocal language switches, Civil Litigation card and Citizen Guides links; owner/Claude editorial review before merge | #61 (updated PR, review required) |
 | 2026-11-06 | ChatGPT | Draft researched Article 226 writ petition guide, SEO study, native Civil Litigation article link, Insights, Citizen Guide, sitemap; owner/Claude legal and SEO review required | #61 (PR, open) |
 | 2026-11-06 | ChatGPT | FIR Quashing native article card on Criminal Defence EN/HI alongside Bail; removed off-pattern resource panel | #60 (PR, open) |
 | 2026-11-06 | ChatGPT | Category-group 11 articles EN/HI, Citizen Guide links, Practice Area resource panels, responsive styling | #59 (PR, open) |
