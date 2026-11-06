@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| 2026-11-06 | ChatGPT | Plain-English FIR quashing article (Section 528 BNSS), navigation link and sitemap; legal review by owner required | `insights/fir-quashing-section-528-bnss/index.html`, `insights/index.html`, `sitemap.xml` | In progress |
+| — | — | — | — | — |
 
 ---
 
@@ -68,6 +68,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
+| 2026-11-06 | ChatGPT | Plain-English FIR quashing article (Section 528 BNSS), Insights index, sitemap; legal/BCI owner review required before merge | #56 (PR, open) |
 | 2026-11-02 | ChatGPT | GA4 internal-device opt-out via URL, EN/HI footer note, no GA on flagged devices, clean URL, SW query-cache verified; added mobile/desktop browser tests (CI review required before merge) | #44 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Auto-dismiss installation prompts on first downward scroll or after 30 seconds across iOS guidance and native install option; EN/HI mobile scroll tests and cache refresh | #38 (PR, unmerged) |
 | 2026-11-01 | ChatGPT | Reader iPhone overlay fix, shorter native speech chunks, improved Escape-focus fallback, updated asset caches, technical EN/HI hreflang audit; legal/BCI editorial review deferred to Pk/Claude | #37 (PR, unmerged) |
