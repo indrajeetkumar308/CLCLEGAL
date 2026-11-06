@@ -50,7 +50,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Started | AI | Task | Files / pages | PR |
 |---|---|---|---|---|
-| 2026-11-06 | ChatGPT | Ensure readable visible breadcrumbs on all inner pages; record mandatory breadcrumb standard | `assets/styles.css`, `AGENTS.md`, `docs/AI-WORKLOG.md` | In progress |
+| — | — | — | — | — |
 
 ---
 
@@ -68,6 +68,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
+| 2026-11-06 | ChatGPT | Increase visible breadcrumb contrast on inner pages; add permanent breadcrumb navigation rule to AGENTS.md | #58 (PR, open) |
 | 2026-11-06 | ChatGPT | FIR quashing EN/HI switch, new Hindi counterpart, sitemap/index update, prevent byline firm name wrapping | #57 (PR; review before merge) |
 | 2026-11-06 | ChatGPT | Plain-English FIR quashing article (Section 528 BNSS), Insights index, sitemap; legal/BCI owner review required before merge | #56 (PR, open) |
 | 2026-11-02 | ChatGPT | GA4 internal-device opt-out via URL, EN/HI footer note, no GA on flagged devices, clean URL, SW query-cache verified; added mobile/desktop browser tests (CI review required before merge) | #44 (PR, unmerged) |
