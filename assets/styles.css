@@ -769,3 +769,15 @@ footer .clc-linkedin-footer:focus-visible{
   outline:3px solid #E8C88D;
   outline-offset:3px;
 }
+
+/* Practice-area navigation for educational articles, responsive and keyboard accessible. */
+.clc-category-intro{margin:0 0 18px!important}
+.clc-category-jump{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+.clc-category-jump a{display:inline-block;border:1px solid var(--gold);border-radius:7px;padding:8px 12px;color:var(--ink);background:var(--surface);font-weight:600;text-decoration:none;font-size:14px}
+.clc-category-jump a:hover,.clc-category-jump a:focus-visible{background:var(--alt);text-decoration:underline}
+.clc-category-group{scroll-margin-top:110px;margin:30px 0 38px}
+.artc .clc-category-group h2{margin:0 0 8px}
+.clc-category-links{font-size:15px!important;margin:0 0 18px!important}
+.clc-category-links a{text-decoration:underline;text-underline-offset:3px;color:var(--gold-text,var(--gold))}
+.clc-category-group .artcard{margin-bottom:12px}
+@media (max-width:480px){.clc-category-jump{gap:7px}.clc-category-jump a{font-size:13px;padding:7px 9px}.clc-category-group{margin:26px 0 32px}}
