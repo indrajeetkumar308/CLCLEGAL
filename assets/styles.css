@@ -791,3 +791,5 @@ footer .clc-linkedin-footer:focus-visible{
 .clc-practice-resources li{margin:4px 0;line-height:1.6}
 .clc-practice-resources a{color:var(--gold-text,var(--gold));text-decoration:underline;text-underline-offset:3px}
 @media (max-width:480px){.clc-practice-resources{padding:16px}}
+
+.main>section.clc-practice-resources,section.clc-practice-resources{padding:20px 22px;min-height:0;margin:0 0 28px}
