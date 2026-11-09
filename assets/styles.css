@@ -801,3 +801,6 @@ footer .clc-linkedin-footer:focus-visible{
   .fbrand{margin-bottom:12px}
   .fbot{margin-top:32px;padding-block:16px}
 }
+
+/* copy buttons in contact card: stop nav-dropdown underline (.dd > button::after) from applying (2026-11-09) */
+.cham-info .dd > button::after{content:none}
