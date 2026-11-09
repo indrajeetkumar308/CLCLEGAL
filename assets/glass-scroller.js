@@ -1,4 +1,4 @@
-/* Floating "liquid glass" scroll bubble: drag up/down to move through the page; fades out when idle. v4: pull-to-scroll (speed grows with pull distance), frame-time based easing, momentum glide; water-drop look. */
+/* Floating "liquid glass" scroll bubble: drag up/down to move through the page; fades out when idle. v5: pull-to-scroll takes over native momentum immediately; float position accumulator; minimum speed; (speed grows with pull distance), frame-time based easing, momentum glide; water-drop look. */
 (function () {
   if (window.__clcGlass) return; window.__clcGlass = true;
   var css = '.clc-glass{position:fixed;right:14px;top:0;left:auto;width:54px;height:54px;border-radius:50%;z-index:1000;will-change:transform,opacity;' +
@@ -21,8 +21,8 @@
   b.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="7 9 12 4 17 9"/><polyline points="7 15 12 20 17 15"/></svg>';
   document.body.appendChild(b);
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var TOP = 90, BOTTOM = 130, SIZE = 54, PULL = 110, MAXV = 2600; /* px/s at full pull */
-  var idle = null, dragging = false, startY = 0, dy = 0, vel = 0, last = 0, raf = 0;
+  var TOP = 90, BOTTOM = 130, SIZE = 54, PULL = 110, MAXV = 2800, MINV = 260, DEAD = 4; /* px/s */
+  var idle = null, dragging = false, startY = 0, dy = 0, vel = 0, last = 0, raf = 0, pos = 0;
   var baseY = TOP, curY = TOP;
   function track() { return Math.max(1, window.innerHeight - TOP - BOTTOM - SIZE); }
   function maxScroll() { return Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
@@ -31,14 +31,15 @@
   function frame(t) {
     raf = 0; var dt = last ? Math.min(48, t - last) : 16; last = t;
     if (dragging) {
-      var p = Math.max(-1, Math.min(1, dy / PULL));
-      var target = (p < 0 ? -1 : 1) * p * p * MAXV;           /* eased speed curve */
-      vel += (target - vel) * Math.min(1, dt / 90);            /* accelerate smoothly */
+      var a = Math.abs(dy), target = 0;
+      if (a > DEAD) { var p = Math.min(1, (a - DEAD) / PULL); target = (dy < 0 ? -1 : 1) * (MINV + (MAXV - MINV) * Math.pow(p, 1.6)); }
+      vel += (target - vel) * Math.min(1, dt / 55);            /* quick, smooth acceleration */
     } else {
       vel *= Math.pow(0.86, dt / 16);                          /* glide to a stop */
       if (Math.abs(vel) < 8) vel = 0;
     }
-    if (vel) window.scrollBy(0, vel * dt / 1000);
+    if (vel) { pos = Math.max(0, Math.min(maxScroll(), pos + vel * dt / 1000)); window.scrollTo(0, Math.round(pos)); }
+    else if (!dragging) pos = window.scrollY;
     baseY = yFromScroll();
     var shown = dragging ? baseY + Math.max(-PULL, Math.min(PULL, dy)) * 0.45 : baseY;
     paint(reduce ? shown : curY + (shown - curY) * Math.min(1, dt / 60));
@@ -53,7 +54,8 @@
   window.addEventListener('scroll', function () { kick(); show(); }, { passive: true });
   window.addEventListener('resize', kick);
   b.addEventListener('pointerdown', function (e) {
-    dragging = true; dy = 0; startY = e.clientY; b.classList.add('drag');
+    dragging = true; dy = 0; vel = 0; startY = e.clientY; b.classList.add('drag');
+    pos = window.scrollY; window.scrollTo(0, Math.round(pos)); /* stop any native momentum so the bubble takes over at once */
     try { b.setPointerCapture(e.pointerId); } catch (_) {}
     document.documentElement.style.scrollBehavior = 'auto'; clearTimeout(idle); e.preventDefault(); kick();
   });
