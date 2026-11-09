@@ -220,7 +220,9 @@ window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup)
   const isiOS=/iPhone|iPad|iPod/.test(ua) ||
     (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
   const standalone=window.matchMedia('(display-mode: standalone)').matches || navigator.standalone===true;
-  if (isiOS && !standalone && !$('#clc-ios-install')) {
+  let snoozed=false;try{snoozed=+localStorage.getItem('clc-ios-install-hide')>Date.now()}catch(_){}
+  const snooze=()=>{try{localStorage.setItem('clc-ios-install-hide',String(Date.now()+90*864e5))}catch(_){}};
+  if (isiOS && !standalone && !snoozed && !$('#clc-ios-install')) {
     const button=document.createElement('button'), popup=document.createElement('aside');
     button.type='button';button.id='clc-ios-install';
     button.setAttribute('aria-expanded','false');
@@ -234,7 +236,7 @@ window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup)
     document.body.append(button,popup);
     window.clcAutoHideInstall(button,popup);
     const close = () => {popup.hidden=true;button.setAttribute('aria-expanded','false');};
-    button.addEventListener('click',()=>{const opened=popup.hidden;popup.hidden=!opened;button.setAttribute('aria-expanded',String(opened));});
+    button.addEventListener('click',()=>{snooze();const opened=popup.hidden;popup.hidden=!opened;button.setAttribute('aria-expanded',String(opened));});
     popup.querySelector('button').addEventListener('click',close);
     document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
     document.addEventListener('pointerdown',e=>{

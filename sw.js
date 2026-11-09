@@ -1,6 +1,6 @@
 /* CLC static PWA: bounded, privacy-aware offline cache.
    Network-first keeps legal information current; old CLC caches are removed on upgrade. */
-const CACHE_VERSION = 'clc-v12-bounded';
+const CACHE_VERSION = 'clc-v13-bounded';
 const SHELL_CACHE = CACHE_VERSION + '-shell';
 const PAGE_CACHE = CACHE_VERSION + '-pages';
 const ASSET_CACHE = CACHE_VERSION + '-assets';

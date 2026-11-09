@@ -29,9 +29,9 @@
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=20261109h">
+<link rel="stylesheet" href="/assets/styles.css?v=20261109i">
 <script>try{if(sessionStorage.getItem('clc-gate')==='1')document.documentElement.classList.add('gate-ok')}catch(e){}</script>
-<script src="/assets/app.js?v=20261109a" defer></script>
+<script src="/assets/app.js?v=20261109b" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Patna High Court: Case Status, Cause List & Orders","url":"https://clclegal.in/citizen-guides/patna-high-court/","inLanguage":"en-IN","description":"Learn how to find your case status, hearing list and available orders on the official Patna High Court website.","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Choudhary Law Chambers","url":"https://clclegal.in/"}}</script>
 <style>
 .artc .cr-fraud-eyebrow{font:700 12px var(--sans);color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin:0 0 24px}
@@ -101,9 +101,11 @@
 <script>
 if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}))}
 (function(){let ev=null;const b=document.getElementById('clc-install');
-addEventListener('beforeinstallprompt',e=>{e.preventDefault();ev=e;if(!matchMedia('(display-mode: standalone)').matches)b.hidden=false});
+const inApp=()=>matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: minimal-ui)').matches||navigator.standalone===true||(()=>{try{return localStorage.getItem('clc-installed')==='1'}catch(_){return false}})();
+if(inApp())b.hidden=true;
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();ev=e;if(!inApp())b.hidden=false});
 b.addEventListener('click',async()=>{if(!ev)return;ev.prompt();await ev.userChoice;ev=null;b.hidden=true});
-addEventListener('appinstalled',()=>{b.hidden=true});})();
+addEventListener('appinstalled',()=>{b.hidden=true;try{localStorage.setItem('clc-installed','1')}catch(_){}});})();
 </script>
 <script src="/assets/glass-scroller.js?v=20261109m" defer></script>
 </body>

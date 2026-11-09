@@ -848,3 +848,7 @@ section:has(> a.artcard) > div[style*="height:16px"]{display:none}
 /* mobile: avoid two contact blocks back to back (2026-11-09) */
 @media (max-width:1000px){.side-cta{display:none}}
 @media (max-width:540px){.cta .btn{display:flex;justify-content:center;width:100%;box-sizing:border-box}}
+
+/* install button: respect [hidden] even with inline display (2026-11-09) */
+#clc-install[hidden]{display:none!important}
+@media (display-mode: standalone){#clc-install{display:none!important}}
