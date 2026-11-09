@@ -22,6 +22,30 @@
   b.className = 'clc-glass'; b.setAttribute('aria-hidden', 'true');
   b.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="7 9 12 4 17 9"/><polyline points="7 15 12 20 17 15"/></svg>';
   document.body.appendChild(b);
+  /* Magnifying lens behind the drop (Chromium browsers: Chrome, Android, Edge). Safari keeps the plain glass look. */
+  (function lens() {
+    var chromium = !!window.chrome && !/iPhone|iPad|iPod/.test(navigator.userAgent);
+    if (!chromium) return;
+    try {
+      var N = 108, cv = document.createElement('canvas'); cv.width = cv.height = N;
+      var cx = cv.getContext('2d'), img = cx.createImageData(N, N), c = N / 2, R = N / 2, MAG = 0.42;
+      for (var y = 0; y < N; y++) for (var x = 0; x < N; x++) {
+        var dx = (x - c) / R, dy = (y - c) / R, d = Math.sqrt(dx * dx + dy * dy), i = (y * N + x) * 4;
+        var k = d < 1 ? MAG * (1 - d * d) : 0;                   /* strongest in the middle, none at the rim */
+        img.data[i] = 128 - dx * k * 127; img.data[i + 1] = 128 - dy * k * 127; img.data[i + 2] = 128; img.data[i + 3] = 255;
+      }
+      cx.putImageData(img, 0, 0);
+      var ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('width', '0'); svg.setAttribute('height', '0'); svg.style.position = 'absolute';
+      svg.innerHTML = '<filter id="clcLens" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">' +
+        '<feImage href="' + cv.toDataURL() + '" x="0" y="0" width="54" height="54" result="m" preserveAspectRatio="none"/>' +
+        '<feDisplacementMap in="SourceGraphic" in2="m" scale="30" xChannelSelector="R" yChannelSelector="G"/></filter>';
+      document.body.appendChild(svg);
+      var ls = document.createElement('style');
+      ls.textContent = '.clc-glass:not(.moving){-webkit-backdrop-filter:url(#clcLens) saturate(1.7) contrast(1.12) brightness(1.08);backdrop-filter:url(#clcLens) saturate(1.7) contrast(1.12) brightness(1.08)}';
+      document.head.appendChild(ls);
+    } catch (_) {}
+  })();
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   /* Pull-to-scroll: hold the drop and pull. Small pull = slow, bigger pull = faster. Release = short glide. */
   var IDLE = 2500, DEAD = 6, PULL = 130, MINV = 90, MAXV = 2400, CURVE = 2.0, lastTap = 0, moved = false;
