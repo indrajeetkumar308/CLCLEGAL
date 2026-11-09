@@ -17,3 +17,22 @@
     sec.appendChild(btn);
   });
 })();
+/* Our Process: reveal steps one after another when the section scrolls into view. */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var lists = document.querySelectorAll('.steps');
+  if (!lists.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target; el.classList.add('in'); io.unobserve(el);
+      setTimeout(function () { el.classList.add('done'); }, 1200);   /* hover then reacts without delay */
+    });
+  }, { threshold: 0.2 });
+  lists.forEach(function (el) {
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) return;          /* already visible on load: no animation */
+    el.classList.add('js-steps'); io.observe(el);
+  });
+})();
