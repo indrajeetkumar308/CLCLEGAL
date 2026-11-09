@@ -24,9 +24,9 @@
   document.body.appendChild(b);
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   /* Pull-to-scroll: hold the drop and pull. Small pull = slow, bigger pull = faster. Release = short glide. */
-  var IDLE = 2500, DEAD = 6, PULL = 120, MINV = 120, MAXV = 2400, CURVE = 1.8, lastTap = 0, moved = false;
+  var IDLE = 2500, DEAD = 6, PULL = 130, MINV = 90, MAXV = 2400, CURVE = 2.0, lastTap = 0, moved = false;
   var idle = null, dragging = false, y0 = 0, dy = 0, vel = 0, pos = 0, raf = 0, last = 0;
-  b.style.top = 'auto'; b.style.bottom = '108px';               /* fixed spot: no repaint of a moving glass while the page scrolls */
+  b.style.bottom = 'auto'; b.style.top = 'calc(50% - 27px)';               /* fixed spot: no repaint of a moving glass while the page scrolls */
   function maxScroll() { return Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
   function speedFor(d) {
     var a = Math.abs(d); if (a <= DEAD) return 0;
@@ -35,12 +35,12 @@
     return (d < 0 ? -1 : 1) * (MINV + (top - MINV) * Math.pow(p, CURVE));
   }
   function frame(t) {
-    raf = 0; var dt = last ? Math.min(34, t - last) : 16; last = t;
-    if (dragging) vel += (speedFor(dy) - vel) * Math.min(1, dt / 70);   /* smooth acceleration */
-    else { vel *= Math.pow(0.88, dt / 16); if (Math.abs(vel) < 15) vel = 0; }
+    raf = 0; var dt = last ? Math.min(50, t - last) : 16.7; last = t;
+    if (dragging) vel += (speedFor(dy) - vel) * (1 - Math.exp(-dt / 120));   /* smooth acceleration */
+    else { vel *= Math.exp(-dt / 220); if (Math.abs(vel) < 10) vel = 0; }
     if (vel) {
       pos = Math.max(0, Math.min(maxScroll(), pos + vel * dt / 1000));
-      window.scrollTo(0, Math.round(pos));
+      window.scrollTo(0, pos);                                  /* sub-pixel position: no 1px stutter at slow speed */
       if (pos <= 0 || pos >= maxScroll()) { vel = 0; if (!b.classList.contains('drop')) { b.classList.add('drop'); } }
     }
     if (dragging || vel) raf = requestAnimationFrame(frame);
