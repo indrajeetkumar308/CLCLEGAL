@@ -845,3 +845,6 @@ section:has(> a.artcard) > div[style*="height:16px"]{display:none}
   .side-box.clc-collapsible.open nav{display:block}
   .side-box.clc-collapsible nav a{padding:11px 20px;font-size:15px}
 }
+/* mobile: avoid two contact blocks back to back (2026-11-09) */
+@media (max-width:1000px){.side-cta{display:none}}
+@media (max-width:540px){.cta .btn{display:flex;justify-content:center;width:100%;box-sizing:border-box}}
