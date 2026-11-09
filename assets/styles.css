@@ -790,3 +790,14 @@ footer .clc-linkedin-footer:focus-visible{
 .main>section.clc-practice-resources,section.clc-practice-resources{padding:20px 22px;min-height:0;margin:0 0 28px}
 
 :root{color-scheme:only light}
+/* compact footer on phones (2026-11-09) */
+@media (max-width:540px){
+  footer.site{padding-top:44px;font-size:14px}
+  .fgrid{gap:28px}
+  .fgrid .fh{margin-bottom:12px;padding-bottom:8px}
+  .fgrid>div:nth-child(2){display:grid;grid-template-columns:1fr 1fr;column-gap:16px}
+  .fgrid>div:nth-child(2) .fh{grid-column:1/-1}
+  .fgrid>div:nth-child(2) a{padding:6px 0;line-height:1.3}
+  .fbrand{margin-bottom:12px}
+  .fbot{margin-top:32px;padding-block:16px}
+}
