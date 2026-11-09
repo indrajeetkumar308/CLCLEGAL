@@ -82,12 +82,7 @@
   --sans:"Source Sans 3","Source Sans 3 Fallback", "Segoe UI", system-ui, sans-serif;
   --deva:"Tiro Devanagari Hindi", "Noto Serif Devanagari", serif;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){color-scheme:dark;
-    --bg:#0B1321; --alt:#0E1829; --surface:#122036; --ink:#E4E9F1; --muted:#A3AEC0; --faint:#7C889C; --line:#223250;
-    --navy:#0C1B33; --navy-2:#081324; --gold:#CDAA6E; --gold-2:#D9BC86; --gold-soft:#231F17; --title:#F1F4F9;
-    --shadow:0 12px 32px -18px rgba(0,0,0,.8);}
-}
+/* auto dark mode removed 2026-11-09: site always uses the light theme */
 :root[data-theme="dark"]{color-scheme:dark;
   --bg:#0B1321; --alt:#0E1829; --surface:#122036; --ink:#E4E9F1; --muted:#A3AEC0; --faint:#7C889C; --line:#223250;
   --navy:#0C1B33; --navy-2:#081324; --gold:#CDAA6E; --gold-2:#D9BC86; --gold-soft:#231F17; --title:#F1F4F9;
@@ -793,3 +788,5 @@ footer .clc-linkedin-footer:focus-visible{
 @media (max-width:480px){.clc-practice-resources{padding:16px}}
 
 .main>section.clc-practice-resources,section.clc-practice-resources{padding:20px 22px;min-height:0;margin:0 0 28px}
+
+:root{color-scheme:only light}
