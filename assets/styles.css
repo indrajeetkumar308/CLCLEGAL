@@ -822,3 +822,16 @@ section:has(> a.artcard) > div[style*="height:16px"]{display:none}
 .clc-more-btn{grid-column:1/-1;justify-self:start;font:600 15px var(--sans);color:var(--gold);background:none;border:1px solid var(--gold);border-radius:8px;padding:10px 16px;cursor:pointer}
 .clc-more-btn:hover{background:var(--gold);color:#fff}
 @media (max-width:540px){.artcard{padding:16px}.artcard h3{font-size:18px}}
+/* Our Process: staggered reveal + hover lift (2026-11-09) */
+.steps>div{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
+.steps>div span{transition:background .35s ease,color .35s ease,transform .35s ease}
+.steps>div:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 14px 28px -18px rgba(12,27,51,.45)}
+.steps>div:hover span{background:var(--gold);color:#fff;transform:scale(1.06)}
+.js-steps>div{opacity:0;transform:translateY(18px)}
+.js-steps.in>div{opacity:1;transform:none;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
+.js-steps.in>div:nth-child(2){transition-delay:.08s}.js-steps.in>div:nth-child(3){transition-delay:.16s}
+.js-steps.in>div:nth-child(4){transition-delay:.24s}.js-steps.in>div:nth-child(5){transition-delay:.32s}
+.js-steps.in>div:nth-child(6){transition-delay:.40s}.js-steps.in>div:nth-child(n+7){transition-delay:.48s}
+.js-steps.in.done>div{transition-delay:0s}
+.js-steps.in>div:hover{transform:translateY(-4px)}
+@media (prefers-reduced-motion:reduce){.js-steps>div,.js-steps.in>div{opacity:1;transform:none;transition:none}.steps>div:hover{transform:none}}
