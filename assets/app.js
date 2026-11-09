@@ -532,8 +532,8 @@ function wireCommon(){const x=t();
  document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
   const el=document.getElementById(b.dataset.copy),v=el.textContent;
   const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent=x.selected};
-  (navigator.clipboard?navigator.clipboard.writeText(v).then(()=>b.textContent=x.copied,sel):sel());
-  setTimeout(()=>b.textContent=x.copy,1800);
+  (navigator.clipboard?navigator.clipboard.writeText(v).then(()=>{b.textContent=x.copied;b.classList.add('is-copied')},sel):sel());
+  setTimeout(()=>{b.textContent=x.copy;b.classList.remove('is-copied')},1800);
  }));
  const f=$('#intake');if(f)f.addEventListener('submit',e=>{e.preventDefault();
   const v=id=>$(id).value.trim(),n=v('#q-name'),p=v('#q-phone'),a=$('#q-ack').checked,err=$('#q-err');

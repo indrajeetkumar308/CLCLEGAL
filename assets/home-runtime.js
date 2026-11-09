@@ -171,7 +171,8 @@ window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup)
       const selection = window.getSelection();selection.removeAllRanges();selection.addRange(range);
       button.textContent=words.selected;
     } else button.textContent=words.copied;
-    setTimeout(()=>{button.textContent=words.copy;},1800);
+    button.classList.add('is-copied');
+    setTimeout(()=>{button.classList.remove('is-copied');button.textContent=words.copy;},1800);
   }));
 
   // Existing user-initiated WhatsApp enquiry form: local preparation only.
