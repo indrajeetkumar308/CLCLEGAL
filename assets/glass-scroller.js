@@ -1,4 +1,4 @@
-/* Floating "liquid glass" scroll bubble: drag up/down to move through the page; fades out when idle. v6: direct drag (page moves 4x finger) + fling momentum; light rendering while moving. */
+/* Floating "water drop" bubble. Tap or pull up: smooth scroll to top. Pull down: smooth scroll to bottom. Uses the browser's own smooth scrolling; the bubble never moves while the page scrolls. Fades when idle. */
 (function () {
   if (window.__clcGlass) return; window.__clcGlass = true;
   var css = '.clc-glass{position:fixed;right:14px;top:0;left:auto;width:54px;height:54px;border-radius:50%;z-index:1000;will-change:transform,opacity;' +
@@ -22,53 +22,35 @@
   b.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="7 9 12 4 17 9"/><polyline points="7 15 12 20 17 15"/></svg>';
   document.body.appendChild(b);
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var TOP = 90, BOTTOM = 130, SIZE = 54, GAIN = 4, IDLE = 2500;
-  var idle = null, dragging = false, raf = 0, last = 0;
-  var pos = 0, pending = 0, lastY = 0, lastT = 0, fv = 0, vel = 0, grabOff = 0, fingerY = 0, curY = TOP;
-  function track() { return Math.max(1, window.innerHeight - TOP - BOTTOM - SIZE); }
+  var IDLE = 2500, SWIPE = 12, idle = null, down = false, y0 = 0, pull = 0;
+  b.style.top = 'auto'; b.style.bottom = '108px';               /* fixed spot above the WhatsApp button: never moves while the page scrolls */
   function maxScroll() { return Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
-  function yFromScroll() { var m = maxScroll(); return TOP + (m ? window.scrollY / m : 0) * track(); }
-  function paint(y) { curY = y; b.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0)'; }
-  function apply(d) { if (!d) return; pos = Math.max(0, Math.min(maxScroll(), pos + d)); window.scrollTo(0, Math.round(pos)); }
-  function frame(t) {
-    raf = 0; var dt = last ? Math.min(40, t - last) : 16; last = t;
-    if (dragging) { apply(pending * GAIN); pending = 0; paint(Math.max(TOP, Math.min(TOP + track(), fingerY - grabOff))); }
-    else {
-      if (vel) { apply(vel * dt / 1000); vel *= Math.pow(0.94, dt / 16); if (Math.abs(vel) < 20 || pos <= 0 || pos >= maxScroll()) vel = 0; }
-      var to = yFromScroll(); paint(reduce ? to : curY + (to - curY) * Math.min(1, dt / 70));
-      if (!vel && Math.abs(to - curY) < 0.4) { b.classList.remove('moving'); last = 0; return; }
-    }
-    raf = requestAnimationFrame(frame);
-  }
-  function kick() { if (!raf) raf = requestAnimationFrame(frame); }
   function show() {
     if (maxScroll() < window.innerHeight * 0.6) { b.classList.remove('on'); return; }
     b.classList.add('on'); clearTimeout(idle);
-    idle = setTimeout(function () { if (!dragging && !vel) b.classList.remove('on'); }, IDLE);
+    idle = setTimeout(function () { if (!down) b.classList.remove('on'); }, IDLE);
   }
-  window.addEventListener('scroll', function () { if (!dragging && !vel) { pos = window.scrollY; kick(); } show(); }, { passive: true });
-  window.addEventListener('resize', kick);
+  function go(to) { /* browser-native smooth scrolling: as smooth as the phone itself */
+    window.scrollTo({ top: to, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  window.addEventListener('scroll', show, { passive: true });
   b.addEventListener('pointerdown', function (e) {
-    dragging = true; vel = 0; pending = 0; fv = 0;
-    pos = window.scrollY; window.scrollTo(0, Math.round(pos));   /* stop native momentum at once */
-    lastY = fingerY = e.clientY; lastT = performance.now(); grabOff = e.clientY - curY;
-    b.classList.add('drag', 'moving'); document.documentElement.style.scrollBehavior = 'auto';
+    down = true; y0 = e.clientY; pull = 0; b.classList.add('drag');
     try { b.setPointerCapture(e.pointerId); } catch (_) {}
-    clearTimeout(idle); e.preventDefault(); kick();
+    clearTimeout(idle); e.preventDefault();
   });
   b.addEventListener('pointermove', function (e) {
-    if (!dragging) return;
-    var now = performance.now(), d = e.clientY - lastY, dt = Math.max(1, now - lastT);
-    pending += d; fingerY = e.clientY;
-    fv = 0.7 * (d / dt * 1000) + 0.3 * fv;                       /* smoothed finger speed, px/s */
-    lastY = e.clientY; lastT = now; kick();
+    if (!down) return;
+    pull = e.clientY - y0;
+    var r = Math.max(-36, Math.min(36, pull * 0.5));            /* rubber-band stretch */
+    b.style.transform = 'translate3d(0,' + r.toFixed(1) + 'px,0)';
   });
   function end() {
-    if (!dragging) return; dragging = false; b.classList.remove('drag');
-    if (performance.now() - lastT < 80) vel = fv * GAIN;          /* fling: keep gliding */
-    b.classList.remove('drop'); void b.offsetWidth; b.classList.add('drop'); show(); kick();
-    setTimeout(function () { document.documentElement.style.scrollBehavior = ''; }, 1500);
+    if (!down) return; down = false; b.classList.remove('drag'); b.style.transform = '';
+    b.classList.remove('drop'); void b.offsetWidth; b.classList.add('drop');
+    if (pull > SWIPE) go(maxScroll());                          /* pull down: go to the bottom (contact) */
+    else go(0);                                                 /* tap or pull up: go to the top */
+    show();
   }
-  b.addEventListener('pointerup', end); b.addEventListener('pointercancel', end); b.addEventListener('lostpointercapture', end);
-  pos = window.scrollY; paint(yFromScroll());
+  b.addEventListener('pointerup', end); b.addEventListener('pointercancel', end);
 })();
