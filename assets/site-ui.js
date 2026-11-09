@@ -36,3 +36,17 @@
     el.classList.add('js-steps'); io.observe(el);
   });
 })();
+/* Mobile/tablet: Practice Areas list in the side box collapses to a single tappable bar. */
+(function () {
+  document.querySelectorAll('.side-box').forEach(function (box) {
+    var h = box.querySelector('.sbh'), nav = box.querySelector('nav');
+    if (!h || !nav) return;
+    box.classList.add('clc-collapsible');
+    if (!nav.id) nav.id = 'side-nav-' + Math.random().toString(36).slice(2, 7);
+    h.setAttribute('role', 'button'); h.setAttribute('tabindex', '0');
+    h.setAttribute('aria-controls', nav.id); h.setAttribute('aria-expanded', 'false');
+    function toggle() { var o = box.classList.toggle('open'); h.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+    h.addEventListener('click', toggle);
+    h.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+})();
