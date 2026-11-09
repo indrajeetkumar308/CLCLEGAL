@@ -1,4 +1,4 @@
-/* Floating "water drop" bubble: hold and pull up/down to scroll (speed grows with the pull, smooth acceleration, short glide on release). Fixed in place; frosted blur off while moving for smoothness; fades when idle. */
+/* Floating "water drop" bubble: hold and pull up/down to scroll (speed grows with the pull, smooth acceleration, short glide on release). Fixed in place; frosted blur off while moving for smoothness; fades when idle. Double-tap = smooth to top; arrow lights up in the pull direction; long pages get a higher top speed. */
 (function () {
   if (window.__clcGlass) return; window.__clcGlass = true;
   var css = '.clc-glass{position:fixed;right:14px;top:0;left:auto;width:54px;height:54px;border-radius:50%;z-index:1000;will-change:transform,opacity;' +
@@ -14,6 +14,7 @@
     '.clc-glass.drop{animation:clcDrop .55s cubic-bezier(.34,1.56,.64,1)}' +
     '@keyframes clcDrop{0%{scale:1.1 .9}45%{scale:.95 1.06}75%{scale:1.03 .98}100%{scale:1 1}}' +
     '.clc-glass svg{position:relative;width:18px;height:18px;stroke:#0C1B33;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.5}' +
+    '.clc-glass.up polyline:first-child,.clc-glass.down polyline:last-child{stroke:#B88A44;stroke-width:3}' + '.clc-glass.up polyline:last-child,.clc-glass.down polyline:first-child{opacity:.25}' +
     '@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.clc-glass{background:rgba(255,255,255,.85)}}' +
     '@media (prefers-reduced-motion:reduce){.clc-glass.drop{animation:none}}@media print{.clc-glass{display:none}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
@@ -23,14 +24,15 @@
   document.body.appendChild(b);
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   /* Pull-to-scroll: hold the drop and pull. Small pull = slow, bigger pull = faster. Release = short glide. */
-  var IDLE = 2500, DEAD = 6, PULL = 120, MINV = 120, MAXV = 2400, CURVE = 1.8;
+  var IDLE = 2500, DEAD = 6, PULL = 120, MINV = 120, MAXV = 2400, CURVE = 1.8, lastTap = 0, moved = false;
   var idle = null, dragging = false, y0 = 0, dy = 0, vel = 0, pos = 0, raf = 0, last = 0;
   b.style.top = 'auto'; b.style.bottom = '108px';               /* fixed spot: no repaint of a moving glass while the page scrolls */
   function maxScroll() { return Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
   function speedFor(d) {
     var a = Math.abs(d); if (a <= DEAD) return 0;
     var p = Math.min(1, (a - DEAD) / PULL);
-    return (d < 0 ? -1 : 1) * (MINV + (MAXV - MINV) * Math.pow(p, CURVE));
+    var top = Math.max(1800, Math.min(4200, maxScroll() / 4));      /* long pages get a higher top speed */
+    return (d < 0 ? -1 : 1) * (MINV + (top - MINV) * Math.pow(p, CURVE));
   }
   function frame(t) {
     raf = 0; var dt = last ? Math.min(34, t - last) : 16; last = t;
@@ -39,7 +41,7 @@
     if (vel) {
       pos = Math.max(0, Math.min(maxScroll(), pos + vel * dt / 1000));
       window.scrollTo(0, Math.round(pos));
-      if (pos <= 0 || pos >= maxScroll()) { if (!dragging) vel = 0; }
+      if (pos <= 0 || pos >= maxScroll()) { vel = 0; if (!b.classList.contains('drop')) { b.classList.add('drop'); } }
     }
     if (dragging || vel) raf = requestAnimationFrame(frame);
     else { last = 0; b.classList.remove('moving'); show(); }
@@ -52,19 +54,23 @@
   }
   window.addEventListener('scroll', function () { if (!dragging && !vel) pos = window.scrollY; show(); }, { passive: true });
   b.addEventListener('pointerdown', function (e) {
-    dragging = true; dy = 0; vel = 0; y0 = e.clientY;
+    dragging = true; dy = 0; vel = 0; y0 = e.clientY; moved = false;
+    if (navigator.vibrate) { try { navigator.vibrate(8); } catch (_) {} }   /* light tap feel on Android */
     pos = window.scrollY; window.scrollTo(0, Math.round(pos));   /* stop native momentum at once */
     b.classList.add('drag', 'moving'); document.documentElement.style.scrollBehavior = 'auto';
     try { b.setPointerCapture(e.pointerId); } catch (_) {}
     clearTimeout(idle); e.preventDefault(); kick();
   });
   b.addEventListener('pointermove', function (e) {
-    if (!dragging) return; dy = e.clientY - y0;
+    if (!dragging) return; dy = e.clientY - y0; if (Math.abs(dy) > DEAD) moved = true;
+    b.classList.toggle('up', dy < -DEAD); b.classList.toggle('down', dy > DEAD);
     var r = Math.max(-40, Math.min(40, dy * 0.45));              /* drop stretches with the pull */
     b.style.transform = 'translate3d(0,' + r.toFixed(1) + 'px,0)';
   });
   function end() {
-    if (!dragging) return; dragging = false; dy = 0; b.classList.remove('drag'); b.style.transform = '';
+    if (!dragging) return; dragging = false; dy = 0; b.classList.remove('drag', 'up', 'down'); b.style.transform = '';
+    var now = Date.now();
+    if (!moved) { if (now - lastTap < 320) { vel = 0; document.documentElement.style.scrollBehavior = ''; window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); lastTap = 0; } else lastTap = now; }
     b.classList.remove('drop'); void b.offsetWidth; b.classList.add('drop'); kick();
     setTimeout(function () { document.documentElement.style.scrollBehavior = ''; }, 1200);
   }
