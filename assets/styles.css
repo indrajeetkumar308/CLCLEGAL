@@ -835,3 +835,13 @@ section:has(> a.artcard) > div[style*="height:16px"]{display:none}
 .js-steps.in.done>div{transition-delay:0s}
 .js-steps.in>div:hover{transform:translateY(-4px)}
 @media (prefers-reduced-motion:reduce){.js-steps>div,.js-steps.in>div{opacity:1;transform:none;transition:none}.steps>div:hover{transform:none}}
+/* mobile: Practice Areas side list collapses to one bar (2026-11-09) */
+@media (max-width:1000px){
+  .side-box.clc-collapsible .sbh{cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-bottom:0;padding:16px 20px;font-size:19px;user-select:none}
+  .side-box.clc-collapsible .sbh::after{content:"";width:9px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg) translateY(-3px);transition:transform .25s ease}
+  .side-box.clc-collapsible.open .sbh{border-bottom:1px solid var(--line)}
+  .side-box.clc-collapsible.open .sbh::after{transform:rotate(-135deg) translateY(-3px)}
+  .side-box.clc-collapsible nav{display:none}
+  .side-box.clc-collapsible.open nav{display:block}
+  .side-box.clc-collapsible nav a{padding:11px 20px;font-size:15px}
+}
