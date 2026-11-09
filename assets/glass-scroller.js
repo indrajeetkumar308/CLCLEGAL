@@ -26,7 +26,12 @@
   /* Pull-to-scroll: hold the drop and pull. Small pull = slow, bigger pull = faster. Release = short glide. */
   var IDLE = 2500, DEAD = 6, PULL = 130, MINV = 90, MAXV = 2400, CURVE = 2.0, lastTap = 0, moved = false;
   var idle = null, dragging = false, y0 = 0, dy = 0, vel = 0, pos = 0, raf = 0, last = 0;
-  b.style.bottom = 'auto'; b.style.top = 'calc(50% - 27px)';               /* fixed spot: no repaint of a moving glass while the page scrolls */
+  b.style.bottom = 'auto';
+  function centre() { b.style.top = Math.round(window.innerHeight / 2 - 27) + 'px'; }   /* fixed px: does not jump when the phone toolbar hides/shows */
+  centre(); window.addEventListener('orientationchange', function () { setTimeout(centre, 300); });
+  var html = document.documentElement;
+  function hold() { html.style.scrollBehavior = 'auto'; }          /* page CSS uses smooth scrolling: switch it off while we move the page */
+  function release() { html.style.scrollBehavior = ''; }               /* fixed spot: no repaint of a moving glass while the page scrolls */
   function maxScroll() { return Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
   function speedFor(d) {
     var a = Math.abs(d); if (a <= DEAD) return 0;
@@ -44,7 +49,7 @@
       if (pos <= 0 || pos >= maxScroll()) { vel = 0; if (!b.classList.contains('drop')) { b.classList.add('drop'); } }
     }
     if (dragging || vel) raf = requestAnimationFrame(frame);
-    else { last = 0; b.classList.remove('moving'); show(); }
+    else { last = 0; b.classList.remove('moving'); release(); show(); }
   }
   function kick() { if (!raf) raf = requestAnimationFrame(frame); }
   function show() {
@@ -57,7 +62,7 @@
     dragging = true; dy = 0; vel = 0; y0 = e.clientY; moved = false;
     if (navigator.vibrate) { try { navigator.vibrate(8); } catch (_) {} }   /* light tap feel on Android */
     pos = window.scrollY; window.scrollTo(0, Math.round(pos));   /* stop native momentum at once */
-    b.classList.add('drag', 'moving'); document.documentElement.style.scrollBehavior = 'auto';
+    b.classList.add('drag', 'moving'); hold();
     try { b.setPointerCapture(e.pointerId); } catch (_) {}
     clearTimeout(idle); e.preventDefault(); kick();
   });
@@ -70,9 +75,8 @@
   function end() {
     if (!dragging) return; dragging = false; dy = 0; b.classList.remove('drag', 'up', 'down'); b.style.transform = '';
     var now = Date.now();
-    if (!moved) { if (now - lastTap < 320) { vel = 0; document.documentElement.style.scrollBehavior = ''; window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); lastTap = 0; } else lastTap = now; }
+    if (!moved) { if (now - lastTap < 320) { vel = 0; release(); window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); lastTap = 0; } else lastTap = now; }
     b.classList.remove('drop'); void b.offsetWidth; b.classList.add('drop'); kick();
-    setTimeout(function () { document.documentElement.style.scrollBehavior = ''; }, 1200);
   }
   b.addEventListener('pointerup', end); b.addEventListener('pointercancel', end); b.addEventListener('lostpointercapture', end);
   pos = window.scrollY;
