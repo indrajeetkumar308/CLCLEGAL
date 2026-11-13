@@ -239,7 +239,7 @@ const T={
 en:{brand:'Choudhary Law Chambers',brandSub:'Advocates & Legal Consultants',brandShort:'Advocates · Patna',
  util:'Patna High Court · Civil & Criminal Courts of Bihar',hours:'Mon–Sat',
  nav:{home:'Home',about:'About',practice:'Practice Areas',founder:'Our Advocate',contact:'Contact',book:'Contact Information'},menu:'Menu',
- gateH:'Disclaimer',gate1:'The Bar Council of India does not permit advocates to solicit work or advertise. By entering this website you acknowledge that there has been no advertisement, solicitation, invitation or inducement of any kind by Choudhary Law Chambers or its members to obtain work through this website.',gate2:'The material here is for general information only and is not legal advice or a legal opinion. Viewing this website, or contacting the chambers through it, does not create an advocate–client relationship.',gateCk:'I have read and understood the disclaimer and wish to proceed.',gateGo:'I Agree — Enter Website',
+ gateH:'Disclaimer',gate1:'The Bar Council of India does not permit advocates to solicit work or advertise. By entering this website you acknowledge that there has been no advertisement, solicitation, invitation or inducement of any kind by Choudhary Law Chambers or its members to obtain work through this website.',gate2:'The material here is for general information only and is not legal advice or a legal opinion. Viewing this website, or contacting the chambers through it, does not create an advocate–client relationship.',gateCk:'I have read and understood the disclaimer and wish to proceed.',gateGo:'I Agree',gateNo:'I Disagree',
  heroEye:'Advocates in Patna · Patna High Court',heroH:'Counsel you can rely on, <em>in court and beyond.</em>',heroTag:'विधिक परामर्श एवं न्यायालयीन प्रतिनिधित्व',heroLead:'Criminal defence, civil and property litigation, family matters and commercial recovery for individuals, families and businesses across Bihar.',heroB2:'Our Practice Areas',
  trust:[['Patna High Court','Bail, quashing, writs and appeals'],['District Courts','Civil, criminal and family courts'],['Revenue Forums','Circle Officer, DCLR and Collector'],['BNS · BNSS · BSA','and legacy IPC and CrPC matters']],
  aboutEye:'About the chambers',aboutH:'A litigation practice built on preparation',aboutP:['Choudhary Law Chambers is a Patna-based practice appearing before the Patna High Court, the civil and criminal courts of Bihar, and the revenue authorities. The chambers handles criminal, civil, property, matrimonial, succession and commercial recovery matters.','Every brief is run personally, from the first notice to the final order. Clients receive a clear assessment at the start, the right remedy in the right forum, and an update after every date of hearing.'],aboutBtn:'Meet Our Advocate',
@@ -272,7 +272,7 @@ en:{brand:'Choudhary Law Chambers',brandSub:'Advocates & Legal Consultants',bran
 hi:{brand:'चौधरी लॉ चैम्बर्स',brandSub:'अधिवक्ता एवं विधिक परामर्शदाता',brandShort:'अधिवक्ता · पटना',
  util:'पटना उच्च न्यायालय · बिहार के व्यवहार एवं दंड न्यायालय',hours:'सोम–शनि',
  nav:{home:'मुखपृष्ठ',about:'परिचय',practice:'कार्यक्षेत्र',founder:'हमारे अधिवक्ता',contact:'संपर्क',book:'संपर्क जानकारी'},menu:'मेनू',
- gateH:'अस्वीकरण',gate1:'बार काउंसिल ऑफ़ इंडिया अधिवक्ताओं को कार्य हेतु आग्रह करने या विज्ञापन देने की अनुमति नहीं देता। इस वेबसाइट में प्रवेश करके आप स्वीकार करते हैं कि चौधरी लॉ चैम्बर्स या इसके सदस्यों द्वारा इस वेबसाइट के माध्यम से कार्य प्राप्त करने हेतु किसी प्रकार का विज्ञापन, आग्रह, आमंत्रण या प्रलोभन नहीं दिया गया है।',gate2:'यहाँ दी गई सामग्री केवल सामान्य जानकारी हेतु है और यह विधिक सलाह या विधिक राय नहीं है। इस वेबसाइट को देखने या इसके माध्यम से चैम्बर्स से संपर्क करने से अधिवक्ता–मुवक्किल संबंध स्थापित नहीं होता।',gateCk:'मैंने अस्वीकरण पढ़ और समझ लिया है तथा आगे बढ़ना चाहता/चाहती हूँ।',gateGo:'मैं सहमत हूँ — वेबसाइट में प्रवेश करें',
+ gateH:'अस्वीकरण',gate1:'बार काउंसिल ऑफ़ इंडिया अधिवक्ताओं को कार्य हेतु आग्रह करने या विज्ञापन देने की अनुमति नहीं देता। इस वेबसाइट में प्रवेश करके आप स्वीकार करते हैं कि चौधरी लॉ चैम्बर्स या इसके सदस्यों द्वारा इस वेबसाइट के माध्यम से कार्य प्राप्त करने हेतु किसी प्रकार का विज्ञापन, आग्रह, आमंत्रण या प्रलोभन नहीं दिया गया है।',gate2:'यहाँ दी गई सामग्री केवल सामान्य जानकारी हेतु है और यह विधिक सलाह या विधिक राय नहीं है। इस वेबसाइट को देखने या इसके माध्यम से चैम्बर्स से संपर्क करने से अधिवक्ता–मुवक्किल संबंध स्थापित नहीं होता।',gateCk:'मैंने अस्वीकरण पढ़ और समझ लिया है तथा आगे बढ़ना चाहता/चाहती हूँ।',gateGo:'मैं सहमत हूँ',gateNo:'मैं असहमत हूँ',
  heroEye:'पटना में अधिवक्ता · पटना उच्च न्यायालय',heroH:'विश्वसनीय विधिक परामर्श, <em>न्यायालय में और उसके बाहर भी।</em>',heroTag:'Legal Counsel & Court Representation',heroLead:'बिहार भर के व्यक्तियों, परिवारों और व्यवसायों के लिए आपराधिक बचाव, दीवानी एवं संपत्ति मुक़दमे, पारिवारिक मामले तथा वाणिज्यिक वसूली।',heroB2:'हमारे कार्यक्षेत्र',
  trust:[['पटना उच्च न्यायालय','ज़मानत, निरस्तीकरण, रिट एवं अपील'],['ज़िला न्यायालय','दीवानी, फ़ौजदारी एवं परिवार न्यायालय'],['राजस्व न्यायालय','अंचल अधिकारी, DCLR एवं समाहर्ता'],['BNS · BNSS · BSA','तथा पुराने IPC एवं CrPC मामले']],
  aboutEye:'चैम्बर्स का परिचय',aboutH:'तैयारी पर आधारित मुक़दमा-प्रधान प्रैक्टिस',aboutP:['चौधरी लॉ चैम्बर्स पटना स्थित प्रैक्टिस है, जो पटना उच्च न्यायालय, बिहार के व्यवहार एवं दंड न्यायालयों तथा राजस्व प्राधिकारियों के समक्ष उपस्थित होती है। चैम्बर्स आपराधिक, दीवानी, संपत्ति, वैवाहिक, उत्तराधिकार एवं वाणिज्यिक वसूली के मामले देखता है।','प्रत्येक मामला पहले नोटिस से अंतिम आदेश तक व्यक्तिगत रूप से संचालित होता है। मुवक्किल को आरंभ में स्पष्ट आकलन, सही मंच पर सही उपाय, और हर सुनवाई की तिथि के बाद अद्यतन जानकारी मिलती है।'],aboutBtn:'हमारे अधिवक्ता से मिलें',
@@ -351,9 +351,8 @@ function renderChrome(){
  const PRE=document.documentElement.hasAttribute('data-pre')&&!window.__CLC_RERENDER;
  if(!PRE)$('#gate').innerHTML=`<div class="gate-in"><div class="gate-head"><div class="mark"><span>CLC</span></div><div style="flex:1"><b>${x.brand}</b><small>${x.brandShort}</small></div>${langToggle('lg-gate')}</div>
  <div class="gate-body"><h2 id="gate-h">${x.gateH}</h2><p>${x.gate1}</p><p>${x.gate2}</p>
- <label class="ck"><input type="checkbox" id="gate-ck"> ${x.gateCk}</label>
- <button class="btn btn-navy" id="gate-go" type="button" disabled>${x.gateGo}</button></div></div>`;
- $('#gate-ck').addEventListener('change',e=>$('#gate-go').disabled=!e.target.checked);
+ <div class="gate-act"><button class="btn btn-navy" id="gate-go" type="button">${x.gateGo}</button><button class="btn btn-outline" id="gate-no" type="button">${x.gateNo}</button></div></div></div>`;
+ $('#gate-no').addEventListener('click',()=>{if(document.referrer&&history.length>1)history.back();else location.replace('https://www.google.com/')});
  $('#gate-go').addEventListener('click',()=>{try{sessionStorage.setItem('clc-gate','1')}catch(e){}$('#gate').hidden=true;document.body.style.overflow='';setCLCBackgroundInert(false);const main=$('#app');if(main){main.setAttribute('tabindex','-1');main.focus({preventScroll:true})}});
  if(!PRE)$('#hdr').innerHTML=`<div class="wrap nav">
   <a class="brand" href="${U('home')}"><div class="mark"><span>CLC</span></div><div><b>${x.brand}</b><small>${x.brandSub}</small></div></a>
@@ -373,8 +372,8 @@ function renderChrome(){
 }
 function setLang(l){
  if(l===LANG)return;LANG=l;try{localStorage.setItem('clc-lang',l)}catch(e){}
- document.documentElement.lang=l;const y=scrollY;const ck=$('#gate-ck')&&$('#gate-ck').checked;
- renderChrome();if(ck){$('#gate-ck').checked=true;$('#gate-go').disabled=false}
+ document.documentElement.lang=l;const y=scrollY;
+ renderChrome();
  current=null;route(true);scrollTo({top:y,behavior:'instant'});
 }
 
@@ -626,7 +625,7 @@ function setCLCBackgroundInert(value){
  let ok=false;try{ok=sessionStorage.getItem('clc-gate')==='1'}catch(e){}
  const gate=$('#gate');if(!gate)return;
  if(ok){gate.hidden=true;setCLCBackgroundInert(false)}
- else {document.body.style.overflow='hidden';setCLCBackgroundInert(true);const ck=$('#gate-ck');if(ck)ck.focus({preventScroll:true})}
+ else {document.body.style.overflow='hidden';setCLCBackgroundInert(true);const ck=$('#gate-go');if(ck)ck.focus({preventScroll:true})}
  document.addEventListener('keydown',e=>{
   if(e.key!=='Tab'||gate.hidden||document.documentElement.classList.contains('gate-ok'))return;
   const controls=[...gate.querySelectorAll('a[href],button:not([disabled]),input:not([disabled])')].filter(el=>!el.hidden&&!el.closest('[hidden]'));

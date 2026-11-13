@@ -852,3 +852,5 @@ section:has(> a.artcard) > div[style*="height:16px"]{display:none}
 /* install button: respect [hidden] even with inline display (2026-11-09) */
 #clc-install[hidden]{display:none!important}
 @media (display-mode: standalone){#clc-install{display:none!important}}
+
+.gate-act{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.gate-act .btn{flex:1 1 140px;justify-content:center}

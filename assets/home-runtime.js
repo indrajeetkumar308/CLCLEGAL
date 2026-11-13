@@ -62,13 +62,13 @@ window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup)
   }
 
   // BCI information gate: retain existing acknowledgement and keyboard trap.
-  const gate = $('#gate'), ack = $('#gate-ck'), enter = $('#gate-go');
+  const gate = $('#gate'), ack = $('#gate-no'), enter = $('#gate-go');
   const backgroundInert = value => {
     for (const element of [header,main,$('.clc-skip-link')])
       if (element) element.inert = value;
   };
   if (gate && ack && enter) {
-    ack.addEventListener('change', () => { enter.disabled = !ack.checked; });
+    ack.addEventListener('click', () => { if(document.referrer&&history.length>1)history.back();else location.replace('https://www.google.com/'); });
     enter.addEventListener('click', () => {
       try { sessionStorage.setItem('clc-gate','1'); } catch (_) {}
       document.documentElement.classList.add('gate-ok');
@@ -84,7 +84,7 @@ window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup)
     else {
       document.body.style.overflow = 'hidden';
       backgroundInert(true);
-      ack.focus({preventScroll:true});
+      enter.focus({preventScroll:true});
     }
     document.addEventListener('keydown', event => {
       if (event.key !== 'Tab' || gate.hidden) return;
