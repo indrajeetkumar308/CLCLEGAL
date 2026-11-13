@@ -22,10 +22,15 @@
   if(!art.querySelector('.artc-share')){
     const url=location.origin+location.pathname,title=((document.querySelector('h1')||{}).textContent||document.title).trim();
     const box=document.createElement('div');
-    box.className='artc-rel artc-share';
+    box.className='artc-share';
     box.innerHTML=`<button type="button" class="share-ic" aria-label="${T.wa.replace(/WhatsApp/,'').trim()||'Share'}" title="${hi?'शेयर करें':'Share'}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button>`;
-    const disc=art.querySelector('.artc-disc');
-    art.insertBefore(box,disc||null);
+    const place=(tries)=>{
+      const tg=document.querySelector('.reader-inner .reader-toggle');
+      if(tg){const w=document.createElement('div');w.className='reader-start';tg.parentNode.insertBefore(w,tg);w.appendChild(tg);w.appendChild(box);box.className='artc-share';return;}
+      if(tries>0)return setTimeout(()=>place(tries-1),150);
+      art.insertBefore(box,art.firstChild);
+    };
+    place(15);
     box.querySelector('button').addEventListener('click',async()=>{
       if(navigator.share){try{await navigator.share({title,url});}catch(_){}return;}
       window.open('https://wa.me/?text='+encodeURIComponent(title+'\n'+url),'_blank','noopener');
@@ -44,7 +49,7 @@
       const box=document.createElement('nav');box.className='artc-next';box.setAttribute('aria-label',hi?'आगे पढ़ें':'Read next');
       box.innerHTML=`<h2>${hi?'आगे पढ़ें':'Read next'}</h2><div class="artc-next-g">`+picks.map(a=>{const h=a.querySelector('h3'),p=a.querySelector('p');const e=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));return `<a class="artcard" href="${e(a.getAttribute('href'))}"><h3>${e(h?h.textContent.trim():'')}</h3><p>${e(p?p.textContent.trim():'')}</p></a>`}).join('')+'</div>';
       const share=art.querySelector('.artc-share'),disc=art.querySelector('.artc-disc');
-      art.insertBefore(box,share||disc||null);
+      art.insertBefore(box,disc||null);
     }catch(_){}
   })();
 })();
