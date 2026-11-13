@@ -3,8 +3,8 @@
   const art=document.querySelector('article.artc');
   if(!art)return;
   const hi=(document.documentElement.lang||'').startsWith('hi');
-  const T=hi?{toc:'इस लेख में',share:'यह जानकारी परिवार या मित्रों को भेजें',wa:'WhatsApp पर भेजें',copy:'लिंक कॉपी करें',copied:'लिंक कॉपी हो गया',more:'और तरीके से भेजें'}
-            :{toc:'In this article',share:'Share this guide with family or friends',wa:'Share on WhatsApp',copy:'Copy link',copied:'Link copied',more:'More ways to share'};
+  const T=hi?{toc:'इस लेख में',share:'यह जानकारी परिवार या मित्रों को भेजें',wa:'शेयर करें',copy:'लिंक कॉपी करें',copied:'लिंक कॉपी हो गया',more:'और तरीके से भेजें'}
+            :{toc:'In this article',share:'Share this guide with family or friends',wa:'Share',copy:'Copy link',copied:'Link copied',more:'More ways to share'};
   const slug=s=>s.toLowerCase().replace(/[^\wऀ-ॿ]+/g,'-').replace(/^-+|-+$/g,'').slice(0,60)||'s';
   // 1) Table of contents (only when the article has 4+ sections)
   const hs=[...art.querySelectorAll(':scope > h2')];
@@ -18,20 +18,33 @@
     (first?first:art.firstChild)&&art.insertBefore(nav,first?first.nextSibling:art.firstChild);
     nav.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const t=document.getElementById(a.getAttribute('href').slice(1));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+t.id);});
   }
-  // 2) Share box
+  // 2) Share: one icon button (native share sheet, else WhatsApp)
   if(!art.querySelector('.artc-share')){
-    const url=location.origin+location.pathname,title=(document.querySelector('h1')||{}).textContent||document.title;
-    const wa='https://wa.me/?text='+encodeURIComponent(title.trim()+'\n'+url);
+    const url=location.origin+location.pathname,title=((document.querySelector('h1')||{}).textContent||document.title).trim();
     const box=document.createElement('div');
     box.className='artc-rel artc-share';
-    box.innerHTML=`<p><b>${T.share}</b></p><div class="artc-share-b"><a class="btn btn-wa" href="${wa}" target="_blank" rel="noopener">${T.wa}</a><button type="button" class="btn btn-outline" data-act="copy">${T.copy}</button>${navigator.share?`<button type="button" class="btn btn-outline" data-act="native">${T.more}</button>`:''}</div>`;
+    box.innerHTML=`<button type="button" class="share-ic" aria-label="${T.wa.replace(/WhatsApp/,'').trim()||'Share'}" title="${hi?'शेयर करें':'Share'}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button>`;
     const disc=art.querySelector('.artc-disc');
     art.insertBefore(box,disc||null);
-    box.addEventListener('click',async e=>{
-      const b=e.target.closest('button[data-act]');if(!b)return;
-      if(b.dataset.act==='native'){try{await navigator.share({title:title.trim(),url});}catch(_){}return;}
-      try{await navigator.clipboard.writeText(url);}catch(_){const i=document.createElement('input');i.value=url;document.body.appendChild(i);i.select();try{document.execCommand('copy')}catch(__){}i.remove();}
-      b.textContent=T.copied;setTimeout(()=>{b.textContent=T.copy},1800);
+    box.querySelector('button').addEventListener('click',async()=>{
+      if(navigator.share){try{await navigator.share({title,url});}catch(_){}return;}
+      window.open('https://wa.me/?text='+encodeURIComponent(title+'\n'+url),'_blank','noopener');
     });
   }
+  // 3) Read next: up to 3 guides from the same topic group on the Insights page
+  (async()=>{
+    try{
+      const base=hi?'/hi/insights/':'/insights/',me=location.pathname.replace(/index\.html$/,'');
+      const html=await (await fetch(base,{credentials:'same-origin'})).text();
+      const doc=new DOMParser().parseFromString(html,'text/html');
+      const mine=[...doc.querySelectorAll('a.artcard')].find(a=>a.getAttribute('href')===me);
+      const grp=mine&&mine.closest('section');if(!grp)return;
+      const picks=[...grp.querySelectorAll('a.artcard')].filter(a=>a.getAttribute('href')!==me).slice(0,3);
+      if(!picks.length||art.querySelector('.artc-next'))return;
+      const box=document.createElement('nav');box.className='artc-next';box.setAttribute('aria-label',hi?'आगे पढ़ें':'Read next');
+      box.innerHTML=`<h2>${hi?'आगे पढ़ें':'Read next'}</h2><div class="artc-next-g">`+picks.map(a=>{const h=a.querySelector('h3'),p=a.querySelector('p');const e=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));return `<a class="artcard" href="${e(a.getAttribute('href'))}"><h3>${e(h?h.textContent.trim():'')}</h3><p>${e(p?p.textContent.trim():'')}</p></a>`}).join('')+'</div>';
+      const share=art.querySelector('.artc-share'),disc=art.querySelector('.artc-disc');
+      art.insertBefore(box,share||disc||null);
+    }catch(_){}
+  })();
 })();
