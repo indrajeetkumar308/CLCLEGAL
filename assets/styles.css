@@ -854,3 +854,4 @@ section:has(> a.artcard) > div[style*="height:16px"]{display:none}
 @media (display-mode: standalone){#clc-install{display:none!important}}
 
 .gate-act{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.gate-act .btn{flex:1 1 140px;justify-content:center}
+.cham-map{margin-top:28px;display:grid;gap:14px;justify-items:start}.cham-map iframe{width:100%;height:340px;border:0;border-radius:14px;box-shadow:0 1px 0 var(--line)}@media(max-width:600px){.cham-map iframe{height:260px}.cham-map .btn{width:100%;justify-content:center}}

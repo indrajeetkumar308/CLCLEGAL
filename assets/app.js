@@ -28,7 +28,8 @@ const FOUNDER="/images/pankaj-kumar-choudhary.jpg";
 /* content */
 const PHONE="+91 62041 66690", EMAIL="pankajpatel66690@gmail.com", TEL="tel:+916204166690", MAILTO="mailto:pankajpatel66690@gmail.com";
 const ADDR=["Choudhary Law Chambers (CLC)","E-12, First Floor, Krishna Apartment,","Anandpuri, Boring Road, Patna, Bihar 800013"];
-const MAPS="https://www.google.com/maps/search/?api=1&query=Krishna+Apartment+Boring+Road+Patna";
+const CHMAP=()=>{const h=LANG==='hi';return `<div class="cham-map"><iframe src="https://www.google.com/maps?q=Choudhary+Law+Chambers+Patna&amp;output=embed" title="${h?'गूगल मैप पर चौधरी लॉ चैम्बर्स':'Choudhary Law Chambers on Google Maps'}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="btn btn-navy" href="https://www.google.com/maps/dir/?api=1&amp;destination=Choudhary+Law+Chambers+Patna" target="_blank" rel="noopener">${h?'रास्ता देखें':'Get Directions'}</a></div>`};
+const MAPS="https://www.google.com/maps/search/?api=1&query=Choudhary+Law+Chambers+Patna";
 const I={
  gavel:'<path d="M14 5l5 5M11 8l5 5M12.5 6.5l-6 6M9 16l-5 5M8 11l5 5"/>',
  shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
@@ -394,7 +395,7 @@ const chambers=()=>{const x=t();return `<section class="s alt" id="chambers"><di
 <div class="f full"><label for="q-msg">${x.fmMsg}</label><textarea id="q-msg" placeholder="${x.fmMsgPh}"></textarea></div>
 <label class="ck"><input type="checkbox" id="q-ack"> ${x.fmAck}</label>
 <div class="ff"><small id="q-err" aria-live="polite">${x.fmReq}</small><button class="btn btn-wa-send" type="submit">${icon('wa')}${x.fmSend}</button></div>
-</form></div></div></section>`};
+</form></div>${CHMAP()}</div></section>`};
 const cta=(h,p)=>`<section class="cta"><div class="wrap"><div><h2>${h}</h2><p>${p}</p></div><div class="acts"><a class="btn btn-gold" href="#chambers">${t().nav.book}</a><a class="btn btn-line" href="${WA}" target="_blank" rel="noopener">${t().ctaWA}</a></div></div></section>`;
 
 const FACADE=`<svg viewBox="0 0 520 440" fill="none" stroke="#C9A96E" stroke-width="1.3" aria-hidden="true">
