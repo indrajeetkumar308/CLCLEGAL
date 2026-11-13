@@ -190,6 +190,7 @@ window.clcAutoHideInstall = window.clcAutoHideInstall || function(button, popup)
     const parts=[ '*' + words.title + '*','',words.name+': '+name,words.phone+': '+phone,
       words.topic+': '+value('#q-topic') ];
     if(value('#q-court'))parts.push(words.court+': '+value('#q-court'));
+    {const d=value('#q-date'),ts=$('#q-time'),t=ts&&ts.selectedIndex>0?ts.value:'';if(d||t)parts.push((document.documentElement.lang==='hi'?'पसंदीदा समय':'Preferred date/time')+': '+[d.split('-').reverse().join('-'),t].filter(Boolean).join(', '));}
     if(value('#q-msg'))parts.push('',words.message+': '+value('#q-msg'));
     const href=WA+'?text='+encodeURIComponent(parts.join('\n'));
     try {window.open(href,'_blank','noopener');}catch (_){}
