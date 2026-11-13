@@ -390,7 +390,7 @@ const chambers=()=>{const x=t();return `<section class="s alt" id="chambers"><di
 <form class="intake" id="intake" novalidate><h3>${x.fmH}</h3><p class="sub">${x.fmSub}</p>
 <div class="f"><label for="q-name">${x.fmName}</label><input id="q-name" autocomplete="name"></div>
 <div class="f"><label for="q-phone">${x.fmPhone}</label><input id="q-phone" inputmode="tel" autocomplete="tel"></div>
-<div class="f"><label for="q-topic">${x.fmTopic}</label><select id="q-topic">${ORDER.map(k=>`<option>${P(k).title}</option>`).join('')}<option>${x.fmElse}</option></select></div>
+<div class="f"><label for="q-topic">${x.fmTopic}</label><select id="q-topic">${ORDER.map(k=>`<option>${P(k).title}</option>`).join('')}<option>${x.fmElse}</option></select></div>${LANG==='hi'?`<div class="f"><label for="q-date">पसंदीदा तारीख (वैकल्पिक)</label><input id="q-date" type="date"></div><div class="f"><label for="q-time">पसंदीदा समय (वैकल्पिक)</label><select id="q-time"><option>कोई भी समय</option><option>सुबह (9–12)</option><option>दोपहर (12–4)</option><option>शाम (4–9)</option></select></div>`:`<div class="f"><label for="q-date">Preferred date (optional)</label><input id="q-date" type="date"></div><div class="f"><label for="q-time">Preferred time (optional)</label><select id="q-time"><option>Any time</option><option>Morning (9–12)</option><option>Afternoon (12–4)</option><option>Evening (4–9)</option></select></div>`}
 <div class="f"><label for="q-court">${x.fmCourt}</label><input id="q-court" placeholder="${x.fmCourtPh}"></div>
 <div class="f full"><label for="q-msg">${x.fmMsg}</label><textarea id="q-msg" placeholder="${x.fmMsgPh}"></textarea></div>
 <label class="ck"><input type="checkbox" id="q-ack"> ${x.fmAck}</label>
@@ -541,6 +541,7 @@ function wireCommon(){const x=t();
   err.textContent=x.fmReq;err.style.color='';
   const lines=[`*${x.waHead}*`,'',`${x.waN}: ${n}`,`${x.waP}: ${p}`,`${x.waT}: ${v('#q-topic')}`];
   if(v('#q-court'))lines.push(`${x.waC}: ${v('#q-court')}`);
+  const _d=($('#q-date')||{}).value||'',_t=($('#q-time')||{}).value||'';if(_d||(_t&&$('#q-time').selectedIndex>0))lines.push(`${LANG==='hi'?'पसंदीदा समय':'Preferred date/time'}: ${[_d.split('-').reverse().join('-'),$('#q-time').selectedIndex>0?_t:''].filter(Boolean).join(', ')}`);
   if(v('#q-msg'))lines.push('',`${x.waM}: ${v('#q-msg')}`);
   const url=WA+'?text='+encodeURIComponent(lines.join('\n'));
   let w=null;try{w=window.open(url,'_blank','noopener')}catch(_){}
