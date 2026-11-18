@@ -39,7 +39,9 @@
       [T('Wrong entry in jamabandi','जमाबंदी में गलत प्रविष्टि'),'jamabandi-correction-parimarjan-bihar'],
       [T('Land survey objection','भूमि सर्वे पर आपत्ति'),'bihar-land-survey-objection-appeal'],
       [T('Got an encroachment notice','अतिक्रमण नोटिस मिला'),'encroachment-notice-bihar-what-to-do']]}],
-    [T('Divorce or family','तलाक या परिवार'),'mutual-consent-vs-contested-divorce-india'],
+    [T('Divorce or family','तलाक या परिवार'),{q:T('What do you need?','आपको क्या चाहिए?'),o:[
+      [T('Divorce','तलाक'),'mutual-consent-vs-contested-divorce-india'],
+      [T('Maintenance (monthly support) for wife, children or parents','पत्नी, बच्चों या माता-पिता का भरण-पोषण'),'maintenance-wife-children-parents-section-144-bnss']]}],
     [T('Check my case status','अपने केस का स्टेटस देखना'),'case-status-patna-high-court-district-court-bihar']]};
   const cardOf=slug=>document.querySelector(`a.artcard[href="${P}${slug}/"]`);
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
