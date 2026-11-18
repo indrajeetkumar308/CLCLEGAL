@@ -30,6 +30,7 @@
     [T('A government job, salary or pension','सरकारी नौकरी, वेतन या पेंशन'),{q:T('What happened?','क्या हुआ?'),o:[
       [T('Suspended or dismissed','निलंबित या बर्खास्त'),'suspended-dismissed-government-job-writ-patna-high-court'],
       [T('Salary or pension stopped','वेतन या पेंशन रुकी'),'salary-pension-stopped-writ-patna-high-court'],
+      [T('Won in High Court, but the order is not followed','हाईकोर्ट में जीते, पर आदेश नहीं माना जा रहा'),'contempt-petition-court-order-not-followed-patna-high-court'],
       [T('Other order of a government office','सरकारी दफ़्तर का कोई और आदेश'),'writ-petition-patna-high-court']]}],
     [T('Land or property','ज़मीन या संपत्ति'),{q:T('What do you need?','आपको क्या चाहिए?'),o:[
       [T('I want to buy land','ज़मीन खरीदनी है'),'buy-land-patna-bihar-simple-guide'],
