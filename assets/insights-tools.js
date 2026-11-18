@@ -25,6 +25,7 @@
       [T('498A case, and we have settled','498A का मामला, समझौता हो गया है'),'498a-compromise-quashing-patna-high-court'],
       [T('Police are not registering my FIR','पुलिस मेरी FIR दर्ज नहीं कर रही'),'police-not-registering-fir-bihar'],
       [T('Convicted by the Sessions Court','सेशन कोर्ट से सज़ा हो गई'),'criminal-appeal-conviction-patna-high-court'],
+      [T('Family member held by police without any order','परिवार के सदस्य को बिना आदेश पुलिस ने पकड़ रखा है'),'habeas-corpus-illegal-detention-patna-high-court'],
       [T('Online / cyber fraud','ऑनलाइन / साइबर ठगी'),'cyber-fraud-complaint-india-1930']]}],
     [T('A government job, salary or pension','सरकारी नौकरी, वेतन या पेंशन'),{q:T('What happened?','क्या हुआ?'),o:[
       [T('Suspended or dismissed','निलंबित या बर्खास्त'),'suspended-dismissed-government-job-writ-patna-high-court'],
