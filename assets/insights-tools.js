@@ -27,6 +27,9 @@
       [T('Convicted by the Sessions Court','सेशन कोर्ट से सज़ा हो गई'),'criminal-appeal-conviction-patna-high-court'],
       [T('Family member held by police without any order','परिवार के सदस्य को बिना आदेश पुलिस ने पकड़ रखा है'),'habeas-corpus-illegal-detention-patna-high-court'],
       [T('Vehicle or house seized in a liquor case','शराब केस में गाड़ी या मकान ज़ब्त'),'liquor-case-vehicle-house-seized-release-bihar'],
+      [T('Ganja / smack / cough syrup (NDPS) case','गांजा / स्मैक / कफ सिरप (NDPS) केस'),'ndps-bail-section-37-patna-high-court'],
+      [T('SC/ST Act case, bail refused','SC/ST एक्ट केस, जमानत खारिज'),'sc-st-act-anticipatory-bail-appeal-14a-patna-high-court'],
+      [T('Child (under 18) accused, kept in observation home','नाबालिग (18 से कम) आरोपी, संप्रेक्षण गृह में'),'juvenile-pocso-case-bail-section-12-jj-act-patna-high-court'],
       [T('Online / cyber fraud','ऑनलाइन / साइबर ठगी'),'cyber-fraud-complaint-india-1930']]}],
     [T('A government job, salary or pension','सरकारी नौकरी, वेतन या पेंशन'),{q:T('What happened?','क्या हुआ?'),o:[
       [T('Recruitment exam / result / selection problem','भर्ती परीक्षा / रिज़ल्ट / चयन में दिक्कत'),'recruitment-exam-result-writ-patna-high-court'],
