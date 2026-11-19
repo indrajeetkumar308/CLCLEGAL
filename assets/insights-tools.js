@@ -26,8 +26,10 @@
       [T('Police are not registering my FIR','पुलिस मेरी FIR दर्ज नहीं कर रही'),'police-not-registering-fir-bihar'],
       [T('Convicted by the Sessions Court','सेशन कोर्ट से सज़ा हो गई'),'criminal-appeal-conviction-patna-high-court'],
       [T('Family member held by police without any order','परिवार के सदस्य को बिना आदेश पुलिस ने पकड़ रखा है'),'habeas-corpus-illegal-detention-patna-high-court'],
+      [T('Vehicle or house seized in a liquor case','शराब केस में गाड़ी या मकान ज़ब्त'),'liquor-case-vehicle-house-seized-release-bihar'],
       [T('Online / cyber fraud','ऑनलाइन / साइबर ठगी'),'cyber-fraud-complaint-india-1930']]}],
     [T('A government job, salary or pension','सरकारी नौकरी, वेतन या पेंशन'),{q:T('What happened?','क्या हुआ?'),o:[
+      [T('Recruitment exam / result / selection problem','भर्ती परीक्षा / रिज़ल्ट / चयन में दिक्कत'),'recruitment-exam-result-writ-patna-high-court'],
       [T('Suspended or dismissed','निलंबित या बर्खास्त'),'suspended-dismissed-government-job-writ-patna-high-court'],
       [T('Salary or pension stopped','वेतन या पेंशन रुकी'),'salary-pension-stopped-writ-patna-high-court'],
       [T('Won in High Court, but the order is not followed','हाईकोर्ट में जीते, पर आदेश नहीं माना जा रहा'),'contempt-petition-court-order-not-followed-patna-high-court'],
@@ -36,6 +38,7 @@
       [T('I want to buy land','ज़मीन खरीदनी है'),'buy-land-patna-bihar-simple-guide'],
       [T('Apply for mutation (dakhil-kharij)','दाखिल-खारिज के लिए आवेदन'),'dakhil-kharij-online-apply-bihar'],
       [T('Mutation rejected','दाखिल-खारिज खारिज हो गया'),'dakhil-kharij-appeal-dclr-bihar'],
+      [T('CO / DCLR / Commissioner order against me','CO / DCLR / आयुक्त का आदेश मेरे विरुद्ध'),'land-co-dclr-order-patna-high-court-writ-tribunal'],
       [T('Wrong entry in jamabandi','जमाबंदी में गलत प्रविष्टि'),'jamabandi-correction-parimarjan-bihar'],
       [T('Land survey objection','भूमि सर्वे पर आपत्ति'),'bihar-land-survey-objection-appeal'],
       [T('Got an encroachment notice','अतिक्रमण नोटिस मिला'),'encroachment-notice-bihar-what-to-do']]}],
