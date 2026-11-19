@@ -1,9 +1,104 @@
 {
-  "date": "2026-11-01T15:02:13.626Z",
-  "pages": 51,
+  "date": "2026-11-19T12:56:41.831Z",
+  "pages": 115,
   "complianceReview": [
     {
+      "file": "hi/insights/498a-compromise-quashing-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/anticipatory-bail-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/bail-cancellation-section-483-bnss-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/bail-dowry-cruelty-case-bns-85-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/bail-liquor-case-bihar-prohibition-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/bail-rejected-sessions-court-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/bihar-land-survey-objection-appeal/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/buy-land-patna-bihar-simple-guide/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/case-status-patna-high-court-district-court-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/check-land-before-buying-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/cheque-bounce-complaint-quashing-section-138-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/civil-dispute-criminal-case-quashing-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/contempt-petition-court-order-not-followed-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/criminal-appeal-conviction-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
       "file": "hi/insights/dakhil-kharij-appeal-dclr-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/dakhil-kharij-online-apply-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/default-bail-chargesheet-not-filed-60-90-days-bnss/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/encroachment-notice-bihar-what-to-do/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/fir-quashing-section-528-bnss-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/habeas-corpus-illegal-detention-patna-high-court/index.html",
       "type": "hindi-solicitation",
       "count": 1
     },
@@ -18,12 +113,167 @@
       "count": 1
     },
     {
+      "file": "hi/insights/land-co-dclr-order-patna-high-court-writ-tribunal/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/liquor-case-vehicle-house-seized-release-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/maintenance-wife-children-parents-section-144-bnss/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/mutation-rejected-jamabandi-split-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/police-not-registering-fir-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/police-notice-section-35-bnss-arrest-7-years/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/recruitment-exam-result-writ-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/salary-pension-stopped-writ-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/summons-complaint-case-quashing-revision-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/suspended-dismissed-government-job-writ-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/undertrial-release-section-479-bnss-half-sentence/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/writ-petition-patna-high-court/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
       "file": "index.html",
       "type": "english-solicitation",
       "count": 2
     },
     {
+      "file": "insights/498a-compromise-quashing-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/anticipatory-bail-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/bail-cancellation-section-483-bnss-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/bail-dowry-cruelty-case-bns-85-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/bail-liquor-case-bihar-prohibition-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/bail-rejected-sessions-court-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/bihar-land-survey-objection-appeal/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/buy-land-patna-bihar-simple-guide/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/case-status-patna-high-court-district-court-bihar/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/check-land-before-buying-bihar/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/cheque-bounce-complaint-quashing-section-138-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/civil-dispute-criminal-case-quashing-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/contempt-petition-court-order-not-followed-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/criminal-appeal-conviction-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
       "file": "insights/dakhil-kharij-appeal-dclr-bihar/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/dakhil-kharij-online-apply-bihar/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/default-bail-chargesheet-not-filed-60-90-days-bnss/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/encroachment-notice-bihar-what-to-do/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/fir-quashing-section-528-bnss-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/habeas-corpus-illegal-detention-patna-high-court/index.html",
       "type": "english-solicitation",
       "count": 1
     },
@@ -36,6 +286,66 @@
       "file": "insights/jamabandi-correction-parimarjan-bihar/index.html",
       "type": "english-solicitation",
       "count": 1
+    },
+    {
+      "file": "insights/land-co-dclr-order-patna-high-court-writ-tribunal/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/liquor-case-vehicle-house-seized-release-bihar/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/maintenance-wife-children-parents-section-144-bnss/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/mutation-rejected-jamabandi-split-bihar/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/police-not-registering-fir-bihar/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/police-notice-section-35-bnss-arrest-7-years/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/recruitment-exam-result-writ-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/salary-pension-stopped-writ-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/summons-complaint-case-quashing-revision-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/suspended-dismissed-government-job-writ-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/undertrial-release-section-479-bnss-half-sentence/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
+      "file": "insights/writ-petition-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
     }
   ],
   "issues": [
@@ -44,15 +354,30 @@
       "issues": [
         "missing-canonical"
       ]
+    },
+    {
+      "file": "hi/insights/fir-quashing-section-528-bnss/index.html",
+      "issues": [
+        "missing-h1",
+        "article-hreflang-or-canonical-mismatch"
+      ]
+    },
+    {
+      "file": "insights/fir-quashing-section-528-bnss/index.html",
+      "issues": [
+        "missing-h1"
+      ]
     }
   ],
   "counts": {
-    "missing-canonical": 1
+    "missing-canonical": 1,
+    "missing-h1": 2,
+    "article-hreflang-or-canonical-mismatch": 1
   },
   "largestAssets": [
     {
       "file": "assets/app.js",
-      "bytes": 193534
+      "bytes": 196533
     },
     {
       "file": "assets/fonts/noto-sans-devanagari-devanagari-wght-normal.woff2",
@@ -68,7 +393,7 @@
     },
     {
       "file": "assets/styles.css",
-      "bytes": 46728
+      "bytes": 57604
     },
     {
       "file": "assets/fonts/source-sans-3-latin-wght-normal.woff2",
@@ -96,7 +421,7 @@
     },
     {
       "file": "assets/home-runtime.js",
-      "bytes": 12216
+      "bytes": 13939
     }
   ]
 }

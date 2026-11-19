@@ -68,6 +68,7 @@ If a task touches the other AI's area, list it under "In progress" first and kee
 
 | Date | AI | Task | PR / commit |
 |---|---|---|---|
+| 2026-11-19 | Claude | 7 new articles (EN + HI): bail in liquor cases, bail in dowry/cruelty (BNS 85) cases, undertrial release (S. 479 BNSS), bail cancellation (S. 483(3)/480(5)), cheque bounce (S. 138) quashing, civil dispute as criminal case quashing, summons in complaint case. Cards on Insights (criminal group) and Criminal Defence pages EN/HI, ItemList, sitemap +14. Owner to verify before merge: SC citations (Arnesh Kumar, Kahkashan Kausar, Dolat Ram, SMS Pharma, Yogendra Pratap Singh, Indian Oil v. NEPC, Paramjeet Batra, Hridaya Ranjan, Pepsi Foods, Vijay Dhanuka) are linked only to the SC home page; S. 223 BNSS proviso and S. 479(2) wording; liquor-case anticipatory bail position under the amended Prohibition Act | this PR |
 | 2026-11-06 | ChatGPT | Add full Hindi translation of Article 226 guide with six examples, reciprocal language switches, Civil Litigation card and Citizen Guides links; owner/Claude editorial review before merge | #61 (updated PR, review required) |
 | 2026-11-06 | ChatGPT | Draft researched Article 226 writ petition guide, SEO study, native Civil Litigation article link, Insights, Citizen Guide, sitemap; owner/Claude legal and SEO review required | #61 (PR, open) |
 | 2026-11-06 | ChatGPT | FIR Quashing native article card on Criminal Defence EN/HI alongside Bail; removed off-pattern resource panel | #60 (PR, open) |
