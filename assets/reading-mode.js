@@ -26,7 +26,8 @@
   bar.setAttribute('role','region');
   bar.setAttribute('aria-label',words.controls);
   bar.innerHTML = `<div class="reader-inner"><button type="button" class="reader-toggle" aria-pressed="false">${words.enter}</button><div class="reader-options" hidden><button type="button" data-size="down" aria-label="${words.smaller}">A−</button><output aria-live="polite" aria-label="${words.size}"></output><button type="button" data-size="up" aria-label="${words.larger}">A+</button><label>${words.theme} <select aria-label="${words.theme}"><option value="light">${words.light}</option><option value="sepia">${words.sepia}</option><option value="dark">${words.dark}</option></select></label></div></div>`;
-  hero.after(bar);
+  const slot=document.getElementById('clc-reader-slot');
+  if (slot) slot.replaceWith(bar); else hero.after(bar);
   const toggle = bar.querySelector('.reader-toggle');
   const options = bar.querySelector('.reader-options');
   const select = bar.querySelector('select');

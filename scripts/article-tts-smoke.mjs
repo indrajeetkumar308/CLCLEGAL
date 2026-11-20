@@ -1,5 +1,8 @@
 import puppeteer from 'puppeteer-core';
+process.on('unhandledRejection',e=>{console.log('::error::'+String(e&&e.stack||e).split('\n').slice(0,3).join(' | ').slice(0,900));process.exit(1)});process.on('uncaughtException',e=>{console.log('::error::'+String(e&&e.stack||e).split('\n').slice(0,3).join(' | ').slice(0,900));process.exit(1)});
 import fs from 'node:fs';
+import {execSync} from 'node:child_process';
+if(process.env.CI){try{if(!execSync('fc-list :lang=hi family').toString().trim()){execSync('sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core',{stdio:'inherit'});}}catch(e){console.log('font setup skipped',e.message)}}
 const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
 fs.mkdirSync('reports/article-tts',{recursive:true});
 for(const lang of ['en','hi'])for(const width of [390,1440]){

@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-19T12:56:41.831Z",
-  "pages": 115,
+  "date": "2026-11-20T15:01:56.551Z",
+  "pages": 117,
   "complianceReview": [
     {
       "file": "hi/insights/498a-compromise-quashing-patna-high-court/index.html",
@@ -129,6 +129,11 @@
     },
     {
       "file": "hi/insights/mutation-rejected-jamabandi-split-bihar/index.html",
+      "type": "hindi-solicitation",
+      "count": 1
+    },
+    {
+      "file": "hi/insights/ndps-bail-section-37-patna-high-court/index.html",
       "type": "hindi-solicitation",
       "count": 1
     },
@@ -308,6 +313,11 @@
       "count": 1
     },
     {
+      "file": "insights/ndps-bail-section-37-patna-high-court/index.html",
+      "type": "english-solicitation",
+      "count": 1
+    },
+    {
       "file": "insights/police-not-registering-fir-bihar/index.html",
       "type": "english-solicitation",
       "count": 1
@@ -393,7 +403,7 @@
     },
     {
       "file": "assets/styles.css",
-      "bytes": 57604
+      "bytes": 56939
     },
     {
       "file": "assets/fonts/source-sans-3-latin-wght-normal.woff2",
