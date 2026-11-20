@@ -29,9 +29,8 @@
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=20261113d">
+<link rel="stylesheet" href="/assets/styles.css?v=20261120p">
 <script>try{if(sessionStorage.getItem('clc-gate')==='1')document.documentElement.classList.add('gate-ok')}catch(e){}</script>
-<script src="/assets/app.js?v=20261113a" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Cyber Fraud Help: Choose Your Situation","description":"Choose your cyber fraud situation and find general safety steps, 1930, official cybercrime reporting and Sanchar Saathi links, without sharing personal details.","url":"https://clclegal.in/citizen-guides/cyber-fraud-help/","inLanguage":"en-IN","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Choudhary Law Chambers","url":"https://clclegal.in/"}}</script>
 <style>
 .artc .cr-fraud-eyebrow{font:700 12px var(--sans);color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin:0 0 24px}
@@ -81,7 +80,7 @@
    </nav></div></header>
 <main id="app"><section class="phero"><div class="wrap">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a>/<a href="/citizen-guides/">Citizen Legal Resource Centre</a>/<span aria-current="page">Cyber Fraud Help</span></nav>
-<h1>Cyber Fraud Help: Choose Your Situation</h1><p>Citizen safety · Official reporting information</p></div></section>
+<h1>Cyber Fraud Help: Choose Your Situation</h1><p>Citizen safety · Official reporting information</p></div></section><div id="clc-reader-slot" aria-hidden="true"></div>
 <div class="wrap"><article class="artc"><p>Not sure which action to take? Choose the situation that best describes what happened. You will see general safety steps and links to the proper government channels.</p>
 <section id="fraud-scenarios" class="cr-navigator" aria-labelledby="cr-navigator-title">
 <p class="cr-navigator-category">Citizen information only · No case assessment or personal data collection</p>
@@ -130,5 +129,6 @@ b.addEventListener('click',async()=>{if(!ev)return;ev.prompt();await ev.userChoi
 addEventListener('appinstalled',()=>{b.hidden=true;try{localStorage.setItem('clc-installed','1')}catch(_){}});})();
 </script>
 <script src="/assets/glass-scroller.js?v=20261109m" defer></script>
+<script>(function(){var g=document.getElementById('gate');if(g){var go=document.getElementById('gate-go'),no=document.getElementById('gate-no');if(go)go.addEventListener('click',function(){try{sessionStorage.setItem('clc-gate','1')}catch(e){}document.documentElement.classList.add('gate-ok');g.hidden=true;document.body.style.overflow=''});if(no)no.addEventListener('click',function(){if(document.referrer&&history.length>1)history.back();else location.replace('https://www.google.com/')})}function L(){var s=document.createElement('script');s.src='/assets/app.js?v=20261120p';document.body.appendChild(s)}if(document.readyState==='complete')L();else addEventListener('load',L)})();</script>
 </body>
 </html>
