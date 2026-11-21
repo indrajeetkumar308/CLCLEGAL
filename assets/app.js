@@ -358,7 +358,7 @@ function renderChrome(){
  if(!PRE)$('#hdr').innerHTML=`<div class="wrap nav">
   <a class="brand" href="${U('home')}"><div class="mark"><span>CLC</span></div><div><b>${x.brand}</b><small>${x.brandSub}</small></div></a>
   <div class="nav-r">${langToggle('lg-hdr')}
-  <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="links" aria-label="${x.menu}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button></div>
+  <a class="hdr-call" href="tel:+916204166690" aria-label="Call +91 62041 66690"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1"/></svg></a><button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="links" aria-label="${x.menu}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button></div>
   <nav class="links" id="links">
    <a href="${U('home')}" data-nav="home">${x.nav.home}</a><a href="${HOMEA('about')}" data-nav="about">${x.nav.about}</a>
    <div class="dd" id="dd"><button type="button" id="dd-btn" aria-expanded="false" aria-controls="dd-menu" aria-haspopup="true">${x.nav.practice} ▾</button><div class="dd-menu" id="dd-menu">${ORDER.map(k=>`<a href="${U(k)}">${P(k).title}<span>›</span></a>`).join('')}</div></div>

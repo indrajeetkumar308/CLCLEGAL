@@ -1,4 +1,5 @@
 import puppeteer from 'puppeteer-core';
+const _ann=e=>{console.log('::error::'+String(e&&e.stack||e).slice(0,900).replace(/\n/g,'%0A'));process.exit(1)};process.on('unhandledRejection',_ann);process.on('uncaughtException',_ann);
 const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
 let failed=false;
 for(const lang of ['','hi/']){
@@ -41,7 +42,7 @@ for(const lang of ['','hi/']){
  await page.type('#q-phone','9999999999');
  await page.click('#q-ack');
  await page.$eval('#intake',form=>form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true})));
- if(!(await page.$('#q-done')))throw Error(lang+' form broken');
+ if(!(await page.$('#q-done')))throw Error(lang+' form broken '+JSON.stringify(await page.evaluate(()=>{const a=document.querySelector('#q-ack'),r=a&&a.getBoundingClientRect(),h=document.querySelector('#hdr')?.getBoundingClientRect();const el=r&&document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return {url:location.href,ack:a&&a.checked,r:r&&[r.x,r.y,r.width,r.height],hdr:h&&[h.y,h.height],hit:el&&(el.tagName+'.'+el.className),app:!!window.CHMAP,sy:scrollY,iw:innerWidth,sw:document.documentElement.scrollWidth}})));
  if(errs.length)throw Error(lang+' JS errors '+errs.join(';'));
  console.log(lang||'en/','passes gate, menu, submenu, outside tap, contact form');
  await page.close();
