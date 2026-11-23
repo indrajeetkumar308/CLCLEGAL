@@ -39,6 +39,7 @@
       [T('I want to buy land','ज़मीन खरीदनी है'),'buy-land-patna-bihar-simple-guide'],
       [T('Apply for mutation (dakhil-kharij)','दाखिल-खारिज के लिए आवेदन'),'dakhil-kharij-online-apply-bihar'],
       [T('Mutation rejected','दाखिल-खारिज खारिज हो गया'),'dakhil-kharij-appeal-dclr-bihar'],
+      [T('Brother / uncle removed my name from jamabandi','भाई / चाचा ने जमाबंदी से मेरा नाम हटाया'),'ancestral-land-share-name-removed-jamabandi-supreme-court'],
       [T('Mutation in someone else\'s name: is my land gone?','किसी और के नाम दाखिल-खारिज: क्या ज़मीन गई?'),'dakhil-kharij-not-proof-of-ownership-supreme-court'],
       [T('CO / DCLR / Commissioner order against me','CO / DCLR / आयुक्त का आदेश मेरे विरुद्ध'),'land-co-dclr-order-patna-high-court-writ-tribunal'],
       [T('Wrong entry in jamabandi','जमाबंदी में गलत प्रविष्टि'),'jamabandi-correction-parimarjan-bihar'],
