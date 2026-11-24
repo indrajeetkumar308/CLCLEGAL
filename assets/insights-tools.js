@@ -30,6 +30,7 @@
       [T('Ganja / smack / cough syrup (NDPS) case','गांजा / स्मैक / कफ सिरप (NDPS) केस'),'ndps-bail-section-37-patna-high-court'],
       [T('Online / cyber fraud','ऑनलाइन / साइबर ठगी'),'cyber-fraud-complaint-india-1930']]}],
     [T('A government job, salary or pension','सरकारी नौकरी, वेतन या पेंशन'),{q:T('What happened?','क्या हुआ?'),o:[
+      [T('Parent died in government job: compassionate appointment','सरकारी नौकरी में माता-पिता की मृत्यु: अनुकंपा नियुक्ति'),'compassionate-appointment-bihar-patna-high-court'],
       [T('Recruitment exam / result / selection problem','भर्ती परीक्षा / रिज़ल्ट / चयन में दिक्कत'),'recruitment-exam-result-writ-patna-high-court'],
       [T('Suspended or dismissed','निलंबित या बर्खास्त'),'suspended-dismissed-government-job-writ-patna-high-court'],
       [T('Salary or pension stopped','वेतन या पेंशन रुकी'),'salary-pension-stopped-writ-patna-high-court'],
