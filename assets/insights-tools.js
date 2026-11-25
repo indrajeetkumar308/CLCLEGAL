@@ -19,6 +19,7 @@
     [T('A police case / FIR / complaint case','पुलिस केस / FIR / परिवाद'),{q:T('What is the situation?','स्थिति क्या है?'),o:[
       [T('Got a police notice to appear','पुलिस का हाज़िरी नोटिस मिला'),'police-notice-section-35-bnss-arrest-7-years'],
       [T('I fear arrest, not arrested yet','गिरफ्तारी का डर है, अभी गिरफ्तार नहीं'),'anticipatory-bail-patna-high-court'],
+      [T('Warrant, ishtehar or kurki issued','वारंट, इश्तेहार या कुर्की जारी'),'warrant-ishtehar-kurki-proclamation-patna-high-court'],
       [T('Already arrested, bail needed','गिरफ्तार हो चुके हैं, जमानत चाहिए'),'bail-rejected-sessions-court-patna-high-court'],
       [T('In jail, chargesheet not filed in 60/90 days','जेल में हैं, 60/90 दिन में चार्जशीट नहीं आई'),'default-bail-chargesheet-not-filed-60-90-days-bnss'],
       [T('The FIR or complaint is false / baseless','FIR या परिवाद झूठा / बेबुनियाद है'),'fir-quashing-section-528-bnss-patna-high-court'],
