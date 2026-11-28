@@ -49,6 +49,7 @@
       [T('Got an encroachment notice','अतिक्रमण नोटिस मिला'),'encroachment-notice-bihar-what-to-do']]}],
     [T('Divorce or family','तलाक या परिवार'),{q:T('What do you need?','आपको क्या चाहिए?'),o:[
       [T('Divorce','तलाक'),'mutual-consent-vs-contested-divorce-india'],
+      [T('Gave property to son, now neglected (senior citizen)','बेटे को संपत्ति दी, अब देखभाल नहीं (वरिष्ठ नागरिक)'),'senior-citizen-gift-deed-cancel-children-eviction-bihar'],
       [T('Maintenance (monthly support) for wife, children or parents','पत्नी, बच्चों या माता-पिता का भरण-पोषण'),'maintenance-wife-children-parents-section-144-bnss']]}],
     [T('Check my case status','अपने केस का स्टेटस देखना'),'case-status-patna-high-court-district-court-bihar']]};
   const cardOf=slug=>document.querySelector(`a.artcard[href="${P}${slug}/"]`);
