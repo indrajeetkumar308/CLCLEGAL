@@ -32,6 +32,7 @@
       [T('Online / cyber fraud','ऑनलाइन / साइबर ठगी'),'cyber-fraud-complaint-india-1930']]}],
     [T('A government job, salary or pension','सरकारी नौकरी, वेतन या पेंशन'),{q:T('What happened?','क्या हुआ?'),o:[
       [T('Parent died in government job: compassionate appointment','सरकारी नौकरी में माता-पिता की मृत्यु: अनुकंपा नियुक्ति'),'compassionate-appointment-bihar-patna-high-court'],
+      [T('Retired: pension or gratuity withheld','रिटायर: पेंशन या ग्रेच्युटी रुकी'),'pension-gratuity-withheld-after-retirement-rule-43b-bihar'],
       [T('Recruitment exam / result / selection problem','भर्ती परीक्षा / रिज़ल्ट / चयन में दिक्कत'),'recruitment-exam-result-writ-patna-high-court'],
       [T('Suspended or dismissed','निलंबित या बर्खास्त'),'suspended-dismissed-government-job-writ-patna-high-court'],
       [T('Salary or pension stopped','वेतन या पेंशन रुकी'),'salary-pension-stopped-writ-patna-high-court'],
